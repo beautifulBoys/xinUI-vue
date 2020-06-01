@@ -1,0 +1,12 @@
+
+@import "~@/styles/config.scss";
+
+.li-label {
+  display: inline-block;
+  margin-right: $label-margin-right;
+  text-align: left;
+  font-size: $label-font-size;
+  width: auto;
+  line-height: $label-line-height;
+  vertical-align: top;
+}

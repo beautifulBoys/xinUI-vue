@@ -1,12 +1,20 @@
 <template>
-  <div class="page">
-    
-  </div>
+  <label class="li-label">
+    <slot></slot>
+  </label>
 </template>
 
 <script>
 export default {
-  components: {
+  props: {
+    width: {
+      type: String,
+      default: ''
+    },
+    align: {
+      type: String,
+      default: 'left'
+    }
   },
   data () {
     return {
@@ -18,7 +26,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
