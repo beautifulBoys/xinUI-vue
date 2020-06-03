@@ -1,11 +1,51 @@
+// 字体字形
 $font-size: 12px;
-$color-text: #333;
+$line-height: 30px;
+
+// 距离
+$margin-right: 15px;
+$common-width: 200px;
 
 // 颜色
+$color-text: #333;
 $color-green: #67C23A;
 $color-blue: #409EFF;
+$color-yellow: #e6a23c;
 $color-red: #F56C6C;
 $color-gray: #909399;
+$border-color: $color-gray + #333;
 
-//距离
-$margin-right: 10px; 
+// label
+$label-color: $color-text;
+$label-font-size: $font-size;
+$label-margin-right: $margin-right;
+$label-line-height: $line-height;
+
+// input
+$input-color: $color-text;
+$input-disabled-color: $color-text + #777;
+$input-width: $common-width;
+$input-font-size: $font-size;
+$input-margin-right: $margin-right;
+$input-line-height: $line-height;
+$input-border-color: $border-color;
+$input-border-error-color: $color-red;
+$input-border-active-color: $color-blue;
+$input-border-success-color: $color-green;
+$input-padding-right: $margin-right;
+
+$textarea-height: 100px;
+$textarea-width: 300px;
+$textarea-line-height: 20px;
+
+// button
+$button-padding: $margin-right;
+
+$button-margin-right: $margin-right;
+$button-font-size: $font-size;
+$button-line-height: $line-height;
+$button-border-default-color: $color-blue;
+$button-border-success-color: $color-green;
+$button-border-error-color: $color-red;
+$button-border-warning-color: $color-yellow;
+$button-border-info-color: $color-gray;

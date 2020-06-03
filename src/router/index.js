@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import label from '@/components/label'
-import input from '@/components/input'
+
+import guide from '@/examples/guide'
+import label from '@/examples/label'
+import input from '@/examples/input'
+import button from '@/examples/button'
 
 Vue.use(Router)
 
@@ -9,18 +12,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      redirect: '/label',
-      childrens: [
-        {
-          path: '/label',
-          component: label
-        },
-        {
-          path: '/input',
-          component: input
-        }
-      ]
+      component: guide
+    },
+    {
+      path: '/label',
+      component: label
+    },
+    {
+      path: '/input',
+      component: input
+    },
+    {
+      path: '/button',
+      component: button
     }
   ]
 })

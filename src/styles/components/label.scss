@@ -1,7 +1,7 @@
 
-@import "~@/styles/config.scss";
+@import "~@/styles/const.scss";
 
-.li-label {
+.xin-label {
   display: inline-block;
   margin-right: $label-margin-right;
   text-align: left;
@@ -9,4 +9,25 @@
   width: auto;
   line-height: $label-line-height;
   vertical-align: top;
+  color: $label-color;
+  &.align-left {
+    text-align: left;
+  }
+  &.align-center {
+    text-align: center;
+  }
+  &.align-right {
+    text-align: right;
+  }
+  &.required {
+    &:before{
+      content: '*';
+      color:red;
+      text-align: center;
+      position: relative;
+      top:2px;
+      display: inline-block;
+      margin: 0 3px;
+    }
+  }
 }

@@ -1,0 +1,95 @@
+
+@import "~@/styles/const.scss";
+
+.xin-input {
+  display: inline-block;
+  margin-right: $input-margin-right;
+  font-size: $input-font-size;
+  width: $input-width;
+  line-height: $input-line-height;
+  height: $input-line-height;
+  vertical-align: top;
+  color: $input-color;
+  outline: none;
+  border: 1px solid $input-border-color;
+  box-sizing: border-box;
+  padding: 0 $input-padding-right;
+  transition: all 0.3s;
+  background: transparentize($input-border-color, 0.9);
+  &::placeholder {
+    color: $input-disabled-color + #222;
+  }
+  &:disabled {
+    color: $input-disabled-color;
+    background: transparentize($input-border-color, 0.7);
+  }
+  &:focus {
+    border: 1px solid $input-border-active-color;
+    box-shadow: 0 0 8px transparentize($input-border-active-color, 0.6);
+    background: transparentize($input-border-active-color, 0.9);
+  }
+  &.round {
+    border-radius: $input-line-height / 2;
+  }
+  &.error {
+    border: 1px solid $input-border-error-color;
+    background: transparentize($input-border-error-color, 0.95);
+    &:focus {
+      box-shadow: 0 0 8px transparentize($input-border-error-color, 0.6);
+      background: transparentize($input-border-error-color, 0.9);
+    }
+  }
+  &.success {
+    border: 1px solid $input-border-success-color;
+    background: transparentize($input-border-success-color, 0.95);
+    &:focus {
+      box-shadow: 0 0 8px transparentize($input-border-success-color, 0.6);
+      background: transparentize($input-border-success-color, 0.9);
+    }
+  }
+}
+
+.xin-textarea {
+  display: inline-block;
+  margin-right: $input-margin-right;
+  font-size: $input-font-size;
+  width: $textarea-width;
+  line-height: $textarea-line-height;
+  height: $textarea-height;
+  vertical-align: top;
+  color: $input-color;
+  outline: none;
+  border: 1px solid $input-border-color;
+  box-sizing: border-box;
+  padding: 5px $input-padding-right;
+  transition: all 0.3s;
+  background: transparentize($input-border-color, 0.9);
+  resize: none;
+  overflow-y: auto;
+  &::placeholder {
+    color: $input-disabled-color + #222;
+  }
+  &:disabled {
+    color: $input-disabled-color;
+    background: transparentize($input-border-color, 0.7);
+  }
+  &:focus {
+    border: 1px solid $input-border-active-color;
+    box-shadow: 0 0 8px transparentize($input-border-active-color, 0.6);
+  }
+  &.round {
+    border-radius: $input-line-height / 2;
+  }
+  &.error {
+    border: 1px solid $input-border-error-color;
+    &:focus {
+      box-shadow: 0 0 8px transparentize($input-border-error-color, 0.6);
+    }
+  }
+  &.success {
+    border: 1px solid $input-border-success-color;
+    &:focus {
+      box-shadow: 0 0 8px transparentize($input-border-success-color, 0.6);
+    }
+  }
+}
