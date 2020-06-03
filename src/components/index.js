@@ -1,11 +1,13 @@
 import input from './input'
 import button from './button'
 import label from './label'
+import radio from './radio'
 
 const lixinComponents = {
   input,
   label,
-  button
+  button,
+  radio
 }
 
 function install (Vue) {
@@ -21,7 +23,8 @@ export default lixinComponents
 export {
   input,
   label,
-  button
+  button,
+  radio
 }
 
 export const components = {

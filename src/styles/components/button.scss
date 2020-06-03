@@ -16,6 +16,10 @@
   background: transparentize($button-border-default-color, 0.95);
   // .iconfont {
   // }
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
   &.round {
     border-radius: $button-line-height / 2;
   }

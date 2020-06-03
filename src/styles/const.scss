@@ -40,7 +40,6 @@ $textarea-line-height: 20px;
 
 // button
 $button-padding: $margin-right;
-
 $button-margin-right: $margin-right;
 $button-font-size: $font-size;
 $button-line-height: $line-height;
@@ -49,3 +48,15 @@ $button-border-success-color: $color-green;
 $button-border-error-color: $color-red;
 $button-border-warning-color: $color-yellow;
 $button-border-info-color: $color-gray;
+
+// radio
+$radio-margin-right: $margin-right;
+$radio-font-size: $font-size;
+$radio-icon-width: 15px;
+$radio-icon-margin-right: 5px;
+$radio-line-height: $line-height;
+$radio-default-color: $color-gray;
+$radio-active-color: $color-blue;
+$radio-disabled-color: $color-gray;
+
+

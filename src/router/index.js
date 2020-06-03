@@ -5,6 +5,7 @@ import guide from '@/examples/guide'
 import label from '@/examples/label'
 import input from '@/examples/input'
 import button from '@/examples/button'
+import radio from '@/examples/radio'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
     {
       path: '/button',
       component: button
+    },
+    {
+      path: '/radio',
+      component: radio
     }
   ]
 })

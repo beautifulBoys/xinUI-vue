@@ -3,10 +3,12 @@
     :class="['xin-button', status, {
       'fill': fill && !inline,
       'inline': inline,
-      'round': round
+      'round': round,
+      'disabled': disabled
     }]"
     v-on="$listeners"
     v-bind="$attrs"
+    :disabled="disabled"
   >
     <!-- <i class="iconfont" v-if="icon && iconMap[icon]" v-html="iconMap[icon]"></i> -->
     <slot></slot>
@@ -42,6 +44,10 @@ export default {
       default: false
     },
     inline: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }

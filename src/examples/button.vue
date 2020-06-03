@@ -1,39 +1,46 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-button status="default">默认按钮</xin-button>
-      <xin-button status="success">成功按钮</xin-button>
-      <xin-button status="error">错误按钮</xin-button>
-      <xin-button status="warning">警告按钮</xin-button>
-      <xin-button status="info">信息按钮</xin-button>
+      <xin-button status="default" @click="event($event)">默认按钮</xin-button>
+      <xin-button status="success" @click="event($event)">成功按钮</xin-button>
+      <xin-button status="error" @click="event($event)">错误按钮</xin-button>
+      <xin-button status="warning" @click="event($event)">警告按钮</xin-button>
+      <xin-button status="info" @click="event($event)">信息按钮</xin-button>
     </div>
     <div class="line">
-      <xin-button status="default" fill>默认按钮</xin-button>
-      <xin-button status="success" fill>成功按钮</xin-button>
-      <xin-button status="error" fill>错误按钮</xin-button>
-      <xin-button status="warning" fill>警告按钮</xin-button>
-      <xin-button status="info" fill>信息按钮</xin-button>
+      <xin-button status="default" fill @click="event($event)">默认按钮</xin-button>
+      <xin-button status="success" fill @click="event($event)">成功按钮</xin-button>
+      <xin-button status="error" fill @click="event($event)">错误按钮</xin-button>
+      <xin-button status="warning" fill @click="event($event)">警告按钮</xin-button>
+      <xin-button status="info" fill @click="event($event)">信息按钮</xin-button>
     </div>
     <div class="line">
-      <xin-button status="default" round>默认按钮</xin-button>
-      <xin-button status="success" round>成功按钮</xin-button>
-      <xin-button status="error" round>错误按钮</xin-button>
-      <xin-button status="warning" round>警告按钮</xin-button>
-      <xin-button status="info" round>信息按钮</xin-button>
+      <xin-button status="default" round @click="event($event)">默认按钮</xin-button>
+      <xin-button status="success" round @click="event($event)">成功按钮</xin-button>
+      <xin-button status="error" round @click="event($event)">错误按钮</xin-button>
+      <xin-button status="warning" round @click="event($event)">警告按钮</xin-button>
+      <xin-button status="info" round @click="event($event)">信息按钮</xin-button>
     </div>
     <div class="line">
-      <xin-button status="default" inline>默认按钮</xin-button>
-      <xin-button status="success" inline>成功按钮</xin-button>
-      <xin-button status="error" inline>错误按钮</xin-button>
-      <xin-button status="warning" inline>警告按钮</xin-button>
-      <xin-button status="info" inline>信息按钮</xin-button>
+      <xin-button status="default" inline @click="event($event)">默认按钮</xin-button>
+      <xin-button status="success" inline @click="event($event)">成功按钮</xin-button>
+      <xin-button status="error" inline @click="event($event)">错误按钮</xin-button>
+      <xin-button status="warning" inline @click="event($event)">警告按钮</xin-button>
+      <xin-button status="info" inline @click="event($event)">信息按钮</xin-button>
     </div>
     <div class="line">
-      <xin-button status="default" icon="success">默认按钮</xin-button>
-      <xin-button status="success" icon="success">成功按钮</xin-button>
-      <xin-button status="error" icon="success">错误按钮</xin-button>
-      <xin-button status="warning" icon="success">警告按钮</xin-button>
-      <xin-button status="info" icon="success">信息按钮</xin-button>
+      <xin-button status="default" disabled @click="event($event)">默认按钮</xin-button>
+      <xin-button status="success" disabled @click="event($event)">成功按钮</xin-button>
+      <xin-button status="error" disabled @click="event($event)">错误按钮</xin-button>
+      <xin-button status="warning" disabled @click="event($event)">警告按钮</xin-button>
+      <xin-button status="info" disabled @click="event($event)">信息按钮</xin-button>
+    </div>
+    <div class="line">
+      <xin-button status="default" icon="success" @click="event($event)">默认按钮</xin-button>
+      <xin-button status="success" icon="success" @click="event($event)">成功按钮</xin-button>
+      <xin-button status="error" icon="success" @click="event($event)">错误按钮</xin-button>
+      <xin-button status="warning" icon="success" @click="event($event)">警告按钮</xin-button>
+      <xin-button status="info" icon="success" @click="event($event)">信息按钮</xin-button>
     </div>
   </div>
 </template>
@@ -49,6 +56,12 @@ export default {
   mounted () {
   },
   methods: {
+    event () {
+      console.log('点击事件')
+    },
+    mouseover () {
+      console.log('mouseover 事件')
+    }
   }
 }
 </script>
