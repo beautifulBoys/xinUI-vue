@@ -14,6 +14,11 @@
   transition: all 0.3s;
   border: 1px solid transparentize($button-border-default-color, 0);
   background: transparentize($button-border-default-color, 0.95);
+  // .iconfont {
+  // }
+  &.round {
+    border-radius: $button-line-height / 2;
+  }
   &.fill {
     color: #fff;
     background: transparentize($button-border-default-color, 0);

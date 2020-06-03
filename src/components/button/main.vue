@@ -2,11 +2,13 @@
   <button
     :class="['xin-button', status, {
       'fill': fill && !inline,
-      'inline': inline
+      'inline': inline,
+      'round': round
     }]"
     v-on="$listeners"
     v-bind="$attrs"
   >
+    <!-- <i class="iconfont" v-if="icon && iconMap[icon]" v-html="iconMap[icon]"></i> -->
     <slot></slot>
   </button>
 </template>
@@ -23,6 +25,10 @@ export default {
       type: String,
       default: 'normal'
     },
+    // icon: { // more, time, smile, play, info, cry, help, compass, setting, error, success
+    //   type: String,
+    //   default: ''
+    // },
     width: {
       type: String,
       default: null
@@ -42,6 +48,19 @@ export default {
   },
   data () {
     return {
+      iconMap: {
+        more: '&#xe637;',
+        time: '&#xe629;',
+        smile: '&#xe624;',
+        play: '&#xe623;',
+        info: '&#xe622;',
+        cry: '&#xe61e;',
+        help: '&#xe61b;',
+        compass: '&#xe625;',
+        setting: '&#xe619;',
+        error: '&#xe618;',
+        success: '&#xe617;'
+      }
     }
   },
   mounted () {
