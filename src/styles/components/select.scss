@@ -9,7 +9,7 @@
   .el-input.el-input--suffix {
     &.is-focus {
       .el-input__inner {
-        border: 1px solid $select-active-color;
+        border: 1px solid $select-border-color;
         box-shadow: 0 0 8px transparentize($select-active-color, 0.3);
       }
       .el-input__suffix {
@@ -22,11 +22,26 @@
         }
       }
     }
+    &.is-disabled {
+      .el-input__inner {
+        cursor: not-allowed;
+        border: 1px solid $select-disabled-color;
+        box-shadow: none;
+        background: $select-tag-background;
+        color: $select-disabled-color - #111111;
+        &:hover {
+          border: 1px solid $select-disabled-color;
+        }
+      }
+      .el-input__suffix {
+        color: $select-disabled-color;
+      }
+    }
     .el-input__inner {
       outline: none;
       width: $select-width;
       height: $select-line-height;
-      border: 1px solid $select-default-color;
+      border: 1px solid $select-border-color;
       border-radius: 0;
       line-height: $select-line-height;
       box-sizing: border-box;
@@ -34,6 +49,7 @@
       cursor: pointer;
       font-size: $select-font-size;
       transition: all $select-animate-time;
+      background: transparentize($select-border-color, 0.9);
       &::-webkit-input-placeholder {
         font-size: $select-font-size;
         color: $select-disabled-color;
@@ -67,7 +83,6 @@
           &::before {
             content: "\e666";
             font-size: $select-font-size;
-            color: $select-default-color;
             line-height: $select-line-height;
             display: block;
             transition: all $select-animate-time;
