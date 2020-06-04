@@ -4,6 +4,7 @@ import label from './label'
 import radio from './radio'
 import checkbox from './checkbox'
 import select from './select'
+import switch1 from './switch'
 
 const lixinComponents = {
   input,
@@ -11,7 +12,8 @@ const lixinComponents = {
   button,
   radio,
   checkbox,
-  select
+  select,
+  switch1
 }
 
 function install (Vue) {
@@ -30,7 +32,8 @@ export {
   button,
   radio,
   checkbox,
-  select
+  select,
+  switch1
 }
 
 export const components = {

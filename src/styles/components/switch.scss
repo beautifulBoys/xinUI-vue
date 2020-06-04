@@ -1,0 +1,52 @@
+
+@import "~@/styles/const.scss";
+.xin-switch {
+  margin-right: $switch-margin-right;
+  display: inline-block;
+  min-width: $switch-min-width;
+  height: $switch-line-height;
+  padding: $switch-border-width;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background: $switch-background-color;
+  cursor: pointer;
+  .box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .item {
+      width: $switch-line-height - 2 * $switch-border-width;
+      height: $switch-line-height - 2 * $switch-border-width;
+      background: #fff;
+      float: left;
+      display: inline-block;
+      transition: all $switch-animate-time;
+    }
+    .label {
+      font-size: $switch-font-size;
+      text-align: center;
+      flex: 1;
+    }
+  }
+  
+  &.active {
+    &.default {
+      background: $switch-default-color;
+    }
+    &.success {
+      background: $switch-success-color;
+    }
+    &.error {
+      background: $switch-error-color;
+    }
+    &.warning {
+      background: $switch-warning-color;
+    }
+    .box {
+      .item {
+        float: right;
+      }
+    }
+  }
+}
+
