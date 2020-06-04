@@ -69,3 +69,22 @@ $checkbox-font-size: $font-size;
 $checkbox-default-color: $color-gray;
 $checkbox-active-color: $color-blue;
 $checkbox-disabled-color: $color-gray + #333333;
+
+// select
+$select-width: $common-width;
+$select-font-size: $font-size;
+$select-animate-time: 0.3s;
+$select-icon-width: 15px;
+$select-line-height: $line-height;
+$select-padding-right: $margin-right;
+$select-default-color: $color-gray;
+$select-active-color: $color-blue;
+$select-disabled-color: $color-gray + #333333;
+$select-tag-line-height: $line-height - 10px;
+$select-tag-background: $color-gray + #555555;
+
+$option-line-height: 25px;
+$option-padding-right: $margin-right;
+$option-font-size: $font-size;
+$option-default-color: $color-gray;
+$option-active-color: $color-blue;

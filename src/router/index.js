@@ -7,6 +7,7 @@ import input from '@/examples/input'
 import button from '@/examples/button'
 import radio from '@/examples/radio'
 import checkbox from '@/examples/checkbox'
+import select from '@/examples/select'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
     {
       path: '/checkbox',
       component: checkbox
+    },
+    {
+      path: '/select',
+      component: select
     }
   ]
 })
