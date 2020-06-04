@@ -6,6 +6,7 @@ import label from '@/examples/label'
 import input from '@/examples/input'
 import button from '@/examples/button'
 import radio from '@/examples/radio'
+import checkbox from '@/examples/checkbox'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
     {
       path: '/radio',
       component: radio
+    },
+    {
+      path: '/checkbox',
+      component: checkbox
     }
   ]
 })

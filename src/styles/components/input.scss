@@ -17,7 +17,7 @@
   transition: all 0.3s;
   background: transparentize($input-border-color, 0.9);
   &::placeholder {
-    color: $input-disabled-color + #222;
+    color: $input-disabled-color + #222222;
   }
   &:disabled {
     color: $input-disabled-color;
@@ -67,7 +67,7 @@
   resize: none;
   overflow-y: auto;
   &::placeholder {
-    color: $input-disabled-color + #222;
+    color: $input-disabled-color + #222222;
   }
   &:disabled {
     color: $input-disabled-color;

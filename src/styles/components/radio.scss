@@ -37,11 +37,11 @@
     cursor: not-allowed;
     pointer-events: none;
     .icon {
-      border-color: $radio-default-color + #333;
+      border-color: $radio-default-color + #333333;
       box-shadow: none;
     }
     .label {
-      color: $radio-default-color + #333;
+      color: $radio-default-color + #333333;
     }
   }
 }

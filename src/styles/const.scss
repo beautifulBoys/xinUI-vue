@@ -8,12 +8,12 @@ $common-width: 200px;
 
 // 颜色
 $color-text: #333;
-$color-green: #67C23A;
-$color-blue: #409EFF;
-$color-yellow: #e6a23c;
-$color-red: #F56C6C;
+$color-green: #15bf81;
+$color-blue: #0095ff;
+$color-yellow: #ffba5a;
+$color-red: #ff6666;
 $color-gray: #909399;
-$border-color: $color-gray + #333;
+$border-color: $color-gray + #333333;
 
 // label
 $label-color: $color-text;
@@ -23,7 +23,7 @@ $label-line-height: $line-height;
 
 // input
 $input-color: $color-text;
-$input-disabled-color: $color-text + #777;
+$input-disabled-color: $color-text + #777777;
 $input-width: $common-width;
 $input-font-size: $font-size;
 $input-margin-right: $margin-right;
@@ -59,4 +59,13 @@ $radio-default-color: $color-gray;
 $radio-active-color: $color-blue;
 $radio-disabled-color: $color-gray;
 
-
+// checkbox
+$checkbox-font-size: $font-size;
+$checkbox-animate-time: 0.2s;
+$checkbox-icon-width: 15px;
+$checkbox-icon-margin-right: 5px;
+$checkbox-line-height: $line-height;
+$checkbox-font-size: $font-size;
+$checkbox-default-color: $color-gray;
+$checkbox-active-color: $color-blue;
+$checkbox-disabled-color: $color-gray + #333333;
