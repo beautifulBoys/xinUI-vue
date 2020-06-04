@@ -16,8 +16,8 @@
       <xin-select :list="list" itemValue="id" disabled itemLabel="name" v-model="val2"></xin-select>
     </div>
     <div class="line">
-      <xin-label width="60">单选</xin-label>
-      <xin-select :list="list" itemValue="id" itemLabel="name" v-model="val3"></xin-select>
+      <xin-label width="60">单选清空</xin-label>
+      <xin-select :list="list" itemValue="id" clearable itemLabel="name" v-model="val3"></xin-select>
     </div>
   </div>
 </template>
