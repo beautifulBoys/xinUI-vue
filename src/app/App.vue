@@ -6,7 +6,7 @@
         <div class="menu-item" v-for="(item, index) in menuList" :key="index" @click="toView(item.url)">
           <i class="iconfont item-icon"></i>
           <div class="item-text">{{item.name}}</div>
-          <i class="iconfont forward">&#xe666;</i>
+          <i class="iconfont forward">&#xe67d;</i>
         </div>
       </div>
       <div class="right">
@@ -28,7 +28,7 @@ export default {
         {name: '单选 radio', url: '/radio'},
         {name: '复选 checkbox', url: '/checkbox'},
         {name: '选择 select', url: '/select'},
-        {name: '日期选择 date-picker', url: '/date-picker'},
+        {name: '日期选择 date-picker', url: '/datePicker'},
         {name: '开关 switch', url: '/switch'},
         {name: '评分 rate', url: '/rate'},
         {name: '表格 table', url: '/table'},

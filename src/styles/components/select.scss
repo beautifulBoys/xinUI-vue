@@ -81,10 +81,10 @@
           justify-content: center;
           align-items: center;
           &.el-icon-arrow-up::before {
-            content: "\e666";
+            content: "\e67d";
           }
           &.el-icon-circle-close::before {
-            content: "\e65c";
+            content: "\e67a";
             color: $select-active-color;
           }
           &::before {
@@ -140,7 +140,7 @@
         display: inline-block;
         cursor: pointer;
         &::before {
-          content: "\e65c";
+          content: "\e67a";
           font-size: $select-font-size;
           color: $select-default-color;
           line-height: $select-tag-line-height;

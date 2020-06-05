@@ -6,6 +6,7 @@ import checkbox from './checkbox'
 import select from './select'
 import switch1 from './switch'
 import rate from './rate'
+import datePicker from './datePicker'
 
 const lixinComponents = {
   input,
@@ -15,7 +16,8 @@ const lixinComponents = {
   checkbox,
   select,
   switch1,
-  rate
+  rate,
+  datePicker
 }
 
 function install (Vue) {
@@ -36,7 +38,8 @@ export {
   checkbox,
   select,
   switch1,
-  rate
+  rate,
+  datePicker
 }
 
 export const components = {
