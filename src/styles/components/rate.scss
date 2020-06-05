@@ -1,0 +1,42 @@
+
+@import "~@/styles/const.scss";
+.xin-rate {
+  margin-right: $rate-margin-right;
+  display: inline-block;
+  height: $rate-line-height;
+  padding: (($rate-line-height - $rate-icon-height) / 2) 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  .item {
+    margin-right: $rate-margin-right;
+    display: inline-block;
+    cursor: pointer;
+    line-height: $rate-icon-height;
+    font-size: $rate-icon-height - 2px;
+    color: $rate-icon-color;
+    transition: all $rate-animate-time;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.active {
+        transform: scale(1.1);
+      &.default {
+        color: $rate-default-color;
+      }
+      &.success {
+        color: $rate-success-color;
+      }
+      &.error {
+        color: $rate-error-color;
+      }
+      &.warning {
+        color: $rate-warning-color;
+      }
+    }
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}
+

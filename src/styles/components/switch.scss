@@ -26,6 +26,17 @@
       font-size: $switch-font-size;
       text-align: center;
       flex: 1;
+      line-height: $switch-line-height - 2 * $switch-border-width;
+      color: #fff;
+      display: inline-block;
+      overflow: hidden;
+      &.left {
+        display: inline-block;
+        padding-right: $switch-border-width;
+      }
+      &.right {
+        display: none;
+      }
     }
   }
   
@@ -46,7 +57,22 @@
       .item {
         float: right;
       }
+      .label{
+        &.left {
+          display: none;
+        }
+        &.right {
+          flex: 1;
+          display: inline-block;
+          padding-left: $switch-border-width;
+        }
+      }
     }
+  }
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 

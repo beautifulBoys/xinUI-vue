@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['xin-button', status, {
+    :class="['xin-button', color, {
       'fill': fill && !inline,
       'inline': inline,
       'round': round,
@@ -19,7 +19,7 @@
 export default {
   name: 'xinButton',
   props: {
-    status: { // default, success, error, warning, info
+    color: { // default, success, error, warning, info
       type: String,
       default: ''
     },

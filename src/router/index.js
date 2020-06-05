@@ -9,6 +9,7 @@ import radio from '@/examples/radio'
 import checkbox from '@/examples/checkbox'
 import select from '@/examples/select'
 import switch1 from '@/examples/switch'
+import rate from '@/examples/rate'
 
 Vue.use(Router)
 
@@ -45,6 +46,10 @@ export default new Router({
     {
       path: '/switch',
       component: switch1
+    },
+    {
+      path: '/rate',
+      component: rate
     }
   ]
 })

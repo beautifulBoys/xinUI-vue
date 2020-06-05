@@ -1,14 +1,15 @@
 <template>
   <div
     :class="['xin-switch', color, {
-      active: inputValue
+      active: inputValue,
+      disabled: disabled
     }]"
     @click="defaultEvent"
   >
     <div class="box">
-      <div class="label"></div>
+      <div class="label left">{{closeLabel}}</div>
       <div class="item"></div>
-      <div class="label"></div>
+      <div class="label right">{{openLabel}}</div>
     </div>
     
   </div>
@@ -21,39 +22,67 @@ export default {
   },
   props: {
     value: {
-      type: Boolean,
+      type: [String, Number, Boolean],
       default: false
     },
     color: { // default, error, warning, success
       type: String,
       default: 'default'
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     openLabel: {
       type: String,
-      default: '开'
+      default: ''
+    },
+    openValue: {
+      type: [String, Number, Boolean],
+      default: true
     },
     closeLabel: {
       type: String,
-      default: '关'
+      default: ''
+    },
+    closeValue: {
+      type: [String, Number, Boolean],
+      default: false
     }
   },
   data () {
     return {
-      inputValue: this.value
+      inputValue: false
     }
+  },
+  created () {
+    this.changeValue()
   },
   watch: {
     value (n, o) {
-      this.inputValue = n
+      this.changeValue()
     }
   },
   mounted () {
   },
   methods: {
+    changeValue () {
+      if (this.value === this.openValue) {
+        this.inputValue = true
+      } else if (this.value === this.closeValue) {
+        this.inputValue = false
+      } else if (this.value) {
+        this.inputValue = true
+      } else if (!this.value) {
+        this.inputValue = false
+      }
+    },
     defaultEvent () {
+      if (this.disabled) return
       this.inputValue = !this.inputValue
-      this.$emit('input', this.inputValue)
-      this.$emit('change', this.inputValue)
+      let val = this.inputValue ? this.openValue : this.closeValue
+      this.$emit('input', val)
+      this.$emit('change', val)
     }
   }
 }
