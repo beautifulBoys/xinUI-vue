@@ -4,6 +4,8 @@
     v-bind="$attrs"
     v-on="$listeners"
     v-model="inputValue"
+    :editable="false"
+    :placeholder="placeholder"
   >
   </DatePicker>
 </template>
@@ -16,7 +18,15 @@ export default {
     DatePicker
   },
   props: {
-    value: null
+    value: null,
+    editable: {
+      type: Boolean,
+      default: false
+    },
+    placeholder: {
+      type: String,
+      default: '请选择'
+    }
   },
   data () {
     return {

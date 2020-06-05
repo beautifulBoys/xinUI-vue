@@ -16,6 +16,9 @@
   padding: 0 $input-padding-right;
   transition: all 0.3s;
   background: transparentize($input-border-color, 0.9);
+  &:hover {
+    border: 1px solid $input-border-active-color;
+  }
   &::placeholder {
     color: $input-disabled-color + #222222;
   }

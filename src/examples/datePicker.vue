@@ -4,6 +4,10 @@
       <xin-label width="60">基础组件</xin-label>
       <xin-date-picker v-model="val"></xin-date-picker>
     </div>
+    <div class="line">
+      <xin-label width="60">时间段选择</xin-label>
+      <xin-date-picker v-model="val1" type="daterange"></xin-date-picker>
+    </div>
   </div>
 </template>
 
@@ -14,7 +18,7 @@ export default {
   data () {
     return {
       val: '',
-      val1: [4, 2],
+      val1: ['2020-05-12', '2020-05-16'],
       val2: 3,
       val3: 4
     }
