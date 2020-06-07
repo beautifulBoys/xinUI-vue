@@ -10,11 +10,11 @@
   vertical-align: middle;
   background: $switch-background-color;
   cursor: pointer;
-  .box {
+  .xin-switch-box {
     width: 100%;
     height: 100%;
     display: flex;
-    .item {
+    .xin-switch-item {
       width: $switch-line-height - 2 * $switch-border-width;
       height: $switch-line-height - 2 * $switch-border-width;
       background: #fff;
@@ -22,7 +22,7 @@
       display: inline-block;
       transition: all $switch-animate-time;
     }
-    .label {
+    .xin-switch-label {
       font-size: $switch-font-size;
       text-align: center;
       flex: 1;
@@ -40,7 +40,7 @@
     }
   }
   
-  &.active {
+  &.xin-switch-active {
     &.default {
       background: $switch-default-color;
     }
@@ -53,11 +53,11 @@
     &.warning {
       background: $switch-warning-color;
     }
-    .box {
-      .item {
+    .xin-switch-box {
+      .xin-switch-item {
         float: right;
       }
-      .label{
+      .xin-switch-label {
         &.left {
           display: none;
         }
@@ -69,7 +69,7 @@
       }
     }
   }
-  &.disabled {
+  &.xin-switch-disabled {
     opacity: 0.4;
     cursor: not-allowed;
     pointer-events: none;

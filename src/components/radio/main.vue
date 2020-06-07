@@ -1,13 +1,13 @@
 <template>
   <label
     :class="['xin-radio', {
-      selected: inputValue === label,
-      disabled: disabled
+      'xin-radio-selected': inputValue === label,
+      'xin-radio-disabled': disabled
     }]"
     @click="defaultEvent"
   >
-    <div class="icon"></div>
-    <div class="label">
+    <div class="xin-radio-icon"></div>
+    <div class="xin-radio-label">
       <slot></slot>
     </div>
   </label>

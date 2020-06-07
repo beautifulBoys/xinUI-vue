@@ -1,9 +1,9 @@
 <template>
   <div class="xin-rate">
     <i
-      :class="['item', 'iconfont', color, {
-        active: index < value,
-        disabled: disabled
+      :class="['xin-rate-item', 'iconfont', color, {
+        'xin-rate-active': index < value,
+        'xin-rate-disabled': disabled
       }]"
       v-for="(item, index) in size"
       :key="index"

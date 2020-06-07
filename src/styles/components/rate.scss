@@ -7,7 +7,7 @@
   padding: (($rate-line-height - $rate-icon-height) / 2) 0;
   box-sizing: border-box;
   vertical-align: middle;
-  .item {
+  .xin-rate-item {
     margin-right: $rate-margin-right;
     display: inline-block;
     cursor: pointer;
@@ -18,7 +18,7 @@
     &:hover {
       transform: scale(1.1);
     }
-    &.active {
+    &.xin-rate-active {
         transform: scale(1.1);
       &.default {
         color: $rate-default-color;
@@ -33,7 +33,7 @@
         color: $rate-warning-color;
       }
     }
-    &.disabled {
+    &.xin-rate-disabled {
       cursor: not-allowed;
       pointer-events: none;
     }

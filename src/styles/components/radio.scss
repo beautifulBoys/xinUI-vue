@@ -6,7 +6,7 @@
   margin-right: $radio-margin-right;
   cursor: pointer;
   transition: all 0.3s;
-  .icon {
+  .xin-radio-icon {
     display: inline-block;
     height: $radio-icon-width;
     width: $radio-icon-width;
@@ -16,7 +16,7 @@
     margin-right: $radio-icon-margin-right;
     box-sizing: border-box;
   }
-  .label {
+  .xin-radio-label {
     display: inline-block;
     font-size: $radio-font-size;
     line-height: $radio-line-height;
@@ -24,23 +24,23 @@
     vertical-align: middle;
     color: $radio-default-color;
   }
-  &.selected {
-    .icon {
+  &.xin-radio-selected {
+    .xin-radio-icon {
       border: 5px solid $radio-active-color;
       box-shadow: 0 0 8px transparentize($radio-active-color, 0.3);
     }
-    .label {
+    .xin-radio-label {
       color: $radio-active-color;
     }
   }
-  &.disabled {
+  &.xin-radio-disabled {
     cursor: not-allowed;
     pointer-events: none;
-    .icon {
+    .xin-radio-icon {
       border-color: $radio-default-color + #333333;
       box-shadow: none;
     }
-    .label {
+    .xin-radio-label {
       color: $radio-default-color + #333333;
     }
   }

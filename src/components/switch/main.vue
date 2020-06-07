@@ -1,15 +1,15 @@
 <template>
   <div
     :class="['xin-switch', color, {
-      active: inputValue,
-      disabled: disabled
+      'xin-switch-active': inputValue,
+      'xin-switch-disabled': disabled
     }]"
     @click="defaultEvent"
   >
-    <div class="box">
-      <div class="label left">{{closeLabel}}</div>
-      <div class="item"></div>
-      <div class="label right">{{openLabel}}</div>
+    <div class="xin-switch-box">
+      <div class="xin-switch-label left">{{closeLabel}}</div>
+      <div class="xin-switch-item"></div>
+      <div class="xin-switch-label right">{{openLabel}}</div>
     </div>
     
   </div>
