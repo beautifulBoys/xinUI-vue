@@ -1,0 +1,34 @@
+
+@import "~@/styles/const.scss";
+.xin-table {
+  width: 100%;
+  .xin-table-content {
+    width: 100%;
+    border-top: 1px solid $table-active-color;
+    .xin-table-thead {
+      .xin-table-tr {
+        .xin-table-th {
+          font-size: $table-font-size;
+          line-height: $table-line-height;
+          background: $table-active-color;
+          color: #fff;
+          padding: 5px 0;
+        }
+      }
+    }
+    .xin-table-tbody {
+      .xin-table-tr {
+        & > td {
+          font-size: $table-font-size;
+          line-height: $table-line-height;
+          text-align: center;
+          padding: 5px;
+        }
+        &.stripe {
+          background: transparentize($table-active-color, 0.9);
+        }
+      }
+    }
+  }
+}
+

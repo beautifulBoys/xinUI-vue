@@ -11,6 +11,7 @@ import select from '@/examples/select'
 import switch1 from '@/examples/switch'
 import rate from '@/examples/rate'
 import datePicker from '@/examples/datePicker'
+import table from '@/examples/table'
 
 Vue.use(Router)
 
@@ -55,6 +56,10 @@ export default new Router({
     {
       path: '/datePicker',
       component: datePicker
+    },
+    {
+      path: '/table',
+      component: table
     }
   ]
 })

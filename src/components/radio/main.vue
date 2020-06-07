@@ -18,7 +18,7 @@ export default {
   name: 'xinRadio',
   props: {
     value: {
-      type: [Number, String, Boolean],
+      type: [Object, Number, String, Boolean],
       default: false
     },
     label: {

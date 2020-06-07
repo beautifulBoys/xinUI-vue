@@ -1,6 +1,7 @@
 <template>
   <Checkbox
     :class="['xin-checkbox', {
+      'hideLabel': hideLabel
     }]"
     v-bind="$attrs"
     v-on="$listeners"
@@ -19,18 +20,22 @@ export default {
   },
   props: {
     value: {
-      type: Array,
+      type: [Array, Boolean],
+      default: false
+    },
+    hideLabel: {
+      type: Boolean,
       default: false
     }
   },
   data () {
     return {
-      inputValue: [...this.value]
+      inputValue: this.value
     }
   },
   watch: {
     value (n, o) {
-      this.inputValue = [...n]
+      this.inputValue = n
     }
   },
   mounted () {
