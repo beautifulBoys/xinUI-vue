@@ -1,7 +1,7 @@
 <template>
   <Checkbox
     :class="['xin-checkbox', {
-      'hideLabel': hideLabel
+      'hide-label': hideLabel
     }]"
     v-bind="$attrs"
     v-on="$listeners"

@@ -29,6 +29,11 @@
     color: $checkbox-default-color;
     transition: all $checkbox-animate-time;
   }
+  &.hide-label {
+    .el-checkbox__label {
+      display: none;
+    }
+  }
   &.is-checked {
     .el-checkbox__input {
       .el-checkbox__inner {

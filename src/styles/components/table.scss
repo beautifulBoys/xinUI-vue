@@ -30,5 +30,20 @@
       }
     }
   }
+  .null-data {
+    padding: 30px 45%;
+    text-align: center;
+    background: transparentize($table-active-color, 0.9);
+    color: transparentize($table-active-color, 0.5);
+    .iconfont {
+      font-size: 30px;
+      display: block;
+    }
+    .text {
+      text-align: center;
+      display: block;
+      font-size: $table-font-size;
+    }
+  }
 }
 

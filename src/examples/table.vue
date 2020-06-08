@@ -1,16 +1,16 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-label>表格展示</xin-label>
-    </div>
-    <div class="line">
+      <xin-label>表格展示（radio 值：{{radioValue}}）；（checkbox 值：{{checkboxValue}}）</xin-label>
       <xin-table
         :thead="thead"
         :tbody="tbody"
         itemValue="id"
         tableIndex
         tableCheckbox
+        @checkbox-change="checkboxChange"
         tableRadio
+        @radio-change="radioChange"
       >
         <template slot-scope="props">
           <td>{{props.item.text}}</td>
@@ -26,6 +26,32 @@
           </td>
         </template>
       </xin-table>
+    </div>
+    <div class="line">
+      <xin-label>空表格</xin-label>
+      <xin-table
+        :thead="thead"
+        :tbody="[]"
+        itemValue="id"
+      >
+        <template slot-scope="props">
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>
+            <xin-button color="error" fill>删除</xin-button>
+          </td>
+        </template>
+      </xin-table>
+    </div>
+    <div class="line">
+    </div>
+    <div class="line">
+      <xin-label>checkbox 值：</xin-label>
+      <xin-label>{{checkboxValue}}</xin-label>
     </div>
   </div>
 </template>
@@ -52,12 +78,22 @@ export default {
         {id: 4, text: '导弹军'},
         {id: 5, text: '后勤军'},
         {id: 6, text: '指挥军'}
-      ]
+      ],
+      radioValue: '',
+      checkboxValue: []
     }
   },
   mounted () {
   },
   methods: {
+    checkboxChange (val, list) {
+      this.checkboxValue = val
+      console.log('checkbox chage 事件: ', val, list)
+    },
+    radioChange (val, item) {
+      this.radioValue = val
+      console.log('radio chage 事件: ', val, item)
+    },
     changeEvent (v) {
       console.log('change事件', v)
     }
