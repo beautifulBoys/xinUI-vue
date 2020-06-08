@@ -12,23 +12,21 @@
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
+  color: transparentize($button-border-default-color - #111111, 0);
   border: 1px solid transparentize($button-border-default-color, 0);
   background: transparentize($button-border-default-color, 0.95);
-  // .iconfont {
-  // }
-  &.disabled {
+  &.xin-button-disabled {
     cursor: not-allowed;
-    pointer-events: none;
   }
-  &.round {
+  &.xin-button-round {
     border-radius: $button-line-height / 2;
   }
-  &.fill {
+  &.xin-button-fill {
     color: #fff;
     background: transparentize($button-border-default-color, 0);
     border: 1px solid transparentize($button-border-default-color, 0);
   }
-  &.inline {
+  &.xin-button-inline {
     color: transparentize($button-border-default-color, 0);
     background: transparentize($button-border-default-color, 1);
     border: 1px solid transparentize($button-border-default-color, 1);
@@ -61,12 +59,12 @@
     color: $button-border-success-color;
     border: 1px solid $button-border-success-color;
     background: transparentize($button-border-success-color, 0.95);
-    &.fill {
+    &.xin-button-fill {
       color: #fff;
       background: transparentize($button-border-success-color, 0);
       border: 1px solid transparentize($button-border-success-color, 0);
     }
-    &.inline {
+    &.xin-button-inline {
       color: transparentize($button-border-success-color, 0);
       background: transparentize($button-border-success-color, 1);
       border: 1px solid transparentize($button-border-success-color, 1);
@@ -100,12 +98,12 @@
     color: $button-border-error-color;
     border: 1px solid $button-border-error-color;
     background: transparentize($button-border-error-color, 0.95);
-    &.fill {
+    &.xin-button-fill {
       color: #fff;
       background: transparentize($button-border-error-color, 0);
       border: 1px solid transparentize($button-border-error-color, 0);
     }
-    &.inline {
+    &.xin-button-inline {
       color: transparentize($button-border-error-color, 0);
       background: transparentize($button-border-error-color, 1);
       border: 1px solid transparentize($button-border-error-color, 1);
@@ -139,12 +137,12 @@
     color: $button-border-warning-color;
     border: 1px solid $button-border-warning-color;
     background: transparentize($button-border-warning-color, 0.95);
-    &.fill {
+    &.xin-button-fill {
       color: #fff;
       background: transparentize($button-border-warning-color, 0);
       border: 1px solid transparentize($button-border-warning-color, 0);
     }
-    &.inline {
+    &.xin-button-inline {
       color: transparentize($button-border-warning-color, 0);
       background: transparentize($button-border-warning-color, 1);
       border: 1px solid transparentize($button-border-warning-color, 1);
@@ -172,45 +170,6 @@
       border: 1px solid transparentize($button-border-warning-color - #111111, 0);
       background: transparentize($button-border-warning-color - #111111, 0);
       box-shadow: 0 0 8px transparentize($button-border-warning-color, 0.4);
-    }
-  }
-  &.info {
-    color: $button-border-info-color;
-    border: 1px solid $button-border-info-color;
-    background: transparentize($button-border-info-color, 0.95);
-    &.fill {
-      color: #fff;
-      background: transparentize($button-border-info-color, 0);
-      border: 1px solid transparentize($button-border-info-color, 0);
-    }
-    &.inline {
-      color: transparentize($button-border-info-color, 0);
-      background: transparentize($button-border-info-color, 1);
-      border: 1px solid transparentize($button-border-info-color, 1);
-      &:hover {
-        color: transparentize($button-border-info-color, 0.2);
-        border: 1px solid transparentize($button-border-info-color, 1);
-        background: transparentize($button-border-info-color, 1);
-        box-shadow: 0 0 8px transparentize($button-border-info-color, 1);
-      }
-      &:active {
-        color: transparentize($button-border-info-color - #111111, 0);
-        border: 1px solid transparentize($button-border-info-color, 1);
-        background: transparentize($button-border-info-color, 1);
-        box-shadow: 0 0 8px transparentize($button-border-info-color, 1);
-      }
-    }
-    &:hover {
-      color: #fff;
-      border: 1px solid transparentize($button-border-info-color, 0.2);
-      background: transparentize($button-border-info-color, 0.2);
-      box-shadow: 0 0 8px transparentize($button-border-info-color, 0.6);
-    }
-    &:active {
-      color: #fff;
-      border: 1px solid transparentize($button-border-info-color - #111111, 0);
-      background: transparentize($button-border-info-color - #111111, 0);
-      box-shadow: 0 0 8px transparentize($button-border-info-color, 0.4);
     }
   }
 }

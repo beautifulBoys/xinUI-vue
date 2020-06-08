@@ -9,7 +9,7 @@
   line-height: $input-line-height;
   height: $input-line-height;
   vertical-align: middle;
-  color: $input-color;
+  color: $input-font-color;
   outline: none;
   border: 1px solid $input-border-color;
   box-sizing: border-box;
@@ -31,10 +31,10 @@
     box-shadow: 0 0 8px transparentize($input-border-active-color, 0.6);
     background: transparentize($input-border-active-color, 0.9);
   }
-  &.round {
+  &.xin-input-round {
     border-radius: $input-line-height / 2;
   }
-  &.error {
+  &.xin-input-error {
     border: 1px solid $input-border-error-color;
     background: transparentize($input-border-error-color, 0.95);
     &:focus {
@@ -42,7 +42,7 @@
       background: transparentize($input-border-error-color, 0.9);
     }
   }
-  &.success {
+  &.xin-input-success {
     border: 1px solid $input-border-success-color;
     background: transparentize($input-border-success-color, 0.95);
     &:focus {
@@ -60,7 +60,7 @@
   line-height: $textarea-line-height;
   height: $textarea-height;
   vertical-align: top;
-  color: $input-color;
+  color: $input-font-color;
   outline: none;
   border: 1px solid $input-border-color;
   box-sizing: border-box;
@@ -80,16 +80,16 @@
     border: 1px solid $input-border-active-color;
     box-shadow: 0 0 8px transparentize($input-border-active-color, 0.6);
   }
-  &.round {
+  &.xin-textarea-round {
     border-radius: $input-line-height / 2;
   }
-  &.error {
+  &.xin-textarea-error {
     border: 1px solid $input-border-error-color;
     &:focus {
       box-shadow: 0 0 8px transparentize($input-border-error-color, 0.6);
     }
   }
-  &.success {
+  &.xin-textarea-success {
     border: 1px solid $input-border-success-color;
     &:focus {
       box-shadow: 0 0 8px transparentize($input-border-success-color, 0.6);

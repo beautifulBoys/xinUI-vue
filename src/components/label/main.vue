@@ -1,10 +1,10 @@
 <template>
   <label 
     :class="['xin-label', {
-      'align-left': align === 'left',
-      'align-center': align === 'center',
-      'align-right': align === 'right',
-      'required': required
+      'xin-label-align-left': align === 'left',
+      'xin-label-align-center': align === 'center',
+      'xin-label-align-right': align === 'right',
+      'xin-label-required': required
     }]"
     :style="{
       width: width.indexOf('px') > -1 ? width : width + 'px'

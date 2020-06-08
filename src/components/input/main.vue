@@ -4,14 +4,15 @@
     :type="type"
     v-model.trim="inputValue"
     :class="['xin-textarea', {
-      'error': status === 'error' && !disabled,
-      'success': status === 'success' && !disabled,
-      'round': round
+      'xin-textarea-error': status === 'error' && !disabled,
+      'xin-textarea-success': status === 'success' && !disabled,
+      'xin-textarea-round': round
     }]"
     :style="{
       width: width.indexOf('px') > -1 ? width : width + 'px'
     }"
     :disabled="disabled"
+	:placeholder="placeholder"
     v-bind="$attrs"
     @focus="$emit('focus', $event)"
     @blur="$emit('blur', $event)"
@@ -23,14 +24,15 @@
     :type="type"
     v-model.trim="inputValue"
     :class="['xin-input', {
-      'error': status === 'error' && !disabled,
-      'success': status === 'success' && !disabled,
-      'round': round
+      'xin-input-error': status === 'error' && !disabled,
+      'xin-input-success': status === 'success' && !disabled,
+      'xin-input-round': round
     }]"
     :style="{
       width: width.indexOf('px') > -1 ? width : width + 'px'
     }"
     :disabled="disabled"
+	:placeholder="placeholder"
     v-bind="$attrs"
     @focus="$emit('focus', $event)"
     @blur="$emit('blur', $event)"
@@ -58,6 +60,10 @@ export default {
       type: Boolean,
       default: false
     },
+	placeholder: {
+      type: String,
+      default: '请输入'
+	},
     maxLength: {
       type: Number,
       default: 0

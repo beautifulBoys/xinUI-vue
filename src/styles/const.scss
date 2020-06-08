@@ -7,23 +7,24 @@ $margin-right: 15px;
 $common-width: 200px;
 
 // 颜色
-$color-text: #333;
-$color-green: #15bf81;
+$color-gray: #909399;
 $color-blue: #0095ff;
+$color-green: #15bf81;
 $color-yellow: #ffba5a;
 $color-red: #ff6666;
-$color-gray: #909399;
+$font-color: $color-gray - #555555;
 $border-color: $color-gray + #333333;
 
 // label
-$label-color: $color-text;
+$label-color: $font-color + #333333;
+$label-required-color: $color-red;
 $label-font-size: $font-size;
 $label-margin-right: $margin-right;
 $label-line-height: $line-height;
 
 // input
-$input-color: $color-text;
-$input-disabled-color: $color-text + #777777;
+$input-font-color: $font-color;
+$input-disabled-color: $font-color + #777777;
 $input-width: $common-width;
 $input-font-size: $font-size;
 $input-margin-right: $margin-right;
@@ -36,7 +37,7 @@ $input-padding-right: $margin-right;
 
 $textarea-height: 100px;
 $textarea-width: 300px;
-$textarea-line-height: 20px;
+$textarea-line-height: $line-height - 10px;
 
 // button
 $button-padding: $margin-right;

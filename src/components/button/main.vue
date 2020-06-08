@@ -1,10 +1,10 @@
 <template>
   <button
     :class="['xin-button', color, {
-      'fill': fill && !inline,
-      'inline': inline,
-      'round': round,
-      'disabled': disabled
+      'xin-button-fill': fill && !inline,
+      'xin-button-inline': inline,
+      'xin-button-round': round,
+      'xin-button-disabled': disabled
     }]"
     v-on="$listeners"
     v-bind="$attrs"
@@ -23,10 +23,10 @@ export default {
       type: String,
       default: ''
     },
-    size: { // small, big
-      type: String,
-      default: 'normal'
-    },
+    // size: { // small, big
+    //   type: String,
+    //   default: 'normal'
+    // },
     // icon: { // more, time, smile, play, info, cry, help, compass, setting, error, success
     //   type: String,
     //   default: ''

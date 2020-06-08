@@ -10,22 +10,23 @@
   line-height: $label-line-height;
   vertical-align: middle;
   color: $label-color;
-  &.align-left {
+  &.xin-label-align-left {
     text-align: left;
   }
-  &.align-center {
+  &.xin-label-align-center {
     text-align: center;
   }
-  &.align-right {
+  &.xin-label-align-right {
     text-align: right;
   }
-  &.required {
-    &:before{
+  &.xin-label-required {
+    &:before {
       content: '*';
-      color:red;
+      color: $label-required-color;
+      font-size: $label-font-size + 2px;
       text-align: center;
       position: relative;
-      top:2px;
+      top: 2px;
       display: inline-block;
       margin: 0 3px;
     }
