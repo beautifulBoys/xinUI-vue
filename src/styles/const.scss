@@ -142,8 +142,12 @@ $table-warning-color: $color-yellow;
 
 // page
 $page-font-size: $font-size;
-$page-line-height: $line-height;
+$page-item-height: $line-height;
+$page-animate-time: 0.3s;
+$page-item-width: 40px;
 $page-margin-right: $margin-right;
+$page-padding-right: 10px;
 $page-font-color: $color-gray;
-$page-background-color: $color-gray + #555555;
+$page-background-color: $color-gray + #666666;
+$page-active-color: $color-blue;
 

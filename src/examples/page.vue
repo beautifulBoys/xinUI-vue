@@ -1,15 +1,27 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-label>基础展示</xin-label>
+      <xin-label>默认展示</xin-label>
       <xin-page
-        :pageInfo="pageInfo"
-        :layout="['info', 'sizes', 'first', 'prev', 'pages', 'next', 'last', 'jump']"
+        :page="pageInfo.page"
+        :size="pageInfo.size"
+        :total="pageInfo.total"
         @page-change="pageChange"
       >
       </xin-page>
     </div>
     <div class="line">
+      <xin-label>完整展示</xin-label>
+      <xin-page
+        :page="pageInfo.page"
+        :size="pageInfo.size"
+        :total="pageInfo.total"
+        :pagerCount="9"
+        :layout="['info', 'sizes', 'first', 'prev', 'pages', 'next', 'last', 'jump']"
+        @page-change="pageChange"
+        @size-change="sizeChange"
+      >
+      </xin-page>
     </div>
   </div>
 </template>
@@ -32,8 +44,7 @@ export default {
       pageInfo: {
         page: 1,
         size: 10,
-        total: 264,
-        align: 'right'
+        total: 111
       },
       tbody: [
         {id: 1, text: '空军'},
@@ -51,8 +62,12 @@ export default {
   },
   methods: {
     pageChange (val) {
-      this.checkboxValue = val
-      console.log('checkbox chage 事件: ', val, list)
+      this.pageInfo.page = val
+      console.log('pageChange 事件: ', val)
+    },
+    sizeChange (val) {
+      this.pageInfo.size = val
+      console.log('sizeChange 事件: ', val)
     },
     radioChange (val, item) {
       this.radioValue = val

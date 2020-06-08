@@ -4,14 +4,18 @@
   margin: 20px 0;
   .xin-page-item {
     display: inline-block;
-    line-height: $page-line-height;
+    line-height: $page-item-height;
     margin-right: $page-margin-right;
     font-size: $page-font-size;
     text-align: center;
     color: $page-font-color;
+    box-sizing: border-box;
     vertical-align: middle;
+    transition: all $page-animate-time;
+    // font-weight: bold;
+    user-select: none;
     &.padding {
-      padding: 0 $page-margin-right;
+      padding: 0 $page-padding-right;
     }
     &.bg {
       background: $page-background-color;
@@ -21,9 +25,25 @@
     }
     &.cursor {
       cursor: pointer;
+      &.active {
+        background: $page-active-color;
+        color: #fff;
+        &:hover {
+          background: $page-active-color;
+          color: #fff;
+        }
+      }
+      &:hover {
+        color: $page-active-color;
+        background: transparentize($page-active-color, 0.7);
+      }
+    }
+    &.disabled {
+      cursor: not-allowed;
+      color: transparentize($page-font-color, 0.6);
     }
     &.width {
-      width: $page-line-height;
+      width: $page-item-width;
     }
     .xin-page-select {
       vertical-align: top;

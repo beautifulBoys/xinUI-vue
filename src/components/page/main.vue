@@ -1,31 +1,69 @@
 <template>
   <div class="xin-page">
-    <div class="xin-page-item">显示 {{info.start}} 到 {{info.end}} 条，共 {{pageInfo.total}} 条记录</div>
-    <div class="xin-page-item">
+    <div class="xin-page-item" v-if="layout.indexOf('info') > -1">
+      显示 {{info.start}} 到 {{info.end}} 条，共 {{totalValue}} 条记录
+    </div>
+    <div class="xin-page-item" v-if="layout.indexOf('sizes') > -1">
       <xin-select
         :list="sizes"
-        v-model="sizesValue"
+        v-model="sizeValue"
+        @change="sizeChange"
         class="xin-page-select"
       ></xin-select>
     </div>
-    <div class="xin-page-item padding cursor bg">{{firstText}}</div>
-    <div class="xin-page-item padding cursor bg">上一页</div>
     <div
       :class="['xin-page-item', 'padding', 'bg', {
-        'cursor': item.type === 'item'
+        'disabled': !hasPrev,
+        'cursor': hasPrev
       }]"
-      v-for="(item, index) in renderList"
-      :key="index"
-    >
-      <span v-if="item.type === 'left-ellipsis'">···</span>
-      <span v-if="item.type === 'item'">{{item.text}}</span>
-      <span v-if="item.type === 'right-ellipsis'">···</span>
-    </div>
-    <div class="xin-page-item padding cursor bg">下一页</div>
-    <div class="xin-page-item padding cursor bg">{{lastText}}</div>
-    <div class="xin-page-item">
+      v-if="layout.indexOf('first') > -1"
+      @click="first"
+    >{{firstText}}</div>
+    <div
+      :class="['xin-page-item', 'padding', 'bg', {
+        'disabled': !hasPrev,
+        'cursor': hasPrev
+      }]"
+      v-if="layout.indexOf('prev') > -1"
+      @click="prev(pageValue)"
+    >上一页</div>
+    <template v-if="layout.indexOf('pages') > -1">
+      <div
+        :class="['xin-page-item', 'padding', 'width', 'bg', {
+          'cursor': item.type === 'item',
+          'active': pageValue === item.text
+        }]"
+        v-for="(item, index) in renderList"
+        :key="index"
+        @click="itemEvent(item)"
+      >
+        <span v-if="item.type === 'left-ellipsis'">···</span>
+        <span v-if="item.type === 'item'">{{item.text}}</span>
+        <span v-if="item.type === 'right-ellipsis'">···</span>
+      </div>
+    </template>
+    <div
+      :class="['xin-page-item', 'padding', 'bg', {
+        'disabled': !hasNext,
+        'cursor': hasNext
+      }]"
+      v-if="layout.indexOf('next') > -1"
+      @click="next(pageValue)"
+    >下一页</div>
+    <div
+      :class="['xin-page-item', 'padding', 'bg', {
+        'disabled': !hasNext,
+        'cursor': hasNext
+      }]"
+      v-if="layout.indexOf('last') > -1"
+      @click="last"
+    >{{lastText}}</div>
+    <div class="xin-page-item" v-if="layout.indexOf('jump') > -1">
       <xin-input
         class="xin-page-input"
+        :rule="/^[0-9]*$/g"
+        v-model="jumpValue"
+        @keyup.enter="jump()"
         placeholder="跳转到"
       ></xin-input>
     </div>
@@ -42,22 +80,25 @@ export default {
       type: Array,
       default: () => ['prev', 'pages', 'next']
     },
-    pageInfo: {
-      type: Object,
-      default: {
-        page: 1,
-        total: 0,
-        size: 10,
-        align: 'center'
-      }
+    page: {
+      type: Number,
+      default: 1
+    },
+    size: {
+      type: Number,
+      default: 10
+    },
+    total: {
+      type: Number,
+      default: 0
+    },
+    pagerCount: {
+      type: Number,
+      default: 7
     },
     sizes: {
       type: Array,
       default: () => [10, 20, 30, 40, 50]
-    },
-    count: {
-      type: Number,
-      default: 7
     },
     align: { // left, center, right
       type: String,
@@ -74,31 +115,48 @@ export default {
   },
   data () {
     return {
-      renderPageInfo: this.pageInfo,
-      sizesValue: 10,
-      renderList: [
-        { page: 1, text: 1, type: 'num' }
-      ],
-      checkboxAllValue: false
+      sizeValue: this.size,
+      pageValue: this.page,
+      totalValue: this.total,
+      jumpValue: '',
+      renderList: []
     }
-  },
-  created () {
   },
   computed: {
     info () {
       return {
-        start: (this.renderPageInfo.page - 1) * 10 + 1,
-        end: this.renderPageInfo.page * 10
+        start: (this.pageValue - 1) * 10 + 1,
+        end: this.pageValue * 10
       }
+    },
+    pageCount () {
+      return Math.ceil(this.totalValue / this.sizeValue)
+    },
+    hasPrev () {
+      return this.pageValue > 1
+    },
+    hasNext () {
+      return this.pageValue < this.pageCount
     }
   },
   watch: {
-    pageInfo (n) {
-      this.renderPageInfo = n
+    page (n) {
+      this.pageValue = n
+    },
+    pageValue (n) {
+      this.createRenderList(n - 1)
+    },
+    total (n) {
+      this.totalValue = n
+      this.createRenderList(this.pageValue - 1)
+    },
+    size (n) {
+      this.sizeValue = n
+      this.createRenderList(this.pageValue - 1)
     }
   },
   mounted () {
-    this.createRenderListFunc()
+    this.createRenderList(this.pageValue - 1)
   },
   methods: {
     createTwinList (index, maxCount, count) {
@@ -137,23 +195,58 @@ export default {
       }
       return arr
     },
-    createRenderList (index1) {
-      let list = this.createTwinList(index1, this.count, this.pageInfo.total)
+    createRenderList (page) {
+      let list = this.createTwinList(page, this.pagerCount, this.pageCount)
       let arr = []
       list.forEach((item, index) => {
         arr.push({
-          index: item,
-          text: index + 1,
+          text: item + 1,
           type: item === -1 ? 'left-ellipsis' : item === 100000000 ? 'right-ellipsis' : 'item'
         })
       })
+      this.renderList = arr
       return arr
     },
-    createRenderListFunc (page, count) {
-      this.renderList = this.createRenderList(13)
-      console.log(this.renderList)
+    first () {
+      if (this.pageValue === 1) return
+      this.pageChange(1)
     },
-    pageChange () {
+    last () {
+      if (this.pageValue === this.pageCount) return
+      this.pageChange(this.pageCount)
+    },
+    prev (page) {
+      if (!this.hasPrev) return
+      this.pageChange(page - 1)
+    },
+    next (page) {
+      if (!this.hasNext) return
+      this.pageChange(page + 1)
+    },
+    jump () {
+      console.log('回车了')
+      if (!this.jumpValue) return
+      let jumpValue = Number(this.jumpValue)
+      if (jumpValue < 1) {
+        this.pageChange(1)
+      } else if (jumpValue >= 1 && jumpValue <= this.pageCount) {
+        this.pageChange(jumpValue)
+      } else if (jumpValue > this.pageCount) {
+        this.pageChange(this.pageCount)
+      } else {
+        console.error('xin-ui ERROR! 请联系开发者检查')
+      }
+      this.jumpValue = ''
+    },
+    itemEvent (pageInfo) {
+      if (pageInfo.type !== 'item') return
+      this.pageChange(pageInfo.text)
+    },
+    sizeChange (size) {
+      this.$emit('size-change', size)
+    },
+    pageChange (page) {
+      this.$emit('page-change', page)
     }
   }
 }
