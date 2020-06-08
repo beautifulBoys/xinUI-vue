@@ -30,16 +30,16 @@
       }
     }
   }
-  .null-data {
+  .xin-table-null-data {
     padding: 30px 45%;
     text-align: center;
     background: transparentize($table-active-color, 0.9);
     color: transparentize($table-active-color, 0.5);
-    .iconfont {
+    .xin-table-null-data-iconfont {
       font-size: 30px;
       display: block;
     }
-    .text {
+    .xin-table-null-data-text {
       text-align: center;
       display: block;
       font-size: $table-font-size;

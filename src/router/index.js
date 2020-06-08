@@ -12,6 +12,7 @@ import switch1 from '@/examples/switch'
 import rate from '@/examples/rate'
 import datePicker from '@/examples/datePicker'
 import table from '@/examples/table'
+import page from '@/examples/page'
 
 Vue.use(Router)
 
@@ -60,6 +61,10 @@ export default new Router({
     {
       path: '/table',
       component: table
+    },
+    {
+      path: '/page',
+      component: page
     }
   ]
 })

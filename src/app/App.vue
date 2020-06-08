@@ -32,7 +32,7 @@ export default {
         {name: '开关 switch', url: '/switch'},
         {name: '评分 rate', url: '/rate'},
         {name: '表格 table', url: '/table'},
-        {name: '分页 pager', url: '/pager'},
+        {name: '分页 page', url: '/page'},
         {name: '树 tree', url: '/tree'},
         {name: '标签 tabs', url: '/tabs'},
         {name: '对话框 dialog', url: '/dialog'},

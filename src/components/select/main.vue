@@ -1,6 +1,9 @@
 <template>
   <Select
     class="xin-select"
+    :style="{
+      width: width.indexOf('px') > -1 ? width : width + 'px'
+    }"
     v-bind="$attrs"
     v-on="$listeners"
     v-model="inputValue"
@@ -10,10 +13,10 @@
       class="ise-option"
       v-for="(item, index) in list"
       :key="index"
-      :value="item[itemValue]"
-      :label="item[itemLabel]"
+      :value="itemValue ? item[itemValue] : item"
+      :label="itemLabel ? item[itemLabel] : item"
     >
-      {{item[itemLabel]}}
+      {{itemLabel ? item[itemLabel] : item}}
     </Option>
   </Select>
 </template>
@@ -32,13 +35,17 @@ export default {
       type: Array,
       default: () => []
     },
+    width: {
+      type: String,
+      default: 'auto'
+    },
     itemValue: {
       type: String,
-      default: 'value'
+      default: ''
     },
     itemLabel: {
       type: String,
-      default: 'label'
+      default: ''
     },
     popperAppendToBody: {
       type: Boolean,
@@ -58,11 +65,6 @@ export default {
   mounted () {
   },
   methods: {
-    defaultEvent (e) {
-      this.inputValue.push(this.label)
-      this.$emit('input', this.inputValue)
-      this.$emit('change', this.inputValue)
-    }
   }
 }
 </script>

@@ -1,0 +1,70 @@
+<template>
+  <div class="page">
+    <div class="line">
+      <xin-label>基础展示</xin-label>
+      <xin-page
+        :pageInfo="pageInfo"
+        :layout="['info', 'sizes', 'first', 'prev', 'pages', 'next', 'last', 'jump']"
+        @page-change="pageChange"
+      >
+      </xin-page>
+    </div>
+    <div class="line">
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  components: {
+  },
+  data () {
+    return {
+      thead: [
+        '学校',
+        '学院',
+        '年级',
+        '班级',
+        '小组',
+        '姓名',
+        '操作'
+      ],
+      pageInfo: {
+        page: 1,
+        size: 10,
+        total: 264,
+        align: 'right'
+      },
+      tbody: [
+        {id: 1, text: '空军'},
+        {id: 2, text: '陆军'},
+        {id: 3, text: '海军'},
+        {id: 4, text: '导弹军'},
+        {id: 5, text: '后勤军'},
+        {id: 6, text: '指挥军'}
+      ],
+      radioValue: '',
+      checkboxValue: []
+    }
+  },
+  mounted () {
+  },
+  methods: {
+    pageChange (val) {
+      this.checkboxValue = val
+      console.log('checkbox chage 事件: ', val, list)
+    },
+    radioChange (val, item) {
+      this.radioValue = val
+      console.log('radio chage 事件: ', val, item)
+    },
+    changeEvent (v) {
+      console.log('change事件', v)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import "./index.scss";
+</style>

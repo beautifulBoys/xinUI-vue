@@ -1,0 +1,41 @@
+
+@import "~@/styles/const.scss";
+.xin-page {
+  margin: 20px 0;
+  .xin-page-item {
+    display: inline-block;
+    line-height: $page-line-height;
+    margin-right: $page-margin-right;
+    font-size: $page-font-size;
+    text-align: center;
+    color: $page-font-color;
+    vertical-align: middle;
+    &.padding {
+      padding: 0 $page-margin-right;
+    }
+    &.bg {
+      background: $page-background-color;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.cursor {
+      cursor: pointer;
+    }
+    &.width {
+      width: $page-line-height;
+    }
+    .xin-page-select {
+      vertical-align: top;
+      margin-right: 0;
+      width: 70px;
+    }
+    .xin-page-input {
+      vertical-align: top;
+      margin-right: 0;
+      text-align: center;
+      width: 70px;
+    }
+  }
+}
+

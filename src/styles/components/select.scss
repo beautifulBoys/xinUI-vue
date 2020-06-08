@@ -4,6 +4,7 @@
   margin-right: $radio-margin-right;
   display: inline-block;
   position: relative;
+  width: $select-width;
   transition: all 0.3s;
   vertical-align: middle;
   .el-input.el-input--suffix {
@@ -39,7 +40,6 @@
     }
     .el-input__inner {
       outline: none;
-      width: $select-width;
       height: $select-line-height;
       border: 1px solid $select-border-color;
       border-radius: 0;
