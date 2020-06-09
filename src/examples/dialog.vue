@@ -1,9 +1,29 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-label>基础展示（值：{{active}}）</xin-label>
-      
+      <xin-label>基础展示</xin-label>
+      <xin-button @click="dialog.show = true">弹出</xin-button>
     </div>
+    <xin-dialog title="信息登记" :visible.sync="dialog.show">
+      <div class="content">
+        <div class="line">
+          <xin-label>姓名：</xin-label>
+          <xin-input></xin-input>
+        </div>
+        <div class="line">
+          <xin-label>性别：</xin-label>
+          <xin-input></xin-input>
+        </div>
+      </div>
+    </xin-dialog>
+    <xin-dialog title="信息登记1" :visible.sync="dialog1.show">
+      <div class="content">
+        <div class="line">
+          <xin-label>姓名：</xin-label>
+          <xin-input></xin-input>
+        </div>
+      </div>
+    </xin-dialog>
   </div>
 </template>
 
@@ -13,19 +33,12 @@ export default {
   },
   data () {
     return {
-      active: 'haiJun',
-      list: [
-        {name: 'kongJun', title: '空军'},
-        {name: 'luJun', title: '陆军'},
-        {name: 'haiJun', title: '海军'},
-        {name: 'huoJianJun', title: '火箭军'},
-        {name: 'houQinJun', title: '后勤军'}
-      ],
-      active1: 2,
-      list1: [
-        {name: 1, title: '空军'},
-        {name: 2, title: '陆军'}
-      ]
+      dialog: {
+        show: false
+      },
+      dialog1: {
+        show: false
+      }
     }
   },
   mounted () {

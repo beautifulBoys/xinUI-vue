@@ -1,60 +1,51 @@
 
 @import "~@/styles/const.scss";
-.xin-tabs {
+.xin-dialog {
   width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparentize($tabs-default-color, 0.6);
-  transition: all $tabs-animate-time;
-  &:hover {
-    box-shadow: 0 0 8px transparentize($tabs-default-color, 0.6);
-  }
-  .xin-tabs-header {
-    background: transparentize($tabs-default-color, 0.9);
-    border-bottom: 1px solid transparentize($tabs-default-color, 0.6);
-    height: $tabs-item-height;
-    box-sizing: border-box;
-    .xin-tabs-header-item {
-      font-size: $tabs-font-size;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparentize($dialog-cover-background, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  .xin-dialog-box {
+    width: $dialog-width;
+    box-shadow: 0 0 8px transparentize($dialog-default-color, 0.4);
+    .xin-dialog-header {
+      line-height: $dialog-line-height;
       text-align: center;
-      min-width: $tabs-width;
-      display: inline-block;
-      line-height: $tabs-item-height;
-      height: $tabs-item-height;
-      box-sizing: border-box;
-      margin-left: -1px;
-      cursor: pointer;
-      &.active {
-        background: #fff;
-        border-left: 1px solid transparentize($tabs-default-color, 0.6);
-        border-right: 1px solid transparentize($tabs-default-color, 0.6);
-        border-bottom: 1px solid #fff;
+      padding: $dialog-header-padding;
+      position: relative;
+      font-size: $dialog-font-size + 2px;
+      color: #fff;
+      font-weight: bold;
+      background: $dialog-active-color;
+      .xin-iconfont {
+        width: $dialog-line-height;
+        cursor: pointer;
+        text-align: center;
+        line-height: $dialog-line-height;
+        display: block;
+        position: absolute;
+        top: $dialog-header-padding;
+        right: $dialog-header-padding;
       }
     }
-  }
-  .xin-tabs-content {
-    padding: 10px 30px;
-    &.scroll {
-      overflow-y: auto;
-    }
-  }
-  &.blue {
-    border-color: transparentize($tabs-active-color, 0);
-    &:hover {
-      box-shadow: 0 0 8px transparentize($tabs-active-color, 0.6);
-    }
-    .xin-tabs-header {
-      background: transparentize($tabs-active-color, 0);
-      .xin-tabs-header-item {
-        color: #fff;
-        &.active {
-          color: $tabs-active-color;
-          border-left: 1px solid transparentize($tabs-active-color, 0);
-          border-right: 1px solid transparentize($tabs-active-color, 0);
-        }
+    .xin-dialog-body {
+      background: #fff;
+      &.padding {
+        padding: 20px 40px;
       }
     }
-
+    .xin-dialog-footer {
+      background: #fff;
+      border-top: 1px solid transparentize($dialog-default-color, 0.8);
+      padding: 10px 20px;
+      text-align: center;
+    }
   }
 }
 

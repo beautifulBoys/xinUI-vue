@@ -12,6 +12,7 @@
   cursor: pointer;
   outline: none;
   transition: all 0.3s;
+  vertical-align: middle;
   color: transparentize($button-border-default-color - #111111, 0);
   border: 1px solid transparentize($button-border-default-color, 0);
   background: transparentize($button-border-default-color, 0.95);

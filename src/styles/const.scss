@@ -155,10 +155,24 @@ $page-active-color: $color-blue;
 // tabs
 $tabs-font-size: $font-size;
 $tabs-animate-time: 0.3s;
-$tabs-item-height: $line-height + 5px;
+$tabs-item-height: $line-height + 10px;
 $tabs-width: 100px;
 $tabs-default-color: $color-gray;
 $tabs-active-color: $color-blue;
 $tabs-success-color: $color-green;
 $tabs-warning-color: $color-yellow;
 $tabs-error-color: $color-red;
+
+// dialog
+$dialog-cover-background: #000;
+$dialog-width: 500px;
+$dialog-animate-time: 0.3s;
+$dialog-header-padding: 5px;
+$dialog-font-size: $font-size;
+$dialog-line-height: $line-height;
+$dialog-default-color: $color-gray;
+$dialog-active-color: $color-blue;
+$dialog-success-color: $color-green;
+$dialog-warning-color: $color-yellow;
+$dialog-error-color: $color-red;
+

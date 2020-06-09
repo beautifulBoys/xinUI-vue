@@ -1,91 +1,113 @@
 <template>
-  <div
-    :class="['xin-tabs', color]"
-  >
-    <div class="xin-tabs-header">
-      <div
-        v-for="(item, index) in list"
-        :key="index"
-        :class="['xin-tabs-header-item', {
-          'active': tabValue === item[itemValue]
-        }]"
-        @click="tabEvent(item)"
-      >
-        {{item[itemLabel]}}
-      </div>
+  <transition name="xin-fade">
+    <div :class="['xin-dialog']" v-show="visible">
+      <transition name="xin-down">
+        <div
+          :class="['xin-dialog-box']"
+          :style="{
+            width: width.indexOf('px') > -1 ? width : width + 'px'
+          }"
+          v-show="visible"
+        >
+          <div class="xin-dialog-header">
+            <span>{{title}}</span>
+            <i class="xin-iconfont" @click="hide()" v-if="closable">&#xe67a;</i>
+          </div>
+          <div
+            :class="['xin-dialog-body', {
+              'padding': !noPadding
+            }]"
+          >
+            <slot></slot>
+          </div>
+          <div class="xin-dialog-footer">
+            <xin-button
+              color="info"
+              fill
+              v-if="confirmVisible"
+              @click="confirm()"
+            >{{confirmLabel}}</xin-button>
+            <xin-button
+              color="warning"
+              fill
+              v-if="cancelVisible"
+              @click="cancel()"
+            >{{cancelLabel}}</xin-button>
+          </div>
+        </div>
+      </transition>
     </div>
-    <div
-      :class="['xin-tabs-content', {
-        scroll: height
-      }]"
-      v-for="(item, index) in list"
-      :key="index"
-      :style="{height: height.indexOf('px') > -1 ? height : height + 'px'}"
-      v-show="tabValue === item[itemValue]"
-    >
-      <slot :name="item[itemValue]"></slot>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
 export default {
-  name: 'xinTabs',
+  name: 'xinDialog',
   components: {
   },
   props: {
-    value: {
-      type: [Number, String],
-      default: ''
+    visible: {
+      type: Boolean,
+      default: false
     },
-    list: {
-      type: Array,
-      default: () => []
+    title: {
+      type: String,
+      default: '提示'
     },
-    color: { // blue
+    width: {
       type: String,
       default: ''
     },
-    height: {
-      type: String,
-      default: 'auto'
+    noPadding: {
+      type: Boolean,
+      default: false
     },
-    itemValue: {
-      type: String,
-      default: 'name'
+    confirmVisible: {
+      type: Boolean,
+      default: true
     },
-    itemLabel: {
+    cancelVisible: {
+      type: Boolean,
+      default: true
+    },
+    confirmLabel: {
       type: String,
-      default: 'title'
+      default: '确 认'
+    },
+    cancelLabel: {
+      type: String,
+      default: '取 消'
     },
     closable: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   data () {
     return {
-      tabValue: this.value
     }
   },
   created () {
 
   },
   watch: {
-    value (n) {
-      this.tabValue = n
-    }
   },
   mounted () {
   },
   methods: {
-    tabEvent (item) {
-      this.tabValue = item[this.itemValue]
-      this.$emit('tab-change', this.tabValue)
+    show () {
+      this.$emit('update:visible', true)
     },
-    getValue (item) {
-      return this.itemValue ? item[this.itemValue] : item
+    hide () {
+      this.$emit('update:visible', false)
     },
+    confirm () {
+      this.$emit('confirm')
+    },
+    cancel () {
+      this.hide()
+      this.$emit('cancel')
+    }
   }
 }
 </script>
