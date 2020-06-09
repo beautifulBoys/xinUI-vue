@@ -13,6 +13,7 @@ import rate from '@/examples/rate'
 import datePicker from '@/examples/datePicker'
 import table from '@/examples/table'
 import page from '@/examples/page'
+import tabs from '@/examples/tabs'
 
 Vue.use(Router)
 
@@ -65,6 +66,10 @@ export default new Router({
     {
       path: '/page',
       component: page
+    },
+    {
+      path: '/tabs',
+      component: tabs
     }
   ]
 })
