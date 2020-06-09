@@ -15,6 +15,7 @@
     vertical-align: middle;
     margin-right: $radio-icon-margin-right;
     box-sizing: border-box;
+    transition: all $radio-animate-time;
   }
   .xin-radio-label {
     display: inline-block;

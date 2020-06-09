@@ -45,7 +45,7 @@
       <xin-input type="text" v-model="val8" :rule="/^[0-9a-zA-Z]*$/g"></xin-input>
     </div>
     <div class="line">
-      <xin-label width="80">正则校验</xin-label>
+      <xin-label width="80">输入区域</xin-label>
       <xin-input type="text" textarea round v-model="val9" placeholder="请输入"></xin-input>
     </div>
   </div>

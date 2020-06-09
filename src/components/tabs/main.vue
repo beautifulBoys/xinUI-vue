@@ -1,5 +1,7 @@
 <template>
-  <div class="xin-tabs">
+  <div
+    :class="['xin-tabs', color]"
+  >
     <div class="xin-tabs-header">
       <div
         v-for="(item, index) in list"
@@ -40,7 +42,7 @@ export default {
       type: Array,
       default: () => []
     },
-    color: {
+    color: { // blue
       type: String,
       default: ''
     },

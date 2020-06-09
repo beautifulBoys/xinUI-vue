@@ -19,7 +19,7 @@
 export default {
   name: 'xinButton',
   props: {
-    color: { // default, success, error, warning, info
+    color: { // success, error, warning, info
       type: String,
       default: ''
     },

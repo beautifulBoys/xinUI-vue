@@ -30,33 +30,25 @@
     <div class="line">
       <xin-label width="60">图标展示</xin-label>
     </div>
-    
-      iconMap: {
-        star: '&#xe6b0;',
-        heart: '&#xe64e;',
-        crown: '&#xe639;',
-        diamond: '&#xe64a;',
-        face: '&#xe650;'
-      },
     <div class="line">
       <xin-label width="60">星</xin-label>
       <xin-rate v-model="val" color="warning"></xin-rate>
     </div>
     <div class="line">
       <xin-label width="60">心</xin-label>
-      <xin-rate v-model="val1" :size="7" color="error" type="heart"></xin-rate>
+      <xin-rate v-model="val" color="error" type="heart"></xin-rate>
     </div>
     <div class="line">
       <xin-label width="60">皇冠</xin-label>
-      <xin-rate v-model="val2" :size="10" color="warning" type="crown"></xin-rate>
+      <xin-rate v-model="val" color="warning" type="crown"></xin-rate>
     </div>
     <div class="line">
       <xin-label width="60">钻</xin-label>
-      <xin-rate v-model="val3" :size="10" type="diamond"></xin-rate>
+      <xin-rate v-model="val" type="diamond"></xin-rate>
     </div>
     <div class="line">
       <xin-label width="60">笑脸</xin-label>
-      <xin-rate v-model="val3" :size="10" color="success" type="face"></xin-rate>
+      <xin-rate v-model="val" color="success" type="face"></xin-rate>
     </div>
   </div>
 </template>
