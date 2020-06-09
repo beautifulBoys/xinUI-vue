@@ -14,6 +14,7 @@ import datePicker from '@/examples/datePicker'
 import table from '@/examples/table'
 import page from '@/examples/page'
 import tabs from '@/examples/tabs'
+import dialog from '@/examples/dialog'
 
 Vue.use(Router)
 
@@ -70,6 +71,10 @@ export default new Router({
     {
       path: '/tabs',
       component: tabs
+    },
+    {
+      path: '/dialog',
+      component: dialog
     }
   ]
 })

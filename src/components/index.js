@@ -10,6 +10,7 @@ import datePicker from './datePicker'
 import table from './table'
 import page from './page'
 import tabs from './tabs'
+import dialog from './dialog'
 
 const lixinComponents = {
   input,
@@ -23,7 +24,8 @@ const lixinComponents = {
   datePicker,
   table,
   page,
-  tabs
+  tabs,
+  dialog
 }
 
 function install (Vue) {
@@ -48,7 +50,8 @@ export {
   datePicker,
   table,
   page,
-  tabs
+  tabs,
+  dialog
 }
 
 export const components = {
