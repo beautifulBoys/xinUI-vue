@@ -1,7 +1,7 @@
 <template>
   <div class="xin-rate">
     <i
-      :class="['xin-rate-item', 'iconfont', color, {
+      :class="['xin-rate-item', 'xin-iconfont', color, {
         'xin-rate-active': index < value,
         'xin-rate-disabled': disabled
       }]"

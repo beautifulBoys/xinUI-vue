@@ -44,7 +44,7 @@
       </tbody>
     </table>
     <div class="xin-table-null" v-if="!tbody.length">
-      <i class="iconfont xin-table-null-iconfont">&#xe621;</i>
+      <i class="xin-iconfont xin-table-null-iconfont">&#xe621;</i>
       <div class="xin-table-null-text">暂无数据</div>
     </div>
   </div>

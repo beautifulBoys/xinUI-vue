@@ -4,9 +4,9 @@
     <div class="body">
       <div class="left">
         <div class="menu-item" v-for="(item, index) in menuList" :key="index" @click="toView(item.url)">
-          <i class="iconfont item-icon"></i>
+          <i class="xin-iconfont item-icon"></i>
           <div class="item-text">{{item.name}}</div>
-          <i class="iconfont forward">&#xe67d;</i>
+          <i class="xin-iconfont forward">&#xe67d;</i>
         </div>
       </div>
       <div class="right">
@@ -95,7 +95,7 @@ html, body {
         border-bottom: 1px solid #eee;
         display: flex;
         cursor: pointer;
-        .iconfont {
+        .xin-iconfont {
           font-size: $font-size;
           display: inline-block;
           vertical-align: top;

@@ -10,7 +10,7 @@
     v-bind="$attrs"
     :disabled="disabled"
   >
-    <!-- <i class="iconfont" v-if="icon && iconMap[icon]" v-html="iconMap[icon]"></i> -->
+    <!-- <i class="xin-iconfont" v-if="icon && iconMap[icon]" v-html="iconMap[icon]"></i> -->
     <slot></slot>
   </button>
 </template>
