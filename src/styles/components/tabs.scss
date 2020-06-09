@@ -2,11 +2,38 @@
 @import "~@/styles/const.scss";
 .xin-tabs {
   width: 100%;
+  border: 1px solid $tabs-border-color;
+  transition: all $tabs-animate-time;
+  &:hover {
+    box-shadow: 0 0 8px transparentize($tabs-default-color, 0.6);
+  }
   .xin-tabs-header {
-    background: #333;
+    background: transparentize($tabs-default-color, 0.9);
+    border-bottom: 1px solid $tabs-border-color;
+    height: $tabs-item-height;
+    box-sizing: border-box;
+    .xin-tabs-header-item {
+      font-size: $tabs-font-size;
+      text-align: center;
+      min-width: $tabs-width;
+      display: inline-block;
+      line-height: $tabs-item-height;
+      height: $tabs-item-height;
+      box-sizing: border-box;
+      margin-left: -1px;
+      &.active {
+        background: #fff;
+        border-left: 1px solid $tabs-border-color;
+        border-right: 1px solid $tabs-border-color;
+        border-bottom: 1px solid #fff;
+      }
+    }
   }
   .xin-tabs-content {
-
+    padding: 10px 30px;
+    &.scroll {
+      overflow-y: auto;
+    }
   }
 }
 
