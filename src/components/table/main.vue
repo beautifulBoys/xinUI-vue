@@ -43,9 +43,9 @@
         </tr>
       </tbody>
     </table>
-    <div class="xin-table-null-data" v-if="!tbody.length">
-      <i class="xin-table-null-data-iconfont">&#xe621;</i>
-      <div class="xin-table-null-data-text">暂无数据</div>
+    <div class="xin-table-null" v-if="!tbody.length">
+      <i class="iconfont xin-table-null-iconfont">&#xe621;</i>
+      <div class="xin-table-null-text">暂无数据</div>
     </div>
   </div>
 </template>

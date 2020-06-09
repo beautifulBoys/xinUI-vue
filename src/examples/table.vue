@@ -49,10 +49,6 @@
     </div>
     <div class="line">
     </div>
-    <div class="line">
-      <xin-label>checkbox 值：</xin-label>
-      <xin-label>{{checkboxValue}}</xin-label>
-    </div>
   </div>
 </template>
 
