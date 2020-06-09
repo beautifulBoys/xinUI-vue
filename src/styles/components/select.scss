@@ -40,6 +40,7 @@
     }
     .el-input__inner {
       outline: none;
+      width: 100%;
       height: $select-line-height;
       border: 1px solid $select-border-color;
       border-radius: 0;

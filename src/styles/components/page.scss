@@ -2,6 +2,15 @@
 @import "~@/styles/const.scss";
 .xin-page {
   margin: 20px 0;
+  &.xin-page-align-left {
+    text-align: left;
+  }
+  &.xin-page-align-center {
+    text-align: center;
+  }
+  &.xin-page-align-right {
+    text-align: right;
+  }
   .xin-page-item {
     display: inline-block;
     line-height: $page-item-height;
@@ -28,6 +37,7 @@
       &.active {
         background: $page-active-color;
         color: #fff;
+        box-shadow: 0 0 8px transparentize($page-active-color, 0.3);
         &:hover {
           background: $page-active-color;
           color: #fff;
@@ -43,7 +53,7 @@
       color: transparentize($page-font-color, 0.6);
     }
     &.width {
-      width: $page-item-width;
+      min-width: $page-item-width;
     }
     .xin-page-select {
       vertical-align: top;

@@ -1,5 +1,9 @@
 <template>
-  <div class="xin-page">
+  <div :class="['xin-page', {
+    'xin-page-align-left': align === 'left',
+    'xin-page-align-center': align === 'center',
+    'xin-page-align-right': align === 'right'
+  }]">
     <div class="xin-page-item" v-if="layout.indexOf('info') > -1">
       显示 {{info.start}} 到 {{info.end}} 条，共 {{totalValue}} 条记录
     </div>
@@ -26,7 +30,7 @@
       }]"
       v-if="layout.indexOf('prev') > -1"
       @click="prev(pageValue)"
-    >上一页</div>
+    >{{prevText}}</div>
     <template v-if="layout.indexOf('pages') > -1">
       <div
         :class="['xin-page-item', 'padding', 'width', 'bg', {
@@ -49,7 +53,7 @@
       }]"
       v-if="layout.indexOf('next') > -1"
       @click="next(pageValue)"
-    >下一页</div>
+    >{{nextText}}</div>
     <div
       :class="['xin-page-item', 'padding', 'bg', {
         'disabled': !hasNext,
@@ -111,6 +115,14 @@ export default {
     lastText: {
       type: String,
       default: '尾页'
+    },
+    prevText: {
+      type: String,
+      default: '上一页'
+    },
+    nextText: {
+      type: String,
+      default: '下一页'
     }
   },
   data () {
@@ -142,16 +154,16 @@ export default {
   watch: {
     page (n) {
       this.pageValue = n
-    },
-    pageValue (n) {
       this.createRenderList(n - 1)
     },
     total (n) {
       this.totalValue = n
+      this.pageChange(1)
       this.createRenderList(this.pageValue - 1)
     },
     size (n) {
       this.sizeValue = n
+      this.pageChange(1)
       this.createRenderList(this.pageValue - 1)
     }
   },

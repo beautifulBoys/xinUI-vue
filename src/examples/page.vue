@@ -11,12 +11,43 @@
       </xin-page>
     </div>
     <div class="line">
+      <xin-label>左中右展示</xin-label>
+      <xin-page
+        :page="pageInfo.page"
+        :size="pageInfo.size"
+        :total="pageInfo.total"
+        align="left"
+        @page-change="pageChange"
+      >
+      </xin-page>
+      <xin-page
+        :page="pageInfo.page"
+        :size="pageInfo.size"
+        :total="pageInfo.total"
+        align="center"
+        @page-change="pageChange"
+      >
+      </xin-page>
+      <xin-page
+        :page="pageInfo.page"
+        :size="pageInfo.size"
+        :total="pageInfo.total"
+        align="right"
+        @page-change="pageChange"
+      >
+      </xin-page>
+    </div>
+    <div class="line">
       <xin-label>完整展示</xin-label>
       <xin-page
         :page="pageInfo.page"
         :size="pageInfo.size"
         :total="pageInfo.total"
         :pagerCount="9"
+        firstText="第一页"
+        lastText="最后一页"
+        prevText="上页"
+        nextText="下页"
         :layout="['info', 'sizes', 'first', 'prev', 'pages', 'next', 'last', 'jump']"
         @page-change="pageChange"
         @size-change="sizeChange"
