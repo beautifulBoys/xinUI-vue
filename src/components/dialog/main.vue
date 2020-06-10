@@ -13,7 +13,7 @@
             <slot name="header" v-if="$slots.header"></slot>
             <div class="xin-dialog-header-default" v-else>
               <span>{{title}}</span>
-              <i class="xin-iconfont" @click="hide()" v-if="closable">&#xe67a;</i>
+              <i class="xin-iconfont" @click="hide()" v-if="closable">&#xe687;</i>
             </div>
           </div>
           <div

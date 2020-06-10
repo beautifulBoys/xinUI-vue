@@ -1,17 +1,23 @@
 <template>
-  <transition name="xin-message">
-    <div :class="['xin-message', {
-      'xin-message-success': type === 'success',
-      'xin-message-warning': type === 'warning',
-      'xin-message-info': type === 'info',
-      'xin-message-error': type === 'error'
-    }]" v-show="show">
+  <transition name="xin-message"  @after-leave="afterLeaveEvent()">
+    <div
+      :class="['xin-message', {
+        'success': type === 'success',
+        'warning': type === 'warning',
+        'info': type === 'info',
+        'error': type === 'error'
+      }]"
+      :style="{
+        top: offsetTop + 'px'
+      }"
+      v-show="visible"
+    >
       <div class="xin-message-icon">
         <i class="xin-iconfont" v-html="iconMap[type]"></i>
       </div>
       <div class="xin-message-content">{{message}}</div>
-      <div class="xin-message-icon">
-        <i class="xin-iconfont" @click="hide()">&#xe67a;</i>
+      <div class="xin-message-icon" v-if="closable">
+        <i class="xin-iconfont close" @click="close()">&#xe687;</i>
       </div>
     </div>
   </transition>
@@ -23,30 +29,15 @@ export default {
   components: {
   },
   props: {
-    show: {
-      type: Boolean,
-      default: false
-    },
-    type: {
-      type: String,
-      default: 'info'
-    },
-    message: {
-      type: String,
-      default: ''
-    },
-    closable: {
-      type: Boolean,
-      default: false
-    }
   },
   data () {
     return {
+      visible: false,
       iconMap: {
-        info: '&#xe626;',
-        success: '&#xe604;',
+        info: '&#xe690;',
+        success: '&#xe68d;',
         warning: '&#xe62e;',
-        error: '&#xe605;'
+        error: '&#xe68f;'
       }
     }
   },
@@ -55,10 +46,25 @@ export default {
   watch: {
   },
   mounted () {
+    if (!this.closable) {
+      this.startTimer()
+    }
   },
   methods: {
-    hide () {
-      this.$emit('update:show', false)
+    afterLeaveEvent () {
+      this.timer && clearTimeout(this.timer)
+      this.$el.parentNode.removeChild(this.$el)
+      this.closeById(this.id)
+      this.$destroy(true)
+    },
+    startTimer () {
+      if (this.duration < 0) return
+      this.timer = setTimeout(() => {
+        this.close()
+      }, this.duration)
+    },
+    close () {
+      this.visible = false
     }
   }
 }

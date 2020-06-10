@@ -6,7 +6,7 @@
         <div class="menu-item" v-for="(item, index) in menuList" :key="index" @click="toView(item.url)">
           <i class="xin-iconfont item-icon"></i>
           <div class="item-text">{{item.name}}</div>
-          <i class="xin-iconfont forward">&#xe67d;</i>
+          <i class="xin-iconfont forward">&#xe685;</i>
         </div>
       </div>
       <div class="right">

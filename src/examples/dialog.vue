@@ -24,7 +24,7 @@
       <div slot="header" class="header">
         <xin-label>请选择城市：</xin-label>
         <xin-select :list="list" itemValue="id" itemLabel="name" v-model="val"></xin-select>
-        <i class="xin-iconfont" @click="dialog3.show = false">&#xe67a;</i>
+        <i class="xin-iconfont" @click="dialog3.show = false">&#xe687;</i>
       </div>
       <xin-table
         :thead="['学校', '学院', '年级', '班级', '小组', '姓名']"
