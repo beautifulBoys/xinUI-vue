@@ -43,7 +43,7 @@ export default {
       this.$message({ type, message: '这是一条弹出信息！' })
     },
     message2 (type) {
-      this.$message[type]('这是一条弹出信息！')
+      this.$message[type]('这是一条弹出信息！水利局开始了讲故事老规矩拉斯苦尽甘来收款结果辽阔的攻击力看过了后端开发水电费考虑哈速度快的首付款几十块了')
     },
     message3 (type) {
       this.$message({ type, message: '这是一条弹出信息！', closable: true })

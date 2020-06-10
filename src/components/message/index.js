@@ -12,11 +12,21 @@ const typeMap = [
 ]
 
 function closeById (id) {
+  let index = -1
+  let del = null
   for (let i = 0; i < pools.length; i++) {
     if (id === pools[i].id) {
-      pools.splice(i, 1)
+      let arr = pools.splice(i, 1)
+      del = arr[0]
+      index = i
       break
     }
+  }
+  for (let i = index; i < pools.length; i++) {
+    let delHeight = del.contentHeight + 15
+    console.log('del.contentHeight: ', del.contentHeight)
+    let top = pools[i].$el.offsetTop - delHeight
+    pools[i].$el.style.top = top + 'px'
   }
 }
 
@@ -28,8 +38,13 @@ const Message = function (options) {
     duration: options.duration || 3000,
     offsetTop: options.offsetTop || 70
   }
+
+  let top = option.offsetTop
+  pools.forEach(item => {
+    top += item.$el.offsetHeight + 15
+  })
   let instance = new MessageComponent({
-    data: { ...option, closeById }
+    data: { ...option, closeById, top }
   })
   instance.id = id++
   instance.$mount()

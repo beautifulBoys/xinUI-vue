@@ -181,7 +181,7 @@ $dialog-error-color: $color-red;
 
 // message
 $message-width: 250px;
-$message-animate-time: 0.3s;
+$message-animate-time: $common-animate-time;
 $message-font-size: $font-size;
 $message-line-height: $line-height - 14px;
 $message-active-color: $color-blue;

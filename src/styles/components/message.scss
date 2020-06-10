@@ -9,6 +9,7 @@
   padding: 10px;
   box-sizing: border-box;
   transform: translate3d(-50%, 0, 0);
+  transition: all $message-animate-time;
   .xin-message-icon {
     align-items: center;
     display: flex;

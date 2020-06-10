@@ -30,7 +30,7 @@
 
 // 透明度 and 下移
 .xin-message-enter-active, .xin-message-leave-active {
-  transition: all $common-animate-time;
+  transition: all $message-animate-time;
   transform: translate3d(-50%, 0, 0);
 }
 .xin-message-enter, .xin-message-leave-to {

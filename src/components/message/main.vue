@@ -1,5 +1,8 @@
 <template>
-  <transition name="xin-message"  @after-leave="afterLeaveEvent()">
+  <transition
+    name="xin-message"
+    @after-leave="afterLeaveEvent()"
+  >
     <div
       :class="['xin-message', {
         'success': type === 'success',
@@ -8,8 +11,9 @@
         'error': type === 'error'
       }]"
       :style="{
-        top: offsetTop + 'px'
+        top: top + 'px'
       }"
+      ref="message"
       v-show="visible"
     >
       <div class="xin-message-icon">
@@ -33,6 +37,7 @@ export default {
   data () {
     return {
       visible: false,
+      contentHeight: 0,
       iconMap: {
         info: '&#xe690;',
         success: '&#xe68d;',
@@ -44,6 +49,11 @@ export default {
   created () {
   },
   watch: {
+    visible (n) {
+      setTimeout(() => {
+        this.contentHeight = this.$el.offsetHeight
+      })
+    }
   },
   mounted () {
     if (!this.closable) {
@@ -51,6 +61,13 @@ export default {
     }
   },
   methods: {
+    getNextTop () {
+      // this.nextTop = this.$refs.message.offsetHeight + this.offsetHeight + 15
+    },
+    beforeEnterEvent () {
+      console.log('before-appear', this.$el.offsetHeight)
+      this.contentHeight = this.$el.offsetHeight
+    },
     afterLeaveEvent () {
       this.timer && clearTimeout(this.timer)
       this.$el.parentNode.removeChild(this.$el)
