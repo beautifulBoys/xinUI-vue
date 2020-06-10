@@ -32,7 +32,6 @@
       <xin-table
         :thead="thead"
         :tbody="[]"
-        itemValue="id"
       >
         <template slot-scope="props">
           <td>{{props.item.text}}</td>

@@ -10,8 +10,11 @@
           v-show="visible"
         >
           <div class="xin-dialog-header">
-            <span>{{title}}</span>
-            <i class="xin-iconfont" @click="hide()" v-if="closable">&#xe67a;</i>
+            <slot name="header" v-if="$slots.header"></slot>
+            <div class="xin-dialog-header-default" v-else>
+              <span>{{title}}</span>
+              <i class="xin-iconfont" @click="hide()" v-if="closable">&#xe67a;</i>
+            </div>
           </div>
           <div
             :class="['xin-dialog-body', {
@@ -21,18 +24,21 @@
             <slot></slot>
           </div>
           <div class="xin-dialog-footer">
-            <xin-button
-              color="info"
-              fill
-              v-if="confirmVisible"
-              @click="confirm()"
-            >{{confirmLabel}}</xin-button>
-            <xin-button
-              color="warning"
-              fill
-              v-if="cancelVisible"
-              @click="cancel()"
-            >{{cancelLabel}}</xin-button>
+            <slot name="footer" v-if="$slots.footer"></slot>
+            <div class="xin-dialog-footer-default" v-else>
+              <xin-button
+                color="info"
+                fill
+                v-if="confirmVisible"
+                @click="confirm()"
+              >{{confirmLabel}}</xin-button>
+              <xin-button
+                color="warning"
+                fill
+                v-if="cancelVisible"
+                @click="cancel()"
+              >{{cancelLabel}}</xin-button>
+            </div>
           </div>
         </div>
       </transition>
@@ -88,7 +94,6 @@ export default {
     }
   },
   created () {
-
   },
   watch: {
   },

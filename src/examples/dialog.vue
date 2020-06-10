@@ -1,10 +1,14 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-label>基础展示</xin-label>
-      <xin-button @click="dialog.show = true">弹出</xin-button>
+      <xin-button @click="dialog1.show = true">基础展示</xin-button>
+      <xin-button @click="dialog2.show = true">表单展示</xin-button>
+      <xin-button @click="dialog3.show = true">自定义展示</xin-button>
     </div>
-    <xin-dialog title="信息登记" :visible.sync="dialog.show">
+    <xin-dialog title="删除确认" :visible.sync="dialog1.show">
+      您确认要删除当前选项吗？
+    </xin-dialog>
+    <xin-dialog title="信息登记" :visible.sync="dialog2.show">
       <div class="content">
         <div class="line">
           <xin-label>姓名：</xin-label>
@@ -16,12 +20,30 @@
         </div>
       </div>
     </xin-dialog>
-    <xin-dialog title="信息登记1" :visible.sync="dialog1.show">
-      <div class="content">
-        <div class="line">
-          <xin-label>姓名：</xin-label>
-          <xin-input></xin-input>
-        </div>
+    <xin-dialog title="信息登记1" :visible.sync="dialog3.show" width="800px">
+      <div slot="header" class="header">
+        <xin-label>请选择城市：</xin-label>
+        <xin-select :list="list" itemValue="id" itemLabel="name" v-model="val"></xin-select>
+        <i class="xin-iconfont" @click="dialog3.show = false">&#xe67a;</i>
+      </div>
+      <xin-table
+        :thead="['学校', '学院', '年级', '班级', '小组', '姓名']"
+        :tbody="tbody"
+      >
+        <template slot-scope="props">
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+          <td>{{props.item.text}}</td>
+        </template>
+      </xin-table>
+      <div slot="footer" class="footer">
+        <xin-button color="success" fill>新增</xin-button>
+        <xin-button color="info" fill>编辑</xin-button>
+        <xin-button color="error" fill>删除</xin-button>
+        <xin-button color="warning" fill>取消</xin-button>
       </div>
     </xin-dialog>
   </div>
@@ -33,12 +55,32 @@ export default {
   },
   data () {
     return {
-      dialog: {
-        show: false
-      },
       dialog1: {
         show: false
-      }
+      },
+      dialog2: {
+        show: false
+      },
+      dialog3: {
+        show: false
+      },
+      tbody: [
+        {id: 1, text: '空军'},
+        {id: 2, text: '陆军'},
+        {id: 3, text: '海军'},
+        {id: 4, text: '导弹军'},
+        {id: 5, text: '后勤军'},
+        {id: 6, text: '指挥军'}
+      ],
+      list: [
+        { id: 1, name: '清华大学' },
+        { id: 2, name: '北京大学' },
+        { id: 3, name: '复旦大学' },
+        { id: 4, name: '浙江大学' },
+        { id: 5, name: '西安大学' },
+        { id: 6, name: '东北大学' }
+      ],
+      val: 1,
     }
   },
   mounted () {
@@ -70,5 +112,30 @@ export default {
   line-height: 20px;
   color: #888;
   text-indent: 30px;
+}
+.header {
+  text-align: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid transparentize(#0095ff, 0);
+  position: relative;
+  .xin-iconfont {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 100%;
+    background: #ff6666;
+    color: #fff;
+  }
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: transparentize(#0095ff, 0.8);
 }
 </style>

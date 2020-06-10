@@ -15,36 +15,42 @@
     width: $dialog-width;
     box-shadow: 0 0 8px transparentize($dialog-default-color, 0.4);
     .xin-dialog-header {
-      line-height: $dialog-line-height;
-      text-align: center;
-      padding: $dialog-header-padding;
-      position: relative;
-      font-size: $dialog-font-size + 2px;
-      color: #fff;
-      font-weight: bold;
-      background: $dialog-active-color;
-      .xin-iconfont {
-        width: $dialog-line-height;
-        cursor: pointer;
-        text-align: center;
+      background: #fff;
+      .xin-dialog-header-default {
         line-height: $dialog-line-height;
-        display: block;
-        position: absolute;
-        top: $dialog-header-padding;
-        right: $dialog-header-padding;
+        text-align: center;
+        padding: $dialog-header-padding;
+        position: relative;
+        font-size: $dialog-font-size + 2px;
+        color: #fff;
+        font-weight: bold;
+        background: $dialog-active-color;
+        .xin-iconfont {
+          width: $dialog-line-height;
+          cursor: pointer;
+          text-align: center;
+          line-height: $dialog-line-height;
+          display: block;
+          position: absolute;
+          top: $dialog-header-padding;
+          right: $dialog-header-padding;
+        }
       }
     }
     .xin-dialog-body {
       background: #fff;
+      font-size: $dialog-font-size;
       &.padding {
         padding: 20px 40px;
       }
     }
     .xin-dialog-footer {
       background: #fff;
-      border-top: 1px solid transparentize($dialog-default-color, 0.8);
-      padding: 10px 20px;
-      text-align: center;
+      .xin-dialog-footer-default {
+        border-top: 1px solid transparentize($dialog-default-color, 0.8);
+        padding: 10px 20px;
+        text-align: center;
+      }
     }
   }
 }
