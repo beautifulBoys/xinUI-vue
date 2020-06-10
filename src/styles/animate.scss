@@ -1,0 +1,39 @@
+// 透明度
+.xin-fade-enter-active, .xin-fade-leave-active {
+  transition: opacity $common-animate-time;
+}
+.xin-fade-enter, .xin-fade-leave-to {
+  opacity: 0;
+}
+
+// 下移
+.xin-down-enter-active, .xin-down-leave-active {
+  transition: transform $common-animate-time;
+  transform: translateY(0);
+}
+.xin-down-enter, .xin-down-leave-to {
+  transform: translateY(-15px);
+}
+
+// 透明度 and 下移
+.xin-fade-down-enter-active, .xin-fade-down-leave-active {
+  transition: all $common-animate-time;
+  transform: translateY(0);
+  opacity: 1;
+}
+.xin-fade-down-enter, .xin-fade-down-leave-to {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+// message
+
+// 透明度 and 下移
+.xin-message-enter-active, .xin-message-leave-active {
+  transition: all $common-animate-time;
+  transform: translate3d(-50%, 0, 0);
+}
+.xin-message-enter, .xin-message-leave-to {
+  opacity: 0;
+  transform: translate3d(-50%, -50px, 0) !important;
+}

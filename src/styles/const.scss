@@ -15,6 +15,9 @@ $color-red: #ff6666;
 $font-color: $color-gray - #555555;
 $border-color: $color-gray + #333333;
 
+// 其他
+$common-animate-time: 0.3s;
+
 // label
 $label-color: $font-color + #333333;
 $label-required-color: $color-red;
@@ -175,4 +178,16 @@ $dialog-active-color: $color-blue;
 $dialog-success-color: $color-green;
 $dialog-warning-color: $color-yellow;
 $dialog-error-color: $color-red;
+
+// message
+$message-width: 250px;
+$message-animate-time: 0.3s;
+$message-font-size: $font-size;
+$message-line-height: $line-height - 14px;
+$message-active-color: $color-blue;
+$message-success-color: $color-green;
+$message-warning-color: $color-yellow;
+$message-error-color: $color-red;
+
+
 

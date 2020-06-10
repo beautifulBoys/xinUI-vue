@@ -1,0 +1,35 @@
+
+@import "~@/styles/const.scss";
+.xin-message {
+  min-width: $message-width;
+  max-width: 2 * $message-width;
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  transform: translate3d(-50%, 0, 0);
+  .xin-message-icon {
+    align-items: center;
+    display: flex;
+    .xin-iconfont {
+      width: $message-line-height;
+      height: $message-line-height;
+      line-height: $message-line-height;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+  .xin-message-content {
+    flex: 1;
+    margin-left: 10px;
+    line-height: $message-line-height;
+    font-size: $message-font-size;
+  }
+  &.xin-message-success {
+    background: transparentize($message-success-color, 0);
+    color: #fff;
+  }
+}
+

@@ -15,6 +15,7 @@ import table from '@/examples/table'
 import page from '@/examples/page'
 import tabs from '@/examples/tabs'
 import dialog from '@/examples/dialog'
+import message from '@/examples/message'
 
 Vue.use(Router)
 
@@ -75,6 +76,10 @@ export default new Router({
     {
       path: '/dialog',
       component: dialog
+    },
+    {
+      path: '/message',
+      component: message
     }
   ]
 })
