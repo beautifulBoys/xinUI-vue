@@ -19,7 +19,7 @@
       <div class="xin-message-icon">
         <i class="xin-iconfont" v-html="iconMap[type]"></i>
       </div>
-      <div class="xin-message-content">{{message}}</div>
+      <div class="xin-message-content">{{messageText}}</div>
       <div class="xin-message-icon" v-if="closable">
         <i class="xin-iconfont close" @click="close()">&#xe687;</i>
       </div>
@@ -46,7 +46,10 @@ export default {
       }
     }
   },
-  created () {
+  computed: {
+    messageText () {
+      return this.message.length > 200 ? this.message.substr(0, 200) : this.message
+    }
   },
   watch: {
     visible (n) {
@@ -54,6 +57,8 @@ export default {
         this.contentHeight = this.$el.offsetHeight
       })
     }
+  },
+  created () {
   },
   mounted () {
     if (!this.closable) {

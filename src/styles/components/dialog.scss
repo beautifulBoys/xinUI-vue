@@ -40,6 +40,7 @@
     .xin-dialog-body {
       background: #fff;
       font-size: $dialog-font-size;
+      line-height: $dialog-line-height - 10px;
       &.padding {
         padding: 20px 40px;
       }

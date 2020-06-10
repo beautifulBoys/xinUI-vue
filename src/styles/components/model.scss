@@ -1,0 +1,18 @@
+
+@import "~@/styles/const.scss";
+
+.xin-model {
+  .xin-model-body {
+    padding: 20px 0;
+    &.align-center {
+      text-align: center;
+    }
+    &.align-right {
+      text-align: right;
+    }
+  }
+  .xin-model-footer {
+    padding: 10px 0;
+    text-align: center;
+  }
+}

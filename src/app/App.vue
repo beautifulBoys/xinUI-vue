@@ -37,6 +37,7 @@ export default {
         {name: '标签 tabs', url: '/tabs'},
         {name: '对话框 dialog', url: '/dialog'},
         {name: '消息提示 message', url: '/message'},
+        {name: '确认框 model', url: '/model'},
         {name: '消息提示框 message-box', url: '/message-box'},
         {name: '步骤条 steps', url: '/steps'},
         {name: '进度条 progress', url: '/progress'},
