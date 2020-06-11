@@ -4,6 +4,7 @@
     :closable="true"
     width="500"
     class="xin-model"
+    @close="closeEvent()"
     :visible.sync="visible"
   >
     <div
@@ -60,6 +61,9 @@ export default {
       } else {
         this.cancelCallback && this.cancelCallback()
       }
+    },
+    closeEvent () {
+      this.closeCallback && this.closeCallback()
     },
     confirm (callback) {
       this.confirmCallback = callback

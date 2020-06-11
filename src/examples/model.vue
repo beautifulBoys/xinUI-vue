@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-button @click="alert()">alert 展示</xin-button>
-      <xin-button @click="confirm()">confirm 展示</xin-button>
-      <xin-button @click="prompt()">prompt 展示</xin-button>
+      <xin-button fill color="success" @click="alert()">alert 展示</xin-button>
+      <xin-button fill color="warning" @click="confirm()">confirm 展示</xin-button>
+      <xin-button fill color="info" @click="prompt()">prompt 展示</xin-button>
     </div>
     <!-- <xin-model title="删除确认" :visible.sync="dialog1.show">
       您确认要删除当前选项吗？
@@ -33,6 +33,8 @@ export default {
         confirmLabel: '知道了'
       }).confirm(() => {
         this.$message.success('Alert 点击了 确定')
+      }).close(() => {
+        this.$message.warning('Alert 点击了 关闭')
       })
     },
     confirm () {
@@ -47,6 +49,8 @@ export default {
         this.$message.success('Confirm 点击了 确定')
       }).cancel(() => {
         this.$message.error('Confirm 点击了 取消')
+      }).close(() => {
+        this.$message.warning('Confirm 点击了 关闭')
       })
     },
     prompt () {

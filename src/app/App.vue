@@ -38,7 +38,7 @@ export default {
         {name: '对话框 dialog', url: '/dialog'},
         {name: '消息提示 message', url: '/message'},
         {name: '确认框 model', url: '/model'},
-        {name: '消息提示框 message-box', url: '/message-box'},
+        // {name: '消息提示框 message-box', url: '/message-box'},
         {name: '步骤条 steps', url: '/steps'},
         {name: '进度条 progress', url: '/progress'},
         {name: '文字提示 tooltip', url: '/tooltip'},
