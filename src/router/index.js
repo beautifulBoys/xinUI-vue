@@ -17,6 +17,7 @@ import tabs from '@/examples/tabs'
 import dialog from '@/examples/dialog'
 import message from '@/examples/message'
 import model from '@/examples/model'
+import steps from '@/examples/steps'
 
 Vue.use(Router)
 
@@ -85,6 +86,10 @@ export default new Router({
     {
       path: '/model',
       component: model
+    },
+    {
+      path: '/steps',
+      component: steps
     }
   ]
 })

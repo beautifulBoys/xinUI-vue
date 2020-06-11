@@ -37,3 +37,10 @@
   opacity: 0;
   transform: translate3d(-50%, -50px, 0) !important;
 }
+
+// steps
+@keyframes steps-animate {
+  0% {transform: scale(0.9);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(0.9);}
+}

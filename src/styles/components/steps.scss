@@ -1,0 +1,100 @@
+
+@import "~@/styles/const.scss";
+.xin-steps {
+  margin-right: $rate-margin-right;
+  vertical-align: top;
+  .xin-steps-box {
+    display: flex;
+    .xin-steps-item {
+      flex: 1;
+      display: flex;
+      margin-right: 5px;
+      color: $steps-default-color;
+      .xin-steps-item-left {
+        margin-right: 3px;
+        .xin-iconfont {
+          font-size: $steps-line-height - 5px;
+          border-radius: 100%;
+          display: block;
+        }
+      }
+      
+      .xin-steps-item-right {
+        flex: 1;
+        .xin-steps-item-line {
+          display: flex;
+          .xin-steps-title {
+            font-size: $steps-font-size + 2px;
+            font-weight: bold;
+            line-height: $steps-line-height;
+          }
+          .xin-steps-space {
+            flex: 1;
+            height: 1px;
+            background: $steps-default-color;
+            margin-top: $steps-line-height / 2 - 1px;
+            margin-left: 10px;
+          }
+          .xin-steps-desc {
+            font-size: $steps-font-size;
+          }
+        }
+      }
+      &.active {
+        .xin-iconfont {
+          color: $steps-active-color;
+          animation: steps-animate 1s linear infinite;
+        }
+        .xin-steps-item-right {
+          .xin-steps-item-line {
+            .xin-steps-title {
+              color: $steps-active-color;
+            }
+            .xin-steps-desc {
+              color: transparentize($steps-active-color, 0.3);
+            }
+          }
+        }
+      }
+      &.success {
+        .xin-iconfont {
+          color: $steps-success-color;
+        }
+        .xin-steps-item-right {
+          .xin-steps-item-line {
+            .xin-steps-title {
+              color: $steps-success-color;
+            }
+            .xin-steps-space {
+              background: $steps-success-color;
+            }
+            .xin-steps-desc {
+              color: transparentize($steps-success-color, 0.3);
+            }
+          }
+        }
+      }
+      &.error {
+        .xin-iconfont {
+          color: $steps-error-color;
+        }
+        .xin-steps-item-right {
+          .xin-steps-item-line {
+            .xin-steps-title {
+              color: $steps-error-color;
+            }
+            .xin-steps-desc {
+              color: transparentize($steps-error-color, 0.3);
+            }
+          }
+        }
+      }
+      &:last-child {
+        .xin-steps-space {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
