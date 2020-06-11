@@ -38,30 +38,11 @@ const Confirm = function (options) {
   return instance
 }
 
-const Prompt = function (options) {
-  let option = {
-    message: options.message || '',
-    closable: options.closable || false,
-    title: options.title || '确认',
-    align: options.align || '',
-    confirmLabel: '搞定哈哈',
-    cancelLabel: '取消嘿嘿'
-  }
-  let instance = new ModelComponent({
-    data: { type: 'prompt', ...option }
-  })
-  instance.$mount()
-  document.body.appendChild(instance.$el)
-  instance.visible = true
-  return instance
-}
-
 const Model = function () {}
 
 Model.install = function () {
   Vue.prototype.$alert = Alert
   Vue.prototype.$confirm = Confirm
-  // Vue.prototype.$prompt = Prompt
 }
 
 export default Model
