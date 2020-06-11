@@ -14,6 +14,7 @@ import dialog from './dialog'
 import message from './message'
 import model from './model'
 import steps from './steps'
+import progress from './progress'
 
 const lixinComponents = {
   input,
@@ -31,7 +32,8 @@ const lixinComponents = {
   dialog,
   message,
   model,
-  steps
+  steps,
+  progress
 }
 
 function install (Vue) {
@@ -60,7 +62,8 @@ export {
   dialog,
   message,
   model,
-  steps
+  steps,
+  progress
 }
 
 export const components = {

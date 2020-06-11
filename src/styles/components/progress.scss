@@ -1,0 +1,123 @@
+
+@import "~@/styles/const.scss";
+.xin-progress {
+  height: $progress-line-height;
+  box-sizing: border-box;
+  vertical-align: middle;
+  display: flex;
+  .xin-progress-body {
+    flex: 1;
+    height: $progress-line-height - 20px;
+    margin-top: 10px;
+    .xin-progress-gress {
+      height: 100%;
+      transition: all $progress-animate-time;
+    }
+  }
+  .xin-progress-title {
+    font-size: $progress-font-size;
+    line-height: $progress-line-height;
+    padding: 0 $progress-margin-right;
+  }
+
+  &.info {
+    $color: $progress-info-color;
+    .xin-progress-body {
+      background: transparentize($color, 0.8);
+      .xin-progress-gress {
+        background: $color;
+        &.stripe {
+          $progress-color: $color;
+          $progress-color1: $color + #222222;
+          background-image: linear-gradient(45deg, $progress-color 25%,$progress-color1 25%,$progress-color1 50%,$progress-color 50%,$progress-color 75%,$progress-color1 75%,$progress-color1);
+          background-size: 50px 50px;
+          animation: progress-animate 1s linear infinite;
+        }
+      }
+    }
+    .xin-progress-title {
+      color: $color;
+    }
+  }
+  &.success {
+    $color: $progress-success-color;
+    .xin-progress-body {
+      background: transparentize($color, 0.8);
+      .xin-progress-gress {
+        background: $color;
+        &.stripe {
+          $progress-color: $color;
+          $progress-color1: $color + #222222;
+          background-image: linear-gradient(45deg, $progress-color 25%,$progress-color1 25%,$progress-color1 50%,$progress-color 50%,$progress-color 75%,$progress-color1 75%,$progress-color1);
+          background-size: 50px 50px;
+          animation: progress-animate 1s linear infinite;
+        }
+      }
+    }
+    .xin-progress-title {
+      color: $color;
+    }
+  }
+  &.warning {
+    $color: $progress-warning-color;
+    .xin-progress-body {
+      background: transparentize($color, 0.8);
+      .xin-progress-gress {
+        background: $color;
+        &.stripe {
+          $progress-color: $color;
+          $progress-color1: $color + #222222;
+          background-image: linear-gradient(45deg, $progress-color 25%,$progress-color1 25%,$progress-color1 50%,$progress-color 50%,$progress-color 75%,$progress-color1 75%,$progress-color1);
+          background-size: 50px 50px;
+          animation: progress-animate 1s linear infinite;
+        }
+      }
+    }
+    .xin-progress-title {
+      color: $color;
+    }
+  }
+  &.error {
+    $color: $progress-error-color;
+    .xin-progress-body {
+      background: transparentize($color, 0.8);
+      .xin-progress-gress {
+        background: $color;
+        &.stripe {
+          $progress-color: $color;
+          $progress-color1: $color + #222222;
+          background-image: linear-gradient(45deg, $progress-color 25%,$progress-color1 25%,$progress-color1 50%,$progress-color 50%,$progress-color 75%,$progress-color1 75%,$progress-color1);
+          background-size: 50px 50px;
+          animation: progress-animate 1s linear infinite;
+        }
+      }
+    }
+    .xin-progress-title {
+      color: $color;
+    }
+  }
+  &.inside {
+    .xin-progress-body {
+      height: $progress-line-height - 10px;
+      margin-top: 5px;
+      .xin-progress-gress {
+        text-align: right;
+        color: #fff;
+        font-size: $progress-font-size;
+        line-height: $progress-line-height - 10px;
+      }
+    }
+    .xin-progress-title {
+      display: none;
+    }
+  }
+  &.round {
+    .xin-progress-body {
+      border-radius: $progress-line-height;
+      .xin-progress-gress {
+        border-radius: $progress-line-height;
+      }
+    }
+  }
+}
+

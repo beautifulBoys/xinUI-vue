@@ -18,6 +18,7 @@ import dialog from '@/examples/dialog'
 import message from '@/examples/message'
 import model from '@/examples/model'
 import steps from '@/examples/steps'
+import progress from '@/examples/progress'
 
 Vue.use(Router)
 
@@ -90,6 +91,10 @@ export default new Router({
     {
       path: '/steps',
       component: steps
+    },
+    {
+      path: '/progress',
+      component: progress
     }
   ]
 })
