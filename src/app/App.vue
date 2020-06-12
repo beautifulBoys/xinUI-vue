@@ -38,14 +38,27 @@ export default {
         {name: '对话框 dialog', url: '/dialog'},
         {name: '消息提示 message', url: '/message'},
         {name: '确认框 model', url: '/model'},
-        // {name: '消息提示框 message-box', url: '/message-box'},
         {name: '步骤条 steps', url: '/steps'},
         {name: '进度条 progress', url: '/progress'},
         {name: '文字提示 tooltip', url: '/tooltip'},
         {name: '标记 badge', url: '/badge'},
         {name: '标签输入框 tag-input', url: '/tag-input'},
         {name: '穿梭框 transfer', url: '/transfer'},
-        {name: '列表排序 sort-list', url: '/sort-list'}
+        {name: '列表排序 sort-list', url: '/sort-list'},
+
+        {name: 'Split 分割面板', url: '/split'},
+        {name: 'Loading 加载', url: '/loading'},
+        {name: 'Slide 滑块', url: '/slide'},
+        {name: 'Cascader 级联选择', url: '/cascader'},
+        {name: 'Transfer 穿梭框', url: '/transfer'},
+        {name: 'Upload 上传', url: '/upload'},
+        {name: 'ColorPicker 颜色选择器', url: '/colorPicker'},
+        {name: 'Tips 提示条', url: '/tips'},
+        {name: 'Popover 气泡提示', url: '/upload'},
+        {name: 'Tag 标签', url: '/tag'},
+        {name: 'Grid 栅格', url: '/grid'},
+        {name: 'Icon 图标', url: '/icon'}
+        
       ]
     }
   },

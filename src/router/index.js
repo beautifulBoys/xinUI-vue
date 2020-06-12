@@ -20,6 +20,7 @@ import model from '@/examples/model'
 import steps from '@/examples/steps'
 import progress from '@/examples/progress'
 import tooltip from '@/examples/tooltip'
+import badge from '@/examples/badge'
 
 Vue.use(Router)
 
@@ -100,6 +101,10 @@ export default new Router({
     {
       path: '/tooltip',
       component: tooltip
+    },
+    {
+      path: '/badge',
+      component: badge
     }
   ]
 })
