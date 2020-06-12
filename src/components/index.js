@@ -17,6 +17,7 @@ import steps from './steps'
 import progress from './progress'
 import tooltip from './tooltip'
 import badge from './badge'
+import transfer from './transfer'
 
 const lixinComponents = {
   input,
@@ -37,7 +38,8 @@ const lixinComponents = {
   steps,
   progress,
   tooltip,
-  badge
+  badge,
+  transfer
 }
 
 function install (Vue) {
@@ -69,7 +71,8 @@ export {
   steps,
   progress,
   tooltip,
-  badge
+  badge,
+  transfer
 }
 
 export const components = {

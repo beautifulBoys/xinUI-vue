@@ -21,6 +21,7 @@ import steps from '@/examples/steps'
 import progress from '@/examples/progress'
 import tooltip from '@/examples/tooltip'
 import badge from '@/examples/badge'
+import transfer from '@/examples/transfer'
 
 Vue.use(Router)
 
@@ -105,6 +106,10 @@ export default new Router({
     {
       path: '/badge',
       component: badge
+    },
+    {
+      path: '/transfer',
+      component: transfer
     }
   ]
 })
