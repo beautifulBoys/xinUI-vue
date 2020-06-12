@@ -3,7 +3,6 @@
 
 .xin-button {
   display: inline-block;
-  margin-right: $button-margin-right;
   font-size: $button-font-size;
   line-height: $button-line-height - 2px;
   height: $button-line-height;
@@ -16,6 +15,9 @@
   color: transparentize($button-border-default-color - #111111, 0);
   border: 1px solid transparentize($button-border-default-color, 0);
   background: transparentize($button-border-default-color, 0.95);
+  &+& {
+    margin-left: $button-margin-right;
+  }
   &.xin-button-disabled {
     cursor: not-allowed;
   }

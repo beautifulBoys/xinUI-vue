@@ -1,0 +1,116 @@
+
+@import "~@/styles/const.scss";
+
+.xin-tooltip {
+  display: inline-block;
+  position: relative;
+  &+& {
+    margin-left: $tooltip-margin-right;
+  }
+  .xin-tooltip-content {
+    // display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    .xin-tooltip-content-box {
+      width: 0;
+      .xin-tooltip-content-text {
+        font-size: $tooltip-font-size;
+        line-height: $tooltip-line-height;
+        text-align: center;
+        padding: 0 $tooltip-margin-right;
+        background: #000;
+        color: #fff;
+        display: inline-block;
+        white-space: nowrap;
+        opacity: 0.4;
+        position: relative;
+        &::before {
+          content: " ";
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          background: #000;
+        }
+      }
+    }
+  }
+  &.xin-tooltip-top {
+    .xin-tooltip-content {
+      top: 0;
+      left: 50%;
+      .xin-tooltip-content-box {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        transform: translateY(-10px);
+        .xin-tooltip-content-text {
+          transform: translateX(-50%);
+          &::before {
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  &.xin-tooltip-right {
+    .xin-tooltip-content {
+      top: 50%;
+      right: 0;
+      .xin-tooltip-content-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(10px) translateY(-50%);
+        .xin-tooltip-content-text {
+          &::before {
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  &.xin-tooltip-bottom {
+    .xin-tooltip-content {
+      bottom: 0;
+      left: 50%;
+      .xin-tooltip-content-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(10px);
+        .xin-tooltip-content-text {
+          transform: translateX(-50%);
+          &::before {
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  &.xin-tooltip-left {
+    .xin-tooltip-content {
+      top: 50%;
+      left: -100%;
+      .xin-tooltip-content-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-10px) translateY(-50%);
+        .xin-tooltip-content-text {
+          &::before {
+            right: -5px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
