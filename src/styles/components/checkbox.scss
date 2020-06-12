@@ -34,6 +34,17 @@
       display: none;
     }
   }
+  &.is-white {
+    .el-checkbox__input {
+      .el-checkbox__inner {
+        border: 5px solid #fff;
+        box-shadow: 0 0 8px transparentize(#ffffff, 0.3);
+      }
+    }
+    .el-checkbox__label {
+      color: #fff;
+    }
+  }
   &.is-checked {
     .el-checkbox__input {
       .el-checkbox__inner {

@@ -1,7 +1,8 @@
 <template>
   <Checkbox
     :class="['xin-checkbox', {
-      'hide-label': hideLabel
+      'hide-label': hideLabel,
+      'is-white': white
     }]"
     v-bind="$attrs"
     v-on="$listeners"
@@ -21,6 +22,10 @@ export default {
   props: {
     value: {
       type: [Array, Boolean],
+      default: false
+    },
+    white: {
+      type: Boolean,
       default: false
     },
     hideLabel: {

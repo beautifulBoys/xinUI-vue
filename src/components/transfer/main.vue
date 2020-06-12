@@ -1,79 +1,194 @@
 <template>
   <div class="xin-transfer">
-    
+    <div class="xin-transfer-side">
+      <div class="xin-transfer-head">
+        <xin-checkbox v-model="left.all" white @change="allCheckboxChange(true, $event)">{{leftTitle}}</xin-checkbox>
+        <span class="xin-transfer-desc">{{left.checkedSum}}/{{leftLength}}</span>
+      </div>
+      <div class="xin-transfer-body">
+        <div class="xin-transfer-item" v-for="(item, index) in list" :key="index">
+          <template v-if="item.aside">
+            <xin-checkbox v-model="item.checked" :disabled="item.disabled" @change="calculate()">{{item.text}}</xin-checkbox>
+          </template>
+        </div>
+      </div>
+    </div>
+    <div class="xin-transfer-control">
+      <div class="cont-box">
+        <div :class="['cont-btn', {active: left.checkedSum}]" @click="left.checkedSum && event(true)">
+          <i class="xin-iconfont">&#xe684;</i>
+        </div>
+        <div class="center"></div>
+        <div :class="['cont-btn', {active: right.checkedSum}]" @click="right.checkedSum && event(false)">
+          <i class="xin-iconfont">&#xe682;</i>
+        </div>
+      </div>
+    </div>
+    <div class="xin-transfer-side">
+      <div class="xin-transfer-head">
+        <xin-checkbox v-model="right.all" white @change="allCheckboxChange(false, $event)">{{rightTitle}}</xin-checkbox>
+        <span class="xin-transfer-desc">{{right.checkedSum}}/{{rightLength}}</span>
+      </div>
+      <div class="xin-transfer-body">
+        <div class="xin-transfer-item" v-for="(item, index) in list" :key="index">
+          <template v-if="!item.aside">
+            <xin-checkbox v-model="item.checked" :disabled="item.disabled" @change="calculate()">{{item.text}}</xin-checkbox>
+          </template>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'xinTransfer',
-  components: {
-  },
   props: {
     value: {
-      type: Number,
-      default: 1
+      type: Array,
+      default () {
+        return []
+      }
     },
-    status: {
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    disabled: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    checked: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    direction: {
+      type: String,
+      default: 'left'
+    },
+    leftTitle: {
+      type: String,
+      default: '左侧列表'
+    },
+    rightTitle: {
+      type: String,
+      default: '右侧列表'
+    },
+    itemValue: {
       type: String,
       default: ''
     },
-    list: {
-      type: Array,
-      default: () => []
-    },
-    type: {
+    itemText: {
       type: String,
-      default: 'star'
+      default: ''
     }
   },
   data () {
     return {
-      inputValue: this.value
+      list: [],
+      left: {
+        all: false,
+        checkedSum: 0
+      },
+      right: {
+        all: false,
+        checkedSum: 0
+      },
+      selectedList: []
     }
   },
   watch: {
-    value (n, o) {
-      this.inputValue = n
+    data (n) {
+      this.formatData()
     }
   },
   mounted () {
+    this.formatData()
+  },
+  computed: {
+    leftLength () {
+      return this.list.length ? this.list.length - this.value.length : 0
+    },
+    rightLength () {
+      return this.list.length ? this.value.length : 0
+    }
   },
   methods: {
-    createTitleFunc (item, index) {
-      let title = ''
-      if (this.inputValue < index + 1) { // wait
-        title = item.title || ''
-      } else if (this.inputValue === index + 1 && this.status !== 'error') { // active
-        title = item.activeTitle || item.title || ''
-      } else if (this.inputValue > index + 1) { // success
-        title = item.successTitle || item.title || ''
-      } else if (this.inputValue === index + 1 && this.status === 'error') { // error
-        title = item.errorTitle || item.title || ''
-      }
-      return title
+    formatData () {
+      let arr = []
+      this.data.forEach(item => {
+        arr.push({
+          text: item[this.itemText],
+          value: item[this.itemValue],
+          checked: false,
+          aside: true,
+          disabled: false
+        })
+      })
+      arr.forEach(item => {
+        this.value.forEach(val => {
+          if (val === item.value) {
+            item.aside = false
+          }
+        })
+        this.checked.forEach(val => {
+          if (val === item.value) {
+            item.checked = true
+          }
+        })
+        this.disabled.forEach(val => {
+          if (val === item.value) {
+            item.disabled = true
+            item.checked = false
+          }
+        })
+      })
+      this.list = arr
+      this.list.length && this.calculate()
     },
-    createDescFunc (item, index) {
-      let desc = ''
-      if (this.inputValue < index + 1) { // wait
-        desc = item.desc || ''
-      } else if (this.inputValue === index + 1 && this.status !== 'error') { // active
-        desc = item.activeDesc || item.desc || ''
-        
-      } else if (this.inputValue > index + 1) { // success
-        desc = item.successDesc || item.desc || ''
-        
-      } else if (this.inputValue === index + 1 && this.status === 'error') { // error
-        desc = item.errorDesc || item.desc || ''
-        
-      }
-      return desc
+    calculate (event) {
+      let leftChecked = 0
+      let rightChecked = 0
+      let value = []
+      this.list.forEach(item => {
+        if (item.aside) {
+          if (item.checked) {
+            leftChecked++
+          }
+        } else {
+          if (item.checked) {
+            rightChecked++
+          }
+          value.push(item.value)
+        }
+      })
+      this.left.checkedSum = leftChecked
+      this.right.checkedSum = rightChecked
+      this.$emit('input', value)
+      event && this.$emit('change', value)
     },
-    defaultEvent (index) {
-      if (this.disabled) return
-      this.inputValue = index + 1
-      this.$emit('input', this.inputValue)
-      this.$emit('change', this.inputValue)
+    event (type) {
+      this.list.forEach(item => {
+        if (item.aside === type && item.checked && !item.disabled) {
+          item.checked = false
+          item.aside = !type
+        }
+      })
+      this.calculate(true)
+    },
+    allCheckboxChange (type, status) {
+      this.list.forEach(item => {
+        if (item.aside === type && !item.disabled) {
+          item.checked = status
+        }
+      })
+      this.calculate()
     }
   }
 }

@@ -1,14 +1,12 @@
 
 @import "~@/styles/const.scss";
 .xin-transfer {
-  display: inline-block;
-
   width: 520px;
   height: 320px;
-  padding: 10px;
   font-size: 0;
   overflow: hidden;
   box-sizing: border-box;
+  vertical-align: top;
   display: inline-block;
   &:hover {
     .xin-transfer-side {
