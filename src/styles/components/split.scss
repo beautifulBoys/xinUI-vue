@@ -1,0 +1,62 @@
+
+@import "~@/styles/const.scss";
+.xin-split {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  display: flex;
+  .xin-split-area {
+    &.flex {
+      flex: 1;
+    }
+  }
+  .xin-split-split {
+    user-select: none;
+    .xin-split-box {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      background: #f9f9f9;
+      display: flex;
+      .xin-split-split-line {
+        background: #ddd;
+      }
+    }
+  }
+  &.horizontal {
+    .xin-split-split {
+      width: 6px;
+      height: 100%;
+      .xin-split-box {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        flex-flow: column;
+        justify-content: center;
+        cursor: col-resize;
+        .xin-split-split-line {
+          width: 100%;
+          height: 1px;
+          margin: 1px 0;
+        }
+      }
+    }
+  }
+  &.vertical {
+    flex-flow: column;
+    .xin-split-split {
+      height: 6px;
+      width: 100%;
+      .xin-split-box {
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        justify-content: center;
+        cursor: row-resize;
+        .xin-split-split-line {
+          height: 100%;
+          width: 1px;
+          margin: 0 1px;
+        }
+      }
+    }
+  }
+}

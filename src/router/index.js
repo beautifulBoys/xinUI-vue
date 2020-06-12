@@ -22,6 +22,7 @@ import progress from '@/examples/progress'
 import tooltip from '@/examples/tooltip'
 import badge from '@/examples/badge'
 import transfer from '@/examples/transfer'
+import split from '@/examples/split'
 
 Vue.use(Router)
 
@@ -110,6 +111,10 @@ export default new Router({
     {
       path: '/transfer',
       component: transfer
+    },
+    {
+      path: '/split',
+      component: split
     }
   ]
 })
