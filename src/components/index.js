@@ -21,6 +21,7 @@ import transfer from './transfer'
 import split from './split'
 import loading from './loading'
 import tips from './tips'
+import tag from './tag'
 
 const lixinComponents = {
   input,
@@ -45,7 +46,8 @@ const lixinComponents = {
   transfer,
   split,
   loading,
-  tips
+  tips,
+  tag
 }
 
 function install (Vue) {
@@ -81,7 +83,8 @@ export {
   transfer,
   split,
   loading,
-  tips
+  tips,
+  tag
 }
 
 export const components = {

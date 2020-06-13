@@ -25,6 +25,7 @@ import transfer from '@/examples/transfer'
 import split from '@/examples/split'
 import loading from '@/examples/loading'
 import tips from '@/examples/tips'
+import tag from '@/examples/tag'
 
 Vue.use(Router)
 
@@ -125,6 +126,10 @@ export default new Router({
     {
       path: '/tips',
       component: tips
+    },
+    {
+      path: '/tag',
+      component: tag
     }
   ]
 })

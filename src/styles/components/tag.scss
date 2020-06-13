@@ -1,0 +1,74 @@
+
+@import "~@/styles/const.scss";
+.xin-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px;
+  vertical-align: middle;
+  &+& {
+    margin-left: $tag-margin-right;
+  }
+  .xin-iconfont {
+    width: $tag-line-height;
+    height: $tag-line-height;
+    line-height: $tag-line-height;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+  .xin-tag-content {
+    margin: 0 5px;
+    line-height: $tag-line-height;
+    font-size: $tag-font-size;
+    word-break: break-all;
+    vertical-align: top;
+    display: inline-block;
+  }
+  &.small {
+    padding: 0;
+    .xin-tag-content {
+      margin: 0 0 0 5px;
+    }
+  }
+  &.default {
+    background: transparentize($tag-default-color, 0.9);
+    color: $tag-default-color;
+    &.fill {
+      background: transparentize($tag-default-color, 0);
+      color: #fff;
+    }
+  }
+  &.success {
+    background: transparentize($tag-success-color, 0.9);
+    color: $tag-success-color;
+    &.fill {
+      background: transparentize($tag-success-color, 0);
+      color: #fff;
+    }
+  }
+  &.info {
+    background: transparentize($tag-info-color, 0.9);
+    color: $tag-info-color;
+    &.fill {
+      background: transparentize($tag-info-color, 0);
+      color: #fff;
+    }
+  }
+  &.warning {
+    background: transparentize($tag-warning-color, 0.9);
+    color: $tag-warning-color;
+    &.fill {
+      background: transparentize($tag-warning-color, 0);
+      color: #fff;
+    }
+  }
+  &.error {
+    background: transparentize($tag-error-color, 0.9);
+    color: $tag-error-color;
+    &.fill {
+      background: transparentize($tag-error-color, 0);
+      color: #fff;
+    }
+  }
+}
+
