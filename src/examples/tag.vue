@@ -56,7 +56,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "./index.scss";
-// .xin-tag {
-//   margin-bottom: 15px;
-// }
 </style>

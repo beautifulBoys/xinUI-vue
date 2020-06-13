@@ -22,6 +22,7 @@ import split from './split'
 import loading from './loading'
 import tips from './tips'
 import tag from './tag'
+import { row, col } from './grid'
 
 const lixinComponents = {
   input,
@@ -47,7 +48,9 @@ const lixinComponents = {
   split,
   loading,
   tips,
-  tag
+  tag,
+  row,
+  col
 }
 
 function install (Vue) {
@@ -84,7 +87,9 @@ export {
   split,
   loading,
   tips,
-  tag
+  tag,
+  row,
+  col
 }
 
 export const components = {

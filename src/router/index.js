@@ -26,6 +26,7 @@ import split from '@/examples/split'
 import loading from '@/examples/loading'
 import tips from '@/examples/tips'
 import tag from '@/examples/tag'
+import grid from '@/examples/grid'
 
 Vue.use(Router)
 
@@ -130,6 +131,10 @@ export default new Router({
     {
       path: '/tag',
       component: tag
+    },
+    {
+      path: '/grid',
+      component: grid
     }
   ]
 })
