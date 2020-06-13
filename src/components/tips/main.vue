@@ -46,6 +46,10 @@ export default {
       type: String,
       default: 'info'
     },
+    value: {
+      type: [String, Number, Boolean, Object],
+      default: ''
+    },
     fill: {
       type: Boolean,
       default: false
@@ -78,7 +82,7 @@ export default {
     afterLeaveEvent () {},
     close () {
       this.visible = false
-      this.$emit('close')
+      this.$emit('close', this.value || this.message)
     }
   }
 }
