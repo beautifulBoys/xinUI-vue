@@ -24,6 +24,7 @@ import badge from '@/examples/badge'
 import transfer from '@/examples/transfer'
 import split from '@/examples/split'
 import loading from '@/examples/loading'
+import tips from '@/examples/tips'
 
 Vue.use(Router)
 
@@ -120,6 +121,10 @@ export default new Router({
     {
       path: '/loading',
       component: loading
+    },
+    {
+      path: '/tips',
+      component: tips
     }
   ]
 })

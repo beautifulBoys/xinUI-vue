@@ -20,6 +20,8 @@ import badge from './badge'
 import transfer from './transfer'
 import split from './split'
 import loading from './loading'
+import tips from './tips'
+
 const lixinComponents = {
   input,
   label,
@@ -42,7 +44,8 @@ const lixinComponents = {
   badge,
   transfer,
   split,
-  loading
+  loading,
+  tips
 }
 
 function install (Vue) {
@@ -77,7 +80,8 @@ export {
   badge,
   transfer,
   split,
-  loading
+  loading,
+  tips
 }
 
 export const components = {

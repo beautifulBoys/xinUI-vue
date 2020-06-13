@@ -1,0 +1,68 @@
+
+@import "~@/styles/const.scss";
+.xin-tips {
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  &+& {
+    margin-top: $tips-margin-right;
+  }
+  .xin-tips-icon {
+    align-items: center;
+    display: flex;
+    .xin-iconfont {
+      width: $tips-line-height;
+      height: $tips-line-height;
+      line-height: $tips-line-height;
+      text-align: center;
+      &.close {
+        cursor: pointer;
+      }
+    }
+    .close-text {
+      line-height: $tips-line-height;
+      font-size: $tips-font-size;
+      cursor: pointer;
+    }
+  }
+  .xin-tips-content {
+    flex: 1;
+    margin: 0 10px;
+    line-height: $tips-line-height;
+    font-size: $tips-font-size;
+    word-break: break-all;
+  }
+  &.success {
+    background: transparentize($tips-success-color, 0.9);
+    color: $tips-success-color;
+    &.fill {
+      background: transparentize($tips-success-color, 0);
+      color: #fff;
+    }
+  }
+  &.info {
+    background: transparentize($tips-info-color, 0.9);
+    color: $tips-info-color;
+    &.fill {
+      background: transparentize($tips-info-color, 0);
+      color: #fff;
+    }
+  }
+  &.warning {
+    background: transparentize($tips-warning-color, 0.9);
+    color: $tips-warning-color;
+    &.fill {
+      background: transparentize($tips-warning-color, 0);
+      color: #fff;
+    }
+  }
+  &.error {
+    background: transparentize($tips-error-color, 0.9);
+    color: $tips-error-color;
+    &.fill {
+      background: transparentize($tips-error-color, 0);
+      color: #fff;
+    }
+  }
+}
+

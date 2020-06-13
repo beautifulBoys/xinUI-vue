@@ -91,3 +91,12 @@
   opacity: 0;
   transform: translate3d(-10px, 0, 0);
 }
+
+// tips
+// 透明度 and 下移
+.xin-tips-enter-active, .xin-tips-leave-active {
+  transition: all $tips-animate-time;
+}
+.xin-tips-enter, .xin-tips-leave-to {
+  opacity: 0;
+}
