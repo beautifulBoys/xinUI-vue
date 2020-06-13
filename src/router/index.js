@@ -23,6 +23,7 @@ import tooltip from '@/examples/tooltip'
 import badge from '@/examples/badge'
 import transfer from '@/examples/transfer'
 import split from '@/examples/split'
+import loading from '@/examples/loading'
 
 Vue.use(Router)
 
@@ -115,6 +116,10 @@ export default new Router({
     {
       path: '/split',
       component: split
+    },
+    {
+      path: '/loading',
+      component: loading
     }
   ]
 })
