@@ -60,34 +60,34 @@
   }
 }
 
-// tooltip
+// popover
 // 透明度 and 位移
-.xin-tooltip-enter-active, .xin-tooltip-leave-active {
-  transition: all $tooltip-animate-time;
+.xin-popover-enter-active, .xin-popover-leave-active {
+  transition: all $popover-animate-time;
 }
-.xin-tooltip-enter, .xin-tooltip-leave-to {
+.xin-popover-enter, .xin-popover-leave-to {
   opacity: 0;
 }
-.xin-tooltip-top-enter-active, .xin-tooltip-top-leave-active,
-.xin-tooltip-right-enter-active, .xin-tooltip-right-leave-active,
-.xin-tooltip-bottom-enter-active, .xin-tooltip-bottom-leave-active,
-.xin-tooltip-left-enter-active, .xin-tooltip-left-leave-active {
-  transition: all $tooltip-animate-time;
+.xin-popover-top-enter-active, .xin-popover-top-leave-active,
+.xin-popover-right-enter-active, .xin-popover-right-leave-active,
+.xin-popover-bottom-enter-active, .xin-popover-bottom-leave-active,
+.xin-popover-left-enter-active, .xin-popover-left-leave-active {
+  transition: all $popover-animate-time;
   transform: translate3d(0, 0, 0);
 }
-.xin-tooltip-top-enter, .xin-tooltip-top-leave-to {
+.xin-popover-top-enter, .xin-popover-top-leave-to {
   opacity: 0;
   transform: translate3d(0, -10px, 0);
 }
-.xin-tooltip-right-enter, .xin-tooltip-right-leave-to {
+.xin-popover-right-enter, .xin-popover-right-leave-to {
   opacity: 0;
   transform: translate3d(10px, 0, 0);
 }
-.xin-tooltip-bottom-enter, .xin-tooltip-bottom-leave-to {
+.xin-popover-bottom-enter, .xin-popover-bottom-leave-to {
   opacity: 0;
   transform: translate3d(0, 10px, 0);
 }
-.xin-tooltip-left-enter, .xin-tooltip-left-leave-to {
+.xin-popover-left-enter, .xin-popover-left-leave-to {
   opacity: 0;
   transform: translate3d(-10px, 0, 0);
 }

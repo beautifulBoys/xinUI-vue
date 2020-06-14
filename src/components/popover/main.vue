@@ -16,7 +16,7 @@
       v-show="visible && trigger === 'click'"
       @click="click(!visible, $event)"
     ></div>
-    <transition :name="animate ? 'xin-tooltip-' + position : 'xin-popover'">
+    <transition :name="animate ? 'xin-popover-' + position : 'xin-popover'">
       <div class="xin-popover-content" v-show="visible" v-if="!disabled">
         <div class="xin-popover-content-box">
           <div class="xin-popover-content-text-box">

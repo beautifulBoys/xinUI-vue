@@ -5,7 +5,7 @@
   display: inline-block;
   position: relative;
   &+& {
-    margin-left: $tooltip-margin-right;
+    margin-left: $popover-margin-right;
   }
   .xin-popover-cover {
     position: fixed;
@@ -25,10 +25,10 @@
       .xin-popover-content-text-box {
         position: absolute;
         .xin-popover-content-text {
-          font-size: $tooltip-font-size;
-          line-height: $tooltip-line-height;
+          font-size: $popover-font-size;
+          line-height: $popover-line-height;
           text-align: center;
-          padding: $tooltip-margin-right - 10px $tooltip-margin-right;
+          padding: $popover-margin-right - 10px $popover-margin-right;
           display: inline-block;
           position: relative;
           box-sizing: border-box;
@@ -44,38 +44,38 @@
           }
           &.white {
             background: #fff;
-            color: $tooltip-default-color;
-            box-shadow: 0 0 8px transparentize($tooltip-default-color, 0.4);
+            color: $popover-default-color;
+            box-shadow: 0 0 8px transparentize($popover-default-color, 0.4);
             &::before {
               background: #fff;
             }
           }
           &.info {
-            background: $tooltip-info-color;
+            background: $popover-info-color;
             color: #fff;
             &::before {
-              background: $tooltip-info-color;
+              background: $popover-info-color;
             }
           }
           &.success {
-            background: $tooltip-success-color;
+            background: $popover-success-color;
             color: #fff;
             &::before {
-              background: $tooltip-success-color;
+              background: $popover-success-color;
             }
           }
           &.warning {
-            background: $tooltip-warning-color;
+            background: $popover-warning-color;
             color: #fff;
             &::before {
-              background: $tooltip-warning-color;
+              background: $popover-warning-color;
             }
           }
           &.error {
-            background: $tooltip-error-color;
+            background: $popover-error-color;
             color: #fff;
             &::before {
-              background: $tooltip-error-color;
+              background: $popover-error-color;
             }
           }
           &::before {

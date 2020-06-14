@@ -5,7 +5,7 @@
     trigger="hover"
     minWidth="0"
     minHeight="20"
-    :color="color"
+    :color="color || 'dark'"
     :disabled="disabled"
     :animate="animate"
     :radius="radius"
@@ -29,7 +29,7 @@ export default {
     },
     color: { // dark, white, info, success, warning, error
       type: String,
-      default: 'white'
+      default: ''
     },
     disabled: {
       type: Boolean,
