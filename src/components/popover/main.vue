@@ -10,7 +10,7 @@
     @mouseout="toggle(false)"
     @click="click(!visible)"
   >
-    <slot name="refer"></slot>
+    <slot></slot>
     <div
       class="xin-popover-cover"
       v-show="visible && trigger === 'click'"
@@ -31,11 +31,11 @@
                 'error': color === 'error',
               }]"
               :style="{
-                'width': width.indexOf('px') > -1 ? width : width + 'px',
+                'min-width': minWidth.indexOf('px') > -1 ? minWidth : minWidth + 'px',
                 'min-height': minHeight.indexOf('px') > -1 ? minHeight : minHeight + 'px'
               }"
             >
-              <slot></slot>
+              <slot name="refer"></slot>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default {
       type: String,
       default: 'hover'
     },
-    width: {
+    minWidth: {
       type: String,
       default: '200'
     },

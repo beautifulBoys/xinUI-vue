@@ -1,35 +1,18 @@
 <template>
-  <div
-    :class="['xin-tooltip', {
-      'xin-tooltip-top': position === 'top',
-      'xin-tooltip-right': position === 'right',
-      'xin-tooltip-bottom': position === 'bottom',
-      'xin-tooltip-left': position === 'left'
-    }]"
-    @mouseover="toggle(true)"
-    @mouseout="toggle(false)"
+  <xin-popover
+    class="xin-tooltip"
+    :position="position"
+    trigger="hover"
+    minWidth="0"
+    minHeight="20"
+    :color="color"
+    :disabled="disabled"
+    :animate="animate"
+    :radius="radius"
   >
-    <transition :name="animate ? 'xin-tooltip-' + position : 'xin-tooltip'">
-      <div class="xin-tooltip-content" v-show="show">
-        <div class="xin-tooltip-content-box">
-          <div class="xin-tooltip-content-text-box">
-            <span
-              :class="['xin-tooltip-content-text', {
-                'radius': radius,
-                'dark': color === 'dark',
-                'white': color === 'white',
-                'info': color === 'info',
-                'success': color === 'success',
-                'warning': color === 'warning',
-                'error': color === 'error',
-              }]"
-            >{{content}}</span>
-          </div>
-        </div>
-      </div>
-    </transition>
+    <template slot="refer">{{content}}</template>
     <slot></slot>
-  </div>
+  </xin-popover>
 </template>
 
 <script>
@@ -46,7 +29,7 @@ export default {
     },
     color: { // dark, white, info, success, warning, error
       type: String,
-      default: 'dark'
+      default: 'white'
     },
     disabled: {
       type: Boolean,
