@@ -224,6 +224,11 @@ $tooltip-margin-right: $margin-right;
 $tooltip-animate-time: 0.3s;
 $tooltip-font-size: $font-size;
 $tooltip-line-height: $line-height;
+$tooltip-default-color: $color-gray;
+$tooltip-info-color: $color-blue;
+$tooltip-success-color: $color-green;
+$tooltip-warning-color: $color-yellow;
+$tooltip-error-color: $color-red;
 
 // badge
 $badge-margin-right: $margin-right;

@@ -1,29 +1,37 @@
 
 @import "~@/styles/const.scss";
 
-.xin-tooltip {
+.xin-popover {
   display: inline-block;
   position: relative;
   &+& {
     margin-left: $tooltip-margin-right;
   }
-  .xin-tooltip-content {
+  .xin-popover-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+  }
+  .xin-popover-content {
     position: absolute;
     width: 0;
     height: 0;
-    z-index: 1000;
-    .xin-tooltip-content-box {
+    z-index: 2000;
+    .xin-popover-content-box {
       position: relative;
-      .xin-tooltip-content-text-box {
+      .xin-popover-content-text-box {
         position: absolute;
-        .xin-tooltip-content-text {
+        .xin-popover-content-text {
           font-size: $tooltip-font-size;
           line-height: $tooltip-line-height;
           text-align: center;
-          padding: 0 $tooltip-margin-right;
+          padding: $tooltip-margin-right - 10px $tooltip-margin-right;
           display: inline-block;
-          white-space: nowrap;
           position: relative;
+          box-sizing: border-box;
           &.radius {
             border-radius: 5px;
           }
@@ -80,15 +88,16 @@
       }
     }
   }
-  &.xin-tooltip-top {
-    .xin-tooltip-content {
+  &.xin-popover-top {
+    .xin-popover-content {
       left: 50%;
       top: 0;
-      .xin-tooltip-content-text-box {
-        bottom: 10px;
+      .xin-popover-content-text-box {
+        bottom: 0;
         left: 0;
+        padding-bottom: 10px;
         transform: translateX(-50%);
-        .xin-tooltip-content-text {
+        .xin-popover-content-text {
           &::before {
             bottom: -5px;
             left: 50%;
@@ -98,15 +107,16 @@
       }
     }
   }
-  &.xin-tooltip-right {
-    .xin-tooltip-content {
+  &.xin-popover-right {
+    .xin-popover-content {
       left: 100%;
       top: 50%;  
-      .xin-tooltip-content-text-box {
+      .xin-popover-content-text-box {
         top: 0;
-        left: 10px;
+        left: 0;
+        padding-left: 10px;
         transform: translateY(-50%);
-        .xin-tooltip-content-text {
+        .xin-popover-content-text {
           &::before {
             left: -5px;
             top: 50%;
@@ -116,15 +126,16 @@
       }
     }
   }
-  &.xin-tooltip-bottom {
-    .xin-tooltip-content {
+  &.xin-popover-bottom {
+    .xin-popover-content {
       left: 50%;
       bottom: 0;
-      .xin-tooltip-content-text-box {
-        top: 10px;
+      .xin-popover-content-text-box {
+        top: 0;
         left: 0;
+        padding-top: 10px;
         transform: translateX(-50%);
-        .xin-tooltip-content-text {
+        .xin-popover-content-text {
           &::before {
             left: 50%;
             top: -5px;
@@ -134,15 +145,16 @@
       }
     }
   }
-  &.xin-tooltip-left {
-    .xin-tooltip-content {
+  &.xin-popover-left {
+    .xin-popover-content {
       left: 0;
       top: 50%;
-      .xin-tooltip-content-text-box {
+      .xin-popover-content-text-box {
         top: 0;
-        right: 10px;
+        right: 0;
+        padding-right: 10px;
         transform: translateY(-50%);
-        .xin-tooltip-content-text {
+        .xin-popover-content-text {
           &::before {
             right: -5px;
             top: 50%;

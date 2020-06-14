@@ -54,7 +54,7 @@ export default {
         {name: 'Upload 上传', url: '/upload'},
         {name: 'ColorPicker 颜色选择器', url: '/colorPicker'},
         {name: 'Tips 提示条', url: '/tips'},
-        {name: 'Popover 气泡提示', url: '/upload'},
+        {name: 'Popover 气泡提示', url: '/popover'},
         {name: 'Tag 标签', url: '/tag'},
         {name: 'Grid 栅格', url: '/grid'},
         {name: 'Icon 图标', url: '/icon'}

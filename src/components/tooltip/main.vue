@@ -13,7 +13,17 @@
       <div class="xin-tooltip-content" v-show="show">
         <div class="xin-tooltip-content-box">
           <div class="xin-tooltip-content-text-box">
-            <span :class="['xin-tooltip-content-text', {radius: radius}]">{{content}}</span>
+            <span
+              :class="['xin-tooltip-content-text', {
+                'radius': radius,
+                'dark': color === 'dark',
+                'white': color === 'white',
+                'info': color === 'info',
+                'success': color === 'success',
+                'warning': color === 'warning',
+                'error': color === 'error',
+              }]"
+            >{{content}}</span>
           </div>
         </div>
       </div>
@@ -33,6 +43,10 @@ export default {
     content: {
       type: String,
       default: ''
+    },
+    color: { // dark, white, info, success, warning, error
+      type: String,
+      default: 'dark'
     },
     disabled: {
       type: Boolean,

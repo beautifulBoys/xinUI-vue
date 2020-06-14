@@ -27,6 +27,7 @@ import loading from '@/examples/loading'
 import tips from '@/examples/tips'
 import tag from '@/examples/tag'
 import grid from '@/examples/grid'
+import popover from '@/examples/popover'
 
 Vue.use(Router)
 
@@ -135,6 +136,10 @@ export default new Router({
     {
       path: '/grid',
       component: grid
+    },
+    {
+      path: '/popover',
+      component: popover
     }
   ]
 })
