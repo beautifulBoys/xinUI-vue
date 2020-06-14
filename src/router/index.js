@@ -28,6 +28,7 @@ import tips from '@/examples/tips'
 import tag from '@/examples/tag'
 import grid from '@/examples/grid'
 import popover from '@/examples/popover'
+import icon from '@/examples/icon'
 
 Vue.use(Router)
 
@@ -140,6 +141,10 @@ export default new Router({
     {
       path: '/popover',
       component: popover
+    },
+    {
+      path: '/icon',
+      component: icon
     }
   ]
 })

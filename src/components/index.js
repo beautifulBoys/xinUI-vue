@@ -24,6 +24,7 @@ import tips from './tips'
 import tag from './tag'
 import { row, col } from './grid'
 import popover from './popover'
+import icon from './icon'
 
 const lixinComponents = {
   input,
@@ -52,7 +53,8 @@ const lixinComponents = {
   tag,
   row,
   col,
-  popover
+  popover,
+  icon
 }
 
 function install (Vue) {
@@ -92,7 +94,8 @@ export {
   tag,
   row,
   col,
-  popover
+  popover,
+  icon
 }
 
 export const components = {
