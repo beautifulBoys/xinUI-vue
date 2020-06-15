@@ -5,12 +5,15 @@
     </div>
     <div class="line">
       <div
-        class="area"
+        :class="['area', {copy: copyStatus}]"
         v-for="(item, index) in list"
         :key="index"
-        :data-clipboard-text="item.name"
-        @click="copy()"
+        ref="image"
+        :data-clipboard-text="getTagString(item.name)"
+        @click="copyStatus = true"
+        @mouseout="copyStatus = false"
       >
+        <div class="cover">{{copyStatus ? '已复制' : '点击复制标签'}}</div>
         <xin-icon class="icon" :name="item.name"/>
         <div class="name">{{item.name}}</div>
       </div>
@@ -19,20 +22,25 @@
 </template>
 
 <script>
+import Clipboard from 'clipboard'
 import iconList from './iconfont-list'
 export default {
   components: {
   },
   data () {
     return {
-      list: iconList
+      list: iconList,
+      copyStatus: false
     }
   },
   mounted () {
+    this.$refs.image.forEach(item => {
+      new Clipboard(item)
+    })
   },
   methods: {
-    copy () {
-      this.$message.success('复制成功')
+    getTagString (name) {
+      return `<xin-icon name="${name}"/>`
     }
   }
 }
@@ -47,10 +55,42 @@ export default {
   box-sizing: border-box;
   margin: 10px;
   border: 1px dashed #ccc;
+  border-radius: 5px;
+  vertical-align: top;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    border: 1px solid $color-blue;
+    .cover {
+      left: 0;
+      top: 0;
+    }
+    &.copy {
+      border: 1px solid $color-green;
+      .cover {
+        color: $color-green;
+      }
+    }
+  }
+  .cover {
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: $color-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+  }
   .icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto;
     font-size: 30px;
     display: flex;
@@ -61,12 +101,8 @@ export default {
   .name {
     text-align: center;
     font-size: 12px;
-  }
-  &:hover {
-    border: 1px solid #aaa;
-    .icon {
-      font-size: 40px;
-    }
+    word-break: break-all;
+    padding: 0 10px;
   }
 }
 </style>
