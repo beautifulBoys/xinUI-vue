@@ -1,11 +1,9 @@
 <template>
   <div
     :class="['xin-option', {
-      'selected': true
+      'selected': isSelected
     }]"
-    v-for="(item, index) in list"
-    :key="index"
-    @click.stop="optionEvent(item)"
+    @click.stop="optionEvent()"
   >{{item[itemLabel]}}</div>
 </template>
 
@@ -16,40 +14,50 @@ export default {
   },
   props: {
     value: {
-      type: [String, Number, Boolean],
+      type: [String, Number, Boolean, Array],
       default: ''
     },
-    list: {
-      type: Array,
-      default: () => []
+    item: {
+      type: Object,
+      default: () => ({})
     },
-    label: {
+    itemValue: {
       type: String,
-      default: 'auto'
+      default: ''
+    },
+    itemLabel: {
+      type: String,
+      default: ''
+    },
+    multiple: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
+      inputValue: this.value
+    }
+  },
+  computed: {
+    isSelected () {
+      if (this.multiple) {
+        return this.inputValue.indexOf(this.item[this.itemValue]) > -1
+      } else {
+        return this.inputValue === this.item[this.itemValue]
+      }
     }
   },
   watch: {
+    value (n) {
+      this.inputValue = n
+    }
   },
   created () {
   },
   methods: {
-    selectEvent () {
-      this.visible = true
-    },
-    coverEvent () {
-      this.visible = false
-    },
-    optionEvent (item) {
-      if (this.multiple) {
-        this.$emit('input', [...this.inputValue, item[this.itemValue]])
-      } else {
-        this.$emit('input', item[this.itemValue])
-        this.coverEvent()
-      }
+    optionEvent () {
+      this.$emit('option-event', this.isSelected)
     }
   }
 }

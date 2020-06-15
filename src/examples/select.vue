@@ -8,6 +8,7 @@
       <xin-label width="60">多选</xin-label>
       <xin-select :list="list" multiple itemValue="id" itemLabel="name" v-model="val1" placeholder="请多选"></xin-select>
     </div>
+    <xin-button @click="val1 = [6]">sfdsfsd</xin-button>
     <!-- <div class="line">
       <xin-label width="60">禁用</xin-label>
       <xin-select :list="list" itemValue="id" disabled itemLabel="name" v-model="val2"></xin-select>
@@ -33,7 +34,7 @@ export default {
         { id: 5, name: '西安大学' },
         { id: 6, name: '东北大学' }
       ],
-      val: 1,
+      val: 2,
       val1: [4, 2],
       val2: 3,
       val3: 4
