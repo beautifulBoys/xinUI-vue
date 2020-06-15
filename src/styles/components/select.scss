@@ -1,190 +1,54 @@
 
 @import "~@/styles/const.scss";
 .xin-select {
-  margin-right: $radio-margin-right;
   display: inline-block;
   position: relative;
   width: $select-width;
   transition: all 0.3s;
   vertical-align: middle;
-  .el-input.el-input--suffix {
-    &.is-focus {
-      .el-input__inner {
-        border: 1px solid $select-border-color;
-        box-shadow: 0 0 8px transparentize($select-active-color, 0.3);
-      }
-      .el-input__suffix {
-        .el-input__suffix-inner {
-          .el-select__caret {
-            &::before {
-              transform: rotate(180deg);
-            }
-          }
-        }
-      }
-    }
-    &.is-disabled {
-      .el-input__inner {
-        cursor: not-allowed;
-        border: 1px solid $select-disabled-color;
-        box-shadow: none;
-        background: $select-tag-background;
-        color: $select-disabled-color - #111111;
-        &:hover {
-          border: 1px solid $select-disabled-color;
-        }
-      }
-      .el-input__suffix {
-        color: $select-disabled-color;
-      }
-    }
-    .el-input__inner {
-      outline: none;
-      width: 100%;
-      height: $select-line-height;
-      border: 1px solid $select-border-color;
-      border-radius: 0;
-      line-height: $select-line-height;
-      box-sizing: border-box;
-      padding: 0 $select-padding-right;
-      cursor: pointer;
-      font-size: $select-font-size;
-      transition: all $select-animate-time;
-      background: transparentize($select-border-color, 0.9);
-      &::-webkit-input-placeholder {
-        font-size: $select-font-size;
-        color: $select-disabled-color;
-      }
-      &:hover {
-        border: 1px solid $select-active-color;
-      }
-    }
-    .el-input__suffix {
-      position: absolute;
-      height: 100%;
-      right: 10px;
-      top: 0;
-      z-index: 1;
-      text-align: center;
-      color: $select-default-color;
-      transition: all 0.3s;
-      .el-input__suffix-inner {
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        display: block;
-        cursor: pointer;
-        .el-select__caret {
-          width: 100%;
-          height: 100%;
-          display: block;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          &.el-icon-arrow-up::before {
-            content: "\e685";
-          }
-          &.el-icon-circle-close::before {
-            content: "\e687";
-            color: $select-active-color;
-          }
-          &::before {
-            font-size: $select-font-size;
-            line-height: $select-line-height;
-            display: block;
-            transition: all $select-animate-time;
-            font-family: "xin-iconfont" !important;
-            font-size: 14px;
-            font-style: normal;
-            -webkit-font-smoothing: antialiased;
-            -webkit-text-stroke-width: 0.2px;
-            -moz-osx-font-smoothing: grayscale;
-          }
-        }
-      }
-    }
+  position: relative;
+  & + & {
+    margin-left: $radio-margin-right;
   }
-  .el-select__tags {
+  .xin-select-input {
+    
+  }
+  .xin-select-cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  .xin-select-options {
     position: absolute;
-    line-height: normal;
-    white-space: normal;
-    z-index: 1;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    overflow: hidden;
-    .el-tag {
-      background-color: $select-tag-background;
-      color: $select-default-color;
-      box-sizing: border-box;
-      margin: 2px 0 2px 6px;
-      height: $select-tag-line-height;
-      display: inline-block;
-      padding: 0 5px 0 7px;
-      &:hover {
-        color: #fff;
-        background-color: $select-default-color;
-        .el-tag__close {
-          &::before {
-            color: #fff;
-          }
-        }
-      }
-      .el-select__tags-text {
-        font-size: $select-font-size;
-      }
-      .el-tag__close {
-        width: 14px;
-        margin-left: 2px;
-        display: inline-block;
-        cursor: pointer;
-        &::before {
-          content: "\e687";
-          font-size: $select-font-size;
-          color: $select-default-color;
-          line-height: $select-tag-line-height;
-          display: block;
-          transition: all $select-animate-time;
-          font-family:"xin-iconfont" !important;
-          font-size:14px;
-          font-style:normal;
-          border-radius: 100%;
-          -webkit-font-smoothing: antialiased;
-          -webkit-text-stroke-width: 0.2px;
-          -moz-osx-font-smoothing: grayscale;
-        }
-      }
-    }
-  }
-  .el-select-dropdown {
-    .el-scrollbar {
-      .el-select-dropdown__wrap {
+    top: 30px;
+    left: 0;
+    padding-top: 5px;
+    min-width: 100%;
+    z-index: 2000;
+    .xin-options-ul {
+      padding: 0;
+      list-style-type: none;
+      background: #fff;
+      box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
+      .xin-option {
+        list-style-type: none;
+        font-size: $option-font-size;
+        padding: 0 $option-padding-right;
+        box-sizing: border-box;
         width: 100%;
-        .el-select-dropdown__list {
-          width: 100%;
-          padding: 5px 0;
-          background: #fff;
-          margin-top: 5px;
-          box-sizing: border-box;
-          box-shadow: 0 0 8px transparentize($option-default-color, 0.3);
-          .el-select-dropdown__item {
-            list-style-type: none;
-            font-size: $option-font-size;
-            padding: 0 $option-padding-right;
-            box-sizing: border-box;
-            width: 100%;
-            line-height: $option-line-height;
-            cursor: pointer;
-            &.hover {
-              background: transparentize($option-active-color, 0.8);
-            }
-            &.selected {
-              color: #fff;
-              background: transparentize($option-active-color, 0);
-            }
-          }
+        line-height: $option-line-height;
+        white-space: nowrap;
+        cursor: pointer;
+        &:hover {
+          background: transparentize($option-active-color, 0.8);
+        }
+        &.selected {
+          color: #fff;
+          background: transparentize($option-active-color, 0);
         }
       }
     }

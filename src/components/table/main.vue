@@ -9,6 +9,7 @@
             <xin-checkbox
               v-model="checkboxAllValue"
               hideLabel
+              white
               @change="checkboxAllChange($event)"
             ></xin-checkbox>
           </th>

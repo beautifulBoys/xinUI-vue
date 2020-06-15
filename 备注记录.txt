@@ -1,6 +1,6 @@
 
 
-# z-index
+# z-index 定义
 # dialog
 cover: 3000
 pop: 4000
@@ -20,7 +20,9 @@ cover: 1000
 pop: 2000
 
 
+#  颜色定义
 
+背景色，边框色，浅色
 
 
 

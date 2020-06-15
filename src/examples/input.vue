@@ -9,6 +9,12 @@
       <xin-input type="text" round v-model="val1"></xin-input>
     </div>
     <div class="line">
+      <xin-label width="80">图标</xin-label>
+      <xin-input type="text" leftIcon="iconshijian" v-model="val1"></xin-input>
+      <xin-input type="text" rightIcon="iconGroup-6" v-model="val1"></xin-input>
+      <xin-input type="text" leftIcon="iconshijian" rightIcon="iconGroup-6" v-model="val1"></xin-input>
+    </div>
+    <div class="line">
       <xin-label width="80">禁用</xin-label>
       <xin-input type="text" disabled v-model="val2"></xin-input>
     </div>

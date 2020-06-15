@@ -7,18 +7,15 @@
     <div class="line">
       <xin-label width="60">多选</xin-label>
       <xin-select :list="list" multiple itemValue="id" itemLabel="name" v-model="val1" placeholder="请多选"></xin-select>
-      <xin-label width="60">多选</xin-label>
-      <xin-input placeholder="请多选"></xin-input>
-
     </div>
-    <div class="line">
+    <!-- <div class="line">
       <xin-label width="60">禁用</xin-label>
       <xin-select :list="list" itemValue="id" disabled itemLabel="name" v-model="val2"></xin-select>
     </div>
     <div class="line">
       <xin-label width="60">单选清空</xin-label>
       <xin-select :list="list" itemValue="id" clearable itemLabel="name" v-model="val3"></xin-select>
-    </div>
+    </div> -->
   </div>
 </template>
 

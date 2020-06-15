@@ -1,36 +1,38 @@
 <template>
-  <Select
-    class="xin-select"
-    :style="{
-      width: width.indexOf('px') > -1 ? width : width + 'px'
-    }"
-    v-bind="$attrs"
-    v-on="$listeners"
-    v-model="inputValue"
-    :popper-append-to-body="popperAppendToBody"
-  >
-    <Option
-      class="ise-option"
-      v-for="(item, index) in list"
-      :key="index"
-      :value="itemValue ? item[itemValue] : item"
-      :label="itemLabel ? item[itemLabel] : item"
-    >
-      {{itemLabel ? item[itemLabel] : item}}
-    </Option>
-  </Select>
+  <div class="xin-select" @click="selectEvent()">
+    <xin-input
+      rightIcon="iconGroup-6"
+    ></xin-input>
+    <div
+      class="xin-select-cover"
+      v-show="visible"
+      @click.stop="coverEvent()"
+    ></div>
+    <div class="xin-select-options" v-show="visible">
+      <ul class="xin-options-ul">
+        <li
+          :class="['xin-option', {
+            'selected': multiple ? inputValue.indexOf(item[itemValue]) : (inputValue === item[itemValue])
+          }]"
+          v-for="(item, index) in list"
+          :key="index"
+          @click.stop="optionEvent(item)"
+        >{{item[itemLabel]}}</li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
-import { Select, Option } from 'element-ui'
 export default {
   name: 'xinSelect',
   components: {
-    Select,
-    Option
   },
   props: {
-    value: null,
+    value: {
+      type: [String, Number, Array],
+      default: ''
+    },
     list: {
       type: Array,
       default: () => []
@@ -47,13 +49,14 @@ export default {
       type: String,
       default: ''
     },
-    popperAppendToBody: {
+    multiple: {
       type: Boolean,
       default: false
-    },
+    }
   },
   data () {
     return {
+      visible: false,
       inputValue: this.value
     }
   },
@@ -62,9 +65,30 @@ export default {
       this.inputValue = n
     }
   },
-  mounted () {
+  created () {
+    if (this.multiple && !Array.isArray(this.inputValue)) {
+      if (this.inputValue) {
+        this.$emit('input', [this.inputValue])
+      } else {
+        this.$emit('input', [])
+      }
+    }
   },
   methods: {
+    selectEvent () {
+      this.visible = true
+    },
+    coverEvent () {
+      this.visible = false
+    },
+    optionEvent (item) {
+      if (this.multiple) {
+        this.$emit('input', [...this.inputValue, item[this.itemValue]])
+      } else {
+        this.$emit('input', item[this.itemValue])
+        this.coverEvent()
+      }
+    }
   }
 }
 </script>

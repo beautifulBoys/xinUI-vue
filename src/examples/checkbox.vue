@@ -16,6 +16,10 @@
       <xin-checkbox :label="5" v-model="val" disabled>西安大学</xin-checkbox>
       <xin-checkbox :label="6" v-model="val" disabled>东北大学</xin-checkbox>
     </div>
+    <div class="line" style="background: #0095ff">
+      <xin-checkbox :label="1" v-model="val" white>清华大学</xin-checkbox>
+      <xin-checkbox :label="2" v-model="val" white>北京大学</xin-checkbox>
+    </div>
   </div>
 </template>
 
