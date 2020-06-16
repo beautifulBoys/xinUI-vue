@@ -1,14 +1,17 @@
 
 @import "~@/styles/const.scss";
 .xin-switch {
-  margin-right: $switch-space-width;
   display: inline-block;
   min-width: $switch-min-width;
   height: $switch-line-height;
   padding: $switch-border-width;
   box-sizing: border-box;
   vertical-align: middle;
-  background: $switch-background-color;
+  background: $switch-default-color;
+  user-select: none;
+  & + & {
+    margin-left: $switch-space-width;
+  }
   cursor: pointer;
   .xin-switch-box {
     width: 100%;
@@ -31,18 +34,18 @@
       display: inline-block;
       overflow: hidden;
       &.left {
-        display: inline-block;
-        padding-right: $switch-border-width;
+        display: none;
       }
       &.right {
-        display: none;
+        display: inline-block;
+        padding-left: $switch-border-width;
       }
     }
   }
   
-  &.xin-switch-active {
-    &.default {
-      background: $switch-default-color;
+  &.active {
+    &.info {
+      background: $switch-info-color;
     }
     &.success {
       background: $switch-success-color;
@@ -59,17 +62,17 @@
       }
       .xin-switch-label {
         &.left {
-          display: none;
+          display: inline-block;
+          padding-right: $switch-border-width;
         }
         &.right {
           flex: 1;
-          display: inline-block;
-          padding-left: $switch-border-width;
+          display: none;
         }
       }
     }
   }
-  &.xin-switch-disabled {
+  &.disabled {
     opacity: 0.4;
     cursor: not-allowed;
     pointer-events: none;

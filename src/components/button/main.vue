@@ -6,34 +6,33 @@
       'round': round,
       'disabled': disabled
     }]"
-    v-on="$listeners"
-    v-bind="$attrs"
+    @click="clickEvent($event)"
     :disabled="disabled"
   >
-    <!-- <i class="xin-iconfont" v-if="icon && iconMap[icon]" v-html="iconMap[icon]"></i> -->
+    <xin-icon :name="icon" v-if="icon" />
     <slot></slot>
   </button>
 </template>
 
 <script>
+import xinIcon from '../icon'
 export default {
   name: 'xinButton',
+  components: {
+    'xin-icon': xinIcon
+  },
   props: {
     color: { // default, info, success, warning, error
       type: String,
       default: 'default'
     },
-    // size: { // small, big
-    //   type: String,
-    //   default: 'normal'
-    // },
-    // icon: { // more, time, smile, play, info, cry, help, compass, setting, error, success
-    //   type: String,
-    //   default: ''
-    // },
+    icon: {
+      type: String,
+      default: ''
+    },
     width: {
       type: String,
-      default: null
+      default: ''
     },
     round: {
       type: Boolean,
@@ -72,6 +71,10 @@ export default {
   mounted () {
   },
   methods: {
+    clickEvent (e) {
+      if (this.disabled) return
+      this.$emit('click', e)
+    }
   }
 }
 </script>

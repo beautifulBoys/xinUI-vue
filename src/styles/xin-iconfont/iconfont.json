@@ -2,9 +2,16 @@
   "id": "1855680",
   "name": "xinUI-vue",
   "font_family": "xin-iconfont",
-  "css_prefix_text": "icon",
+  "css_prefix_text": "",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "1278349",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
     {
       "icon_id": "7588136",
       "name": "删除",

@@ -1,10 +1,12 @@
 <template>
   <label
     :class="['xin-radio', {
-      'xin-radio-selected': inputValue === label,
-      'xin-radio-disabled': disabled
+      'info': !white,
+      'white': white,
+      'selected': inputValue === label,
+      'disabled': disabled
     }]"
-    @click="defaultEvent"
+    @click="defaultEvent()"
   >
     <div class="xin-radio-icon"></div>
     <div class="xin-radio-label">
@@ -23,6 +25,10 @@ export default {
     },
     label: {
       type: [Number, String, Boolean],
+      default: false
+    },
+    white: {
+      type: Boolean,
       default: false
     },
     disabled: {
@@ -44,6 +50,7 @@ export default {
   },
   methods: {
     defaultEvent (e) {
+      if (this.disabled) return
       this.inputValue = this.label
       this.$emit('input', this.inputValue)
       this.$emit('change', this.inputValue)

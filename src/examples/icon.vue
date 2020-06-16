@@ -9,13 +9,13 @@
         v-for="(item, index) in list"
         :key="index"
         ref="image"
-        :data-clipboard-text="getTagString(item.name)"
+        :data-clipboard-text="getTagString(item.font_class)"
         @click="copyStatus = true"
         @mouseout="copyStatus = false"
       >
         <div class="cover">{{copyStatus ? '已复制' : '点击复制标签'}}</div>
-        <xin-icon class="icon" :name="item.name"/>
-        <div class="name">{{item.name}}</div>
+        <xin-icon class="icon" :name="item.font_class"/>
+        <div class="name">{{item.font_class}}</div>
       </div>
     </div>
   </div>
@@ -23,13 +23,14 @@
 
 <script>
 import Clipboard from 'clipboard'
-import iconList from './iconfont-list'
+import iconJson from '../styles/xin-iconfont/iconfont.json'
+console.log(iconJson)
 export default {
   components: {
   },
   data () {
     return {
-      list: iconList,
+      list: iconJson.glyphs,
       copyStatus: false
     }
   },

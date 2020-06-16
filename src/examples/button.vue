@@ -34,19 +34,21 @@
     </div>
     <div class="line">
       <xin-label width="60">禁用按钮</xin-label>
-      <xin-button color="default" disabled @click="event($event)">默认按钮</xin-button>
-      <xin-button color="info" disabled @click="event($event)">信息按钮</xin-button>
-      <xin-button color="success" disabled @click="event($event)">成功按钮</xin-button>
-      <xin-button color="error" disabled @click="event($event)">错误按钮</xin-button>
-      <xin-button color="warning" disabled @click="event($event)">警告按钮</xin-button>
+      <xin-button color="default" inline disabled @click="event($event)">默认按钮</xin-button>
+      <xin-button color="success" inline disabled @click="event($event)">成功按钮</xin-button>
+      <xin-button color="default" fill disabled @click="event($event)">信息按钮</xin-button>
+      <xin-button color="success" fill disabled @click="event($event)">成功按钮</xin-button>
+      <xin-button color="default" disabled @click="event($event)">错误按钮</xin-button>
+      <xin-button color="success" disabled @click="event($event)">警告按钮</xin-button>
     </div>
     <div class="line">
       <xin-label width="60">图标按钮</xin-label>
-      <xin-button color="default" icon="success" @click="event($event)">默认按钮</xin-button>
-      <xin-button color="info" icon="success" @click="event($event)">信息按钮</xin-button>
-      <xin-button color="success" icon="success" @click="event($event)">成功按钮</xin-button>
-      <xin-button color="error" icon="success" @click="event($event)">错误按钮</xin-button>
-      <xin-button color="warning" icon="success" @click="event($event)">警告按钮</xin-button>
+      <xin-button color="default" icon="smile" @click="event($event)">默认按钮</xin-button>
+      <xin-button color="info" icon="setting" @click="event($event)">信息按钮</xin-button>
+      <xin-button color="success" fill icon="baocun" @click="event($event)">成功按钮</xin-button>
+      <xin-button color="error" fill icon="Group-8" @click="event($event)">错误按钮</xin-button>
+      <xin-button color="warning" inline icon="cry" @click="event($event)">警告按钮</xin-button>
+      <xin-button color="info" inline icon="more" @click="event($event)">警告按钮</xin-button>
     </div>
   </div>
 </template>

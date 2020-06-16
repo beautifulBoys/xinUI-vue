@@ -1,3 +1,17 @@
 
 @import "~@/styles/const.scss";
 
+.xin-iconfont {
+  &.loading {
+    animation: icon-loading-animate 2s linear infinite;
+  }
+  // progress
+  @keyframes icon-loading-animate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

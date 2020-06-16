@@ -20,9 +20,9 @@
           <td>{{props.item.text}}</td>
           <td>{{props.item.text}}</td>
           <td>
-            <!-- <xin-button color="info" fill>编辑</xin-button>
-            <xin-button color="success" fill>新增</xin-button> -->
-            <xin-button color="error" fill>删除</xin-button>
+            <!-- <xin-button color="info" fill>编辑</xin-button> -->
+            <xin-button color="success" inline>新增</xin-button>
+            <xin-button color="error" inline>删除</xin-button>
           </td>
         </template>
       </xin-table>

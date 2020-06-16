@@ -7,10 +7,10 @@ $space-width: 15px;
 $common-width: 200px;
 
 // 颜色
-$color-gray: #8a8d92;
+$color-gray: #65676b;
 $color-blue: #0095ff;
 $color-green: #15bf81;
-$color-yellow: #ffba5a;
+$color-yellow: #f7ab42;
 $color-red: #ff6666;
 $font-color: $color-gray - #555555;
 $border-color: $color-gray + #333333;
@@ -60,8 +60,8 @@ $radio-icon-width: 15px;
 $radio-icon-margin-right: 5px;
 $radio-line-height: $line-height;
 $radio-default-color: $color-gray;
-$radio-active-color: $color-blue;
-$radio-disabled-color: $color-gray;
+$radio-info-color: $color-blue;
+$radio-disabled-color: $color-gray + #777777;
 
 // checkbox
 $checkbox-font-size: $font-size;
@@ -98,10 +98,10 @@ $switch-space-width: $space-width;
 $switch-line-height: $line-height;
 $switch-min-width: 60px;
 $switch-font-size: $font-size;
-$switch-animate-time: 0.3s;
+$switch-animate-time: $common-animate-time;
 $switch-border-width: 5px;
-$switch-background-color: $color-gray;
-$switch-default-color: $color-blue;
+$switch-default-color: $color-gray;
+$switch-info-color: $color-blue;
 $switch-success-color: $color-green;
 $switch-error-color: $color-red;
 $switch-warning-color: $color-yellow;
@@ -138,7 +138,7 @@ $datePicker-warning-color: $color-yellow;
 $table-font-size: $font-size;
 $table-line-height: $line-height;
 $table-default-color: $color-gray;
-$table-active-color: $color-blue;
+$table-info-color: $color-blue;
 $table-success-color: $color-green;
 $table-error-color: $color-red;
 $table-warning-color: $color-yellow;

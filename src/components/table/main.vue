@@ -65,6 +65,10 @@ export default {
       type: Array,
       default: () => []
     },
+    color: {
+      type: String,
+      default: 'info'
+    },
     itemValue: {
       type: String,
       default: 'value'

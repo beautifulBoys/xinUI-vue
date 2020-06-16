@@ -31,10 +31,10 @@
     </div>
     <div class="line">
       <xin-label width="80">禁用</xin-label>
-      <xin-switch v-model="val6" disabled></xin-switch>
-      <xin-switch v-model="val6" disabled color="success"></xin-switch>
-      <xin-switch v-model="val6" disabled color="error"></xin-switch>
-      <xin-switch v-model="val6" disabled color="warning"></xin-switch>
+      <xin-switch v-model="val1" disabled></xin-switch>
+      <xin-switch v-model="val1" disabled color="success"></xin-switch>
+      <xin-switch v-model="val1" disabled color="error"></xin-switch>
+      <xin-switch v-model="val1" disabled color="warning"></xin-switch>
     </div>
   </div>
 </template>
@@ -58,6 +58,7 @@ export default {
   },
   methods: {
     changeEvent (v) {
+      this.$message.info(String(v))
       console.log('change事件', v)
     }
   }

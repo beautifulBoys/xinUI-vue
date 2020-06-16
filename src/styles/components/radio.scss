@@ -3,14 +3,16 @@
 
 .xin-radio {
   display: inline-block;
-  margin-right: $radio-space-width;
   cursor: pointer;
   transition: all 0.3s;
+  & + & {
+    margin-left: $radio-space-width;
+  }
   .xin-radio-icon {
     display: inline-block;
     height: $radio-icon-width;
     width: $radio-icon-width;
-    border: 1px solid $radio-default-color;
+    border-style: solid;
     border-radius: 100%;
     vertical-align: middle;
     margin-right: $radio-icon-margin-right;
@@ -23,26 +25,61 @@
     line-height: $radio-line-height;
     height: $radio-line-height;
     vertical-align: middle;
-    color: $radio-default-color;
   }
-  &.xin-radio-selected {
-    .xin-radio-icon {
-      border: 5px solid $radio-active-color;
-      box-shadow: 0 0 8px transparentize($radio-active-color, 0.3);
-    }
-    .xin-radio-label {
-      color: $radio-active-color;
-    }
-  }
-  &.xin-radio-disabled {
+  &.disabled {
     cursor: not-allowed;
-    pointer-events: none;
+  }
+  &.info {
     .xin-radio-icon {
-      border-color: $radio-default-color + #333333;
-      box-shadow: none;
+      border-width: 1px;
+      border-color: $radio-default-color;
     }
     .xin-radio-label {
-      color: $radio-default-color + #333333;
+      color: $radio-default-color;
+    }
+    &.selected {
+      .xin-radio-icon {
+        border-width: 5px;
+        border-color: $radio-info-color;
+        box-shadow: 0 0 8px transparentize($radio-info-color, 0.3);
+      }
+      .xin-radio-label {
+        color: $radio-info-color;
+      }
+    }
+    &.disabled {
+      .xin-radio-icon {
+        border-color: $radio-disabled-color;
+        box-shadow: none;
+      }
+      .xin-radio-label {
+        color: $radio-disabled-color;
+      }
+    }
+  }
+  &.white {
+    .xin-radio-icon {
+      border-width: 1px;
+      border-color: #fff;
+    }
+    .xin-radio-label {
+      color: #fff;
+    }
+    &.selected {
+      .xin-radio-icon {
+        border-width: 5px;
+        border-color: #fff;
+        box-shadow: 0 0 8px transparentize(#fff, 0.3);
+      }
+    }
+    &.disabled {
+      .xin-radio-icon {
+        border-color: transparentize(#fff, 0.5);
+        box-shadow: none;
+      }
+      .xin-radio-label {
+        color: transparentize(#fff, 0.5);
+      }
     }
   }
 }
