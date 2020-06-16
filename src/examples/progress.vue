@@ -23,7 +23,7 @@
     </div>
     <div class="line">
       <xin-label>动态修改（value: {{percent}}%）</xin-label>
-      <xin-button fill color="active" @click="percent -= 10">- 10%</xin-button>
+      <xin-button fill color="info" @click="percent -= 10">- 10%</xin-button>
       <xin-button fill color="success" @click="percent += 10">+ 10%</xin-button>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-button @click="dialog1.show = true">基础展示</xin-button>
-      <xin-button @click="dialog2.show = true">表单展示</xin-button>
-      <xin-button @click="dialog3.show = true">自定义展示</xin-button>
+      <xin-button fill @click="dialog1.show = true">基础展示</xin-button>
+      <xin-button fill @click="dialog2.show = true">表单展示</xin-button>
+      <xin-button fill @click="dialog3.show = true">自定义展示</xin-button>
     </div>
     <xin-dialog title="删除确认" :visible.sync="dialog1.show">
       您确认要删除当前选项吗？

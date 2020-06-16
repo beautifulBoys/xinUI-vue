@@ -6,7 +6,7 @@
     </div>
     <div class="line">
       <xin-button fill color="success" @click="step1 > 1 && step1--">后退一步</xin-button>
-      <xin-button fill color="active" @click="step1 < list.length + 1 && step1++">前进一步</xin-button>
+      <xin-button fill color="info" @click="step1 < list.length + 1 && step1++">前进一步</xin-button>
     </div>
     <div class="line">
       <xin-label width="60">全面</xin-label>
@@ -14,7 +14,7 @@
     </div>
     <div class="line">
       <xin-button fill color="success" @click="step2 > 1 && step2--">后退一步</xin-button>
-      <xin-button fill color="active" @click="step2 < list.length + 1 && step2++">前进一步</xin-button>
+      <xin-button fill color="info" @click="step2 < list.length + 1 && step2++">前进一步</xin-button>
       <xin-button fill color="error" @click="errStatus2 ? errStatus2 = '' : errStatus2 = 'error'">失败</xin-button>
     </div>
   </div>

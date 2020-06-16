@@ -36,19 +36,19 @@
         <xin-button fill>左边</xin-button>
       </xin-tooltip>
       <xin-tooltip position="top" color="white" content="上边工具条">
-        <xin-button fill>上边</xin-button>
+        <xin-button fill color="error">上边</xin-button>
       </xin-tooltip>
-      <xin-tooltip position="bottom" color="info" content="下边工具条">
-        <xin-button fill>下边</xin-button>
+      <xin-tooltip position="top" color="info" content="上边工具条">
+        <xin-button fill color="info">上边</xin-button>
       </xin-tooltip>
-      <xin-tooltip position="right" color="success" content="右边工具条">
-        <xin-button fill>右边</xin-button>
+      <xin-tooltip position="bottom" color="success" content="下边工具条">
+        <xin-button fill color="success">下边</xin-button>
       </xin-tooltip>
-      <xin-tooltip position="top" color="warning" content="上边工具条">
-        <xin-button fill>上边</xin-button>
+      <xin-tooltip position="right" color="warning" content="右边工具条">
+        <xin-button fill color="warning">右边</xin-button>
       </xin-tooltip>
       <xin-tooltip position="top" color="error" content="上边工具条">
-        <xin-button fill>上边</xin-button>
+        <xin-button fill color="error">上边</xin-button>
       </xin-tooltip>
     </div>
     <div class="line">
