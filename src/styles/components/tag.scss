@@ -15,6 +15,9 @@
     display: inline-block;
     text-align: center;
     cursor: pointer;
+    &:hover {
+      color: $tag-default-color - #444444;
+    }
   }
   .xin-tag-content {
     margin: 0 5px;
@@ -26,6 +29,7 @@
   }
   &.small {
     padding: 0;
+    margin: 5px;
     .xin-tag-content {
       margin: 0 0 0 5px;
     }
