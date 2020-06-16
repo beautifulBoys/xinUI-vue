@@ -5,7 +5,7 @@
   display: inline-block;
   position: relative;
   &+& {
-    margin-left: $popover-margin-right;
+    margin-left: $popover-space-width;
   }
   .xin-popover-cover {
     position: fixed;
@@ -28,7 +28,7 @@
           font-size: $popover-font-size;
           line-height: $popover-line-height;
           text-align: center;
-          padding: $popover-margin-right - 10px $popover-margin-right;
+          padding: $popover-space-width - 10px $popover-space-width;
           display: inline-block;
           position: relative;
           box-sizing: border-box;

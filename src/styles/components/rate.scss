@@ -1,14 +1,14 @@
 
 @import "~@/styles/const.scss";
 .xin-rate {
-  margin-right: $rate-margin-right;
+  margin-right: $rate-space-width;
   display: inline-block;
   height: $rate-line-height;
   padding: (($rate-line-height - $rate-icon-height) / 2) 0;
   box-sizing: border-box;
   vertical-align: middle;
   .xin-rate-item {
-    margin-right: $rate-margin-right;
+    margin-right: $rate-space-width;
     display: inline-block;
     cursor: pointer;
     line-height: $rate-icon-height;

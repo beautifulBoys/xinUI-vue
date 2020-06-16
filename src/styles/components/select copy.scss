@@ -1,7 +1,7 @@
 
 @import "~@/styles/const.scss";
 .xin-select {
-  margin-right: $radio-margin-right;
+  margin-right: $radio-space-width;
   display: inline-block;
   position: relative;
   width: $select-width;
@@ -46,7 +46,7 @@
       border-radius: 0;
       line-height: $select-line-height;
       box-sizing: border-box;
-      padding: 0 $select-padding-right;
+      padding: 0 $select-space-width;
       cursor: pointer;
       font-size: $select-font-size;
       transition: all $select-animate-time;
@@ -172,7 +172,7 @@
           .el-select-dropdown__item {
             list-style-type: none;
             font-size: $option-font-size;
-            padding: 0 $option-padding-right;
+            padding: 0 $select-space-width;
             box-sizing: border-box;
             width: 100%;
             line-height: $option-line-height;

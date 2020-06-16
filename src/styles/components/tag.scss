@@ -6,7 +6,7 @@
   padding: 5px;
   vertical-align: middle;
   &+& {
-    margin-left: $tag-margin-right;
+    margin-left: $tag-space-width;
   }
   .xin-iconfont {
     width: $tag-line-height;

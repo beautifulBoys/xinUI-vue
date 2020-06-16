@@ -1,10 +1,10 @@
 <template>
   <button
     :class="['xin-button', color, {
-      'xin-button-fill': fill && !inline,
-      'xin-button-inline': inline,
-      'xin-button-round': round,
-      'xin-button-disabled': disabled
+      'fill': fill && !inline,
+      'inline': inline,
+      'round': round,
+      'disabled': disabled
     }]"
     v-on="$listeners"
     v-bind="$attrs"
@@ -19,9 +19,9 @@
 export default {
   name: 'xinButton',
   props: {
-    color: { // success, error, warning, info
+    color: { // default, info, success, warning, error
       type: String,
-      default: ''
+      default: 'default'
     },
     // size: { // small, big
     //   type: String,

@@ -14,7 +14,7 @@
   .xin-page-item {
     display: inline-block;
     line-height: $page-item-height;
-    margin-right: $page-margin-right;
+    margin-right: $page-space-width;
     font-size: $page-font-size;
     text-align: center;
     color: $page-font-color;
@@ -24,7 +24,7 @@
     // font-weight: bold;
     user-select: none;
     &.padding {
-      padding: 0 $page-padding-right;
+      padding: 0 $page-space-width;
     }
     &.bg {
       background: $page-background-color;

@@ -17,7 +17,7 @@
   .xin-progress-title {
     font-size: $progress-font-size;
     line-height: $progress-line-height;
-    padding: 0 $progress-margin-right;
+    padding: 0 $progress-space-width;
   }
 
   &.info {

@@ -3,11 +3,11 @@ $font-size: 12px;
 $line-height: 30px;
 
 // 距离
-$margin-right: 15px;
+$space-width: 15px;
 $common-width: 200px;
 
 // 颜色
-$color-gray: #909399;
+$color-gray: #8a8d92;
 $color-blue: #0095ff;
 $color-green: #15bf81;
 $color-yellow: #ffba5a;
@@ -22,7 +22,7 @@ $common-animate-time: 0.3s;
 $label-color: $font-color + #333333;
 $label-required-color: $color-red;
 $label-font-size: $font-size;
-$label-margin-right: $margin-right;
+$label-space-width: $space-width;
 $label-line-height: $line-height;
 
 // input
@@ -30,31 +30,30 @@ $input-font-color: $font-color;
 $input-disabled-color: $font-color + #777777;
 $input-width: $common-width;
 $input-font-size: $font-size;
-$input-margin-right: $margin-right;
+$input-space-width: $space-width;
 $input-line-height: $line-height;
 $input-border-color: $border-color;
 $input-border-error-color: $color-red;
 $input-border-active-color: $color-blue;
 $input-border-success-color: $color-green;
-$input-padding-right: $margin-right;
 
 $textarea-height: 100px;
 $textarea-width: 300px;
 $textarea-line-height: $line-height - 10px;
 
 // button
-$button-padding: $margin-right;
-$button-margin-right: $margin-right;
+$button-padding: $space-width;
+$button-space-width: $space-width;
 $button-font-size: $font-size;
 $button-line-height: $line-height;
-$button-border-default-color: $color-blue;
-$button-border-success-color: $color-green;
-$button-border-error-color: $color-red;
-$button-border-warning-color: $color-yellow;
-$button-border-info-color: $color-gray;
+$button-default-color: $color-gray;
+$button-success-color: $color-green;
+$button-error-color: $color-red;
+$button-warning-color: $color-yellow;
+$button-info-color: $color-blue;
 
 // radio
-$radio-margin-right: $margin-right;
+$radio-space-width: $space-width;
 $radio-font-size: $font-size;
 $radio-animate-time: 0.1s;
 $radio-icon-width: 15px;
@@ -81,7 +80,7 @@ $select-font-size: $font-size;
 $select-animate-time: 0.3s;
 $select-icon-width: 15px;
 $select-line-height: $line-height;
-$select-padding-right: $margin-right;
+$select-space-width: $space-width;
 $select-default-color: $color-gray;
 $select-active-color: $color-blue;
 $select-disabled-color: $color-gray + #333333;
@@ -89,13 +88,13 @@ $select-tag-line-height: $line-height - 10px;
 $select-tag-background: $color-gray + #555555;
 $select-border-color: $border-color;
 $option-line-height: 25px;
-$option-padding-right: $margin-right;
+$option-space-width: $space-width;
 $option-font-size: $font-size;
 $option-default-color: $color-gray;
 $option-active-color: $color-blue;
 
 // switch
-$switch-margin-right: $margin-right;
+$switch-space-width: $space-width;
 $switch-line-height: $line-height;
 $switch-min-width: 60px;
 $switch-font-size: $font-size;
@@ -108,7 +107,7 @@ $switch-error-color: $color-red;
 $switch-warning-color: $color-yellow;
 
 // rate
-$rate-margin-right: $margin-right;
+$rate-space-width: $space-width;
 $rate-line-height: $line-height;
 $rate-min-width: 60px;
 $rate-font-size: $font-size;
@@ -121,7 +120,7 @@ $rate-error-color: $color-red;
 $rate-warning-color: $color-yellow;
 
 // datePicker
-$datePicker-margin-right: $margin-right;
+$datePicker-space-width: $space-width;
 $datePicker-line-height: $line-height;
 $datePicker-min-width: 60px;
 $datePicker-width: 300px;
@@ -149,8 +148,8 @@ $page-font-size: $font-size;
 $page-item-height: $line-height;
 $page-animate-time: 0.3s;
 $page-item-width: 40px;
-$page-margin-right: $margin-right;
-$page-padding-right: 10px;
+$page-space-width: $space-width;
+$page-space-width: $space-width - 5px;
 $page-font-color: $color-gray;
 $page-background-color: $color-gray + #666666;
 $page-active-color: $color-blue;
@@ -209,7 +208,7 @@ $steps-warning-color: $color-yellow;
 $steps-error-color: $color-red;
 
 // progress
-$progress-margin-right: $margin-right;
+$progress-space-width: $space-width;
 $progress-font-size: $font-size;
 $progress-animate-time: 0.3s;
 $progress-line-height: $line-height;
@@ -220,10 +219,10 @@ $progress-warning-color: $color-yellow;
 $progress-error-color: $color-red;
 
 // tooltip
-$tooltip-margin-right: $margin-right;
+$tooltip-space-width: $space-width;
 
 // badge
-$badge-margin-right: $margin-right;
+$badge-space-width: $space-width;
 $badge-animate-time: 0.3s;
 $badge-font-size: $font-size;
 $badge-line-height: $line-height;
@@ -234,7 +233,7 @@ $badge-warning-color: $color-yellow;
 $badge-error-color: $color-red;
 
 // transfer
-$transfer-margin-right: $margin-right;
+$transfer-space-width: $space-width;
 $transfer-default-color: $color-gray;
 $transfer-info-color: $color-blue;
 $transfer-success-color: $color-green;
@@ -248,7 +247,7 @@ $loading-warning-color: $color-yellow;
 $loading-error-color: $color-red;
 
 // tips
-$tips-margin-right: $margin-right;
+$tips-space-width: $space-width;
 $tips-animate-time: $common-animate-time;
 $tips-font-size: $font-size;
 $tips-line-height: $line-height - 14px;
@@ -258,7 +257,7 @@ $tips-warning-color: $color-yellow;
 $tips-error-color: $color-red;
 
 // tag
-$tag-margin-right: $margin-right;
+$tag-space-width: $space-width;
 $tag-animate-time: $common-animate-time;
 $tag-font-size: $font-size;
 $tag-line-height: $line-height - 10px;
@@ -272,7 +271,7 @@ $tag-error-color: $color-red;
 $grid-font-size: $font-size;
 
 // popover
-$popover-margin-right: $margin-right;
+$popover-space-width: $space-width;
 $popover-animate-time: 0.3s;
 $popover-font-size: $font-size;
 $popover-line-height: $line-height;

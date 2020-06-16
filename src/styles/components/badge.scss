@@ -5,17 +5,17 @@
   display: inline-block;
   position: relative;
   &+& {
-    margin-left: $badge-margin-right;
+    margin-left: $badge-space-width;
   }
   .xin-badge-content {
-    padding: 0 $badge-margin-right - 10px;
+    padding: 0 $badge-space-width - 10px;
     line-height: $badge-line-height - 14px;
     font-size: $badge-font-size;
     border-width: 1px;
     border-style: solid;
     position: absolute;
     top: 0;
-    right: $badge-margin-right;
+    right: $badge-space-width;
     transform: translateY(-50%) translateX(100%);
     box-sizing: border-box;
     z-index: 1000;

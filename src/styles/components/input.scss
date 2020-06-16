@@ -8,7 +8,7 @@
   vertical-align: middle;
   position: relative;
   & + & {
-    margin-left: $input-margin-right;
+    margin-left: $input-space-width;
   }
   .xin-input-icon {
     width: $input-line-height;
@@ -72,7 +72,7 @@
     outline: none;
     border: 1px solid $input-border-color;
     box-sizing: border-box;
-    padding: 0 $input-padding-right;
+    padding: 0 $input-space-width;
     transition: all 0.3s;
     background: transparentize($input-border-color, 0.85);
     &::placeholder {
@@ -102,10 +102,10 @@
 .xin-textarea {
   display: inline-block;
   & + & {
-    margin-left: $input-margin-right;
+    margin-left: $input-space-width;
   }
   .xin-textarea-inner {
-    margin-right: $input-margin-right;
+    margin-right: $input-space-width;
     font-size: $input-font-size;
     width: $textarea-width;
     line-height: $textarea-line-height;
@@ -115,7 +115,7 @@
     outline: none;
     border: 1px solid $input-border-color;
     box-sizing: border-box;
-    padding: 5px $input-padding-right;
+    padding: 5px $input-space-width;
     transition: all 0.3s;
     background: transparentize($input-border-color, 0.9);
     resize: none;

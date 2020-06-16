@@ -8,7 +8,7 @@
   vertical-align: middle;
   position: relative;
   & + & {
-    margin-left: $radio-margin-right;
+    margin-left: $radio-space-width;
   }
   .xin-select-input {
     
@@ -46,7 +46,7 @@
       .xin-option {
         list-style-type: none;
         font-size: $option-font-size;
-        padding: 0 $option-padding-right;
+        padding: 0 $select-space-width;
         box-sizing: border-box;
         width: 100%;
         line-height: $option-line-height;

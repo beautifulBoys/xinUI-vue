@@ -5,7 +5,7 @@
   padding: 10px;
   box-sizing: border-box;
   &+& {
-    margin-top: $tips-margin-right;
+    margin-top: $tips-space-width;
   }
   .xin-tips-icon {
     align-items: center;
