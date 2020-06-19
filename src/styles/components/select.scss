@@ -1,17 +1,72 @@
 
 @import "~@/styles/const.scss";
+@import "~@/styles/components/input.scss";
+
 .xin-select {
   display: inline-block;
-  position: relative;
   width: $select-width;
   transition: all 0.3s;
   vertical-align: middle;
   position: relative;
+  font-size: 0;
   & + & {
     margin-left: $radio-space-width;
   }
+
+  .xin-input-icon {
+    width: $input-line-height;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    color: $input-default-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.icon-left {
+      left: 0;
+    }
+    &.icon-right {
+      right: 0;
+      .icon:hover {
+        color: $input-default-color - #333333;
+      }
+    }
+    .icon {
+      width: 16px;
+      height: 16px;
+      display: block;
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   .xin-select-input {
-    
+    width: 100%;
+    font-size: $input-font-size;
+    line-height: $input-line-height - 6px;
+    box-sizing: border-box;
+    padding: 2px $input-space-width;
+    border: 1px solid $select-default-color;
+    .xin-tag {
+      vertical-align: top;
+    }
+    &.placeholder {
+      color: transparentize($select-default-color, 0.6);
+    }
+    &.multiple {
+      padding-left: $input-space-width - 5px;
+      padding-right: $input-space-width - 5px;
+    }
+    &.has-left-icon {
+      padding-left: $input-line-height;
+    }
+    &.has-right-icon {
+      padding-right: $input-line-height;
+    }
+    &.xin-input-round {
+      border-radius: $input-line-height / 2;
+    }
   }
   .xin-select-cover {
     width: 100%;
@@ -19,7 +74,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    // background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
   }
   .xin-select-tags {
@@ -27,13 +81,19 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 2000;
-    // background: red;
+    height: auto;
+    min-height: $select-line-height;
+    font-size: $input-font-size;
+    line-height: $input-line-height - 10px;
+    box-sizing: border-box;
+    padding: 2px $input-space-width;
+    box-sizing: border-box;
+    transition: all $select-animate-time;
+    border: 1px solid $select-default-color;
   }
   .xin-select-options {
     position: absolute;
-    top: 30px;
+    top: 100%;
     left: 0;
     padding-top: 5px;
     min-width: 100%;
@@ -53,11 +113,11 @@
         white-space: nowrap;
         cursor: pointer;
         &:hover {
-          background: transparentize($option-active-color, 0.8);
+          background: transparentize($select-info-color, 0.8);
         }
         &.selected {
           color: #fff;
-          background: transparentize($option-active-color, 0);
+          background: transparentize($select-info-color, 0);
         }
       }
     }

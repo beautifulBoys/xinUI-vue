@@ -29,7 +29,7 @@
   &.disabled {
     cursor: not-allowed;
   }
-  &.info {
+  &.xin-radio-info {
     .xin-radio-icon {
       border-width: 1px;
       border-color: $radio-default-color;
@@ -57,7 +57,7 @@
       }
     }
   }
-  &.white {
+  &.xin-radio-white {
     .xin-radio-icon {
       border-width: 1px;
       border-color: #fff;

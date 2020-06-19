@@ -8,6 +8,9 @@
       'xin-textarea-error': color === 'error',
       'xin-textarea-success': color === 'success',
     }]"
+    :style="{
+      width: width.indexOf('px') > -1 ? width : width + 'px'
+    }"
     v-if="textarea"
   >
     <textarea
@@ -16,9 +19,6 @@
       :class="['xin-textarea-inner', {
         'xin-textarea-round': round
       }]"
-      :style="{
-        width: width.indexOf('px') > -1 ? width : width + 'px'
-      }"
       :disabled="disabled"
       :placeholder="placeholder"
       v-bind="$attrs"
@@ -38,10 +38,13 @@
       'xin-input-error': color === 'error',
       'xin-input-success': color === 'success',
     }]"
+    :style="{
+      width: width.indexOf('px') > -1 ? width : width + 'px'
+    }"
     v-else
   >
     <div class="xin-input-icon icon-left" v-if="leftIcon">
-      <xin-icon class="icon" :name="leftIcon"/>
+      <xin-icon class="icon" :name="leftIcon" @click="leftIconEvent()"/>
     </div>
     <div class="xin-input-icon icon-right" v-if="rightIcon">
       <xin-icon class="icon" :name="rightIcon" @click="rightIconEvent()"/>
@@ -54,9 +57,6 @@
         'has-left-icon': leftIcon,
         'has-right-icon': rightIcon
       }]"
-      :style="{
-        width: width.indexOf('px') > -1 ? width : width + 'px'
-      }"
       :disabled="disabled"
       :placeholder="placeholder"
       v-bind="$attrs"
@@ -190,6 +190,9 @@ export default {
   mounted () {
   },
   methods: {
+    leftIconEvent () {
+      this.$emit('left-icon-event')
+    },
     rightIconEvent () {
       this.$emit('right-icon-event')
     }

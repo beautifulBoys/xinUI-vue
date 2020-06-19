@@ -1,11 +1,19 @@
 
 @import "~@/styles/const.scss";
+@mixin xin-tag-color ($color) {
+  background: transparentize($color, 0.9);
+  color: $tag-default-color;
+  &.fill {
+    background: transparentize($color, 0);
+    color: #fff;
+  }
+}
 .xin-tag {
   display: inline-block;
   box-sizing: border-box;
   padding: 5px;
   vertical-align: middle;
-  &+& {
+  & + & {
     margin-left: $tag-space-width;
   }
   .xin-iconfont {
@@ -15,9 +23,7 @@
     display: inline-block;
     text-align: center;
     cursor: pointer;
-    &:hover {
-      color: $tag-default-color - #444444;
-    }
+    vertical-align: top;
   }
   .xin-tag-content {
     margin: 0 5px;
@@ -29,50 +35,26 @@
   }
   &.small {
     padding: 0;
-    margin: 5px;
+    margin: 3px;
+    height: $tag-line-height;
     .xin-tag-content {
       margin: 0 0 0 5px;
     }
   }
-  &.default {
-    background: transparentize($tag-default-color, 0.9);
-    color: $tag-default-color;
-    &.fill {
-      background: transparentize($tag-default-color, 0);
-      color: #fff;
-    }
+  &.xin-tag-default {
+    @include xin-tag-color ($tag-default-color);
   }
-  &.success {
-    background: transparentize($tag-success-color, 0.9);
-    color: $tag-success-color;
-    &.fill {
-      background: transparentize($tag-success-color, 0);
-      color: #fff;
-    }
+  &.xin-tag-success {
+    @include xin-tag-color ($tag-success-color);
   }
-  &.info {
-    background: transparentize($tag-info-color, 0.9);
-    color: $tag-info-color;
-    &.fill {
-      background: transparentize($tag-info-color, 0);
-      color: #fff;
-    }
+  &.xin-tag-info {
+    @include xin-tag-color ($tag-info-color);
   }
-  &.warning {
-    background: transparentize($tag-warning-color, 0.9);
-    color: $tag-warning-color;
-    &.fill {
-      background: transparentize($tag-warning-color, 0);
-      color: #fff;
-    }
+  &.xin-tag-warning {
+    @include xin-tag-color ($tag-warning-color);
   }
-  &.error {
-    background: transparentize($tag-error-color, 0.9);
-    color: $tag-error-color;
-    &.fill {
-      background: transparentize($tag-error-color, 0);
-      color: #fff;
-    }
+  &.xin-tag-error {
+    @include xin-tag-color ($tag-error-color);
   }
 }
 

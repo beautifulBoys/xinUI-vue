@@ -63,7 +63,7 @@ $radio-icon-margin-right: 5px;
 $radio-line-height: $line-height;
 $radio-default-color: $color-gray;
 $radio-info-color: $color-blue;
-$radio-disabled-color: $color-gray + #777777;
+$radio-disabled-color: $color-gray + #555555;
 
 // checkbox
 $checkbox-font-size: $font-size;
@@ -74,7 +74,7 @@ $checkbox-line-height: $line-height;
 $checkbox-font-size: $font-size;
 $checkbox-default-color: $color-gray;
 $checkbox-active-color: $color-blue;
-$checkbox-disabled-color: $color-gray + #333333;
+$checkbox-disabled-color: $color-gray + #555555;
 
 // select
 $select-width: $common-width;
@@ -84,16 +84,13 @@ $select-icon-width: 15px;
 $select-line-height: $line-height;
 $select-space-width: $space-width;
 $select-default-color: $color-gray;
-$select-active-color: $color-blue;
-$select-disabled-color: $color-gray + #333333;
-$select-tag-line-height: $line-height - 10px;
-$select-tag-background: $color-gray + #555555;
-$select-border-color: $border-color;
+$select-info-color: $color-blue;
+$select-warning-color: $color-yellow;
+$select-success-color: $color-green;
+$select-error-color: $color-red;
 $option-line-height: 25px;
 $option-space-width: $space-width;
 $option-font-size: $font-size;
-$option-default-color: $color-gray;
-$option-active-color: $color-blue;
 
 // switch
 $switch-space-width: $space-width;
@@ -262,7 +259,7 @@ $tips-error-color: $color-red;
 $tag-space-width: $space-width;
 $tag-animate-time: $common-animate-time;
 $tag-font-size: $font-size;
-$tag-line-height: $line-height - 10px;
+$tag-line-height: $line-height - 12px;
 $tag-default-color: $color-gray;
 $tag-info-color: $color-blue;
 $tag-success-color: $color-green;

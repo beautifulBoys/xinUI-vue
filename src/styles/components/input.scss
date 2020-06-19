@@ -117,14 +117,15 @@
 
 .xin-textarea {
   display: inline-block;
+  width: $textarea-width;
   & + & {
     margin-left: $input-space-width;
   }
   .xin-textarea-inner {
     margin-right: $input-space-width;
     font-size: $input-font-size;
-    width: $textarea-width;
     line-height: $textarea-line-height;
+    width: 100%;
     height: $textarea-height;
     vertical-align: top;
     outline: none;

@@ -1,34 +1,53 @@
 <template>
-  <div class="xin-select" @click="selectEvent()">
-    <xin-input
-      rightIcon="iconGroup-4"
-      placeholder="请选择"
-      v-model="inputText"
-    ></xin-input>
-    <!-- <div class="xin-input visible">
-      <div class="xin-input-inner"></div>
-      <div class="xin-input-icon icon-left">
-        <xin-icon name=""></xin-icon>
+  <div class="xin-select">
+    <div @mouseover="mouseover($event)" @mouseleave="mouseleave($event)" @click="selectEvent()">
+      <div class="xin-input-icon icon-left" v-if="icon">
+        <xin-icon class="icon" :name="icon"/>
       </div>
-      <div class="xin-input-icon icon-right">
-        <xin-icon name="rightIcon"></xin-icon>
+      <div class="xin-input-icon icon-right" v-if="rightIcon">
+        <xin-icon
+          :class="['icon', {rotate: visible}]"
+          :name="iconMap['1']"
+          v-if="clearable && !multiple && hover === '1'"
+          @click="rightIconEvent()"
+        />
+        <xin-icon
+          :class="['icon', {rotate: visible}]"
+          :name="iconMap['0']"
+          v-else
+        />
       </div>
-    </div> -->
+      <div
+        :class="['xin-select-input', {
+          'xin-input-default': color === 'default',
+          'placeholder': multiple ? !tags.length : !inputValue,
+          'multiple': multiple
+        }]"
+      >
+        <template v-if="multiple">
+          <template v-if="tags.length">
+            <xin-tag
+              small
+              closable
+              v-for="(item, index) in tags"
+              :key="index"
+              @close="closeTagEvent(item)"
+              :message="item[itemLabel]"
+            ></xin-tag>
+          </template>
+          <span v-else>{{placeholder}}</span>
+        </template>
+        <template v-else>
+          <span v-if="inputText">{{inputText}}</span>
+          <span v-else>{{placeholder}}</span>
+        </template>
+      </div>
+    </div>
     <div
       class="xin-select-cover"
       v-show="visible"
       @click.stop="coverEvent()"
     ></div>
-    <div class="xin-select-tags" v-if="tags.length">
-      <xin-tag
-        small
-        closable
-        v-for="(item, index) in tags"
-        :key="index"
-        @close="closeTagEvent(item)"
-        :message="item[itemLabel]"
-      ></xin-tag>
-    </div>
     <div class="xin-select-options" v-show="visible">
       <div class="xin-options-ul">
         <xin-option
@@ -66,9 +85,13 @@ export default {
       type: String,
       default: 'auto'
     },
-    rightIcon: {
+    color: {
       type: String,
-      default: 'iconGroup-4'
+      default: 'default'
+    },
+    icon: {
+      type: String,
+      default: ''
     },
     itemValue: {
       type: String,
@@ -81,6 +104,18 @@ export default {
     multiple: {
       type: Boolean,
       default: false
+    },
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    closable: {
+      type: Boolean,
+      default: false
+    },
+    placeholder: {
+      type: String,
+      default: '请选择'
     }
   },
   data () {
@@ -88,7 +123,13 @@ export default {
       visible: false,
       inputValue: this.value,
       tags: [],
-      inputText: ''
+      rightIcon: 'Group-4',
+      inputText: '',
+      iconMap: {
+        '1': 'Group-6',
+        '0': 'Group-4'
+      },
+      hover: 0 // 0：false, 1: true
     }
   },
   computed: {
@@ -113,7 +154,7 @@ export default {
   },
   methods: {
     closeTagEvent (item) {
-      console.log(item)
+      this.optionEvent(true, item)
     },
     createTags (arr) {
       if (!this.multiple) {
@@ -132,6 +173,18 @@ export default {
           })
         })
         this.tags = list
+      }
+    },
+    mouseover (e) {
+      this.hover = '1'
+    },
+    mouseleave (e) {
+      this.hover = '0'
+    },
+    rightIconEvent () {
+      console.log('-----------')
+      if (this.hover === '1' && this.clearable && !this.multiple) {
+        this.$emit('input', '')
       }
     },
     selectEvent () {

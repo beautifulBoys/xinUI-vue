@@ -1,8 +1,8 @@
 <template>
   <label
     :class="['xin-radio', {
-      'info': !white,
-      'white': white,
+      'xin-radio-info': !white,
+      'xin-radio-white': white,
       'selected': inputValue === label,
       'disabled': disabled
     }]"

@@ -1,24 +1,18 @@
 <template>
-  <transition
-    name="xin-tips"
-    @after-leave="afterLeaveEvent()"
+  <div
+    :class="['xin-tag', {
+      'xin-tag-default': color === 'default',
+      'xin-tag-success': color === 'success',
+      'xin-tag-warning': color === 'warning',
+      'xin-tag-info': color === 'info',
+      'xin-tag-error': color === 'error',
+      'fill': fill,
+      'small': small
+    }]"
   >
-    <div
-      :class="['xin-tag', {
-        'default': color === 'default',
-        'success': color === 'success',
-        'warning': color === 'warning',
-        'info': color === 'info',
-        'error': color === 'error',
-        'fill': fill,
-        'small': small
-      }]"
-      v-if="visible"
-    >
-      <span class="xin-tag-content">{{message}}</span>
-      <i class="xin-iconfont" v-if="closable" @click="close()">&#xe687;</i>
-    </div>
-  </transition>
+    <span class="xin-tag-content">{{message}}</span>
+    <i class="xin-iconfont" v-if="closable" @click.stop="close()">&#xe687;</i>
+  </div>
 </template>
 
 <script>
@@ -39,10 +33,6 @@ export default {
       type: String,
       default: 'default'
     },
-    value: {
-      type: [String, Number, Boolean, Object],
-      default: ''
-    },
     fill: {
       type: Boolean,
       default: false
@@ -54,13 +44,6 @@ export default {
   },
   data () {
     return {
-      iconMap: {
-        info: '&#xe690;',
-        success: '&#xe68d;',
-        warning: '&#xe62e;',
-        error: '&#xe68f;'
-      },
-      visible: true
     }
   },
   watch: {
@@ -68,10 +51,8 @@ export default {
   mounted () {
   },
   methods: {
-    afterLeaveEvent () {},
     close () {
-      this.visible = false
-      this.$emit('close', this.value || this.message)
+      this.$emit('close', this.message)
     }
   }
 }
