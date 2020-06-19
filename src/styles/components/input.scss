@@ -1,6 +1,51 @@
 
 @import "~@/styles/const.scss";
-
+@mixin xin-input-color ($color) {
+  .xin-input-inner {
+    color: $color;
+    border: 1px solid $color;
+    background: transparentize($color, 0.95);
+    &:focus {
+      box-shadow: 0 0 8px transparentize($color, 0.6);
+      background: transparentize($color, 0.9);
+    }
+    &::placeholder {
+      color: transparentize($color, 0.6);
+    }
+  }
+  &.disabled {
+    .xin-input-inner {
+      cursor: not-allowed;
+      color: transparentize($color, 0.7);
+      border: 1px solid transparentize($color, 0.7);
+    }
+    .xin-input-icon {
+      cursor: not-allowed;
+      color: transparentize($color, 0.7);
+    }
+  }
+}
+@mixin xin-textarea-color ($color) {
+  .xin-textarea-inner {
+    color: $color;
+    border: 1px solid $color;
+    background: transparentize($color, 0.95);
+    &:focus {
+      box-shadow: 0 0 8px transparentize($color, 0.6);
+      background: transparentize($color, 0.9);
+    }
+    &::placeholder {
+      color: transparentize($color, 0.6);
+    }
+  }
+  &.disabled {
+    .xin-input-inner {
+      cursor: not-allowed;
+      color: transparentize($color, 0.7);
+      border: 1px solid transparentize($color, 0.7);
+    }
+  }
+}
 .xin-input {
   display: inline-block;
   width: $input-width;
@@ -15,7 +60,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    color: $input-border-color;
+    color: $input-default-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +70,7 @@
     &.icon-right {
       right: 0;
       .icon:hover {
-        color: $input-border-color - #333333;
+        color: $input-default-color - #333333;
       }
     }
     .icon {
@@ -34,59 +79,15 @@
       display: block;
     }
   }
-  &.visible {
-    &:hover {
-      .xin-input-inner {
-        border: 1px solid $input-border-active-color;
-      }
-    }
-    .xin-input-error {
-      border: 1px solid $input-border-error-color;
-      background: transparentize($input-border-error-color, 0.95);
-      &:focus {
-        box-shadow: 0 0 8px transparentize($input-border-error-color, 0.6);
-        background: transparentize($input-border-error-color, 0.9);
-      }
-      &:hover {
-        border: 1px solid $input-border-error-color;
-      }
-    }
-    .xin-input-success {
-      border: 1px solid $input-border-success-color;
-      background: transparentize($input-border-success-color, 0.95);
-      &:focus {
-        box-shadow: 0 0 8px transparentize($input-border-success-color, 0.6);
-        background: transparentize($input-border-success-color, 0.9);
-      }
-      &:hover {
-        border: 1px solid $input-border-success-color;
-      }
-    }
-  }
   .xin-input-inner {
     width: 100%;
     height: 100%;
     font-size: $input-font-size;
     line-height: $input-line-height;
-    color: $input-font-color;
     outline: none;
-    border: 1px solid $input-border-color;
     box-sizing: border-box;
     padding: 0 $input-space-width;
-    transition: all 0.3s;
-    background: transparentize($input-border-color, 0.85);
-    &::placeholder {
-      color: $input-disabled-color + #222222;
-    }
-    &:disabled {
-      color: $input-disabled-color;
-      background: transparentize($input-border-color, 0.6);
-    }
-    &:focus {
-      border: 1px solid $input-border-active-color;
-      box-shadow: 0 0 8px transparentize($input-border-active-color, 0.6);
-      background: transparentize($input-border-active-color, 0.9);
-    }
+    transition: all $input-animate-time;
     &.has-left-icon {
       padding-left: $input-line-height;
     }
@@ -96,6 +97,21 @@
     &.xin-input-round {
       border-radius: $input-line-height / 2;
     }
+  }
+  &.xin-input-default {
+    @include xin-input-color ($input-default-color);
+  }
+  &.xin-input-info {
+    @include xin-input-color ($input-info-color);
+  }
+  &.xin-input-success {
+    @include xin-input-color ($input-success-color);
+  }
+  &.xin-input-warning {
+    @include xin-input-color ($input-warning-color);
+  }
+  &.xin-input-error {
+    @include xin-input-color ($input-error-color);
   }
 }
 
@@ -111,41 +127,30 @@
     line-height: $textarea-line-height;
     height: $textarea-height;
     vertical-align: top;
-    color: $input-font-color;
     outline: none;
-    border: 1px solid $input-border-color;
     box-sizing: border-box;
     padding: 5px $input-space-width;
-    transition: all 0.3s;
-    background: transparentize($input-border-color, 0.9);
+    transition: all $input-animate-time;
     resize: none;
     overflow-y: auto;
-    &::placeholder {
-      color: $input-disabled-color + #222222;
-    }
-    &:disabled {
-      color: $input-disabled-color;
-      background: transparentize($input-border-color, 0.7);
-    }
-    &:focus {
-      border: 1px solid $input-border-active-color;
-      box-shadow: 0 0 8px transparentize($input-border-active-color, 0.6);
-    }
     &.xin-textarea-round {
-      border-radius: $input-line-height / 2;
+      border-radius: $input-line-height / 4;
     }
-    &.xin-textarea-error {
-      border: 1px solid $input-border-error-color;
-      &:focus {
-        box-shadow: 0 0 8px transparentize($input-border-error-color, 0.6);
-      }
-    }
-    &.xin-textarea-success {
-      border: 1px solid $input-border-success-color;
-      &:focus {
-        box-shadow: 0 0 8px transparentize($input-border-success-color, 0.6);
-      }
-    }
+  }
+  &.xin-textarea-default {
+    @include xin-textarea-color ($input-default-color);
+  }
+  &.xin-textarea-info {
+    @include xin-textarea-color ($input-info-color);
+  }
+  &.xin-textarea-success {
+    @include xin-textarea-color ($input-success-color);
+  }
+  &.xin-textarea-warning {
+    @include xin-textarea-color ($input-warning-color);
+  }
+  &.xin-textarea-error {
+    @include xin-textarea-color ($input-error-color);
   }
 }
 

@@ -1,14 +1,19 @@
 <template>
   <div
-    class="xin-textarea"
+    :class="['xin-textarea', {
+      'disabled': disabled,
+      'xin-textarea-default': color === 'default',
+      'xin-textarea-info': color === 'info',
+      'xin-textarea-warning': color === 'warning',
+      'xin-textarea-error': color === 'error',
+      'xin-textarea-success': color === 'success',
+    }]"
     v-if="textarea"
   >
     <textarea
       :type="type"
       v-model.trim="inputValue"
       :class="['xin-textarea-inner', {
-        'xin-textarea-error': status === 'error' && !disabled,
-        'xin-textarea-success': status === 'success' && !disabled,
         'xin-textarea-round': round
       }]"
       :style="{
@@ -25,21 +30,26 @@
     </textarea>
   </div>
   <div
-    :class="['xin-input', disabled ? 'disabled' : 'visible']"
+    :class="['xin-input', {
+      'disabled': disabled,
+      'xin-input-default': color === 'default',
+      'xin-input-info': color === 'info',
+      'xin-input-warning': color === 'warning',
+      'xin-input-error': color === 'error',
+      'xin-input-success': color === 'success',
+    }]"
     v-else
   >
-    <div class="xin-input-icon icon-left">
-      <xin-icon class="icon" v-if="leftIcon" :name="leftIcon"/>
+    <div class="xin-input-icon icon-left" v-if="leftIcon">
+      <xin-icon class="icon" :name="leftIcon"/>
     </div>
-    <div class="xin-input-icon icon-right">
-      <xin-icon class="icon" v-if="rightIcon" :name="rightIcon" @click="rightIconEvent()"/>
+    <div class="xin-input-icon icon-right" v-if="rightIcon">
+      <xin-icon class="icon" :name="rightIcon" @click="rightIconEvent()"/>
     </div>
     <input
       :type="type"
       v-model.trim="inputValue"
       :class="['xin-input-inner', {
-        'xin-input-error': status === 'error' && !disabled,
-        'xin-input-success': status === 'success' && !disabled,
         'xin-input-round': round,
         'has-left-icon': leftIcon,
         'has-right-icon': rightIcon
@@ -70,9 +80,9 @@ export default {
       type: String,
       default: 'text'
     },
-    status: { // success error
+    color: { // success error
       type: String,
-      default: ''
+      default: 'default'
     },
     disabled: {
       type: Boolean,

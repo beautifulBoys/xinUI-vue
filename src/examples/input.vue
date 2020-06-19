@@ -1,8 +1,12 @@
 <template>
   <div class="page">
     <div class="line">
-      <xin-label width="80">默认</xin-label>
+      <xin-label width="80">颜色展示</xin-label>
       <xin-input type="text" v-model="val" placeholder="请输入姓名"></xin-input>
+      <xin-input type="text" v-model="val" color="info" placeholder="请输入姓名"></xin-input>
+      <xin-input type="text" v-model="val" color="success" placeholder="请输入姓名"></xin-input>
+      <xin-input type="text" v-model="val" color="warning" placeholder="请输入姓名"></xin-input>
+      <xin-input type="text" v-model="val" color="error" placeholder="请输入姓名"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">圆角</xin-label>
@@ -10,19 +14,23 @@
     </div>
     <div class="line">
       <xin-label width="80">图标</xin-label>
-      <xin-input type="text" leftIcon="iconshijian" rightIcon="iconGroup-6" v-model="val1"></xin-input>
+      <xin-input type="text" leftIcon="shijian" rightIcon="Group-6" v-model="val1"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">禁用</xin-label>
       <xin-input type="text" disabled v-model="val2"></xin-input>
     </div>
     <div class="line">
+      <xin-label width="80">密码输入</xin-label>
+      <xin-input type="password" v-model="val2"></xin-input>
+    </div>
+    <div class="line">
       <xin-label width="80">输入正确</xin-label>
-      <xin-input type="text" status="success" v-model="val2"></xin-input>
+      <xin-input type="text" color="success" v-model="val2"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">输入错误</xin-label>
-      <xin-input type="text" status="error" v-model="val2"></xin-input>
+      <xin-input type="text" color="error" v-model="val2"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">最大长度</xin-label>
