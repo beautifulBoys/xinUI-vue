@@ -1,27 +1,22 @@
 <template>
   <div class="xin-select">
-    <div @mouseover="mouseover($event)" @mouseleave="mouseleave($event)" @click="selectEvent()">
+    <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
       <div class="xin-input-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
       </div>
       <div class="xin-input-icon icon-right" v-if="rightIcon">
         <xin-icon
           :class="['icon', {rotate: visible}]"
-          :name="iconMap['1']"
-          v-if="clearable && !multiple && hover === '1'"
-          @click="rightIconEvent()"
-        />
-        <xin-icon
-          :class="['icon', {rotate: visible}]"
-          :name="iconMap['0']"
-          v-else
+          :name="clearable && !multiple ? iconMap[hover] : iconMap['0']"
+          @click.native="rightIconEvent($event)"
         />
       </div>
       <div
         :class="['xin-select-input', {
           'xin-input-default': color === 'default',
           'placeholder': multiple ? !tags.length : !inputValue,
-          'multiple': multiple
+          'multiple': multiple,
+          'focus': visible
         }]"
       >
         <template v-if="multiple">
@@ -158,6 +153,10 @@ export default {
     },
     createTags (arr) {
       if (!this.multiple) {
+        if (!arr) {
+          this.inputText = ''
+          return
+        }
         this.list.forEach(item => {
           if (arr === item[this.itemValue]) {
             this.inputText = item[this.itemLabel]
@@ -181,9 +180,9 @@ export default {
     mouseleave (e) {
       this.hover = '0'
     },
-    rightIconEvent () {
-      console.log('-----------')
+    rightIconEvent (e) {
       if (this.hover === '1' && this.clearable && !this.multiple) {
+        e.stopPropagation()
         this.$emit('input', '')
       }
     },

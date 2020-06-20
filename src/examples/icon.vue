@@ -24,7 +24,6 @@
 <script>
 import Clipboard from 'clipboard'
 import iconJson from '../styles/xin-iconfont/iconfont.json'
-console.log(iconJson)
 export default {
   components: {
   },

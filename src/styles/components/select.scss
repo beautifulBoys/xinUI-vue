@@ -48,8 +48,13 @@
     box-sizing: border-box;
     padding: 2px $input-space-width;
     border: 1px solid $select-default-color;
+    background: transparentize($select-default-color, 0.95);
     .xin-tag {
       vertical-align: top;
+    }
+    &.focus {
+      box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
+      background: transparentize($select-default-color, 0.9);
     }
     &.placeholder {
       color: transparentize($select-default-color, 0.6);
