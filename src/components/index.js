@@ -26,7 +26,7 @@ import { row, col } from './grid'
 import popover from './popover'
 import icon from './icon'
 
-const lixinComponents = {
+const xinComponents = {
   input,
   label,
   button,
@@ -58,14 +58,14 @@ const lixinComponents = {
 }
 
 function install (Vue) {
-  for (let index in lixinComponents) {
-    lixinComponents[index].install && lixinComponents[index].install(Vue)
+  for (let index in xinComponents) {
+    xinComponents[index].install && xinComponents[index].install(Vue)
   }
 }
 
-lixinComponents.install = install
+xinComponents.install = install
 
-export default lixinComponents
+export default xinComponents
 
 export {
   input,

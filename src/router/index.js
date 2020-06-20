@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import examples from '@/examples'
 
 import guide from '@/examples/guide'
 import label from '@/examples/label'
@@ -31,6 +32,11 @@ import popover from '@/examples/popover'
 import icon from '@/examples/icon'
 
 Vue.use(Router)
+
+let routes = []
+for (let k in examples) {
+  
+}
 
 export default new Router({
   routes: [
