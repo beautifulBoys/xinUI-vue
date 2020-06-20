@@ -1,6 +1,7 @@
 <template>
   <div class="xin-badge">
     <span
+      v-if="!disabled"
       :class="['xin-badge-content', {
         'xin-badge-fill': fill,
         'xin-badge-round': round,
@@ -42,6 +43,10 @@ export default {
     max: {
       type: Number,
       default: 0
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

@@ -46,18 +46,18 @@
       </xin-badge>
     </div>
     <div class="line">
-      <xin-label width="80">亮点展示</xin-label>
+      <xin-label width="80">白底色</xin-label>
       <xin-badge :value="12" :fill="false" color="info">
-        <xin-button color="error" fill>未读消息</xin-button>
+        <xin-button color="info" fill>未读消息</xin-button>
       </xin-badge>
       <xin-badge :value="12" :fill="false" color="success">
-        <xin-button color="error" fill>未读消息</xin-button>
+        <xin-button color="info" fill>未读消息</xin-button>
       </xin-badge>
       <xin-badge :value="12" :fill="false" color="warning">
-        <xin-button color="error" fill>未读消息</xin-button>
+        <xin-button color="info" fill>未读消息</xin-button>
       </xin-badge>
       <xin-badge :value="12" :fill="false" color="error">
-        <xin-button color="error" fill>未读消息</xin-button>
+        <xin-button color="info" fill>未读消息</xin-button>
       </xin-badge>
     </div>
     <div class="line">

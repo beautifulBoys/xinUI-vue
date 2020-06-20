@@ -1,5 +1,7 @@
 <template>
-  <div class="xin-date-picker">
+  <div :class="['xin-date-picker', {
+    'disabled': disabled
+  }]">
     <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
       <div class="xin-date-picker-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
@@ -44,12 +46,12 @@
           <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
             <thead>
               <tr>
-                <th></th>
+                <th v-for="(item, index) in table.thead" :key="index">{{item}}</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
+              <tr v-for="(line, lineIndex) in table.tbody" :key="lineIndex">
+                <td v-for="(item, index) in line" :key="index"></td>
               </tr>
             </tbody>
           </table>
@@ -110,6 +112,10 @@ export default {
       type: Boolean,
       default: false
     },
+    range: {
+      type: Boolean,
+      default: false
+    },
     placeholder: {
       type: String,
       default: '请选择'
@@ -125,13 +131,21 @@ export default {
     format: {
       type: String,
       default: ''
+    },
+    valueFormat: {
+      type: String,
+      default: ''
     }
   },
   data () {
     return {
       visible: false,
       inputValue: this.value,
-      hover: false
+      hover: false,
+      table: {
+        thead: ['日', '一', '二', '三', '四', '五', '六'],
+        tbody: []
+      }
     }
   },
   computed: {

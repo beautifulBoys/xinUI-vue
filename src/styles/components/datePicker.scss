@@ -13,6 +13,18 @@
     margin-left: $radio-space-width;
   }
 
+  &.disabled {
+    .xin-date-picker-input {
+      cursor: not-allowed;
+      color: transparentize($input-default-color, 0.7);
+      border: 1px solid transparentize($input-default-color, 0.7);
+    }
+    .xin-date-picker-icon {
+      cursor: not-allowed;
+      color: transparentize($input-default-color, 0.7);
+    }
+  }
+
   .xin-date-picker-icon {
     width: $input-line-height;
     height: 100%;
