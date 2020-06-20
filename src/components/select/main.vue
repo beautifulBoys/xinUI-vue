@@ -1,10 +1,12 @@
 <template>
-  <div class="xin-select">
+  <div :class="['xin-select', {
+    'disabled': disabled
+  }]">
     <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
-      <div class="xin-input-icon icon-left" v-if="icon">
+      <div class="xin-select-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
       </div>
-      <div class="xin-input-icon icon-right" v-if="rightIcon">
+      <div class="xin-select-icon icon-right" v-if="rightIcon">
         <xin-icon
           :class="['icon', {rotate: visible}]"
           :name="clearable && !multiple ? iconMap[hover] : iconMap['0']"
@@ -12,9 +14,10 @@
         />
       </div>
       <div
-        :class="['xin-select-input', {
-          'xin-input-default': color === 'default',
+        :class="['xin-select-input', 'has-right-icon', {
+          'xin-select-default': color === 'default',
           'placeholder': multiple ? !tags.length : !inputValue,
+          'has-left-icon': icon,
           'multiple': multiple,
           'focus': visible
         }]"
@@ -104,6 +107,10 @@ export default {
       type: Boolean,
       default: false
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     closable: {
       type: Boolean,
       default: false
@@ -175,9 +182,11 @@ export default {
       }
     },
     mouseover (e) {
+      if (this.disabled) return
       this.hover = '1'
     },
     mouseleave (e) {
+      if (this.disabled) return
       this.hover = '0'
     },
     rightIconEvent (e) {
@@ -187,6 +196,7 @@ export default {
       }
     },
     selectEvent () {
+      if (this.disabled) return
       this.visible = true
     },
     coverEvent () {
