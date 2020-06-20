@@ -46,20 +46,22 @@
       v-show="visible"
       @click.stop="coverEvent()"
     ></div>
-    <div class="xin-select-options" v-show="visible">
-      <div class="xin-options-ul">
-        <xin-option
-          v-for="(item, index) in list"
-          :key="index"
-          :item="item"
-          :value="inputValue"
-          :itemValue="itemValue"
-          :itemLabel="itemLabel"
-          :multiple="multiple"
-          @option-event="optionEvent($event, item)"
-        ></xin-option>
+    <transition name="xin-select">
+      <div class="xin-select-options" v-show="visible">
+        <div class="xin-options-ul">
+          <xin-option
+            v-for="(item, index) in list"
+            :key="index"
+            :item="item"
+            :value="inputValue"
+            :itemValue="itemValue"
+            :itemLabel="itemLabel"
+            :multiple="multiple"
+            @option-event="optionEvent($event, item)"
+          ></xin-option>
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 

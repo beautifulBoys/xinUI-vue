@@ -26,6 +26,17 @@
   transform: translateY(-15px);
 }
 
+
+// select
+.xin-select-enter-active, .xin-select-leave-active {
+  transition: all $common-animate-time;
+  opacity: 1;
+}
+.xin-select-enter, .xin-select-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
 // message
 // 透明度 and 下移
 .xin-message-enter-active, .xin-message-leave-active {

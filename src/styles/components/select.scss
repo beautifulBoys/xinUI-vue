@@ -59,6 +59,7 @@
     padding: 2px $input-space-width;
     border: 1px solid $select-default-color;
     background: transparentize($select-default-color, 0.95);
+    transition: all $select-animate-time;
     .xin-tag {
       vertical-align: top;
     }
@@ -119,11 +120,13 @@
     padding-top: 5px;
     min-width: 100%;
     z-index: 2000;
+    transition: all $select-animate-time;
     .xin-options-ul {
       padding: 0;
       list-style-type: none;
       background: #fff;
       box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
+      overflow-y: auto;
       .xin-option {
         list-style-type: none;
         font-size: $select-font-size;
