@@ -110,11 +110,11 @@
       box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
       .xin-option {
         list-style-type: none;
-        font-size: $option-font-size;
+        font-size: $select-font-size;
         padding: 0 $select-space-width;
         box-sizing: border-box;
         width: 100%;
-        line-height: $option-line-height;
+        line-height: $select-line-height - 5px;
         white-space: nowrap;
         cursor: pointer;
         &:hover {
