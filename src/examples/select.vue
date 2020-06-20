@@ -9,12 +9,12 @@
       <xin-select :list="list" multiple itemValue="id" itemLabel="name" v-model="val1" placeholder="请多选"></xin-select>
     </div>
     <div class="line">
-      <xin-label width="60">禁用</xin-label>
-      <xin-select :list="list" itemValue="id" icon="smile" disabled itemLabel="name" v-model="val2"></xin-select>
-    </div>
-    <div class="line">
       <xin-label width="60">图标</xin-label>
       <xin-select :list="list" itemValue="id" icon="smile" itemLabel="name" v-model="val2"></xin-select>
+    </div>
+    <div class="line">
+      <xin-label width="60">禁用</xin-label>
+      <xin-select :list="list" itemValue="id" icon="smile" disabled itemLabel="name" v-model="val2"></xin-select>
     </div>
     <div class="line">
       <xin-label width="60">单选清空</xin-label>
