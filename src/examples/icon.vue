@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page-icon">
     <div class="line">
       <xin-label>xinUI Icon 集合</xin-label>
     </div>
@@ -45,64 +45,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-.area {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 10px;
-  border: 1px dashed #ccc;
-  border-radius: 5px;
-  vertical-align: top;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  
-  &:hover {
-    border: 1px solid $color-blue;
-    .cover {
-      left: 0;
-      top: 0;
-    }
-    &.copy {
-      border: 1px solid $color-green;
-      .cover {
-        color: $color-green;
-      }
-    }
-  }
-  .cover {
-    position: absolute;
-    top: -200%;
-    left: -200%;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    color: $color-blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 12px;
-  }
-  .icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-  }
-  .name {
-    text-align: center;
-    font-size: 12px;
-    word-break: break-all;
-    padding: 0 10px;
-  }
-}
-</style>

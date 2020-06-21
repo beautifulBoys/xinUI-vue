@@ -53,19 +53,6 @@ export default {
   },
   data () {
     return {
-      iconMap: {
-        more: '&#xe637;',
-        time: '&#xe629;',
-        smile: '&#xe624;',
-        play: '&#xe623;',
-        info: '&#xe68e;',
-        cry: '&#xe61e;',
-        help: '&#xe689;',
-        compass: '&#xe625;',
-        setting: '&#xe619;',
-        error: '&#xe68c;',
-        success: '&#xe68b;'
-      }
     }
   },
   mounted () {

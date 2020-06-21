@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import formatDate from '@/utils/format-date'
+// import formatDate from '@/utils/format-date'
 export default {
   name: 'xinDatePicker',
   components: {
@@ -159,17 +159,17 @@ export default {
     }
   },
   created () {
-    this.createTable(2020, 7)
+    // this.createTable(2020, 7)
   },
   methods: {
-    createTable (year, month) {
-      let date = []
-      let res = formatDate.formatDateTime(`${year}-${month}-01`)
-      console.log(res)
-      for (let i = 0; i < 6; i++) {
-        let line = []
-      }
-    },
+    // createTable (year, month) {
+    //   let date = []
+    //   let res = formatDate.formatDateTime(`${year}-${month}-01`)
+    //   console.log(res)
+    //   for (let i = 0; i < 6; i++) {
+    //     let line = []
+    //   }
+    // },
     mouseover (e) {
       this.hover = true
     },

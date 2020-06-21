@@ -85,21 +85,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-</style>
-<style lang="scss">
-.xin-col-content {
-  color: #fff;
-  background: #0095ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  min-height: 25px;
-}
-.xin-row + .xin-row {
-  margin-top: 10px !important;
-}
-</style>

@@ -289,13 +289,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-.line p {
-  font-size: 14px;
-  line-height: 20px;
-  color: #888;
-  text-indent: 30px;
-}
-</style>

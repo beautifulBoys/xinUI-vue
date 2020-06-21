@@ -149,11 +149,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-p {
-  margin: 5px 0;
-  line-height: 16px;
-}
-</style>

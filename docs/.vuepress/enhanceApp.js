@@ -1,6 +1,7 @@
 
-import { components } from '@src/components'
-
+import { components } from '../../src/components'
+import examples from '../../src/examples'
+// import './theme.scss'
 // 使用异步函数也是可以的
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -10,4 +11,5 @@ export default ({
   isServer // 当前应用配置是处于 服务端渲染 或 客户端
 }) => {
   Vue.use(components)
+  Vue.use(examples)
 }

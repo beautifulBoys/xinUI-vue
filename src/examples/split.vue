@@ -43,13 +43,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-.p {
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-  line-height: 20px;
-}
-</style>

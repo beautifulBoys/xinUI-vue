@@ -104,38 +104,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-.line p {
-  font-size: 14px;
-  line-height: 20px;
-  color: #888;
-  text-indent: 30px;
-}
-.header {
-  text-align: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid transparentize(#0095ff, 0);
-  position: relative;
-  .xin-iconfont {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 30px;
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 100%;
-    background: #ff6666;
-    color: #fff;
-  }
-}
-.footer {
-  text-align: center;
-  padding: 20px;
-  background: transparentize(#0095ff, 0.8);
-}
-</style>

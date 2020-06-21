@@ -1,59 +1,87 @@
-import guide from '@/examples/guide'
-import label from '@/examples/label'
-import input from '@/examples/input'
-import button from '@/examples/button'
-import radio from '@/examples/radio'
-import checkbox from '@/examples/checkbox'
-import select from '@/examples/select'
-import switch1 from '@/examples/switch'
-import rate from '@/examples/rate'
-import datePicker from '@/examples/datePicker'
-import table from '@/examples/table'
-import page from '@/examples/page'
-import tabs from '@/examples/tabs'
-import dialog from '@/examples/dialog'
-import message from '@/examples/message'
-import model from '@/examples/model'
-import steps from '@/examples/steps'
-import progress from '@/examples/progress'
-import tooltip from '@/examples/tooltip'
-import badge from '@/examples/badge'
-import transfer from '@/examples/transfer'
-import split from '@/examples/split'
-import loading from '@/examples/loading'
-import tips from '@/examples/tips'
-import tag from '@/examples/tag'
-import grid from '@/examples/grid'
-import popover from '@/examples/popover'
-import icon from '@/examples/icon'
+import Vue from 'vue'
+
+import Label from '@/examples/label'
+import Input from '@/examples/input'
+import Button from '@/examples/button'
+import Radio from '@/examples/radio'
+import Checkbox from '@/examples/checkbox'
+import Select from '@/examples/select'
+import Switch from '@/examples/switch'
+import Rate from '@/examples/rate'
+import DatePicker from '@/examples/datePicker'
+import Table from '@/examples/table'
+import Page from '@/examples/page'
+import Tabs from '@/examples/tabs'
+import Dialog from '@/examples/dialog'
+import Message from '@/examples/message'
+import Model from '@/examples/model'
+import Steps from '@/examples/steps'
+import Progress from '@/examples/progress'
+import Tooltip from '@/examples/tooltip'
+import Badge from '@/examples/badge'
+import Transfer from '@/examples/transfer'
+import Split from '@/examples/split'
+import Loading from '@/examples/loading'
+import Tips from '@/examples/tips'
+import Tag from '@/examples/tag'
+import Grid from '@/examples/grid'
+import Popover from '@/examples/popover'
+import Icon from '@/examples/icon'
 
 export default {
-  guide,
-  label,
-  input,
-  button,
-  radio,
-  checkbox,
-  select,
-  switch1,
-  rate,
-  datePicker,
-  table,
-  page,
-  tabs,
-  dialog,
-  message,
-  model,
-  steps,
-  progress,
-  tooltip,
-  badge,
-  transfer,
-  split,
-  loading,
-  tips,
-  tag,
-  grid,
-  popover,
-  icon
+  install () {
+    Vue.component('example-label', Label)
+    Vue.component('example-input', Input)
+    Vue.component('example-button', Button)
+    Vue.component('example-radio', Radio)
+    Vue.component('example-checkbox', Checkbox)
+    Vue.component('example-select', Select)
+    Vue.component('example-switch', Switch)
+    Vue.component('example-rate', Rate)
+    Vue.component('example-date-picker', DatePicker)
+    Vue.component('example-table', Table)
+    Vue.component('example-page', Page)
+    Vue.component('example-tabs', Tabs)
+    Vue.component('example-dialog', Dialog)
+    Vue.component('example-message', Message)
+    Vue.component('example-model', Model)
+    Vue.component('example-steps', Steps)
+    Vue.component('example-progress', Progress)
+    Vue.component('example-tooltip', Tooltip)
+    Vue.component('example-badge', Badge)
+    Vue.component('example-transfer', Transfer)
+    Vue.component('example-split', Split)
+    Vue.component('example-loading', Loading)
+    Vue.component('example-tips', Tips)
+    Vue.component('example-grid', Grid)
+    Vue.component('example-popover', Popover)
+    Vue.component('example-icon', Icon)
+  },
+  Label,
+  Input,
+  Button,
+  Radio,
+  Checkbox,
+  Select,
+  Switch,
+  Rate,
+  DatePicker,
+  Table,
+  Page,
+  Tabs,
+  Dialog,
+  Message,
+  Model,
+  Steps,
+  Progress,
+  Tooltip,
+  Badge,
+  Transfer,
+  Split,
+  Loading,
+  Tips,
+  Tag,
+  Grid,
+  Popover,
+  Icon
 }

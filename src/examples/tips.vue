@@ -43,10 +43,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "./index.scss";
-// .xin-tips {
-//   margin-bottom: 15px;
-// }
-</style>
