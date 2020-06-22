@@ -13,8 +13,8 @@ module.exports = {
     logo: '/assets/images/logo.png',
     nav: [
       {
-        text: 'XinUI',
-        link: '/ui/'
+        text: 'Components',
+        link: '/components/'
       },
       {
         text: 'XinSkill',
@@ -26,7 +26,7 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/ui/': [
+      '/components/': [
         '',
         {
           title: '组件',

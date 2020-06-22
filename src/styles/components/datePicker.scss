@@ -74,10 +74,6 @@
     &.placeholder {
       color: transparentize($select-default-color, 0.6);
     }
-    &.multiple {
-      padding-left: $input-space-width - 5px;
-      padding-right: $input-space-width - 5px;
-    }
     &.has-left-icon {
       padding-left: $input-line-height;
     }
@@ -95,21 +91,6 @@
     top: 0;
     left: 0;
     z-index: 1000;
-  }
-  .xin-date-picker-tags {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    min-height: $select-line-height;
-    font-size: $input-font-size;
-    line-height: $input-line-height - 10px;
-    box-sizing: border-box;
-    padding: 2px $input-space-width;
-    box-sizing: border-box;
-    transition: all $select-animate-time;
-    border: 1px solid $select-default-color;
   }
   .xin-date-picker-options {
     position: absolute;
@@ -148,7 +129,56 @@
         }
       }
       .content-body {
-        height: 200px;
+        .date-picker-content-body {
+          width: 100%;
+          margin-top: 20px;
+          .thead {
+            .tr {
+              .th {
+                line-height: 30px;
+                font-size: $datePicker-font-size;
+              }
+            }
+          }
+          .tbody {
+            .tr {
+              .td {
+                padding: 3px 0;
+                .day {
+                  width: 30px;
+                  line-height: 30px;
+                  margin: 0 auto;
+                  text-align: center;
+                  font-size: $datePicker-font-size;
+                  border-radius: 100%;
+                  &.current-month-day {
+                    cursor: pointer;
+                    &:hover {
+                      color: $datePicker-info-color;
+                      background: transparentize($datePicker-info-color, 0.9);
+                    }
+                  }
+                  &.disabled {
+                    color: transparentize($datePicker-default-color, 0.5);
+                  }
+                  &.today {
+                    color: $datePicker-info-color;
+                    font-weight: bold;
+                    font-size: $datePicker-font-size + 1px;
+                  }
+                  &.selected {
+                    color: #fff;
+                    background: $datePicker-info-color;
+                    &:hover {
+                      color: #fff;
+                      background: $datePicker-info-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
