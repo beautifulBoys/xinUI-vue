@@ -4,6 +4,7 @@
       'hide-label': hideLabel,
       'is-white': white
     }]"
+    :disabled="disabled"
     v-bind="$attrs"
     v-on="$listeners"
     v-model="inputValue"
@@ -29,6 +30,10 @@ export default {
       default: false
     },
     hideLabel: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     }

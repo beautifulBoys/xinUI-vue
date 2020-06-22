@@ -102,7 +102,7 @@ export default {
     },
     maxLength: {
       type: Number,
-      default: 0
+      default: 100000
     },
     rule: { // 整数（int），小数（float），正数（positive），非中文（noChinese），正则表达式（regexp）
       type: [String, RegExp],
@@ -123,7 +123,7 @@ export default {
     // 宽度
     width: {
       type: String,
-      default: 'auto'
+      default: ''
     },
     round: {
       type: Boolean,
