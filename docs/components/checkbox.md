@@ -6,7 +6,9 @@ import { Checkbox } from 'xin-ui'
 ```
 
 ## 示例
-<example-checkbox/>
+<div>
+  <example-checkbox/>
+</div>
 
 ## 代码示例
 <<< ./src/examples/checkbox.vue
