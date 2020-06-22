@@ -1,17 +1,14 @@
 <template>
   <div :class="['xin-date-picker', {
-    'disabled': disabled
+    'disabled': disabled,
+    'range': range
   }]">
     <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
       <div class="xin-date-picker-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
       </div>
       <div class="xin-date-picker-icon icon-right" v-if="clearable && hover && inputText">
-        <xin-icon
-          :class="['icon']"
-          name="Group-6"
-          @click.native="rightIconEvent($event)"
-        />
+        <xin-icon class="icon" name="Group-6" @click.native="rightIconEvent($event)"/>
       </div>
       <div
         :class="['xin-date-picker-input', {
@@ -22,8 +19,14 @@
           'focus': visible
         }]"
       >
-        <span v-if="inputText">{{inputText}}</span>
-        <span v-else>{{placeholder}}</span>
+        <template v-if="range">
+          <div class="input-text">{{inputText || startPlaceholder}}</div>
+          <div class="space">至</div>
+          <div class="input-text">{{inputText || endPlaceholder}}</div>
+        </template>
+        <template v-else>
+          <div class="input-text">{{inputText || placeholder}}</div>
+        </template>
       </div>
     </div>
     <div
@@ -89,10 +92,6 @@ export default {
       type: [String, Date, Array],
       default: ''
     },
-    list: {
-      type: Array,
-      default: () => []
-    },
     width: {
       type: String,
       default: ''
@@ -104,14 +103,6 @@ export default {
     icon: {
       type: String,
       default: 'Group-'
-    },
-    itemValue: {
-      type: String,
-      default: ''
-    },
-    itemLabel: {
-      type: String,
-      default: ''
     },
     readonly: {
       type: Boolean,
@@ -135,11 +126,11 @@ export default {
     },
     startPlaceholder: {
       type: String,
-      default: ''
+      default: '开始时间'
     },
     endPlaceholder: {
       type: String,
-      default: ''
+      default: '结束时间'
     },
     format: {
       type: String,

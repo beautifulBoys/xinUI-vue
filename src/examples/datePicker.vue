@@ -14,7 +14,7 @@
     </div>
     <div class="line">
       <xin-label width="60">时间段选择</xin-label>
-      <xin-date-picker v-model="val1" type="daterange"></xin-date-picker>
+      <xin-date-picker v-model="val1" range></xin-date-picker>
     </div>
   </div>
 </template>

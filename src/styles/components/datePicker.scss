@@ -25,6 +25,15 @@
     }
   }
 
+  &.range {
+    width: $select-width + 100px;
+    .xin-date-picker-input {
+      .input-text {
+        text-align: center;
+      }
+    }
+  }
+
   .xin-date-picker-icon {
     width: $input-line-height;
     height: 100%;
@@ -61,6 +70,13 @@
     padding: 2px $input-space-width;
     border: 1px solid $select-default-color;
     background: transparentize($select-default-color, 0.95);
+    display: flex;
+    .input-text {
+      flex: 1;
+    }
+    .space {
+      margin: 0 10px;
+    }
     &.has-left-icon {
       padding-left: $input-line-height;
     }
@@ -131,7 +147,8 @@
       .content-body {
         .date-picker-content-body {
           width: 100%;
-          margin-top: 20px;
+          margin-top: 10px;
+          padding: 10px;
           .thead {
             .tr {
               .th {
