@@ -19,13 +19,13 @@ import { button } from 'xin-ui'
 * 默认值：`default`
 * 描述：按钮颜色，也用来区分按钮状态。
 
-| 可选值 | 颜色 |
-| - | - |
-| default | 灰色 |
-| info | 蓝色 |
-| success | 绿色 |
-| warning | 黄色 |
-| error | 红色 |
+| 可选值 | 颜色 | 状态 | 
+| - | - | - |
+| default | 灰色 | 默认 |
+| info | 蓝色 | 提示信息 |
+| success | 绿色 | 成功 |
+| warning | 黄色 | 警告 |
+| error | 红色 | 错误 |
 
 ### icon
 

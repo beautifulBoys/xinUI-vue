@@ -13,12 +13,16 @@ module.exports = {
     logo: '/assets/images/logo.png',
     nav: [
       {
-        text: 'Components',
-        link: '/components/'
+        text: '快速开始',
+        link: '/start'
       },
       {
-        text: 'XinSkill',
-        link: '/skill/'
+        text: '基础组件',
+        link: '/components'
+      },
+      {
+        text: '高级组件',
+        link: '/skill'
       },
       {
         text: '代码仓库',
@@ -26,22 +30,37 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/components/': [
+      '/start': [
+        '',
+        {
+          title: '快速开始',
+          collapsable: true,
+          children: [
+            // 'badge',
+            // '/button',
+            // '/checkbox',
+            // '/datePicker',
+            // '/dialog',
+            // '/input'
+          ]
+        }
+      ],
+      '/components': [
         '',
         {
           title: '组件',
           collapsable: true,
           children: [
-            // 'badge',
-            'button',
-            'checkbox',
-            // 'datePicker',
-            'dialog',
-            // 'input'
+            // '/badge',
+            '/button',
+            '/checkbox',
+            // '/datePicker',
+            '/dialog',
+            // '/input'
           ]
         }
       ],
-      '/skill/': [
+      '/skill': [
         ''
       ]
     }
