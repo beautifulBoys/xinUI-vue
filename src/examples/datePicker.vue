@@ -14,7 +14,7 @@
     </div>
     <div class="line">
       <xin-label width="60">时间段选择</xin-label>
-      <xin-date-picker v-model="val1" range></xin-date-picker>
+      <xin-date-picker v-model="val2" range></xin-date-picker>
     </div>
   </div>
 </template>
@@ -25,9 +25,12 @@ export default {
   },
   data () {
     return {
-      val: '',
+      val: '2020-10-12',
       val1: '',
-      val2: ['2020-05-12', '2020-05-16'],
+      val2: {
+        start: '2020-05-12',
+        end: '2020-05-16'
+      },
       val3: 4
     }
   },

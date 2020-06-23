@@ -7,26 +7,22 @@
       <div class="xin-date-picker-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
       </div>
-      <div class="xin-date-picker-icon icon-right" v-if="clearable && hover && inputText">
+      <div class="xin-date-picker-icon icon-right" v-if="clearable && hover && (inputValue.startText || inputValue.endText)">
         <xin-icon class="icon" name="Group-6" @click.native="rightIconEvent($event)"/>
       </div>
       <div
         :class="['xin-date-picker-input', {
           'xin-date-picker-default': color === 'default',
-          'placeholder': !inputText,
           'has-left-icon': icon,
           'has-right-icon': true,
           'focus': visible
         }]"
       >
-        <template v-if="range">
-          <div class="input-text">{{inputText || startPlaceholder || placeholder}}</div>
-          <div class="space">至</div>
-          <div class="input-text">{{inputText || endPlaceholder || placeholder}}</div>
-        </template>
-        <template v-else>
-          <div class="input-text">{{inputText || placeholder}}</div>
-        </template>
+          <div :class="['input-text', {'placeholder': !inputValue.startText}]">{{inputValue.startText || (range ? startPlaceholder : placeholder)}}</div>
+          <template v-if="range">
+            <div class="space">至</div>
+            <div :class="['input-text', {'placeholder': !inputValue.endText}]">{{inputValue.endText || endPlaceholder}}</div>
+          </template>
       </div>
     </div>
     <div
@@ -35,46 +31,84 @@
       @click.stop="coverEvent()"
     ></div>
     <div class="xin-date-picker-options" v-show="visible">
-      <div class="date-picker-content">
-        <div class="content-header">
-          <div class="xin-date-picker-icon icon-left">
-            <xin-icon class="icon" name="Group-19" @click.native="preMonth()" />
+      <div :class="['date-picker-content', {'range': range}]">
+        <div class="calendar">
+          <div class="content-header">
+            <div class="xin-date-picker-icon icon-left">
+              <xin-icon class="icon" name="Group-19" @click.native="toPreMonth()" />
+            </div>
+            <div class="content-header-text">{{table.year}} 年 {{table.month}} 月</div>
+            <div class="xin-date-picker-icon icon-right">
+              <xin-icon class="icon" name="Group-20" @click.native="toNextMonth()" />
+            </div>
           </div>
-          <div class="content-header-text">{{table.year}} 年 {{table.month}} 月</div>
-          <div class="xin-date-picker-icon icon-right">
-            <xin-icon class="icon" name="Group-20" @click.native="nextMonth()" />
+          <div class="content-body">
+            <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
+              <thead class="thead">
+                <tr class="tr">
+                  <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+                <tr v-for="(line, lineIndex) in table.tbody" :key="lineIndex" class="tr">
+                  <td
+                    :class="['td', {
+                    }]"
+                    v-for="(item, index) in line"
+                    :key="index"
+                  >
+                    <div
+                      :class="['day', {
+                        'pre-month-day': table.month === 1 ? item.month  === 12 : item.month === table.month - 1,
+                        'current-month-day': item.month === table.month,
+                        'next-month-day': table.month === 12 ? item.month  === 1 : item.month === table.month + 1,
+                        'disabled': item.month !== table.month,
+                        'today': today.month === item.month && today.day === item.day,
+                        'selected': (startSelect.year === item.year && startSelect.month === item.month && startSelect.day === item.day) || (endSelect.year === item.year && endSelect.month === item.month && endSelect.day === item.day)
+                      }]"
+                      @click="dateEvent(item, item.month !== table.month)"
+                    >{{item.day}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="content-body">
-          <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
-            <thead class="thead">
-              <tr class="tr">
-                <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
-              </tr>
-            </thead>
-            <tbody class="tbody">
-              <tr v-for="(line, lineIndex) in table.tbody" :key="lineIndex" class="tr">
-                <td
-                  :class="['td', {
-                  }]"
-                  v-for="(item, index) in line"
-                  :key="index"
-                >
-                  <div
-                    :class="['day', {
-                      'pre-month-day': table.month === 1 ? item.month  === 12 : item.month === table.month - 1,
-                      'current-month-day': item.month === table.month,
-                      'next-month-day': table.month === 12 ? item.month  === 1 : item.month === table.month + 1,
-                      'disabled': item.month !== table.month,
-                      'today': today.month === item.month && today.day === item.day,
-                      'selected': select.year === item.year && select.month === item.month && select.day === item.day
+        <div :class="['calendar', {'border': range}]" v-if="range">
+          <div class="content-header">
+            <div class="content-header-text">{{nextYear || ''}} 年 {{nextMonth || ''}} 月</div>
+          </div>
+          <div class="content-body">
+            <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
+              <thead class="thead">
+                <tr class="tr">
+                  <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
+                </tr>
+              </thead>
+              <tbody class="tbody">
+                <tr v-for="(line, lineIndex) in table.nextTbody" :key="lineIndex" class="tr">
+                  <td
+                    :class="['td', {
                     }]"
-                    @click="dateEvent(item)"
-                  >{{item.day}}</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                    v-for="(item, index) in line"
+                    :key="index"
+                  >
+                    <div
+                      :class="['day', {
+                        'pre-month-day': nextMonth === 1 ? item.month  === 12 : item.month === nextMonth - 1,
+                        'current-month-day': item.month === nextMonth,
+                        'next-month-day': nextMonth === 12 ? item.month  === 1 : item.month === nextMonth + 1,
+                        'disabled': item.month !== nextMonth,
+                        'today': today.month === item.month && today.day === item.day,
+                        'selected': (startSelect.year === item.year && startSelect.month === item.month && startSelect.day === item.day) || (endSelect.year === item.year && endSelect.month === item.month && endSelect.day === item.day)
+                      }]"
+                      @click="dateEvent(item, item.month !== nextMonth)"
+                    >{{item.day}}</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -89,7 +123,7 @@ export default {
   },
   props: {
     value: {
-      type: [String, Date, Array],
+      type: [String, Date, Object],
       default: ''
     },
     width: {
@@ -140,53 +174,92 @@ export default {
   data () {
     return {
       visible: false,
-      inputValue: this.value ? new Date(this.value) : this.value,
-      inputText: '',
       hover: false,
+      inputValue: {
+        start: null,
+        startText: '',
+        end: null,
+        endText: ''
+      },
       table: {
         year: null,
         month: null,
         thead: ['日', '一', '二', '三', '四', '五', '六'],
-        tbody: []
+        tbody: [],
+        nextTbody: []
+      },
+      startSelect: {
+        year: null,
+        month: null,
+        day: null
+      },
+      endSelect: {
+        year: null,
+        month: null,
+        day: null
       },
       today: {
         year: null,
         month: null,
         day: null
       },
-      select: {
-        year: null,
-        month: null,
-        day: null
-      }
+      touchNum: 0
     }
   },
   computed: {
+    nextYear () {
+      if (this.table.year && this.table.month) {
+        return this.table.month > 11 ? this.table.year + 1 : this.table.year
+      } else {
+        return null
+      }
+    },
+    nextMonth () {
+      if (this.table.year && this.table.month) {
+        return this.table.month > 11 ? 1 : this.table.month + 1
+      } else {
+        return null
+      }
+    },
   },
   watch: {
     value (n, o) {
-      this.inputValue = n ? new Date(n) : n
-      if (n) {
-        let select = formatDate.formatDateTime(n)
-        this.select.year = Number(select.year)
-        this.select.month = Number(select.month)
-        this.select.day = Number(select.day)
-        this.table.year = Number(select.year)
-        this.table.month = Number(select.month)
-        this.createTable(this.table.year, this.table.month)
-      } else {
-        this.select = { year: null, month: null, day: null }
-        let current = formatDate.formatDateTime(n)
-        this.table.year = Number(current.year)
-        this.table.month = Number(current.month)
-      }
+      this.init(n)
     },
-    inputValue (n) {
+    'inputValue.start' (n) {
       if (n) {
         let info = formatDate.formatDateTime(n)
-        this.inputText = `${info.year}-${info.month}-${info.day}`
+        this.inputValue.startText = `${info.year}-${info.month}-${info.day}`
+        this.startSelect = {
+          year: Number(info.year),
+          month: Number(info.month),
+          day: Number(info.day)
+        }
       } else {
-        this.inputText = ''
+        this.inputValue.startText = ''
+        this.startSelect = {
+          year: null,
+          month: null,
+          day: null
+        }
+      }
+    },
+    'inputValue.end' (n) {
+      if (n) {
+        let info = formatDate.formatDateTime(n)
+        this.inputValue.endText = `${info.year}-${info.month}-${info.day}`
+        this.endSelect = {
+          year: Number(info.year),
+          month: Number(info.month),
+          day: Number(info.day)
+        }
+      } else {
+        this.inputValue.endText = ''
+        this.endSelect = {
+          year: null,
+          month: null,
+          day: null
+        }
       }
     }
   },
@@ -195,18 +268,26 @@ export default {
     this.today.year = Number(day.year)
     this.today.month = Number(day.month)
     this.today.day = Number(day.day)
-    if (this.inputValue) {
-      let select = formatDate.formatDateTime(this.inputValue)
-      this.table.year = select.year
-      this.table.month = select.month
-    } else {
-      this.table.year = this.today.year
-      this.table.month = this.today.month
-    }
-    
-    this.createTable(this.table.year, this.table.month)
+    this.init(this.value)
   },
   methods: {
+    init (value) {
+      if (this.range) {
+        this.inputValue.start = value.start ? formatDate.getCST(value.start) : null
+        this.inputValue.end = value.end ? formatDate.getCST(value.end) : null
+        let startSelect = formatDate.formatDateTime(this.inputValue.start)
+        this.table.year = this.inputValue.start ? Number(startSelect.year) : this.today.year
+        this.table.month = this.inputValue.start ? Number(startSelect.month) : this.today.month
+        this.table.tbody = this.createTable(this.table.year, this.table.month)
+        this.table.nextTbody = this.createTable(this.nextYear, this.nextMonth)
+      } else {
+        this.inputValue.start = value ? formatDate.getCST(value) : null
+        let startSelect = formatDate.formatDateTime(this.inputValue.start)
+        this.table.year = this.inputValue.start ? Number(startSelect.year) : this.today.year
+        this.table.month = this.inputValue.start ? Number(startSelect.month) : this.today.month
+        this.table.tbody = this.createTable(this.table.year, this.table.month)
+      }
+    },
     createTable (year, month) {
       let current = formatDate.formatDateTime(`${year}-${month}-01`)
       let date = [
@@ -227,7 +308,7 @@ export default {
         }
         days.push(week)
       }
-      this.table.tbody = days
+      return days
     },
     preMonthDays (year, month, current) {
       let preYear = month > 1 ? year : year - 1
@@ -262,20 +343,34 @@ export default {
       }
       return arr
     },
-    preMonth () {
+    toPreMonth () {
       this.table.year = this.table.month === 1 ? this.table.year - 1 : this.table.year
       this.table.month = this.table.month === 1 ? 12 : this.table.month - 1
-      this.createTable(this.table.year, this.table.month)
+      this.table.tbody = this.createTable(this.table.year, this.table.month)
+      if (this.range) this.table.nextTbody = this.createTable(this.nextYear, this.nextMonth)
     },
-    nextMonth () {
+    toNextMonth () {
       this.table.year = this.table.month === 12 ? this.table.year + 1 : this.table.year
       this.table.month = this.table.month === 12 ? 1 : this.table.month + 1
-      this.createTable(this.table.year, this.table.month)
+      this.table.tbody = this.createTable(this.table.year, this.table.month)
+      if (this.range) this.table.nextTbody = this.createTable(this.nextYear, this.nextMonth)
     },
-    dateEvent (item) {
-      if (item.month === this.table.month) {
-        this.emit(`${item.year}-${item.month}-${item.day}`)
-        this.visible = false
+    dateEvent (item, disabled) {
+      if (disabled) return
+      this.touchNum += 1
+      if (this.range) {
+        if (this.touchNum === 1) {
+          this.inputValue.start = `${item.year}-${item.month}-${item.day}`
+          this.inputValue.end = null
+        } else if (this.touchNum === 2) {
+          this.inputValue.end = `${item.year}-${item.month}-${item.day}`
+          this.coverEvent()
+        }
+      } else {
+        if (item.month === this.table.month) {
+          this.emit(`${item.year}-${item.month}-${item.day}`)
+          this.coverEvent()
+        }
       }
     },
     mouseover (e) {
@@ -291,15 +386,20 @@ export default {
     selectEvent () {
       if (this.disabled) return
       this.visible = true
+      this.touchNum = 0
     },
     coverEvent () {
       this.visible = false
     },
     emit (date) {
-      if (this.format) {
-        this.$emit('input', date ? formatDate.formatDate(date, this.format) : '')
+      if (this.range) {
+
       } else {
-        this.$emit('input', date ? formatDate.getCST(date) : '')
+        if (this.format) {
+          this.$emit('input', date ? formatDate.formatDate(date, this.format) : '')
+        } else {
+          this.$emit('input', date ? formatDate.getCST(date) : '')
+        }
       }
     }
   }

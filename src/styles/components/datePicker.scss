@@ -73,6 +73,9 @@
     display: flex;
     .input-text {
       flex: 1;
+      &.placeholder {
+        color: transparentize($select-default-color, 0.6);
+      }
     }
     .space {
       margin: 0 10px;
@@ -86,9 +89,6 @@
     &.focus {
       box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
       background: transparentize($select-default-color, 0.9);
-    }
-    &.placeholder {
-      color: transparentize($select-default-color, 0.6);
     }
     &.has-left-icon {
       padding-left: $input-line-height;
@@ -116,9 +116,18 @@
     min-width: 100%;
     z-index: 2000;
     .date-picker-content {
-      width: $datePicker-width;
-      background: #fff;
       box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
+      &.range {
+        width: 2 * $datePicker-width + 1px;
+      }
+      .calendar {
+        width: $datePicker-width;
+        display: inline-block;
+        background: #fff;
+        &.border {
+          border-left: 1px solid #eee;
+        }
+      }
       .content-header {
         height: 30px;
         position: relative;
