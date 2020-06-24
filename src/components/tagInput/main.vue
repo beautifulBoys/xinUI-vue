@@ -88,10 +88,11 @@ export default {
       if (e.keyCode === 8) {
         this.backSpace && !this.innerValue && this.backspace()
       } else if (e.keyCode === 13) {
-        this.innerValue && this.add()
+        this.add()
       }
     },
     add () {
+      if (!this.innerValue) return
       this.$emit('input', [...this.tags, this.innerValue])
       this.innerValue = ''
     },
