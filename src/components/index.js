@@ -26,6 +26,7 @@ import tag from './tag'
 import { row, col } from './grid'
 import popover from './popover'
 import icon from './icon'
+import tree from './tree'
 
 const xinComponents = {
   input,
@@ -56,7 +57,8 @@ const xinComponents = {
   row,
   col,
   popover,
-  icon
+  icon,
+  tree
 }
 
 function install (Vue) {
@@ -98,7 +100,8 @@ export {
   row,
   col,
   popover,
-  icon
+  icon,
+  tree
 }
 
 export const components = {

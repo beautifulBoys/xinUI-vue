@@ -1,0 +1,26 @@
+
+@import "~@/styles/const.scss";
+
+.xin-tree {
+}
+
+.xin-leaf {
+  .xin-leaf-label {
+    .leaf-icon-box {
+      width: $tree-line-height - 15px;
+      line-height: $tree-line-height;
+      height: $tree-line-height;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      .leaf-icon {
+        cursor: pointer;
+        display: block;
+        transition: all $tree-animate-time;
+        &.visible {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

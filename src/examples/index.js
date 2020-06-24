@@ -28,6 +28,7 @@ import Tag from '@/examples/tag'
 import Grid from '@/examples/grid'
 import Popover from '@/examples/popover'
 import Icon from '@/examples/icon'
+import Tree from '@/examples/tree'
 
 export default {
   install () {
@@ -58,6 +59,7 @@ export default {
     Vue.component('example-grid', Grid)
     Vue.component('example-popover', Popover)
     Vue.component('example-icon', Icon)
+    Vue.component('example-tree', Tree)
   },
   Label,
   Input,
@@ -86,5 +88,6 @@ export default {
   Tag,
   Grid,
   Popover,
-  Icon
+  Icon,
+  Tree
 }
