@@ -98,21 +98,6 @@
     left: 0;
     z-index: 1000;
   }
-  .xin-select-tags {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    min-height: $select-line-height;
-    font-size: $input-font-size;
-    line-height: $input-line-height - 10px;
-    box-sizing: border-box;
-    padding: 2px $input-space-width;
-    box-sizing: border-box;
-    transition: all $select-animate-time;
-    border: 1px solid $select-default-color;
-  }
   .xin-select-options {
     position: absolute;
     top: 100%;

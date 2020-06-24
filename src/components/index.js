@@ -7,6 +7,7 @@ import select from './select'
 import switch1 from './switch'
 import rate from './rate'
 import datePicker from './datePicker'
+import tagInput from './tagInput'
 import table from './table'
 import page from './page'
 import tabs from './tabs'
@@ -36,6 +37,7 @@ const xinComponents = {
   switch1,
   rate,
   datePicker,
+  tagInput,
   table,
   page,
   tabs,
@@ -77,6 +79,7 @@ export {
   switch1,
   rate,
   datePicker,
+  tagInput,
   table,
   page,
   tabs,

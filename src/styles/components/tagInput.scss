@@ -1,0 +1,40 @@
+
+@import "~@/styles/const.scss";
+
+.xin-tag-input {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: $tagInput-width;
+  transition: all 0.3s;
+  vertical-align: middle;
+  font-size: $tagInput-font-size;
+  line-height: $tagInput-line-height - 6px;
+  box-sizing: border-box;
+  padding: 2px $tagInput-space-width;
+  border: 1px solid $tagInput-default-color;
+  background: transparentize($tagInput-default-color, 0.95);
+  & + & {
+    margin-left: $tagInput-space-width;
+  }
+  .xin-tag {
+    vertical-align: top;
+  }
+
+  .tag-input {
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    min-width: 100px;
+    width: 100px;
+    flex-grow: 1;
+    line-height: $tagInput-line-height - 6px;
+  }
+  &.focus {
+    box-shadow: 0 0 8px transparentize($tagInput-default-color, 0.6);
+    background: transparentize($tagInput-default-color, 0.9);
+  }
+}
+
