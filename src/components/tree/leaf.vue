@@ -53,7 +53,7 @@ export default {
   data () {
     return {
       selected: false,
-      visible: true
+      visible: false
     }
   },
   watch: {
