@@ -170,34 +170,56 @@
             .tr {
               .td {
                 padding: 3px 0;
-                .day {
-                  width: 30px;
-                  line-height: 30px;
-                  margin: 0 auto;
-                  text-align: center;
-                  font-size: $datePicker-font-size;
-                  border-radius: 100%;
-                  &.current-month-day {
-                    cursor: pointer;
-                    &:hover {
-                      color: $datePicker-info-color;
-                      background: transparentize($datePicker-info-color, 0.9);
-                    }
-                  }
-                  &.disabled {
-                    color: transparentize($datePicker-default-color, 0.5);
-                  }
-                  &.today {
+                .day-box {
+                  height: 20px;
+                  width: 100%;
+                  margin: 5px 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  &.section {
                     color: $datePicker-info-color;
-                    font-weight: bold;
-                    font-size: $datePicker-font-size + 1px;
+                    background: transparentize($datePicker-info-color, 0.9);
                   }
-                  &.selected {
-                    color: #fff;
-                    background: $datePicker-info-color;
-                    &:hover {
+                  .day {
+                    width: 30px;
+                    line-height: 30px;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: $datePicker-font-size;
+                    // border-radius: 100%;
+                    &.current-month {
+                      cursor: pointer;
+                      &:hover {
+                        color: $datePicker-info-color;
+                        background: transparentize($datePicker-info-color, 0.9);
+                      }
+                    }
+                    &.disabled {
+                      color: transparentize($datePicker-default-color, 0.5);
+                      &.today {
+                        color: transparentize($datePicker-default-color, 0.5);
+                      }
+                      &.current-month {
+                        cursor: auto;
+                        &:hover {
+                          color: transparentize($datePicker-default-color, 0.5);
+                          background: #fff;
+                        }
+                      }
+                    }
+                    &.today {
+                      color: $datePicker-info-color;
+                      font-weight: bold;
+                      font-size: $datePicker-font-size + 1px;
+                    }
+                    &.selected {
                       color: #fff;
                       background: $datePicker-info-color;
+                      &:hover {
+                        color: #fff;
+                        background: $datePicker-info-color;
+                      }
                     }
                   }
                 }

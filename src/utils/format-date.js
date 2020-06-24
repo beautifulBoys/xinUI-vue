@@ -12,7 +12,8 @@ var format = {
       second: this.paddNum(cst.getSeconds()).toString(),
       monthDays: num[cst.getMonth()],
       week: cst.getDay(),
-      stamp: cst.getTime()
+      stamp: cst.getTime(),
+      date: cst
     }
   },
   // 格式化时间戳
