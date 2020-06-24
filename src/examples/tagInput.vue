@@ -4,6 +4,10 @@
       <xin-label width="80">基础组件</xin-label>
       <xin-tag-input v-model="val"></xin-tag-input>
     </div>
+    <div class="line">
+      <xin-label width="80">宽度</xin-label>
+      <xin-tag-input v-model="val1" width="300"></xin-tag-input>
+    </div>
   </div>
 </template>
 
@@ -13,7 +17,8 @@ export default {
   },
   data () {
     return {
-      val: ['陆军', '东风快递', '火箭军']
+      val: [],
+      val1: ['陆军', '东风快递', '火箭军']
     }
   },
   mounted () {

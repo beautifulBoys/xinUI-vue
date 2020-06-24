@@ -30,7 +30,11 @@
     min-width: 100px;
     width: 100px;
     flex-grow: 1;
+    font-size: $tagInput-font-size;
     line-height: $tagInput-line-height - 6px;
+    &::placeholder {
+      color: transparentize($tagInput-default-color, 0.6);
+    }
   }
   &.focus {
     box-shadow: 0 0 8px transparentize($tagInput-default-color, 0.6);

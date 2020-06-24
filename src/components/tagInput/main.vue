@@ -17,7 +17,9 @@
     ></xin-tag>
     <input
       class="tag-input"
+      ref="input"
       v-model="innerValue"
+      :placeholder="tags.length ? '' : placeholder"
       @keydown="keydownEvent($event)"
       @blur="blurEvent($event)"
     />
@@ -41,6 +43,10 @@ export default {
     color: {
       type: String,
       default: 'default'
+    },
+    maxSize: {
+      type: Number,
+      default: 10
     },
     closable: {
       type: Boolean,
@@ -83,6 +89,7 @@ export default {
         }
       })
       this.$emit('input', arr)
+      this.$refs.input.focus()
     },
     keydownEvent (e) {
       if (e.keyCode === 8) {
@@ -93,6 +100,9 @@ export default {
     },
     add () {
       if (!this.innerValue) return
+      if (this.tags.length >= this.maxSize) {
+        this.$emit('maxSize', this.tags.length)
+      }
       this.$emit('input', [...this.tags, this.innerValue])
       this.innerValue = ''
     },
