@@ -26,10 +26,9 @@
   transform: translateY(-15px);
 }
 
-
 // select
 .xin-select-enter-active, .xin-select-leave-active {
-  transition: all $common-animate-time;
+  transition: all $select-animate-time;
   opacity: 1;
 }
 .xin-select-enter, .xin-select-leave-to {
@@ -110,4 +109,14 @@
 }
 .xin-tips-enter, .xin-tips-leave-to {
   opacity: 0;
+}
+
+// date-picker
+.xin-date-picker-enter-active, .xin-date-picker-leave-active {
+  transition: all $datePicker-animate-time;
+  opacity: 1;
+}
+.xin-date-picker-enter, .xin-date-picker-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }

@@ -21,7 +21,7 @@
           width: (inputValue > 100 ? 100 : inputValue < 0 ? 0 : inputValue) + '%'
         }"
       >
-        <span style="padding: 0 10px">{{inputValue > 100 ? 100 : inputValue < 0 ? 0 : inputValue}}%</span>
+        <span style="padding: 0 10px" v-if="inside">{{inputValue > 100 ? 100 : inputValue < 0 ? 0 : inputValue}}%</span>
       </div>
     </div>
     <div class="xin-progress-title">{{inputValue > 100 ? 100 : inputValue < 0 ? 0 : inputValue}}%</div>

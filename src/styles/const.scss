@@ -79,7 +79,7 @@ $checkbox-disabled-color: $color-gray + #555555;
 // select
 $select-width: $common-width;
 $select-font-size: $font-size;
-$select-animate-time: 0.1s;
+$select-animate-time: 0.15s;
 $select-icon-width: 15px;
 $select-line-height: $line-height;
 $select-space-width: $space-width;
@@ -121,7 +121,7 @@ $datePicker-line-height: $line-height;
 $datePicker-min-width: 60px;
 $datePicker-width: 300px;
 $datePicker-font-size: $font-size;
-$datePicker-animate-time: 0.3s;
+$datePicker-animate-time: 0.15s;
 $datePicker-icon-height: 20px;
 $datePicker-icon-color: $color-gray + #444444;
 $datePicker-color: $color-gray - #222222;
@@ -293,7 +293,7 @@ $popover-error-color: $color-red;
 
 // tree
 $tree-space-width: $space-width;
-$tree-animate-time: 0.3s;
+$tree-animate-time: 0.1s;
 $tree-font-size: $font-size;
 $tree-line-height: $line-height;
 $tree-default-color: $color-gray;

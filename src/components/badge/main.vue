@@ -20,6 +20,7 @@
 export default {
   name: 'xinBadge',
   props: {
+    value: null,
     color: { // success, error, warning, info
       type: String,
       default: 'error'

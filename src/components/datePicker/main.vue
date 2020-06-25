@@ -30,94 +30,96 @@
       v-show="visible"
       @click.stop="coverEvent()"
     ></div>
-    <div class="xin-date-picker-options" v-show="visible">
-      <div :class="['date-picker-content', {'range': range}]">
-        <div class="calendar">
-          <div class="content-header">
-            <div class="xin-date-picker-icon icon-left">
-              <xin-icon class="icon" name="Group-19" @click.native="toPreMonth()" />
+    <transition name="xin-date-picker">
+      <div class="xin-date-picker-options" v-show="visible">
+        <div :class="['date-picker-content', {'range': range}]">
+          <div class="calendar">
+            <div class="content-header">
+              <div class="xin-date-picker-icon icon-left">
+                <xin-icon class="icon" name="Group-19" @click.native="toPreMonth()" />
+              </div>
+              <div class="content-header-text">{{table.year}} 年 {{table.month}} 月</div>
+              <div class="xin-date-picker-icon icon-right">
+                <xin-icon class="icon" name="Group-20" @click.native="toNextMonth()" />
+              </div>
             </div>
-            <div class="content-header-text">{{table.year}} 年 {{table.month}} 月</div>
-            <div class="xin-date-picker-icon icon-right">
-              <xin-icon class="icon" name="Group-20" @click.native="toNextMonth()" />
+            <div class="content-body">
+              <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
+                <thead class="thead">
+                  <tr class="tr">
+                    <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody" @mouseleave="tdMouseleave()">
+                  <tr v-for="(line, lineIndex) in table.tbody" :key="lineIndex" class="tr">
+                    <td
+                      :class="['td', {
+                      }]"
+                      v-for="(item, index) in line"
+                      :key="index"
+                      @mouseover="tdMouseover(item)"
+                    >
+                      <div :class="['day-box', {'section': (range && item.month === table.month && startSelect && endSelect && ((item.stamp > startSelect && item.stamp < endSelect) || (item.stamp < startSelect && item.stamp > endSelect)))}]">
+                        <div
+                          :class="['day', {
+                            'pre-month': table.month === 1 ? item.month  === 12 : item.month === table.month - 1,
+                            'current-month': item.month === table.month,
+                            'next-month': table.month === 12 ? item.month  === 1 : item.month === table.month + 1,
+                            'today': today.stamp === item.stamp,
+                            'selected': (item.month === table.month && !disabledDate(item.date)) && (startSelect === item.stamp || endSelect === item.stamp),
+                            'disabled': item.month !== table.month || disabledDate(item.date)
+                          }]"
+                          @click="dateEvent(item, (item.month !== table.month || disabledDate(item.date)))"
+                        >{{item.day}}</div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div class="content-body">
-            <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
-              <thead class="thead">
-                <tr class="tr">
-                  <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
-                </tr>
-              </thead>
-              <tbody class="tbody" @mouseleave="tdMouseleave()">
-                <tr v-for="(line, lineIndex) in table.tbody" :key="lineIndex" class="tr">
-                  <td
-                    :class="['td', {
-                    }]"
-                    v-for="(item, index) in line"
-                    :key="index"
-                    @mouseover="tdMouseover(item)"
-                  >
-                    <div :class="['day-box', {'section': (range && item.month === table.month && startSelect && endSelect && ((item.stamp > startSelect && item.stamp < endSelect) || (item.stamp < startSelect && item.stamp > endSelect)))}]">
-                      <div
-                        :class="['day', {
-                          'pre-month': table.month === 1 ? item.month  === 12 : item.month === table.month - 1,
-                          'current-month': item.month === table.month,
-                          'next-month': table.month === 12 ? item.month  === 1 : item.month === table.month + 1,
-                          'today': today.stamp === item.stamp,
-                          'selected': (item.month === table.month && !disabledDate(item.date)) && (startSelect === item.stamp || endSelect === item.stamp),
-                          'disabled': item.month !== table.month || disabledDate(item.date)
-                        }]"
-                        @click="dateEvent(item, (item.month !== table.month || disabledDate(item.date)))"
-                      >{{item.day}}</div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div :class="['calendar', {'border': range}]" v-if="range">
-          <div class="content-header">
-            <div class="content-header-text">{{nextYear || ''}} 年 {{nextMonth || ''}} 月</div>
-          </div>
-          <div class="content-body">
-            <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
-              <thead class="thead">
-                <tr class="tr">
-                  <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
-                </tr>
-              </thead>
-              <tbody class="tbody" @mouseleave="tdMouseleave()">
-                <tr v-for="(line, lineIndex) in table.nextTbody" :key="lineIndex" class="tr">
-                  <td
-                    :class="['td', {
-                    }]"
-                    v-for="(item, index) in line"
-                    :key="index"
-                    @mouseover="tdMouseover(item)"
-                  >
-                    <div :class="['day-box', {'section': (range && item.month === nextMonth && startSelect && endSelect && ((item.stamp > startSelect && item.stamp < endSelect) || (item.stamp < startSelect && item.stamp > endSelect)))}]">
-                      <div
-                        :class="['day', {
-                          'pre-month': nextMonth === 1 ? item.month  === 12 : item.month === nextMonth - 1,
-                          'current-month': item.month === nextMonth,
-                          'next-month': nextMonth === 12 ? item.month  === 1 : item.month === nextMonth + 1,
-                          'today': today.stamp === item.stamp,
-                          'selected': (item.month === nextMonth && !disabledDate(item.date)) && (startSelect === item.stamp || endSelect === item.stamp),
-                          'disabled': item.month !== nextMonth || disabledDate(item.date)
-                        }]"
-                        @click="dateEvent(item, (item.month !== nextMonth || disabledDate(item.date)))"
-                      >{{item.day}}</div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div :class="['calendar', {'border': range}]" v-if="range">
+            <div class="content-header">
+              <div class="content-header-text">{{nextYear || ''}} 年 {{nextMonth || ''}} 月</div>
+            </div>
+            <div class="content-body">
+              <table cellspacing="0" cellpadding="0" class="date-picker-content-body">
+                <thead class="thead">
+                  <tr class="tr">
+                    <th v-for="(item, index) in table.thead" :key="index" class="th">{{item}}</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody" @mouseleave="tdMouseleave()">
+                  <tr v-for="(line, lineIndex) in table.nextTbody" :key="lineIndex" class="tr">
+                    <td
+                      :class="['td', {
+                      }]"
+                      v-for="(item, index) in line"
+                      :key="index"
+                      @mouseover="tdMouseover(item)"
+                    >
+                      <div :class="['day-box', {'section': (range && item.month === nextMonth && startSelect && endSelect && ((item.stamp > startSelect && item.stamp < endSelect) || (item.stamp < startSelect && item.stamp > endSelect)))}]">
+                        <div
+                          :class="['day', {
+                            'pre-month': nextMonth === 1 ? item.month  === 12 : item.month === nextMonth - 1,
+                            'current-month': item.month === nextMonth,
+                            'next-month': nextMonth === 12 ? item.month  === 1 : item.month === nextMonth + 1,
+                            'today': today.stamp === item.stamp,
+                            'selected': (item.month === nextMonth && !disabledDate(item.date)) && (startSelect === item.stamp || endSelect === item.stamp),
+                            'disabled': item.month !== nextMonth || disabledDate(item.date)
+                          }]"
+                          @click="dateEvent(item, (item.month !== nextMonth || disabledDate(item.date)))"
+                        >{{item.day}}</div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
