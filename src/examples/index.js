@@ -9,6 +9,7 @@ import Select from '@/examples/select'
 import Switch from '@/examples/switch'
 import Rate from '@/examples/rate'
 import DatePicker from '@/examples/datePicker'
+import colorPicker from '@/examples/colorPicker'
 import TagInput from '@/examples/tagInput'
 import Table from '@/examples/table'
 import Page from '@/examples/page'
@@ -41,6 +42,7 @@ export default {
     Vue.component('example-switch', Switch)
     Vue.component('example-rate', Rate)
     Vue.component('example-date-picker', DatePicker)
+    Vue.component('example-color-picker', colorPicker)
     Vue.component('example-tag-input', TagInput)
     Vue.component('example-table', Table)
     Vue.component('example-page', Page)
@@ -70,6 +72,7 @@ export default {
   Switch,
   Rate,
   DatePicker,
+  colorPicker,
   TagInput,
   Table,
   Page,

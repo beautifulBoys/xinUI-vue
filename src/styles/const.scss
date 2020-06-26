@@ -131,6 +131,22 @@ $datePicker-success-color: $color-green;
 $datePicker-error-color: $color-red;
 $datePicker-warning-color: $color-yellow;
 
+// colorPicker
+$colorPicker-space-width: $space-width;
+$colorPicker-line-height: $line-height;
+$colorPicker-min-width: 60px;
+$colorPicker-width: 50px;
+$colorPicker-font-size: $font-size;
+$colorPicker-animate-time: 0.15s;
+$colorPicker-icon-height: 20px;
+$colorPicker-icon-color: $color-gray + #444444;
+$colorPicker-color: $color-gray - #222222;
+$colorPicker-default-color: $color-gray;
+$colorPicker-info-color: $color-blue;
+$colorPicker-success-color: $color-green;
+$colorPicker-error-color: $color-red;
+$colorPicker-warning-color: $color-yellow;
+
 // select
 $tagInput-width: 200px;
 $tagInput-font-size: $font-size;

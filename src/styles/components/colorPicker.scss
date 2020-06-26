@@ -1,0 +1,141 @@
+
+@import "~@/styles/const.scss";
+
+.xin-color-picker {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-size: 0;
+  & + & {
+    margin-left: $radio-space-width;
+  }
+  .xin-color-picker-input {
+    // width: $colorPicker-width;
+    height: $colorPicker-line-height;
+    padding: 5px 0 5px 5px;
+    box-sizing: border-box;
+    border: 1px solid $colorPicker-default-color;
+    .color-picker-color {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+    .color-picker-icon {
+      width: $colorPicker-line-height - 8px;
+      height: $colorPicker-line-height - 12px;
+      display: inline-block;
+      vertical-align: top;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      .icon {
+
+      }
+    }
+  }
+  .xin-color-picker-cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  .xin-color-picker-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 5px;
+    min-width: 100%;
+    z-index: 2000;
+    .color-picker-options-content {
+      width: 300px;
+      padding: 10px;
+      box-sizing: border-box;
+      box-shadow: 0 0 8px transparentize($colorPicker-default-color, 0.6);
+      .content-picker {
+        width: 100%;
+        height: 180px;
+        position: relative;
+        user-select: none;
+        .position {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          &.colors {
+            background: red;
+          }
+          &.whites {
+            background: linear-gradient(90deg, #fff, transparent);
+          }
+          &.blanks {
+            background: linear-gradient(0, #000, transparent);
+          }
+        }
+        .pickers {
+          width: 0;
+          height: 0;
+          position: absolute;
+          .pickers-box {
+            width: 0;
+            height: 0;
+            position: relative;
+            &::before {
+              width: 8px;
+              height: 8px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 100%;
+              border: 1px solid #333;
+              background: #fff;
+              box-sizing: border-box;
+              content: " ";
+              display: block;
+              transform: translate3d(-50%, -50%, 0);
+            }
+            &::after {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 100%;
+              border-width: 25px;
+              border-style: solid;
+              border-color: red;
+              content: " ";
+              display: block;
+              transform: translate3d(-50%, -50%, 0);
+            }
+          }
+        }
+      }
+      .content-line {
+        width: 100%;
+        height: 10px;
+        margin: 10px 0;
+        background: linear-gradient(90deg, red 0, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, red);
+      }
+      .content-bottom {
+        width: 100%;
+        display: flex;
+        .colors {
+          width: $colorPicker-line-height;
+          height: $colorPicker-line-height;
+          margin-right: $colorPicker-space-width;
+        }
+        .xin-input {
+          flex: 1;
+          margin-right: $colorPicker-space-width;
+        }
+        .xin-button {
+
+        }
+      }
+    }
+  }
+}
+
