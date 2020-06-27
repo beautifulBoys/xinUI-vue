@@ -28,6 +28,7 @@ import { row, col } from './grid'
 import popover from './popover'
 import icon from './icon'
 import tree from './tree'
+import slide from './slide'
 
 const xinComponents = {
   input,
@@ -60,7 +61,8 @@ const xinComponents = {
   col,
   popover,
   icon,
-  tree
+  tree,
+  slide
 }
 
 function install (Vue) {
@@ -104,7 +106,8 @@ export {
   col,
   popover,
   icon,
-  tree
+  tree,
+  slide
 }
 
 export const components = {
