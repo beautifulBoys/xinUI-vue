@@ -23,6 +23,7 @@
             @mousedown="mousedown($event)"
             @mousemove="mousemove($event)"
             @mouseup="mouseup($event)"
+            @mouseleave="mouseleave($event)"
           >
             <div class="position colors"></div>
             <div class="position whites"></div>
@@ -31,8 +32,11 @@
               top: pickers.top + 'px',
               left: pickers.left + 'px'
             }">
-              <div class="pickers-box"></div>
+              <div :class="['pickers-box', {
+                'down': pickers.status
+              }]"></div>
             </div>
+            <div class="pickers-cover"></div>
           </div>
           <div class="content-line"></div>
           <div class="content-bottom">
@@ -127,19 +131,32 @@ export default {
   },
   methods: {
     mousedown (e) {
+      // console.log('进入', e.offsetX, e.offsetY)
       this.pickers.status = true
       this.pickers.top = e.offsetY
       this.pickers.left = e.offsetX
-      console.log(e.offsetX, e.offsetY)
+    },
+    conversion16 (value) {
+      value = Number(value)
+      return value.toString(16)
+    },
+    conversion10 (value) {
+      value = String(value)
+      return parseInt(value, 16) 
     },
     mousemove (e) {
       if (!this.pickers.status) return
-      // console.log(e.offsetX, e.offsetY)
-      // if (e.offsetX < 0 || e.offsetY < 0) return
-      // this.pickers.top = e.offsetY
-      // this.pickers.left = e.offsetX
+      this.pickers.top = e.offsetY < 0 ? 0 : e.offsetY > 180 ? 180 : e.offsetY
+      this.pickers.left = e.offsetX < 0 ? 0 : e.offsetX > 280 ? 280 : e.offsetX
+    },
+    changeColor () {
+      let x = this.pickers.left
+      let y = this.pickers.top
     },
     mouseup (e) {
+      this.pickers.status = false
+    },
+    mouseleave (e) {
       this.pickers.status = false
     },
     coverEvent () {
