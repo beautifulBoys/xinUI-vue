@@ -5,10 +5,23 @@
   box-sizing: border-box;
   vertical-align: middle;
   padding: (($slide-line-height - $slide-height) / 2) 0;
+  user-select: none;
   .slide-content {
     width: 100%;
     height: 100%;
     background: transparentize($slide-default-color, 0.8);
+    .slide-content-dots {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .slide-dot {
+        position: absolute;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: #fff;
+      }
+    }
     position: relative;
     .content-handle {
       position: absolute;

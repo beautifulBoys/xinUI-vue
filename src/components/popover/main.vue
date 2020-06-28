@@ -18,7 +18,7 @@
       @click="click(!visible, $event)"
     ></div>
     <transition :name="animate ? 'xin-popover-' + position : 'xin-popover'">
-      <div class="xin-popover-content" v-show="visible" v-if="!disabled">
+      <div class="xin-popover-content" v-show="visible || stayShow" v-if="!disabled">
         <div class="xin-popover-content-box">
           <div class="xin-popover-content-text-box">
             <div
@@ -78,6 +78,11 @@ export default {
       default: false
     },
     radius: {
+      type: Boolean,
+      default: false
+    },
+    // 内部供 slide -> tooltip 使用
+    stayShow: {
       type: Boolean,
       default: false
     }

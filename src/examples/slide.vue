@@ -22,8 +22,8 @@
     </div>
     <div class="line">
       <xin-label width="100">范围内选择</xin-label>
-      <xin-slide v-model="value" :min="35" :max="42" ></xin-slide>
-      <xin-slide v-model="value4" range :min="35" :max="42" ></xin-slide>
+      <xin-slide v-model="value" :min="35" :max="42" :step="0.5" unit="℃"></xin-slide>
+      <xin-slide v-model="value4" range :min="35" :max="42"></xin-slide>
     </div>
   </div>
 </template>
@@ -34,13 +34,13 @@ export default {
   },
   data () {
     return {
-      value: 0,
+      value: 40,
       value1: 30,
       value2: 60,
       value3: 100,
       value4: {
-        start: 30,
-        end: 70
+        start: 37,
+        end: 40
       }
     }
   },

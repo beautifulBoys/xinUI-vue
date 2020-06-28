@@ -11,26 +11,36 @@
     }]"
   >
     <div class="slide-content">
+      <div class="slide-content-dots">
+        <div
+          class="slide-dot"
+          v-for="(item, index) in dots"
+          :key="index"
+          :style="{'left': item.percent + '%'}"
+        ></div>
+      </div>
       <xin-tooltip
         position="top"
         :content="start.value + unit"
-        class="content-handle"
-        :style="{'left': start.value + '%'}"
+        :stayShow="mouse === 'start'"
+        class="content-handle start"
+        :style="{'left': start.percent + '%'}"
         v-if="range"
         @mousedown="mousedown($event, 'start')"
       ></xin-tooltip>
       <div
         class="content-selected"
         :style="{
-          'width': end.value - start.value + '%',
-          'left': start.value + '%'
+          'width': end.percent - start.percent + '%',
+          'left': start.percent + '%'
         }"
       ></div>
       <xin-tooltip
         position="top"
         :content="end.value + unit"
-        class="content-handle"
-        :style="{'left': end.value + '%'}"
+        :stayShow="mouse === 'end'"
+        class="content-handle end"
+        :style="{'left': end.percent + '%'}"
         @mousedown="mousedown($event, 'end')"
       ></xin-tooltip>
     </div>
@@ -88,23 +98,20 @@ export default {
   },
   data () {
     return {
-      innerValue: {
-        start: 0,
-        end: 0
-      },
       start: {
         value: 0,
-        status: false
+        percent: 0
       },
       end: {
         value: 0,
-        status: false
+        percent: 0
       },
-      mouse: ''
+      mouse: '',
+      dots: []
     }
   },
   computed: {
-    stepValue () {
+    stepsValue () {
       return (this.max - this.min) / this.step
     }
   },
@@ -121,32 +128,54 @@ export default {
   },
   methods: {
     init (value) {
+      this.createDots()
       if (this.range) {
-        // let start = value >= this.min ? value : value <= this.max ? value : 0
-        // let end = value >= this.min ? value : value <= this.max ? value : 0
-        // this.innerValue.start = start / this.step
-        // this.innerValue.end = end / this.step
+        let start = value.start < this.min || value.start > this.max ? 0 : value.start
+        this.start.percent = 100 * (start - this.min) / (this.max - this.min)
+        let end = value.end < this.min || value.end > this.max ? 0 : value.end
+        this.end.percent = 100 * (end - this.min) / (this.max - this.min)
       } else {
-        let end = value >= this.min ? value : value <= this.max ? value : 0
-        this.end.value = end
+        this.end.percent = value < this.min || value > this.max ? 0 : value
       }
     },
+    createDots () {
+      let nums = (this.max - this.min) / this.step
+      let arr = []
+      for (let i = 0; i <= nums; i++) {
+        arr.push({
+          value: i * this.step + this.min,
+          percent: i * 100 / nums,
+          start: (i * 100 / nums) - (0.5 * 100 / nums),
+          end: (i * 100 / nums) + (0.5 * 100 / nums)
+        })
+      }
+      this.dots = arr
+    },
     mousedown (e, direction) {
+      console.log(direction)
       this.mouse = direction
     },
     mousemove (e) {
       if (!this.mouse) return
-      let value = (100 * (e.pageX - this.$refs.slide.offsetLeft) / this.$refs.slide.clientWidth).toFixed(0)
-      this[this.mouse].value = Math.abs(value > 100 ? 100 : value < 0 ? 0 : value)
+      let value = (100 * (e.pageX - this.$refs.slide.offsetLeft) / this.$refs.slide.clientWidth)
+      this.dots.forEach(item => {
+        if (value > item.start && value < item.end) {
+          this[this.mouse].value = item.value
+          this[this.mouse].percent = item.percent
+        }
+      })
+      if (this.start.percent > this.end.percent) {
+        this.start.percent = this.start.percent + this.end.percent
+        this.end.percent = this.start.percent - this.end.percent
+        this.start.percent = this.start.percent - this.end.percent
+        
+        this.start.value = this.start.value + this.end.value
+        this.end.value = this.start.value - this.end.value
+        this.start.value = this.start.value - this.end.value
+      }
     },
     mouseup (e) {
       this.mouse = ''
-    },
-    defaultEvent (index) {
-      if (this.disabled) return
-      this.innerValue = index + 1
-      this.$emit('input', this.innerValue)
-      this.$emit('change', this.innerValue)
     }
   }
 }

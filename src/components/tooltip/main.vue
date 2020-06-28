@@ -10,6 +10,7 @@
     :animate="animate"
     :radius="radius"
     v-on="$listeners"
+    :stayShow="stayShow"
   >
     <template slot="refer">{{content}}</template>
     <slot></slot>
@@ -45,6 +46,10 @@ export default {
       default: false
     },
     radius: {
+      type: Boolean,
+      default: false
+    },
+    stayShow: {
       type: Boolean,
       default: false
     }
