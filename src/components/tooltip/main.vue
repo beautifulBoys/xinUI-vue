@@ -9,6 +9,7 @@
     :disabled="disabled"
     :animate="animate"
     :radius="radius"
+    v-on="$listeners"
   >
     <template slot="refer">{{content}}</template>
     <slot></slot>
@@ -16,8 +17,12 @@
 </template>
 
 <script>
+import Popover from '../popover'
 export default {
   name: 'xinTooltip',
+  components: {
+    'xin-popover': Popover
+  },
   props: {
     position: {
       type: String,

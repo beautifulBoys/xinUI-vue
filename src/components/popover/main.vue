@@ -6,6 +6,7 @@
       'xin-popover-bottom': position === 'bottom',
       'xin-popover-left': position === 'left'
     }]"
+    v-on="$listeners"
     @mouseover="toggle(true)"
     @mouseout="toggle(false)"
     @click="click(!visible)"
