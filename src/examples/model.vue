@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-button fill color="success" @click="alert()">alert 展示</xin-button>
       <xin-button fill color="warning" @click="confirm()">confirm 展示</xin-button>

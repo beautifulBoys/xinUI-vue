@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     欢迎页
   </div>
 </template>

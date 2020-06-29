@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label>基础展示（值：{{active}}）</xin-label>
       <xin-tabs

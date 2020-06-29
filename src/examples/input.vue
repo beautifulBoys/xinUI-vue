@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="80">颜色展示</xin-label>
       <xin-input type="text" v-model="val" placeholder="请输入姓名"></xin-input>

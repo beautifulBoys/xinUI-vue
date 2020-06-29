@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="60">单选</xin-label>
       <xin-select :list="list" itemValue="id" itemLabel="name" v-model="val"></xin-select>

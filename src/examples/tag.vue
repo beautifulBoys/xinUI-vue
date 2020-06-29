@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="100">基础展示</xin-label>
       <xin-tag message="红烧排骨"></xin-tag>

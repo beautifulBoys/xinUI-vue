@@ -2,13 +2,13 @@
   <div id="app">
     <div class="header">练习</div>
     <div class="body">
-      <!-- <div class="left">
+      <div class="left">
         <div class="menu-item" v-for="(item, index) in menuList" :key="index" @click="toView(item.url)">
           <i class="xin-iconfont item-icon"></i>
           <div class="item-text">{{item.name}}</div>
           <i class="xin-iconfont forward">&#xe685;</i>
         </div>
-      </div> -->
+      </div>
       <div class="right">
         <router-view></router-view>
       </div>
@@ -139,19 +139,19 @@ html, body {
 $color-blue: #0095ff;
 $color-green: #15bf81;
 
-.page {
+.example-page {
   font-size: 12px;
+  .line {
+    margin: 15px 0;
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      color: #888;
+      text-indent: 30px;
+    }
+  }
 }
 
-.line {
-  margin: 15px 0;
-}
-.line p {
-  font-size: 14px;
-  line-height: 20px;
-  color: #888;
-  text-indent: 30px;
-}
 .header {
   text-align: center;
   padding: 10px 20px;

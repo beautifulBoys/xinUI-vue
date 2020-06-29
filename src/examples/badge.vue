@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="80">颜色展示</xin-label>
       <xin-badge :value="value1" color="info">

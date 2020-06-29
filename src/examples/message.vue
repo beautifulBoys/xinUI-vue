@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="80px">基础展示</xin-label>
       <xin-button @click="message1('info')" fill color="info">信息</xin-button>

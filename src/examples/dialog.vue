@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-button fill @click="dialog1.show = true">基础展示</xin-button>
       <xin-button fill @click="dialog2.show = true">表单展示</xin-button>

@@ -6,7 +6,7 @@ import { DatePicker } from 'xin-ui'
 ```
 
 ## 示例
-<example-datePicker/>
+<example-date-picker/>
 
 ## 代码示例
 <<< ./src/examples/datePicker.vue

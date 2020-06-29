@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="100">基础及间隔</xin-label>
       <xin-tree :list="list" itemValue="id" itemLabel="name"></xin-tree>

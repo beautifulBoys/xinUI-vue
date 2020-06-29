@@ -14,15 +14,15 @@ module.exports = {
     nav: [
       {
         text: '快速开始',
-        link: '/start'
+        link: '/start/'
       },
       {
         text: '基础组件',
-        link: '/components'
+        link: '/components/'
       },
       {
-        text: '高级组件',
-        link: '/skill'
+        text: '功能组件',
+        link: '/skill/'
       },
       {
         text: '代码仓库',
@@ -30,37 +30,56 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/start': [
+      '/start/': [
         '',
         {
           title: '快速开始',
           collapsable: true,
           children: [
-            // 'badge',
-            // '/button',
-            // '/checkbox',
-            // '/datePicker',
-            // '/dialog',
-            // '/input'
           ]
         }
       ],
-      '/components': [
+      '/components/': [
         '',
         {
           title: '组件',
           collapsable: true,
           children: [
-            // '/badge',
-            '/button',
-            '/checkbox',
-            // '/datePicker',
-            '/dialog',
-            // '/input'
+            'label',
+            'input',
+            'button',
+            'radio',
+            'checkbox',
+            'select',
+            'switch',
+            'rate',
+            'datePicker',
+            'colorPicker',
+            'tagInput',
+            'table',
+            'page',
+            'tabs',
+            'dialog',
+            'message',
+            'model',
+            'steps',
+            'progress',
+            'tooltip',
+            'badge',
+            'transfer',
+            'split',
+            'loading',
+            'tips',
+            'tag',
+            'grid',
+            'popover',
+            'icon',
+            'tree',
+            'slide',
           ]
         }
       ],
-      '/skill': [
+      'skill': [
         ''
       ]
     }

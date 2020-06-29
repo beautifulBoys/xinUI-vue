@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="80">基础展示</xin-label>
       <xin-radio label="1" v-model="val" @change="changeEvent">清华大学</xin-radio>

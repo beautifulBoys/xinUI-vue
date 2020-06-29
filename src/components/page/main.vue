@@ -9,7 +9,9 @@
     </div>
     <div class="xin-page-item" v-if="layout.indexOf('sizes') > -1">
       <xin-select
-        :list="sizes"
+        :list="sizeList"
+        itemValue="id"
+        itemLabel="name"
         v-model="sizeValue"
         @change="sizeChange"
         class="xin-page-select"
@@ -75,9 +77,13 @@
 </template>
 
 <script>
+import Select from '../select'
+import Input from '../input'
 export default {
   name: 'xinPage',
   components: {
+    'xin-select': Select,
+    'xin-input': Input
   },
   props: {
     layout: { // info, sizes, first, prev, pages, next, last, jump
@@ -140,6 +146,16 @@ export default {
         start: (this.pageValue - 1) * 10 + 1,
         end: this.pageValue * 10
       }
+    },
+    sizeList () {
+      let arr = []
+      this.sizes.forEach(item => {
+        arr.push({
+          id: item,
+          name: item
+        })
+      })
+      return arr
     },
     pageCount () {
       return Math.ceil(this.totalValue / this.sizeValue)

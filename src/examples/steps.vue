@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="60">默认展示</xin-label>
       <xin-steps :list="list" v-model="step1"></xin-steps>

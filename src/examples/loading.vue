@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="60">Bar 展示</xin-label>
       <xin-button @click="start()">开始加载</xin-button>

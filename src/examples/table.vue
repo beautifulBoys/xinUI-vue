@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label>表格展示（radio 值：{{radioValue}}）；（checkbox 值：{{checkboxValue}}）</xin-label>
       <xin-table

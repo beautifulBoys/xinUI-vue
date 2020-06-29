@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="60">基础展示</xin-label>
       <xin-tooltip position="left" content="左边工具条">

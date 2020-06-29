@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="60">基础样式</xin-label>
       <xin-button color="default" @click="event($event)">默认按钮</xin-button>

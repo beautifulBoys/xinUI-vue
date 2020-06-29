@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="100">宽度200像素</xin-label>
       <xin-input type="text"></xin-input>

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="80">基础组件</xin-label>
       <xin-tag-input v-model="val"></xin-tag-input>

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="100">基础展示</xin-label>
       <xin-slide v-model="value"></xin-slide>

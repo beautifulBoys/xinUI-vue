@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="100">基础展示</xin-label>
       <xin-tips color="info" message="注意，此组件库仅供学习交流使用，切勿商用！"></xin-tips>

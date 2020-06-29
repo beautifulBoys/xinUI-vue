@@ -1,68 +1,68 @@
-import input from './input'
-import button from './button'
-import label from './label'
-import radio from './radio'
-import checkbox from './checkbox'
-import select from './select'
-import switch1 from './switch'
-import rate from './rate'
-import datePicker from './datePicker'
-import colorPicker from './colorPicker'
-import tagInput from './tagInput'
-import table from './table'
-import page from './page'
-import tabs from './tabs'
-import dialog from './dialog'
-import message from './message'
-import model from './model'
-import steps from './steps'
-import progress from './progress'
-import tooltip from './tooltip'
-import badge from './badge'
-import transfer from './transfer'
-import split from './split'
-import loading from './loading'
-import tips from './tips'
-import tag from './tag'
-import { row, col } from './grid'
-import popover from './popover'
-import icon from './icon'
-import tree from './tree'
-import slide from './slide'
+import Input from './input'
+import Button from './button'
+import Label from './label'
+import Radio from './radio'
+import Checkbox from './checkbox'
+import Select from './select'
+import Switch from './switch'
+import Rate from './rate'
+import DatePicker from './datePicker'
+import ColorPicker from './colorPicker'
+import TagInput from './tagInput'
+import Table from './table'
+import Page from './page'
+import Tabs from './tabs'
+import Dialog from './dialog'
+import Message from './message'
+import Model from './model'
+import Steps from './steps'
+import Progress from './progress'
+import Tooltip from './tooltip'
+import Badge from './badge'
+import Transfer from './transfer'
+import Split from './split'
+import Loading from './loading'
+import Tips from './tips'
+import Tag from './tag'
+import { Row, Col } from './grid'
+import Popover from './popover'
+import Icon from './icon'
+import Tree from './tree'
+import Slide from './slide'
 
 const xinComponents = {
-  input,
-  label,
-  button,
-  radio,
-  checkbox,
-  select,
-  switch1,
-  rate,
-  datePicker,
-  colorPicker,
-  tagInput,
-  table,
-  page,
-  tabs,
-  dialog,
-  message,
-  model,
-  steps,
-  progress,
-  tooltip,
-  badge,
-  transfer,
-  split,
-  loading,
-  tips,
-  tag,
-  row,
-  col,
-  popover,
-  icon,
-  tree,
-  slide
+  Input,
+  Label,
+  Button,
+  Radio,
+  Checkbox,
+  Select,
+  Switch,
+  Rate,
+  DatePicker,
+  ColorPicker,
+  TagInput,
+  Table,
+  Page,
+  Tabs,
+  Dialog,
+  Message,
+  Model,
+  Steps,
+  Progress,
+  Tooltip,
+  Badge,
+  Transfer,
+  Split,
+  Loading,
+  Tips,
+  Tag,
+  Row,
+  Col,
+  Popover,
+  Icon,
+  Tree,
+  Slide
 }
 
 function install (Vue) {
@@ -76,38 +76,38 @@ xinComponents.install = install
 export default xinComponents
 
 export {
-  input,
-  label,
-  button,
-  radio,
-  checkbox,
-  select,
-  switch1,
-  rate,
-  datePicker,
-  colorPicker,
-  tagInput,
-  table,
-  page,
-  tabs,
-  dialog,
-  message,
-  model,
-  steps,
-  progress,
-  tooltip,
-  badge,
-  transfer,
-  split,
-  loading,
-  tips,
-  tag,
-  row,
-  col,
-  popover,
-  icon,
-  tree,
-  slide
+  Input,
+  Label,
+  Button,
+  Radio,
+  Checkbox,
+  Select,
+  Switch,
+  Rate,
+  DatePicker,
+  ColorPicker,
+  TagInput,
+  Table,
+  Page,
+  Tabs,
+  Dialog,
+  Message,
+  Model,
+  Steps,
+  Progress,
+  Tooltip,
+  Badge,
+  Transfer,
+  Split,
+  Loading,
+  Tips,
+  Tag,
+  Row,
+  Col,
+  Popover,
+  Icon,
+  Tree,
+  Slide
 }
 
 export const components = {

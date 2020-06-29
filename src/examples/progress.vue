@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-label width="100">颜色及条纹</xin-label>
       <xin-progress v-model="percent"></xin-progress>

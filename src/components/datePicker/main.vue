@@ -124,7 +124,7 @@
 </template>
 
 <script>
-import formatDate from '@/utils/format-date'
+import formatDate from '../../utils/format-date'
 export default {
   name: 'xinDatePicker',
   components: {

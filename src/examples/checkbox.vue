@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="example-page">
     <div class="line">
       <xin-checkbox :label="1" v-model="val">清华大学</xin-checkbox>
       <xin-checkbox :label="2" v-model="val">北京大学</xin-checkbox>

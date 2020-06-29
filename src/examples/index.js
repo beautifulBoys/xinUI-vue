@@ -59,6 +59,7 @@ export default {
     Vue.component('example-split', Split)
     Vue.component('example-loading', Loading)
     Vue.component('example-tips', Tips)
+    Vue.component('example-tag', Tag)
     Vue.component('example-grid', Grid)
     Vue.component('example-popover', Popover)
     Vue.component('example-icon', Icon)
