@@ -6,6 +6,7 @@
       <xin-leaf
         :key="index"
         :item="item"
+        :parent="parent"
         :itemLabel="itemLabel"
         :itemValue="itemValue"
         :step="step"
@@ -28,6 +29,10 @@ export default {
       type: Array,
       default: () => []
     },
+    parent: {
+      type: Object,
+      default: () => ({})
+    },
     itemValue: {
       type: String,
       default: ''
@@ -36,6 +41,14 @@ export default {
       type: String,
       default: ''
     },
+    model: {
+      type: String,
+      default: ''
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {
@@ -43,9 +56,22 @@ export default {
   },
   watch: {
   },
-  mounted () {
+  created () {
   },
   methods: {
+    getValue (type) {
+      let value
+      if (!type) {
+        value = this.list
+      } else if (type === 'selected') {
+
+      }
+    },
+    mapFunc () {
+      if (!this.parent.childrens) return
+      let selected = this.parent.childrens.every(child => child.selected)
+      this.$set(this.parent, 'selected', selected)
+    }
   }
 }
 </script>

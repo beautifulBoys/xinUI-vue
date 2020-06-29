@@ -1,9 +1,9 @@
-import Main from './main'
+import Tree from './tree'
 import Leaf from './leaf'
 
-Main.install = (Vue) => {
-  Vue.component(Main.name, Main)
+Tree.install = (Vue) => {
+  Vue.component(Tree.name, Tree)
   Vue.component(Leaf.name, Leaf)
 }
 
-export default Main
+export default Tree

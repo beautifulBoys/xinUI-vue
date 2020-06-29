@@ -24,28 +24,48 @@ export default {
               childrens: [
                 {
                   id: 3,
-                  name: '浑南区'
+                  name: '浑南区',
+                  childrens: [
+                    {
+                      id: 4,
+                      name: '站东街道'
+                    },
+                    {
+                      id: 5,
+                      name: '白塔街道'
+                    }
+                  ]
                 },
                 {
-                  id: 4,
+                  id: 6,
                   name: '皇姑区'
                 },
                 {
-                  id: 5,
+                  id: 7,
                   name: '铁西经济技术开发区'
                 }
               ]
             },
             {
-              id: 6,
+              id: 8,
               name: '大连市',
               childrens: [
                 {
-                  id: 7,
-                  name: '金州区'
+                  id: 9,
+                  name: '金州区',
+                  childrens: [
+                    {
+                      id: 10,
+                      name: '金州一街道'
+                    },
+                    {
+                      id: 11,
+                      name: '金州二街道'
+                    }
+                  ]
                 },
                 {
-                  id: 8,
+                  id: 12,
                   name: '甘井子区'
                 }
               ]
@@ -53,33 +73,33 @@ export default {
           ]
         },
         {
-          id: 9,
+          id: 13,
           name: '甘肃省',
           childrens: [
             {
-              id: 10,
+              id: 14,
               name: '兰州市',
               childrens: [
                 {
-                  id: 11,
+                  id: 15,
                   name: '七里河区'
                 },
                 {
-                  id: 12,
+                  id: 16,
                   name: '城关区'
                 }
               ]
             },
             {
-              id: 13,
+              id: 17,
               name: '武威市',
               childrens: [
                 {
-                  id: 14,
+                  id: 18,
                   name: '凉州区'
                 },
                 {
-                  id: 15,
+                  id: 19,
                   name: '古浪县'
                 }
               ]

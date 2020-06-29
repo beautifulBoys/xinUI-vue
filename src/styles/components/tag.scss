@@ -13,6 +13,7 @@
   box-sizing: border-box;
   padding: 5px;
   vertical-align: middle;
+  font-size: 0;
   & + & {
     margin-left: $tag-space-width;
   }

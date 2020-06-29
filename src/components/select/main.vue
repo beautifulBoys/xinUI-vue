@@ -149,9 +149,9 @@ export default {
   created () {
     if (this.multiple && !Array.isArray(this.inputValue)) {
       if (this.inputValue) {
-        this.$emit('input', [this.inputValue])
+        this.emit([this.inputValue])
       } else {
-        this.$emit('input', [])
+        this.emit([])
       }
     }
     this.createTags(this.inputValue)
@@ -194,7 +194,7 @@ export default {
     rightIconEvent (e) {
       if (this.hover === '1' && this.clearable && !this.multiple) {
         e.stopPropagation()
-        this.$emit('input', '')
+        this.emit('')
       }
     },
     selectEvent () {
@@ -216,11 +216,15 @@ export default {
         } else {
           arr = [...this.inputValue, item[this.itemValue]]
         }
-        this.$emit('input', arr)
+        this.emit(arr)
       } else {
-        this.$emit('input', item[this.itemValue])
+        this.emit(item[this.itemValue])
         this.coverEvent()
       }
+    },
+    emit (val) {
+      this.$emit('input', val)
+      this.$emit('change', val)
     }
   }
 }

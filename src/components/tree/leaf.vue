@@ -9,12 +9,16 @@
           @click.native="visible = !visible"
         />
       </div>
-      <xin-checkbox v-model="selected">{{item[itemLabel]}}</xin-checkbox>
+      <xin-checkbox
+        v-model="item.selected"
+        @input="changeEvent($event)"
+      >{{item[itemLabel]}}</xin-checkbox>
     </div>
     <template v-if="item.childrens">
       <xin-tree
         v-show="visible"
         :list="item.childrens"
+        :parent="item"
         :step="step + 1"
         :itemValue="itemValue"
         :itemLabel="itemLabel"
@@ -41,6 +45,10 @@ export default {
       type: Number,
       default: 0
     },
+    parent: {
+      type: Object,
+      default: () => ([])
+    },
     itemValue: {
       type: String,
       default: ''
@@ -52,7 +60,6 @@ export default {
   },
   data () {
     return {
-      selected: false,
       visible: false
     }
   },
@@ -61,6 +68,21 @@ export default {
   mounted () {
   },
   methods: {
+    changeEvent (val) {
+      console.log(this.item.name)
+      this.mapFunc(this.item, val)
+    },
+    mapFunc (item, val) {
+      if (item.childrens) {
+        item.childrens.forEach(child => {
+          this.mapFunc(child, val)
+        })
+        this.$set(item, 'selected', val)
+      } else {
+        this.$set(item, 'selected', val)
+      }
+      this.$parent.mapFunc && this.$parent.mapFunc()
+    }
   }
 }
 </script>
