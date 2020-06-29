@@ -1,1 +1,1 @@
-# lixin-ui-vue
+# xinUI-vue
