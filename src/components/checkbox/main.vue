@@ -1,18 +1,16 @@
 <template>
-  <label
+  <Checkbox
     :class="['xin-checkbox', {
-      'xin-checkbox-info': !white,
-      'xin-checkbox-white': white,
-      'selected': isSelected,
-      'disabled': disabled
+      'hide-label': hideLabel,
+      'is-white': white
     }]"
-    @click="defaultEvent()"
+    :disabled="disabled"
+    v-bind="$attrs"
+    v-on="$listeners"
+    v-model="inputValue"
   >
-    <div class="xin-checkbox-icon"></div>
-    <div class="xin-checkbox-label">
       <slot></slot>
-    </div>
-  </label>
+  </Checkbox>
 </template>
 
 <script>
@@ -31,18 +29,6 @@ export default {
       type: Boolean,
       default: false
     },
-    label: {
-      type: [String, Number],
-      default: ''
-    },
-    trueLabel: {
-      type: [String, Number, Boolean],
-      default: true
-    },
-    falseLabel: {
-      type: [String, Number, Boolean],
-      default: false
-    },
     hideLabel: {
       type: Boolean,
       default: false
@@ -54,34 +40,21 @@ export default {
   },
   data () {
     return {
-      innerValue: this.value
-    }
-  },
-  computed: {
-    isSelected () {
-      return this.innerValue.includes(this.label)
+      inputValue: this.value
     }
   },
   watch: {
     value (n, o) {
-      this.innerValue = n
+      this.inputValue = n
     }
   },
   mounted () {
   },
   methods: {
     defaultEvent (e) {
-      // this.innerValue.push(this.label)
-      let arr = []
-      if (this.isSelected) {
-        this.innerValue.forEach(item => {
-          if (this.label !== item) arr.push(item)
-        })
-      } else {
-        arr = [...this.innerValue, this.label]
-      }
-      this.$emit('input', arr)
-      this.$emit('change', arr)
+      this.inputValue.push(this.label)
+      this.$emit('input', this.inputValue)
+      this.$emit('change', this.inputValue)
     }
   }
 }
