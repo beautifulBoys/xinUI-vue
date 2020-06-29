@@ -2,16 +2,12 @@
   <div
     ref="slide"
     :class="['xin-slide', {
-      'round': round,
-      'inside': inside,
       'info': color === 'info',
-      'error': color === 'error',
-      'warning': color === 'warning',
-      'success': color === 'success'
+      'disabled': disabled
     }]"
   >
     <div class="slide-content">
-      <div class="slide-content-dots">
+      <div class="slide-content-dots" v-if="dot">
         <div
           class="slide-dot"
           v-for="(item, index) in dots"
@@ -23,9 +19,10 @@
         position="top"
         :content="start.value + unit"
         :stayShow="mouse === 'start'"
-        class="content-handle start"
+        class="content-handle"
         :style="{'left': start.percent + '%'}"
         v-if="range"
+        :disabled="disabled"
         @mousedown="mousedown($event, 'start')"
       ></xin-tooltip>
       <div
@@ -39,8 +36,9 @@
         position="top"
         :content="end.value + unit"
         :stayShow="mouse === 'end'"
-        class="content-handle end"
+        class="content-handle"
         :style="{'left': end.percent + '%'}"
+        :disabled="disabled"
         @mousedown="mousedown($event, 'end')"
       ></xin-tooltip>
     </div>
@@ -75,15 +73,15 @@ export default {
       type: Boolean,
       default: false
     },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
     color: { // info, error, warning, success
       type: String,
       default: 'info'
     },
-    inside: {
-      type: Boolean,
-      default: false
-    },
-    round: {
+    dot: {
       type: Boolean,
       default: false
     },
@@ -111,9 +109,6 @@ export default {
     }
   },
   computed: {
-    stepsValue () {
-      return (this.max - this.min) / this.step
-    }
   },
   watch: {
     value (n, o) {
@@ -122,60 +117,85 @@ export default {
   },
   mounted () {
     this.init(this.value)
-    window.lixin = this.$refs.slide
+    if (this.disabled) return
     document.addEventListener('mousemove', this.mousemove, false)
     document.addEventListener('mouseup', this.mouseup, false)
   },
   methods: {
     init (value) {
-      this.createDots()
       if (this.range) {
         let start = value.start < this.min || value.start > this.max ? 0 : value.start
         this.start.percent = 100 * (start - this.min) / (this.max - this.min)
         let end = value.end < this.min || value.end > this.max ? 0 : value.end
         this.end.percent = 100 * (end - this.min) / (this.max - this.min)
       } else {
-        this.end.percent = value < this.min || value > this.max ? 0 : value
+        let end = value < this.min || value > this.max ? 0 : value
+        this.end.percent = 100 * (end - this.min) / (this.max - this.min)
+      }
+      this.createDots()
+      this.createValues()
+    },
+    createValues () {
+      this.end.value = this.min + (this.end.percent * 0.01 * (this.max - this.min))
+      if (this.range) {
+        this.start.value = this.min + (this.start.percent * 0.01 * (this.max - this.min))
       }
     },
     createDots () {
       let nums = (this.max - this.min) / this.step
       let arr = []
       for (let i = 0; i <= nums; i++) {
+        let percent = (100 / nums).toFixed(2)
         arr.push({
           value: i * this.step + this.min,
-          percent: i * 100 / nums,
-          start: (i * 100 / nums) - (0.5 * 100 / nums),
-          end: (i * 100 / nums) + (0.5 * 100 / nums)
+          percent: i * percent,
+          start: (i * percent) - (0.5 * percent),
+          end: (i * percent) + (0.5 * percent)
         })
       }
       this.dots = arr
     },
     mousedown (e, direction) {
-      console.log(direction)
+      if (this.disabled) return
+      if (this.readonly) return
       this.mouse = direction
     },
     mousemove (e) {
+      if (this.disabled) return
+      if (this.readonly) return
       if (!this.mouse) return
       let value = (100 * (e.pageX - this.$refs.slide.offsetLeft) / this.$refs.slide.clientWidth)
-      this.dots.forEach(item => {
-        if (value > item.start && value < item.end) {
-          this[this.mouse].value = item.value
-          this[this.mouse].percent = item.percent
+
+      for (let i = 0; i < this.dots.length; i++) {
+        if (value > this.dots[i].start && value < this.dots[i].end) {
+          this[this.mouse].value = this.dots[i].value
+          this[this.mouse].percent = this.dots[i].percent
+          break
         }
-      })
+      }
       if (this.start.percent > this.end.percent) {
-        this.start.percent = this.start.percent + this.end.percent
-        this.end.percent = this.start.percent - this.end.percent
-        this.start.percent = this.start.percent - this.end.percent
-        
-        this.start.value = this.start.value + this.end.value
-        this.end.value = this.start.value - this.end.value
-        this.start.value = this.start.value - this.end.value
+        [this.start.percent, this.end.percent] = [this.end.percent, this.start.percent]
       }
     },
     mouseup (e) {
+      if (this.disabled) return
+      if (this.readonly) return
       this.mouse = ''
+      this.emit()
+    },
+    emit () {
+      let val
+      if (this.range) {
+        val = {
+          start: this.start.value,
+          end: this.end.value
+        }
+      } else {
+        val = this.end.value
+      }
+      console.log('input: ', val)
+      this.$emit('input', val)
+      this.$emit('change', val)
     }
   }
 }
