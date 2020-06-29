@@ -1,0 +1,94 @@
+
+@import "~@/styles/const.scss";
+.xin-checkbox {
+  margin-right: $radio-space-width;
+  cursor: pointer;
+  .el-checkbox__input {
+    .el-checkbox__inner {
+      background-color: transparent;
+      border: 1px solid $checkbox-default-color;
+      height: $checkbox-icon-width;
+      width: $checkbox-icon-width;
+      display: inline-block;
+      border-radius: 0;
+      box-sizing: border-box;
+      vertical-align: middle;
+      margin-right: $checkbox-icon-margin-right;
+      transition: all $checkbox-animate-time;
+    }
+    .el-checkbox__original {
+      display: none;
+    }
+  }
+  .el-checkbox__label {
+    display: inline-block;
+    font-size: $checkbox-font-size;
+    line-height: $checkbox-line-height;
+    height: $checkbox-line-height;
+    vertical-align: middle;
+    color: $checkbox-default-color;
+    transition: all $checkbox-animate-time;
+  }
+  &.hide-label {
+    .el-checkbox__label {
+      display: none;
+    }
+  }
+  &.is-checked {
+    .el-checkbox__input {
+      .el-checkbox__inner {
+        border: 5px solid $checkbox-active-color;
+        box-shadow: 0 0 8px transparentize($checkbox-active-color, 0.3);
+      }
+    }
+    .el-checkbox__label {
+      color: $checkbox-active-color;
+    }
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    .el-checkbox__input {
+      .el-checkbox__inner {
+        border: 1px solid $checkbox-disabled-color;
+        box-shadow: none;
+      }
+    }
+    .el-checkbox__label {
+      color: $checkbox-disabled-color;
+    }
+    &.is-checked {
+      .el-checkbox__input {
+        .el-checkbox__inner {
+          border: 5px solid $checkbox-disabled-color;
+          box-shadow: none;
+        }
+      }
+      .el-checkbox__label {
+        color: $checkbox-disabled-color;
+      }
+    }
+  }
+  &.is-white {
+    .el-checkbox__input {
+      .el-checkbox__inner {
+        border: 1px solid #fff;
+        box-shadow: none;
+      }
+    }
+    .el-checkbox__label {
+      color: #fff;
+    }
+    &.is-checked {
+      .el-checkbox__input {
+        .el-checkbox__inner {
+          border: 5px solid #fff;
+          box-shadow: none;
+        }
+      }
+      .el-checkbox__label {
+        color: #fff;
+      }
+    }
+  }
+}
+

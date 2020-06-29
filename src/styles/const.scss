@@ -66,6 +66,7 @@ $radio-info-color: $color-blue;
 $radio-disabled-color: $color-gray + #555555;
 
 // checkbox
+$checkbox-space-width: $space-width;
 $checkbox-font-size: $font-size;
 $checkbox-animate-time: 0.1s;
 $checkbox-icon-width: 15px;
@@ -73,7 +74,7 @@ $checkbox-icon-margin-right: 5px;
 $checkbox-line-height: $line-height;
 $checkbox-font-size: $font-size;
 $checkbox-default-color: $color-gray;
-$checkbox-active-color: $color-blue;
+$checkbox-info-color: $color-blue;
 $checkbox-disabled-color: $color-gray + #555555;
 
 // select
