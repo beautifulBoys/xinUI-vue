@@ -13,9 +13,29 @@ import { Radio } from 'xin-ui'
 
 ## 参数
 
+### value / v-model
+
+* 类型：`[Number, String, Boolean]`
+* 默认值：`""`
+* 描述：单选框值，双向绑定。
+
+### label
+
+* 类型：`[Number, String, Boolean]`
+* 默认值：`false`
+* 描述：选中时的值。
+
+### disabled
+
+* 类型：`Boolean`
+* 默认值：`false`
+* 描述：是否禁用。
+
 ## 事件
 
-无事件。
+### change
+* 描述：值改变事件。
+* 回调参数: `(value)`；单选框的值。
 
 ## 依赖情况
 

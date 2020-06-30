@@ -20,8 +20,8 @@ export default {
   name: 'xinRadio',
   props: {
     value: {
-      type: [Object, Number, String, Boolean],
-      default: false
+      type: [Number, String, Boolean],
+      default: ''
     },
     label: {
       type: [Number, String, Boolean],
