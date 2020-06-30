@@ -1,7 +1,12 @@
 <template>
-  <div :class="['xin-select', {
-    'disabled': disabled
-  }]">
+  <div
+    :class="['xin-select', {
+      'disabled': disabled
+    }]"
+    :style="{
+      'width': width.indexOf('px') > -1 ? width : width + 'px'
+    }"
+  >
     <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
       <div class="xin-select-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
@@ -83,7 +88,7 @@ export default {
     },
     width: {
       type: String,
-      default: 'auto'
+      default: ''
     },
     color: {
       type: String,
@@ -159,6 +164,7 @@ export default {
   methods: {
     closeTagEvent (item) {
       this.optionEvent(true, item)
+      this.$emit('close', item[this.itemValue])
     },
     createTags (arr) {
       if (!this.multiple) {
@@ -194,7 +200,7 @@ export default {
     rightIconEvent (e) {
       if (this.hover === '1' && this.clearable && !this.multiple) {
         e.stopPropagation()
-        this.emit('')
+        this.emit('clear')
       }
     },
     selectEvent () {

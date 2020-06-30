@@ -15,20 +15,20 @@
   &.disabled {
     .xin-select-input {
       cursor: not-allowed;
-      color: transparentize($input-default-color, 0.7);
-      border: 1px solid transparentize($input-default-color, 0.7);
+      color: transparentize($select-default-color, 0.7);
+      border: 1px solid transparentize($select-default-color, 0.7);
     }
     .xin-select-icon {
       cursor: not-allowed;
-      color: transparentize($input-default-color, 0.7);
+      color: transparentize($select-default-color, 0.7);
     }
   }
   .xin-select-icon {
-    width: $input-line-height;
+    width: $select-line-height;
     height: 100%;
     position: absolute;
     top: 0;
-    color: $input-default-color;
+    color: $select-default-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
     &.icon-right {
       right: 0;
       .icon:hover {
-        color: $input-default-color - #333333;
+        color: $select-default-color - #333333;
       }
     }
     .icon {
@@ -53,10 +53,10 @@
 
   .xin-select-input {
     width: 100%;
-    font-size: $input-font-size;
-    line-height: $input-line-height - 6px;
+    font-size: $select-font-size;
+    line-height: $select-line-height - 6px;
     box-sizing: border-box;
-    padding: 2px $input-space-width;
+    padding: 2px $select-space-width;
     border: 1px solid $select-default-color;
     background: transparentize($select-default-color, 0.95);
     transition: all $select-animate-time;
@@ -64,30 +64,31 @@
       vertical-align: top;
     }
     &.has-left-icon {
-      padding-left: $input-line-height;
+      padding-left: $select-line-height;
     }
     &.has-right-icon {
-      padding-right: $input-line-height;
+      padding-right: $select-line-height;
     }
     &.focus {
-      box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
-      background: transparentize($select-default-color, 0.9);
+      border: 1px solid $select-info-color;
+      box-shadow: 0 0 8px transparentize($select-info-color, 0.6);
+      background: transparentize($select-info-color, 0.9);
     }
     &.placeholder {
       color: transparentize($select-default-color, 0.6);
     }
     &.multiple {
-      padding-left: $input-space-width - 5px;
-      padding-right: $input-space-width - 5px;
+      padding-left: $select-space-width - 5px;
+      padding-right: $select-space-width - 5px;
     }
     &.has-left-icon {
-      padding-left: $input-line-height;
+      padding-left: $select-line-height;
     }
     &.has-right-icon {
-      padding-right: $input-line-height;
+      padding-right: $select-line-height;
     }
     &.xin-select-round {
-      border-radius: $input-line-height / 2;
+      border-radius: $select-line-height / 2;
     }
   }
   .xin-select-cover {
@@ -112,6 +113,7 @@
       background: #fff;
       box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
       overflow-y: auto;
+      max-height: 300px;
       .xin-option {
         list-style-type: none;
         font-size: $select-font-size;
