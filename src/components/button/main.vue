@@ -6,6 +6,9 @@
       'round': round,
       'disabled': disabled
     }]"
+    :style="{
+      'width': width.indexOf('px') > -1 ? width : width + 'px'
+    }"
     @click="clickEvent($event)"
     :disabled="disabled"
   >

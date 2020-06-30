@@ -19,13 +19,13 @@ import { Badge } from 'xin-ui'
 * 默认值：`"error"`
 * 描述：输入框颜色，也可用来区分输入状态。
 
-| 可选值 | 颜色 |
+| 可选值 | 颜色 | 描述及说明 |
 | - | - |
-| default | 灰色 |
-| info | 蓝色 |
-| success | 绿色 |
-| warning | 黄色 |
-| error | 红色 |
+| default | 灰色 | 默认颜色 |
+| info | 蓝色 | 提示色 |
+| success | 绿色 | 成功色 |
+| warning | 黄色 | 警告色 |
+| error | 红色 | 错误色 |
 
 ### dot
 

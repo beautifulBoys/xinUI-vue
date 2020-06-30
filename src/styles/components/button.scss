@@ -85,6 +85,11 @@
   & + & {
     margin-left: $button-space-width;
   }
+  .xin-iconfont {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+  }
   &.disabled {
     cursor: not-allowed;
   }

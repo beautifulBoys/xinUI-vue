@@ -13,6 +13,30 @@ import { ColorPicker } from 'xin-ui'
 
 ## 参数
 
+### value / v-model
+
+* 类型：`String`
+* 默认值：`"red"`
+* 描述：颜色选择器值，双向绑定。
+
+### readonly
+
+* 类型：`Boolean`
+* 默认值：`false`
+* 描述：是否只读。
+
+### disabled
+
+* 类型：`Boolean`
+* 默认值：`false`
+* 描述：是否禁用。
+
+### model
+
+* 类型：`String`
+* 默认值：`""`
+* 描述：是否禁用。
+
 ## 事件
 
 无事件。

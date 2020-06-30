@@ -3,22 +3,20 @@
     <div class="line">
       <xin-label width="80">颜色展示</xin-label>
       <xin-input type="text" v-model="val" placeholder="请输入姓名"></xin-input>
-      <xin-input type="text" v-model="val" color="info" placeholder="请输入姓名"></xin-input>
       <xin-input type="text" v-model="val" color="success" placeholder="请输入姓名"></xin-input>
-      <xin-input type="text" v-model="val" color="warning" placeholder="请输入姓名"></xin-input>
       <xin-input type="text" v-model="val" color="error" placeholder="请输入姓名"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">圆角</xin-label>
-      <xin-input type="text" round v-model="val1"></xin-input>
+      <xin-input type="text" round v-model="val"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">图标</xin-label>
-      <xin-input type="text" leftIcon="shijian" rightIcon="Group-6" v-model="val1"></xin-input>
+      <xin-input type="text" leftIcon="shijian" rightIcon="Group-6" v-model="val"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">禁用</xin-label>
-      <xin-input type="text" disabled v-model="val2"></xin-input>
+      <xin-input type="text" disabled v-model="val"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">密码输入</xin-label>

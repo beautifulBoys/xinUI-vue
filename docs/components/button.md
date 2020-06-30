@@ -2,7 +2,7 @@
 
 ## 引用
 ```js
-import { button } from 'xin-ui'
+import { Button } from 'xin-ui'
 ```
 
 ## 示例
@@ -67,7 +67,9 @@ import { button } from 'xin-ui'
 
 ## 事件
 
-所有原生事件均可使用。
+### click
+* 描述：点击事件。
+* 回调参数: `(event)`；原生事件回调参数。
 
 ## 依赖情况
 

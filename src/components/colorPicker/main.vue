@@ -61,18 +61,6 @@ export default {
       type: [String, Date, Object],
       default: ''
     },
-    width: {
-      type: String,
-      default: ''
-    },
-    color: {
-      type: String,
-      default: 'default'
-    },
-    icon: {
-      type: String,
-      default: 'Group-'
-    },
     readonly: {
       type: Boolean,
       default: false
@@ -85,29 +73,9 @@ export default {
       type: Boolean,
       default: false
     },
-    range: {
-      type: Boolean,
-      default: false
-    },
-    placeholder: {
-      type: String,
-      default: '请选择'
-    },
-    startPlaceholder: {
-      type: String,
-      default: '开始时间'
-    },
-    endPlaceholder: {
-      type: String,
-      default: '结束时间'
-    },
-    format: {
+    model: {
       type: String,
       default: ''
-    },
-    disabledDate: {
-      type: Function,
-      default: () => false
     }
   },
   data () {

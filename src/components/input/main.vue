@@ -3,8 +3,6 @@
     :class="['xin-textarea', {
       'disabled': disabled,
       'xin-textarea-default': color === 'default',
-      'xin-textarea-info': color === 'info',
-      'xin-textarea-warning': color === 'warning',
       'xin-textarea-error': color === 'error',
       'xin-textarea-success': color === 'success',
     }]"
@@ -33,8 +31,6 @@
     :class="['xin-input', {
       'disabled': disabled,
       'xin-input-default': color === 'default',
-      'xin-input-info': color === 'info',
-      'xin-input-warning': color === 'warning',
       'xin-input-error': color === 'error',
       'xin-input-success': color === 'success',
     }]"

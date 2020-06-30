@@ -25,6 +25,32 @@
     }
   }
 }
+@mixin xin-input-default-color ($color, $info) {
+  .xin-input-inner {
+    color: $color;
+    border: 1px solid $color;
+    background: transparentize($color, 0.95);
+    &:focus {
+      box-shadow: 0 0 8px transparentize($info, 0.6);
+      background: transparentize($info, 0.9);
+      border: 1px solid transparentize($info, 0);
+    }
+    &::placeholder {
+      color: transparentize($color, 0.6);
+    }
+  }
+  &.disabled {
+    .xin-input-inner {
+      cursor: not-allowed;
+      color: transparentize($color, 0.7);
+      border: 1px solid transparentize($color, 0.7);
+    }
+    .xin-input-icon {
+      cursor: not-allowed;
+      color: transparentize($color, 0.7);
+    }
+  }
+}
 @mixin xin-textarea-color ($color) {
   .xin-textarea-inner {
     color: $color;
@@ -33,6 +59,28 @@
     &:focus {
       box-shadow: 0 0 8px transparentize($color, 0.6);
       background: transparentize($color, 0.9);
+    }
+    &::placeholder {
+      color: transparentize($color, 0.6);
+    }
+  }
+  &.disabled {
+    .xin-input-inner {
+      cursor: not-allowed;
+      color: transparentize($color, 0.7);
+      border: 1px solid transparentize($color, 0.7);
+    }
+  }
+}
+@mixin xin-textarea-default-color ($color, $info) {
+  .xin-textarea-inner {
+    color: $color;
+    border: 1px solid $color;
+    background: transparentize($color, 0.95);
+    &:focus {
+      box-shadow: 0 0 8px transparentize($info, 0.6);
+      background: transparentize($info, 0.9);
+      border: 1px solid $info;
     }
     &::placeholder {
       color: transparentize($color, 0.6);
@@ -99,16 +147,10 @@
     }
   }
   &.xin-input-default {
-    @include xin-input-color ($input-default-color);
-  }
-  &.xin-input-info {
-    @include xin-input-color ($input-info-color);
+    @include xin-input-default-color ($input-default-color, $input-info-color);
   }
   &.xin-input-success {
     @include xin-input-color ($input-success-color);
-  }
-  &.xin-input-warning {
-    @include xin-input-color ($input-warning-color);
   }
   &.xin-input-error {
     @include xin-input-color ($input-error-color);
@@ -139,16 +181,10 @@
     }
   }
   &.xin-textarea-default {
-    @include xin-textarea-color ($input-default-color);
-  }
-  &.xin-textarea-info {
-    @include xin-textarea-color ($input-info-color);
+    @include xin-textarea-default-color ($input-default-color, $input-info-color);
   }
   &.xin-textarea-success {
     @include xin-textarea-color ($input-success-color);
-  }
-  &.xin-textarea-warning {
-    @include xin-textarea-color ($input-warning-color);
   }
   &.xin-textarea-error {
     @include xin-textarea-color ($input-error-color);

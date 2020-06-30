@@ -31,13 +31,11 @@ import { Input } from 'xin-ui'
 * 默认值：`"default"`
 * 描述：输入框颜色，也可用来区分输入状态。
 
-| 可选值 | 颜色 |
-| - | - |
-| default | 灰色 |
-| info | 蓝色 |
-| success | 绿色 |
-| warning | 黄色 |
-| error | 红色 |
+| 可选值 | 颜色 | 描述 |
+| - | - | - |
+| default | 灰色 | 默认颜色 |
+| success | 绿色 | 输入正确颜色 |
+| error | 红色 | 输入错误颜色 |
 
 ### disabled
 
