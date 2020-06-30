@@ -1,4 +1,4 @@
-# Label 标签
+# Label 表单标签
 
 ## 引用
 ```js
@@ -12,6 +12,24 @@ import { Label } from 'xin-ui'
 <<< ./src/examples/label.vue
 
 ## 参数
+
+### width
+
+* 类型：`String`
+* 默认值：`""`
+* 描述：表单标签宽度。
+
+### align
+
+* 类型：`String`
+* 默认值：`"left"`
+* 描述：对齐方式，`["left", "center", "right"]`。
+
+### required
+
+* 类型：`Boolean`
+* 默认值：`false`
+* 描述：是否必须，表单中使用。
 
 ## 事件
 
