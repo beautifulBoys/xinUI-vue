@@ -1,8 +1,13 @@
 <template>
-  <div :class="['xin-date-picker', {
-    'disabled': disabled,
-    'range': range
-  }]">
+  <div
+    :class="['xin-date-picker', {
+      'disabled': disabled,
+      'range': range
+    }]"
+    :style="{
+      'width': width.indexOf('px') > -1 ? width : width + 'px'
+    }"
+  >
     <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
       <div class="xin-date-picker-icon icon-left" v-if="icon">
         <xin-icon class="icon" :name="icon"/>
@@ -389,7 +394,7 @@ export default {
       e.stopPropagation()
       this.startSelect = 0
       this.endSelect = 0
-      this.emit()
+      this.emit('clear')
     },
     selectEvent () {
       if (this.disabled) return

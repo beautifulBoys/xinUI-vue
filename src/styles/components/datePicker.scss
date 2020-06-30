@@ -87,8 +87,9 @@
       padding-right: $input-line-height;
     }
     &.focus {
-      box-shadow: 0 0 8px transparentize($select-default-color, 0.6);
-      background: transparentize($select-default-color, 0.9);
+      border: 1px solid $select-info-color;
+      box-shadow: 0 0 8px transparentize($select-info-color, 0.6);
+      background: transparentize($select-info-color, 0.9);
     }
     &.has-left-icon {
       padding-left: $input-line-height;

@@ -23,21 +23,7 @@ import { DatePicker } from 'xin-ui'
 
 * 类型：`String`
 * 默认值：`""`
-* 描述：输入框宽度，不带单位。
-
-### color
-
-* 类型：`String`
-* 默认值：`"default"`
-* 描述：输入框颜色，也可用来区分输入状态。
-
-| 可选值 | 颜色 |
-| - | - |
-| default | 灰色 |
-| info | 蓝色 |
-| success | 绿色 |
-| warning | 黄色 |
-| error | 红色 |
+* 描述：选择器宽度，不带单位。
 
 ### icon
 
@@ -72,22 +58,19 @@ import { DatePicker } from 'xin-ui'
 ### placeholder
 
 * 类型：`String`
-* 默认值：`""`
-* 举例：`loading`
+* 默认值：`"请选择"`
 * 描述：未输入提示语。
 
 ### startPlaceholder
 
 * 类型：`String`
-* 默认值：`""`
-* 举例：`loading`
+* 默认值：`"开始时间"`
 * 描述：开始时间未输入提示语。
 
 ### endPlaceholder
 
 * 类型：`String`
-* 默认值：`""`
-* 举例：`loading`
+* 默认值：`"结束时间"`
 * 描述：结束时间未输入提示语。
 
 ### format
@@ -96,15 +79,25 @@ import { DatePicker } from 'xin-ui'
 * 默认值：`""`
 * 描述：输出日期格式。
 
+### disabledDate
+
+* 类型：`Function`
+* 默认值：`function (date) {}`
+* 描述：禁用日期，日历渲染的时候，每天调用此方法，由您决定是否禁用当天。
+
 ## 事件
 
 ### change
 * 描述：值改变得时候。
 * 回调参数: `(value)`；改变后的值，在输入框值更新之后回调。
 
+### clear
+* 描述：清空事件。
+* 回调参数: 无回调参数。
+
 ## 依赖情况
 
-无依赖。
+Icon。
 
 
 
