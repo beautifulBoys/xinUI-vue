@@ -3,10 +3,10 @@
     :class="['xin-progress', {
       'round': round,
       'inside': inside,
-      'info': color === 'info',
-      'error': color === 'error',
-      'warning': color === 'warning',
-      'success': color === 'success'
+      'xin-progress-info': color === 'info',
+      'xin-progress-error': color === 'error',
+      'xin-progress-warning': color === 'warning',
+      'xin-progress-success': color === 'success'
     }]"
     :style="{
       width: width.indexOf('px') > -1 ? width : width + 'px'

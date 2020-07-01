@@ -20,7 +20,7 @@
     padding: 0 $progress-space-width;
   }
 
-  &.info {
+  &.xin-progress-info {
     $color: $progress-info-color;
     .xin-progress-body {
       background: transparentize($color, 0.8);
@@ -39,7 +39,7 @@
       color: $color;
     }
   }
-  &.success {
+  &.xin-progress-success {
     $color: $progress-success-color;
     .xin-progress-body {
       background: transparentize($color, 0.8);
@@ -58,7 +58,7 @@
       color: $color;
     }
   }
-  &.warning {
+  &.xin-progress-warning {
     $color: $progress-warning-color;
     .xin-progress-body {
       background: transparentize($color, 0.8);
@@ -77,7 +77,7 @@
       color: $color;
     }
   }
-  &.error {
+  &.xin-progress-error {
     $color: $progress-error-color;
     .xin-progress-body {
       background: transparentize($color, 0.8);

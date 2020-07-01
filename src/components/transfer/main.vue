@@ -16,11 +16,11 @@
     <div class="xin-transfer-control">
       <div class="cont-box">
         <div :class="['cont-btn', {active: left.checkedSum}]" @click="left.checkedSum && event(true)">
-          <i class="xin-iconfont">&#xe684;</i>
+          <xin-icon name="arrow-right" />
         </div>
         <div class="center"></div>
         <div :class="['cont-btn', {active: right.checkedSum}]" @click="right.checkedSum && event(false)">
-          <i class="xin-iconfont">&#xe682;</i>
+          <xin-icon name="arrow-lift" />
         </div>
       </div>
     </div>
@@ -41,8 +41,12 @@
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinTransfer',
+  components: {
+    'xin-icon': Icon
+  },
   props: {
     value: {
       type: Array,
