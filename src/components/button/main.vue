@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['xin-button', color, {
+    :class="['xin-button', 'xin-button-' + color, {
       'fill': fill && !inline,
       'inline': inline,
       'round': round,

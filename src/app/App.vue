@@ -6,7 +6,7 @@
         <div class="menu-item" v-for="(item, index) in menuList" :key="index" @click="toView(item.url)">
           <i class="xin-iconfont item-icon"></i>
           <div class="item-text">{{item.name}}</div>
-          <i class="xin-iconfont forward">&#xe685;</i>
+          <xin-icon name="arrow-right" />
         </div>
       </div>
       <div class="right">
@@ -112,9 +112,6 @@ html, body {
           font-size: $font-size;
           display: inline-block;
           vertical-align: top;
-          &.forward {
-            transform: rotate(270deg);
-          }
         }
         .item-text {
           flex: 1;
@@ -151,47 +148,50 @@ $color-green: #15bf81;
     }
   }
 }
-
-.header {
-  text-align: center;
-  padding: 10px 20px;
-  border-bottom: 1px solid transparentize(#0095ff, 0);
-  position: relative;
-  .xin-iconfont {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+.example-dialog {
+  .header {
     text-align: center;
-    line-height: 30px;
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 100%;
-    background: #ff6666;
-    color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid transparentize(#0095ff, 0);
+    position: relative;
+    .xin-iconfont {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 30px;
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border-radius: 100%;
+      background: #ff6666;
+      color: #fff;
+    }
+  }
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background: transparentize(#0095ff, 0.8);
   }
 }
-.footer {
-  text-align: center;
-  padding: 20px;
-  background: transparentize(#0095ff, 0.8);
+
+.example-grid {
+  .xin-col-content {
+    color: #fff;
+    background: #0095ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 25px;
+  }
+  .xin-row + .xin-row {
+    margin-top: 10px !important;
+  }
 }
 
-.xin-col-content {
-  color: #fff;
-  background: #0095ff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  min-height: 25px;
-}
-.xin-row + .xin-row {
-  margin-top: 10px !important;
-}
-
-.page-icon {
+.example-icon {
   .area {
     width: 100px;
     height: 100px;

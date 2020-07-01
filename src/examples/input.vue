@@ -12,7 +12,7 @@
     </div>
     <div class="line">
       <xin-label width="80">图标</xin-label>
-      <xin-input type="text" leftIcon="shijian" rightIcon="Group-6" v-model="val"></xin-input>
+      <xin-input type="text" leftIcon="phone" rightIcon="close" v-model="val" @left-icon-event="iconEvent('左侧图标')" @right-icon-event="iconEvent('右侧图标')"></xin-input>
     </div>
     <div class="line">
       <xin-label width="80">禁用</xin-label>
@@ -83,6 +83,9 @@ export default {
   mounted () {
   },
   methods: {
+    iconEvent (type) {
+      this.$message.info(type + ' - 点击事件')
+    }
   }
 }
 </script>

@@ -44,11 +44,15 @@
     <div class="line">
       <xin-label width="60">图标按钮</xin-label>
       <xin-button color="default" icon="smile" @click="event($event)">默认按钮</xin-button>
-      <xin-button color="info" icon="setting" @click="event($event)">信息按钮</xin-button>
-      <xin-button color="success" fill icon="baocun" @click="event($event)">成功按钮</xin-button>
-      <xin-button color="error" fill icon="Group-8" @click="event($event)">错误按钮</xin-button>
-      <xin-button color="warning" inline icon="cry" @click="event($event)">警告按钮</xin-button>
-      <xin-button color="info" inline icon="more" @click="event($event)">警告按钮</xin-button>
+      <xin-button color="info" icon="set" @click="event($event)">信息按钮</xin-button>
+      <xin-button color="success" fill icon="store" @click="event($event)">成功按钮</xin-button>
+      <xin-button color="error" fill icon="Daytimemode" @click="event($event)">错误按钮</xin-button>
+      <xin-button color="warning" inline icon="robot" @click="event($event)">警告按钮</xin-button>
+      <xin-button color="info" inline icon="collection" @click="event($event)">信息按钮</xin-button>
+    </div>
+    <div class="line">
+      <xin-label width="60">加载展示</xin-label>
+      <xin-button color="info" :disabled="disabled" :icon="icon" fill @click="loadingEvent($event)">信息按钮</xin-button>
     </div>
   </div>
 </template>
@@ -59,6 +63,8 @@ export default {
   },
   data () {
     return {
+      icon: 'set',
+      disabled: false
     }
   },
   mounted () {
@@ -66,6 +72,15 @@ export default {
   methods: {
     event () {
       console.log('点击事件')
+    },
+    loadingEvent () {
+      console.log('点击事件')
+      this.icon = 'loading'
+      this.disabled = true
+      setTimeout(() => {
+        this.icon = 'set'
+        this.disabled = false
+      }, 3000)
     },
     mouseover () {
       console.log('mouseover 事件')

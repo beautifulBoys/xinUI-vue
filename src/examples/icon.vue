@@ -1,5 +1,5 @@
 <template>
-  <div class="page-icon">
+  <div class="example-page example-icon">
     <div class="line">
       <xin-label>xinUI Icon 集合</xin-label>
     </div>

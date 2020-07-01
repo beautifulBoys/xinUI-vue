@@ -105,19 +105,19 @@
       margin-left: $button-space-width - 10px;
     }
   }
-  &.default {
+  &.xin-button-default {
     @include button-style ($button-default-color);
   }
-  &.info {
+  &.xin-button-info {
     @include button-style ($button-info-color);
   }
-  &.success {
+  &.xin-button-success {
     @include button-style ($button-success-color);
   }
-  &.error {
+  &.xin-button-error {
     @include button-style ($button-error-color);
   }
-  &.warning {
+  &.xin-button-warning {
     @include button-style ($button-warning-color);
   }
 }

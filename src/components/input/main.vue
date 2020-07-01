@@ -40,10 +40,10 @@
     v-else
   >
     <div class="xin-input-icon icon-left" v-if="leftIcon">
-      <xin-icon class="icon" :name="leftIcon" @click="leftIconEvent()"/>
+      <xin-icon class="icon" :name="leftIcon" @click.native="leftIconEvent()"/>
     </div>
     <div class="xin-input-icon icon-right" v-if="rightIcon">
-      <xin-icon class="icon" :name="rightIcon" @click="rightIconEvent()"/>
+      <xin-icon class="icon" :name="rightIcon" @click.native="rightIconEvent()"/>
     </div>
     <input
       :type="type"
