@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11488030",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e7bc",
+      "unicode_decimal": 59324
+    },
+    {
+      "icon_id": "1631186",
+      "name": "旋转1",
+      "font_class": "xuanzhuan",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "1635295",
+      "name": "旋转2",
+      "font_class": "xuanzhuan1",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "11488158",
+      "name": "view larger",
+      "font_class": "viewlarger",
+      "unicode": "e7b9",
+      "unicode_decimal": 59321
+    },
+    {
+      "icon_id": "13087836",
+      "name": "缩小",
+      "font_class": "suoxiao",
+      "unicode": "e7c7",
+      "unicode_decimal": 59335
+    },
+    {
       "icon_id": "7588098",
       "name": "勾",
       "font_class": "gou",
@@ -1103,6 +1138,13 @@
       "font_class": "robot",
       "unicode": "e7da",
       "unicode_decimal": 59354
+    },
+    {
+      "icon_id": "9512564",
+      "name": "空",
+      "font_class": "empty",
+      "unicode": "e621",
+      "unicode_decimal": 58913
     }
   ]
 }

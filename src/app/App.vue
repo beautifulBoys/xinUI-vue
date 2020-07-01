@@ -44,8 +44,7 @@ export default {
         {name: 'Badge 标记', url: '/badge'},
         {name: 'TagInput 标签输入框', url: '/tagInput'},
         {name: 'Transfer 穿梭框', url: '/transfer'},
-        {name: 'SortList列表排序', url: '/sortList'},
-
+        {name: 'SortList 列表排序', url: '/sortList'},
         {name: 'Split 分割面板', url: '/split'},
         {name: 'Loading 加载', url: '/loading'},
         {name: 'Slide 滑块', url: '/slide'},
@@ -56,8 +55,8 @@ export default {
         {name: 'Popover 气泡提示', url: '/popover'},
         {name: 'Tag 标签', url: '/tag'},
         {name: 'Grid 栅格', url: '/grid'},
-        {name: 'Icon 图标', url: '/icon'}
-        
+        {name: 'Icon 图标', url: '/icon'},
+        {name: 'Viewer 预览器', url: '/viewer'}
       ]
     }
   },

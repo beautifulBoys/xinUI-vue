@@ -31,6 +31,7 @@ import Popover from '@/examples/popover'
 import Icon from '@/examples/icon'
 import Tree from '@/examples/tree'
 import Slide from '@/examples/slide'
+import Viewer from '@/examples/viewer'
 
 export default {
   install () {
@@ -65,6 +66,7 @@ export default {
     Vue.component('example-icon', Icon)
     Vue.component('example-tree', Tree)
     Vue.component('example-slide', Slide)
+    Vue.component('example-viewer', Viewer)
   },
   Label,
   Input,
@@ -96,5 +98,6 @@ export default {
   Popover,
   Icon,
   Tree,
-  Slide
+  Slide,
+  Viewer
 }

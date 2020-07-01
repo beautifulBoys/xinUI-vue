@@ -29,6 +29,7 @@ import Popover from './popover'
 import Icon from './icon'
 import Tree from './tree'
 import Slide from './slide'
+import Viewer from './viewer'
 
 const xinComponents = {
   Input,
@@ -62,7 +63,8 @@ const xinComponents = {
   Popover,
   Icon,
   Tree,
-  Slide
+  Slide,
+  Viewer
 }
 
 function install (Vue) {
@@ -107,7 +109,8 @@ export {
   Popover,
   Icon,
   Tree,
-  Slide
+  Slide,
+  Viewer
 }
 
 export const components = {
