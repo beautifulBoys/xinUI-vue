@@ -15,8 +15,10 @@
       height: $tips-line-height;
       line-height: $tips-line-height;
       text-align: center;
+      font-size: $tips-font-size + 8px;
       &.close {
         cursor: pointer;
+        font-size: $tips-font-size + 4px;
       }
     }
     .close-text {
@@ -32,7 +34,7 @@
     font-size: $tips-font-size;
     word-break: break-all;
   }
-  &.success {
+  &.xin-tips-success {
     background: transparentize($tips-success-color, 0.9);
     color: $tips-success-color;
     &.fill {
@@ -40,7 +42,7 @@
       color: #fff;
     }
   }
-  &.info {
+  &.xin-tips-info {
     background: transparentize($tips-info-color, 0.9);
     color: $tips-info-color;
     &.fill {
@@ -48,7 +50,7 @@
       color: #fff;
     }
   }
-  &.warning {
+  &.xin-tips-warning {
     background: transparentize($tips-warning-color, 0.9);
     color: $tips-warning-color;
     &.fill {
@@ -56,7 +58,7 @@
       color: #fff;
     }
   }
-  &.error {
+  &.xin-tips-error {
     background: transparentize($tips-error-color, 0.9);
     color: $tips-error-color;
     &.fill {

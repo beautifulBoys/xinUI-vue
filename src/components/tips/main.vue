@@ -5,10 +5,10 @@
   >
     <div
       :class="['xin-tips', {
-        'success': color === 'success',
-        'warning': color === 'warning',
-        'info': color === 'info',
-        'error': color === 'error',
+        'xin-tips-success': color === 'success',
+        'xin-tips-warning': color === 'warning',
+        'xin-tips-info': color === 'info',
+        'xin-tips-error': color === 'error',
         'fill': fill
       }]"
       :style="{
@@ -17,21 +17,23 @@
       v-if="visible"
     >
       <div class="xin-tips-icon">
-        <i class="xin-iconfont" v-html="iconMap[color]"></i>
+        <xin-icon :name="iconMap[color]" />
       </div>
       <div class="xin-tips-content">{{message}}</div>
       <div class="xin-tips-icon" v-if="closable">
         <span v-if="closeLabel" class="close-text" @click="close()">{{closeLabel}}</span>
-        <i v-else class="xin-iconfont close" @click="close()">&#xe687;</i>
+        <xin-icon v-else class="close" name="close" @click.native="close()" />
       </div>
     </div>
   </transition>
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinTips',
   components: {
+    'xin-icon': Icon
   },
   props: {
     message: {
@@ -66,10 +68,10 @@ export default {
   data () {
     return {
       iconMap: {
-        info: '&#xe690;',
-        success: '&#xe68d;',
-        warning: '&#xe62e;',
-        error: '&#xe68f;'
+        info: 'prompt-fill',
+        success: 'success-fill',
+        warning: 'warning',
+        error: 'reeor-fill'
       },
       visible: true
     }
