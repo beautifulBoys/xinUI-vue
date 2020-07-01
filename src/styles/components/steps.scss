@@ -40,7 +40,7 @@
           }
         }
       }
-      &.active {
+      &.xin-steps-active {
         .xin-iconfont {
           color: $steps-active-color;
           animation: steps-animate 1s linear infinite;
@@ -56,7 +56,7 @@
           }
         }
       }
-      &.success {
+      &.xin-steps-success {
         .xin-iconfont {
           color: $steps-success-color;
         }
@@ -74,7 +74,7 @@
           }
         }
       }
-      &.error {
+      &.xin-steps-error {
         .xin-iconfont {
           color: $steps-error-color;
         }

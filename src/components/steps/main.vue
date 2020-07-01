@@ -3,18 +3,22 @@
     <div class="xin-steps-box">
       <div
         :class="['xin-steps-item', {
-          'active': inputValue === index + 1 && status !== 'error',
-          'success': inputValue > index + 1,
-          'error': inputValue === index + 1 && status === 'error'
+          'xin-steps-active': inputValue === index + 1 && status !== 'error',
+          'xin-steps-success': inputValue > index + 1,
+          'xin-steps-error': inputValue === index + 1 && status === 'error'
         }]"
         v-for="(item, index) in list"
         :key="index"
       >
         <div class="xin-steps-item-left">
-          <i class="xin-iconfont" v-if="inputValue < index + 1">&#xe622;</i>
+          <xin-icon name="shijian" v-if="inputValue < index + 1" />
+          <xin-icon name="bofang" v-if="inputValue === index + 1 && status !== 'error'" />
+          <xin-icon name="gou" v-if="inputValue > index + 1" />
+          <xin-icon name="shanchu1" v-if="inputValue === index + 1 && status === 'error'" />
+          <!-- <i class="xin-iconfont" v-if="inputValue < index + 1">&#xe622;</i>
           <i class="xin-iconfont" v-if="inputValue === index + 1 && status !== 'error'">&#xe61c;</i>
           <i class="xin-iconfont" v-if="inputValue > index + 1">&#xe61f;</i>
-          <i class="xin-iconfont" v-if="inputValue === index + 1 && status === 'error'">&#xe626;</i>
+          <i class="xin-iconfont" v-if="inputValue === index + 1 && status === 'error'">&#xe626;</i> -->
         </div>
         <div class="xin-steps-item-right">
           <div class="xin-steps-item-line">
@@ -31,9 +35,11 @@
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinSteps',
   components: {
+    'xin-icon': Icon
   },
   props: {
     value: {
