@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11488105",
+      "name": "reeor",
+      "font_class": "reeor",
+      "unicode": "e771",
+      "unicode_decimal": 59249
+    },
+    {
       "icon_id": "850430",
       "name": "Warning",
       "font_class": "warning",
