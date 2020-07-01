@@ -1,22 +1,24 @@
 <template>
   <div class="xin-rate">
-    <i
-      :class="['xin-rate-item', 'xin-iconfont', color, {
+    <xin-icon
+      :class="['xin-rate-item', 'xin-rate-' + color, {
         'xin-rate-active': index < value,
         'xin-rate-disabled': disabled
       }]"
       v-for="(item, index) in size"
       :key="index"
-      v-html="iconMap[type]"
+      :name="icon"
       @click="defaultEvent(index)"
-    ></i>
+    />
   </div>
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinRate',
   components: {
+    'xin-icon': Icon
   },
   props: {
     value: {
@@ -33,22 +35,15 @@ export default {
     },
     color: { // default, error, warning, success
       type: String,
-      default: 'default'
+      default: 'info'
     },
-    type: {
+    icon: {
       type: String,
-      default: 'star'
+      default: 'collection-fill'
     }
   },
   data () {
     return {
-      iconMap: {
-        star: '&#xe6b0;',
-        heart: '&#xe64e;',
-        crown: '&#xe642;',
-        diamond: '&#xe64a;',
-        face: '&#xe7d7;'
-      },
       inputValue: this.value
     }
   },

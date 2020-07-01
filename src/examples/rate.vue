@@ -36,19 +36,23 @@
     </div>
     <div class="line">
       <xin-label width="60">心</xin-label>
-      <xin-rate v-model="val" color="error" type="heart"></xin-rate>
+      <xin-rate v-model="val" icon="favorites-fill" color="error"></xin-rate>
     </div>
     <div class="line">
       <xin-label width="60">皇冠</xin-label>
-      <xin-rate v-model="val" color="warning" type="crown"></xin-rate>
+      <xin-rate v-model="val" icon="vip-fill" color="warning"></xin-rate>
     </div>
     <div class="line">
-      <xin-label width="60">钻</xin-label>
-      <xin-rate v-model="val" type="diamond"></xin-rate>
+      <xin-label width="60">火</xin-label>
+      <xin-rate v-model="val" icon="hot-fill" color="error"></xin-rate>
     </div>
     <div class="line">
       <xin-label width="60">笑脸</xin-label>
-      <xin-rate v-model="val" color="success" type="face"></xin-rate>
+      <xin-rate v-model="val" icon="smile-fill" color="success"></xin-rate>
+    </div>
+    <div class="line">
+      <xin-label width="60">奖杯</xin-label>
+      <xin-rate v-model="val" icon="topraning-fill" color="default"></xin-rate>
     </div>
   </div>
 </template>

@@ -12,30 +12,29 @@
     display: inline-block;
     cursor: pointer;
     line-height: $rate-icon-height;
-    font-size: $rate-icon-height - 2px;
+    font-size: $rate-icon-height;
     color: $rate-icon-color;
     transition: all $rate-animate-time;
     &:hover {
       transform: scale(1.1);
     }
     &.xin-rate-active {
-        transform: scale(1.1);
-      &.default {
-        color: $rate-default-color;
+      transform: scale(1.1);
+      &.xin-rate-info {
+        color: $rate-info-color;
       }
-      &.success {
+      &.xin-rate-success {
         color: $rate-success-color;
       }
-      &.error {
+      &.xin-rate-error {
         color: $rate-error-color;
       }
-      &.warning {
+      &.xin-rate-warning {
         color: $rate-warning-color;
       }
     }
     &.xin-rate-disabled {
       cursor: not-allowed;
-      pointer-events: none;
     }
   }
 }
