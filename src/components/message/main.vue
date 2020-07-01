@@ -5,10 +5,10 @@
   >
     <div
       :class="['xin-message', {
-        'success': type === 'success',
-        'warning': type === 'warning',
-        'info': type === 'info',
-        'error': type === 'error'
+        'xin-message-success': type === 'success',
+        'xin-message-warning': type === 'warning',
+        'xin-message-info': type === 'info',
+        'xin-message-error': type === 'error'
       }]"
       :style="{
         top: top + 'px'
@@ -17,20 +17,22 @@
       v-show="visible"
     >
       <div class="xin-message-icon">
-        <i class="xin-iconfont" v-html="iconMap[type]"></i>
+        <xin-icon class="icon" :name="iconMap[type]" />
       </div>
       <div class="xin-message-content">{{messageText}}</div>
       <div class="xin-message-icon" v-if="closable">
-        <i class="xin-iconfont close" @click="close()">&#xe687;</i>
+        <xin-icon class="close" name="close" @click.native="close()" />
       </div>
     </div>
   </transition>
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinMessage',
   components: {
+    'xin-icon': Icon
   },
   props: {
   },
@@ -39,10 +41,10 @@ export default {
       visible: false,
       contentHeight: 0,
       iconMap: {
-        info: '&#xe690;',
-        success: '&#xe68d;',
-        warning: '&#xe62e;',
-        error: '&#xe68f;'
+        info: 'prompt-fill',
+        success: 'success-fill',
+        warning: 'warning',
+        error: 'reeor-fill'
       }
     }
   },

@@ -21,6 +21,9 @@
       &.close {
         cursor: pointer;
       }
+      &.icon {
+        font-size: $message-font-size + 8px;
+      }
     }
   }
   .xin-message-content {
@@ -30,19 +33,19 @@
     font-size: $message-font-size;
     word-break: break-all;
   }
-  &.success {
+  &.xin-message-success {
     background: transparentize($message-success-color, 0);
     color: #fff;
   }
-  &.info {
+  &.xin-message-info {
     background: transparentize($message-active-color, 0);
     color: #fff;
   }
-  &.warning {
+  &.xin-message-warning {
     background: transparentize($message-warning-color, 0);
     color: #fff;
   }
-  &.error {
+  &.xin-message-error {
     background: transparentize($message-error-color, 0);
     color: #fff;
   }
