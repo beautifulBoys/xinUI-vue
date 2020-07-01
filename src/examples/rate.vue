@@ -52,7 +52,7 @@
     </div>
     <div class="line">
       <xin-label width="60">奖杯</xin-label>
-      <xin-rate v-model="val" icon="topraning-fill" color="default"></xin-rate>
+      <xin-rate v-model="val" icon="topraning-fill" color="info"></xin-rate>
     </div>
   </div>
 </template>

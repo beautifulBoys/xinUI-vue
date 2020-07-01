@@ -1,14 +1,14 @@
 <template>
   <div class="xin-rate">
     <xin-icon
+      v-for="(item, index) in size"
+      :key="index"
       :class="['xin-rate-item', 'xin-rate-' + color, {
         'xin-rate-active': index < value,
         'xin-rate-disabled': disabled
       }]"
-      v-for="(item, index) in size"
-      :key="index"
       :name="icon"
-      @click="defaultEvent(index)"
+      @click.native="defaultEvent(index)"
     />
   </div>
 </template>
@@ -57,9 +57,9 @@ export default {
   methods: {
     defaultEvent (index) {
       if (this.disabled) return
-      this.inputValue = index + 1
-      this.$emit('input', this.inputValue)
-      this.$emit('change', this.inputValue)
+      let val = index + 1
+      this.$emit('input', val)
+      this.$emit('change', val)
     }
   }
 }
