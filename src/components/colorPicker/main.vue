@@ -7,7 +7,7 @@
     >
       <span class="color-picker-color" :style="{'background': 'red'}"></span>
       <div class="color-picker-icon">
-        <xin-icon class="icon" name="Group-4"/>
+        <xin-icon :class="{'rotate': visible}" name="arrow-down"/>
       </div>
     </div>
     <div
@@ -52,9 +52,11 @@
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinColorPicker',
   components: {
+    'xin-icon': Icon
   },
   props: {
     value: {

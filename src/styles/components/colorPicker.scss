@@ -28,8 +28,8 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      .icon {
-
+      .xin-iconfont.rotate {
+        transform: rotate(180deg);
       }
     }
   }
