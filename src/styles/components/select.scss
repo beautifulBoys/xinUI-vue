@@ -41,13 +41,8 @@
         color: $select-default-color - #333333;
       }
     }
-    .icon {
-      width: 16px;
-      height: 16px;
-      display: block;
-      &.rotate {
-        transform: rotate(180deg);
-      }
+    .xin-iconfont.rotate {
+      transform: rotate(180deg);
     }
   }
 

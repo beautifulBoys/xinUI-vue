@@ -145,6 +145,9 @@
     &.xin-input-round {
       border-radius: $input-line-height / 2;
     }
+    &.xin-input-center {
+      text-align: center;
+    }
   }
   &.xin-input-default {
     @include xin-input-default-color ($input-default-color, $input-info-color);

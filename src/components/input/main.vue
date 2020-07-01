@@ -50,6 +50,7 @@
       v-model.trim="inputValue"
       :class="['xin-input-inner', {
         'xin-input-round': round,
+        'xin-input-center': center,
         'has-left-icon': leftIcon,
         'has-right-icon': rightIcon
       }]"
@@ -95,6 +96,10 @@ export default {
     rightIcon: {
       type: String,
       default: ''
+    },
+    center: {
+      type: Boolean,
+      default: false
     },
     maxLength: {
       type: Number,

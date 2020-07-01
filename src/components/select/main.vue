@@ -9,11 +9,11 @@
   >
     <div @click="selectEvent()" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
       <div class="xin-select-icon icon-left" v-if="icon">
-        <xin-icon class="icon" :name="icon"/>
+        <xin-icon :name="icon"/>
       </div>
       <div class="xin-select-icon icon-right" v-if="rightIcon">
         <xin-icon
-          :class="['icon', {rotate: visible}]"
+          :class="[{rotate: visible}]"
           :name="clearable && !multiple ? iconMap[hover] : iconMap['0']"
           @click.native="rightIconEvent($event)"
         />

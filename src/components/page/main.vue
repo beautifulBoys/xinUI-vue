@@ -9,6 +9,7 @@
     </div>
     <div class="xin-page-item" v-if="layout.indexOf('sizes') > -1">
       <xin-select
+        width="70"
         :list="sizeList"
         itemValue="id"
         itemLabel="name"
@@ -71,6 +72,8 @@
         v-model="jumpValue"
         @keyup.enter="jump()"
         placeholder="跳转到"
+        width="70"
+        center
       ></xin-input>
     </div>
   </div>
