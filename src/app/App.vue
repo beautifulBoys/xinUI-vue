@@ -154,7 +154,7 @@ $color-green: #15bf81;
     padding: 10px 20px;
     border-bottom: 1px solid transparentize(#0095ff, 0);
     position: relative;
-    .xin-iconfont {
+    .close {
       width: 30px;
       height: 30px;
       cursor: pointer;

@@ -13,7 +13,7 @@
             <slot name="header" v-if="$slots.header"></slot>
             <div class="xin-dialog-header-default" v-else>
               <span>{{title}}</span>
-              <i class="xin-iconfont" @click="close()" v-if="closable">&#xe687;</i>
+              <xin-icon name="close" @click.native="close()" />
             </div>
           </div>
           <div
@@ -47,9 +47,11 @@
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinDialog',
   components: {
+    'xin-icon': Icon
   },
   props: {
     visible: {

@@ -4,7 +4,7 @@
       <div class="leaf-icon-box">
         <xin-icon
           :class="['leaf-icon', {'visible': visible}]"
-          name="Group-3"
+          name="arrow-right"
           v-if="item.childrens"
           @click.native="visible = !visible"
         />

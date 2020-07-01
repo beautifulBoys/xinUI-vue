@@ -20,11 +20,11 @@
         </div>
       </div>
     </xin-dialog>
-    <xin-dialog title="信息登记1" :visible.sync="dialog3.show" width="800px">
+    <xin-dialog title="自定义" :visible.sync="dialog3.show" width="800px">
       <div slot="header" class="header">
         <xin-label>请选择城市：</xin-label>
         <xin-select :list="list" itemValue="id" itemLabel="name" v-model="val"></xin-select>
-        <i class="xin-iconfont" @click="dialog3.show = false">&#xe687;</i>
+        <xin-icon class="close" name="ashbin-fill" @click.native="dialog3.show = false" />
       </div>
       <xin-table
         :thead="['学校', '学院', '年级', '班级', '小组', '姓名']"
