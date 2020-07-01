@@ -13,7 +13,7 @@
         <xin-icon class="icon" :name="icon"/>
       </div>
       <div class="xin-date-picker-icon icon-right" v-if="clearable && hover && (inputValue.start || inputValue.end)">
-        <xin-icon class="icon" name="Group-6" @click.native="rightIconEvent($event)"/>
+        <xin-icon class="icon" name="reeor" @click.native="rightIconEvent($event)"/>
       </div>
       <div
         :class="['xin-date-picker-input', {
@@ -41,11 +41,11 @@
           <div class="calendar">
             <div class="content-header">
               <div class="xin-date-picker-icon icon-left">
-                <xin-icon class="icon" name="Group-19" @click.native="toPreMonth()" />
+                <xin-icon class="icon" name="leftarrow" @click.native="toPreMonth()" />
               </div>
               <div class="content-header-text">{{table.year}} 年 {{table.month}} 月</div>
               <div class="xin-date-picker-icon icon-right">
-                <xin-icon class="icon" name="Group-20" @click.native="toNextMonth()" />
+                <xin-icon class="icon" name="Rightarrow" @click.native="toNextMonth()" />
               </div>
             </div>
             <div class="content-body">
@@ -149,7 +149,7 @@ export default {
     },
     icon: {
       type: String,
-      default: 'Group-'
+      default: 'calendar'
     },
     readonly: {
       type: Boolean,

@@ -132,11 +132,11 @@ export default {
       visible: false,
       inputValue: this.value,
       tags: [],
-      rightIcon: 'Group-4',
+      rightIcon: 'arrow-down',
       inputText: '',
       iconMap: {
-        '1': 'Group-6',
-        '0': 'Group-4'
+        '1': 'reeor',
+        '0': 'arrow-down'
       },
       hover: 0 // 0：false, 1: true
     }

@@ -11,14 +11,16 @@
     }]"
   >
     <span class="xin-tag-content">{{message}}</span>
-    <i class="xin-iconfont" v-if="closable" @click.stop="close()">&#xe687;</i>
+    <xin-icon name="reeor" v-if="closable" @click.native="close($event)" />
   </div>
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinTag',
   components: {
+    'xin-icon': Icon
   },
   props: {
     message: {
@@ -51,7 +53,8 @@ export default {
   mounted () {
   },
   methods: {
-    close () {
+    close (e) {
+      e.stopPropagation()
       this.$emit('close', this.message)
     }
   }
