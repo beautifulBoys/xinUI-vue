@@ -44,16 +44,16 @@
   }
   
   &.active {
-    &.info {
+    &.xin-switch-info {
       background: $switch-info-color;
     }
-    &.success {
+    &.xin-switch-success {
       background: $switch-success-color;
     }
-    &.error {
+    &.xin-switch-error {
       background: $switch-error-color;
     }
-    &.warning {
+    &.xin-switch-warning {
       background: $switch-warning-color;
     }
     .xin-switch-box {

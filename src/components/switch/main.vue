@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['xin-switch', color, {
+    :class="['xin-switch', 'xin-switch-' + color, {
       'active': inputValue,
       'disabled': disabled
     }]"
