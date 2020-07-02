@@ -6,7 +6,6 @@ const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const env = require('../config/prod.env')
@@ -18,7 +17,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         sourceMap: config.build.productionSourceMap,
         extract: true,
         usePostCSS: true
-      }),
+      })
     ]
   },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
@@ -42,16 +41,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].css'),
       allChunks: true,
-    }),
-    new OptimizeCSSPlugin({
-      cssProcessorOptions: config.build.productionSourceMap
-        ? { safe: true, map: { inline: false } }
-        : { safe: true }
-    }),
-    new webpack.HashedModuleIdsPlugin(),
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    })
   ]
 })
 
-console.log(webpackConfig.module.rules)
+// console.log(webpackConfig.module.rules)
 module.exports = webpackConfig
