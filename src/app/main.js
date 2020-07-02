@@ -5,6 +5,8 @@ import App from './App'
 import router from '@/router'
 import xinUI from '@/components'
 import '@/styles/index.scss'
+// import xinUI from '../../lib/index.js'
+// import '../../lib/styles.css'
 
 Vue.config.productionTip = false
 Vue.use(xinUI)

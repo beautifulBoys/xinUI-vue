@@ -23,7 +23,9 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('[name].js')
+    filename: utils.assetsPath('[name].js'),
+    library: '[name]',
+    libraryTarget: 'umd'
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -39,10 +41,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       parallel: true
     }),
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/[name].css'),
+      filename: utils.assetsPath('[name].css'),
       allChunks: true,
     })
-  ]
+  ],
+  externals: /^(vue)/i
 })
 
 // console.log(webpackConfig.module.rules)
