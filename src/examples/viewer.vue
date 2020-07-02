@@ -1,7 +1,13 @@
 <template>
-  <div class="example-page">
+  <div class="example-page example-viewer">
     <div class="line">
-      <xin-button fill color="info" @click="viewer()">打开预览</xin-button>
+      <img
+        v-for="(item, index) in list"
+        :key="index"
+        class="img"
+        :src="item.url"
+        @click="viewer(index)"
+      />
     </div>
     <!-- <xin-viewer :images="images"></xin-viewer> -->
   </div>
@@ -14,16 +20,20 @@ export default {
   data () {
     return {
       list: [
-        {name: '是打发', url: 'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg'},
-        {name: 'gas第三个', url: 'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg'}
+        {name: '', url: '//weiliicimg1.pstatp.com/weili/om/195469175792468004.webp'},
+        {name: '', url: '//icweiliimg1.pstatp.com/weili/om/656483973141626885.webp'},
+        {name: '', url: '//weiliicimg1.pstatp.com/weili/om/656483964551692300.webp'},
+        {name: '', url: '//weiliicimg9.pstatp.com/weili/om/668387878730203163.webp'},
+        {name: '', url: '//icweiliimg6.pstatp.com/weili/om/912709318147047592.webp'},
+        {name: '', url: '//icweiliimg1.pstatp.com/weili/om/201561269073346566.webp'}
       ]
     }
   },
   mounted () {
   },
   methods: {
-    viewer () {
-      this.$viewer({ list: this.list })
+    viewer (index) {
+      this.$viewer({ list: this.list, index: index })
     }
   }
 }

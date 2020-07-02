@@ -3,11 +3,11 @@ import Main from './main'
 
 let ViewerComponent = Vue.extend(Main)
 
-const Viewer = function (options) {
+const Viewer = function (options = {}) {
   let instance = new ViewerComponent({
     data: {
-      ...options,
-      list: options.list || []
+      list: options.list || [],
+      viewIndex: options.index || 0
     }
   })
   instance.$mount()

@@ -249,4 +249,14 @@ $color-green: #15bf81;
     }
   }
 }
+
+.example-viewer {
+  .img {
+    width: 100px;
+    height: 80px;
+    margin: 15px;
+    display: inline-block;
+    cursor: pointer;
+  }
+}
 </style>
