@@ -1,6 +1,7 @@
 
 import { components } from '../../src/components'
 import examples from '../../src/examples'
+import '../../lib/app.css'
 // import './theme.scss'
 // 使用异步函数也是可以的
 export default ({

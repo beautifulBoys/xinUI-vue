@@ -76,7 +76,6 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-size: 0;
 }
 * {
   font-family: microsoft yahei;
@@ -230,6 +229,7 @@ $color-green: #15bf81;
       align-items: center;
       text-align: center;
       font-size: 12px;
+      z-index: 10;
     }
     .icon {
       width: 60px;

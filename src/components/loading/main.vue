@@ -50,6 +50,9 @@ export default {
       this.timer = setTimeout(() => {
         clearTimeout(this.timer)
         this.status = ''
+        // TODO
+        // this.$el.parentNode.removeChild(this.$el)
+        // this.$destroy(true)
       }, 1200)
       
     }

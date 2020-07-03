@@ -10,6 +10,7 @@
   box-sizing: border-box;
   transform: translate3d(-50%, 0, 0);
   transition: all $message-animate-time;
+  z-index: 7000;
   .xin-message-icon {
     align-items: center;
     display: flex;

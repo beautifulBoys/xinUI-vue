@@ -15,6 +15,7 @@
     padding: 5px 0 5px 5px;
     box-sizing: border-box;
     border: 1px solid $colorPicker-default-color;
+    background: #fff;
     .color-picker-color {
       width: 18px;
       height: 18px;
@@ -47,6 +48,7 @@
     left: 0;
     padding-top: 5px;
     min-width: 100%;
+    background: #fff;
     z-index: 2000;
     .color-picker-options-content {
       width: 300px;

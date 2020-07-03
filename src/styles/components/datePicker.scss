@@ -157,19 +157,29 @@
       .content-body {
         .date-picker-content-body {
           width: 100%;
+          margin: 0;
           margin-top: 10px;
           padding: 10px;
+          border-collapse: separate;
+          display: inline-table;
           .thead {
             .tr {
+              border: none;
+              background: #fff;
               .th {
                 line-height: 30px;
                 font-size: $datePicker-font-size;
+                border: none;
+                padding: 0;
               }
             }
           }
           .tbody {
             .tr {
+              border: none;
+              background: #fff;
               .td {
+                border: none;
                 padding: 3px 0;
                 .day-box {
                   height: 20px;
