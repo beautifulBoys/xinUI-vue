@@ -1,3 +1,4 @@
+
 // 字体字形
 $font-size: 12px;
 $line-height: 30px;
@@ -12,22 +13,20 @@ $color-blue: #0095ff;
 $color-green: #15bf81;
 $color-yellow: #f7ab42;
 $color-red: #ff6666;
-$font-color: $color-gray - #333333;
-$border-color: $color-gray + #555555;
 
 // 其他
 $common-animate-time: 0.3s;
 
 // label
-$label-color: $font-color + #333333;
+$label-color: $color-gray;
 $label-required-color: $color-red;
 $label-font-size: $font-size;
 $label-space-width: $space-width;
 $label-line-height: $line-height;
 
 // input
-$input-font-color: $font-color;
-$input-disabled-color: $font-color + #777777;
+$input-font-color: $color-gray;
+$input-disabled-color: $color-gray + #444444;
 $input-width: $common-width;
 $input-animate-time: $common-animate-time;
 $input-font-size: $font-size;

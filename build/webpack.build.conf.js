@@ -45,7 +45,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       allChunks: true,
     })
   ],
-  externals: /^(vue)/i
+  externals: /^(vue|element-ui)/i
 })
 
 // console.log(webpackConfig.module.rules)

@@ -5,7 +5,7 @@
   "author": "lixin_boy <1298947916@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --colors",
     "dev-docs": "vuepress dev docs",
     "build": "node build/build.js",
     "build-docs": "vuepress build docs"
