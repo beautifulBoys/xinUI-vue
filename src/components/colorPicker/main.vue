@@ -2,7 +2,7 @@
   <div :class="['xin-color-picker', {
   }]">
     <div :class="['xin-color-picker-input']" @click="visible = true">
-      <span class="color-picker-color" :style="{'background': 'red'}"></span>
+      <span class="color-picker-color" :style="{'background': this.innerValue}"></span>
       <div class="color-picker-icon">
         <xin-icon :class="{'rotate': visible}" name="arrow-down"/>
       </div>
@@ -84,6 +84,7 @@ export default {
   data () {
     return {
       visible: false,
+      innerValue: '',
       boxInfo: {
         width: 280,
         height: 180,
@@ -114,10 +115,13 @@ export default {
   },
   watch: {
     value (n, o) {
-      // this.init(n)
+      this.innerValue = n
+      this.boxPickers.color = n
     }
   },
   mounted () {
+    this.innerValue = this.value
+    this.boxPickers.color = this.value
     this.init()
     this.renderBox(this.boxInfo.color)
     this.renderBar()

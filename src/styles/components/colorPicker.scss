@@ -118,6 +118,8 @@
           width: $colorPicker-line-height;
           height: $colorPicker-line-height;
           margin-right: $colorPicker-space-width;
+          box-sizing: border-box;
+          border: 1px solid $colorPicker-default-color;
         }
         .xin-input {
           flex: 1;
