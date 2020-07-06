@@ -3,7 +3,12 @@
     <div class="header">练习</div>
     <div class="body">
       <div class="left">
-        <div class="menu-item" v-for="(item, index) in menuList" :key="index" @click="toView(item.url)">
+        <div
+          :class="['menu-item', {active: $route.path === item.url}]"
+          v-for="(item, index) in menuList"
+          :key="index"
+          @click="toView(item.url)"
+        >
           <i class="xin-iconfont item-icon"></i>
           <div class="item-text">{{item.name}}</div>
           <xin-icon name="arrow-right" />
@@ -91,23 +96,24 @@ html, body {
     line-height: 50px;
     font-size: $font-size + 10px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $color-blue;
   }
   .body {
     display: flex;
     .left {
       width: 200px;
-      border-right: 1px solid #ddd;
+      border-right: 1px solid $color-blue;
       overflow-y: auto;
       .menu-item {
-        line-height: 25px;
-        height: 25px;
-        padding: 5px 10px;
-        border-bottom: 1px solid #eee;
+        line-height: 38px;
+        height: 38px;
+        padding: 0 10px;
+        border-bottom: 2px solid #fff;
+        background: transparentize($color-blue, 0.95);
         display: flex;
         cursor: pointer;
         .xin-iconfont {
-          font-size: $font-size;
+          font-size: $font-size + 2px;
           display: inline-block;
           vertical-align: top;
         }
@@ -116,10 +122,16 @@ html, body {
           text-indent: 20px;
           font-size: $font-size;
           display: inline-block;
-          line-height: 20px;
+          line-height: 38px;
         }
         &:hover {
-          background: #f5f5f5;
+          color: $color-blue;
+          font-weight: bold;
+        }
+        &.active {
+          background: $color-blue;
+          color: #fff;
+          font-weight: bold;
         }
       }
     }
@@ -131,8 +143,8 @@ html, body {
 }
 </style>
 <style lang="scss">
-$color-blue: #0095ff;
-$color-green: #15bf81;
+@import "./const.scss";
+$color-blue: $color-blue;
 
 .example-page {
   font-size: 12px;
@@ -150,7 +162,7 @@ $color-green: #15bf81;
   .header {
     text-align: center;
     padding: 10px 20px;
-    border-bottom: 1px solid transparentize(#0095ff, 0);
+    border-bottom: 1px solid transparentize($color-blue, 0);
     position: relative;
     .close {
       width: 30px;
@@ -163,21 +175,21 @@ $color-green: #15bf81;
       top: 10px;
       right: 10px;
       border-radius: 100%;
-      background: #ff6666;
+      background: $color-red;
       color: #fff;
     }
   }
   .footer {
     text-align: center;
     padding: 20px;
-    background: transparentize(#0095ff, 0.8);
+    background: transparentize($color-blue, 0.8);
   }
 }
 
 .example-grid {
   .xin-col-content {
     color: #fff;
-    background: #0095ff;
+    background: $color-blue;
     display: flex;
     justify-content: center;
     align-items: center;
