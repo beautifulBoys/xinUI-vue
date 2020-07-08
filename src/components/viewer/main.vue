@@ -9,7 +9,7 @@
         :style="{
           'transform': 'rotate(' + rotate + 'deg) scale(' + scale + ') translateX(' + translateX + 'px) translateY(' + translateY + 'px)'
         }"
-        :src="image.url"
+        :src="image[itemValue]"
       />
       <xin-icon
         name="arrow-lift"
@@ -55,6 +55,7 @@ export default {
       translateX: 0,
       translateY: 0,
       viewIndex: 0,
+      itemValue: 'url',
       visible: false
     }
   },

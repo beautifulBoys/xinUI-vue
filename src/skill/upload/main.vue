@@ -3,8 +3,8 @@
     :class="['xin-upload']"
   >
     <div class="upload-area upload-item" v-for="(item, index) in fileList" :key="index">
-      <xin-icon name="shanchu1" @click.native="remove(item, index)"/>
-      <img class="upload-item-img" :src="item[itemValue]" :title="item[itemLabel]" />
+      <xin-icon name="shanchu1" @click.native="remove($event, item, index)"/>
+      <img class="upload-item-img" :src="item[itemValue]" :title="item[itemLabel]" @click="viewEvent($event, item, index)" />
     </div>
     <div class="upload-area upload-add" v-if="fileList.length < limit">
       <div class="xin-upload-box">
@@ -12,12 +12,14 @@
         <div class="xin-upload-progress" :style="{height: progress + '%'}" v-show="progress">{{progress}}%</div>
       </div>
       <input
-        class="xin-upload-input"
+        ref="input"
         type="file"
+        class="xin-upload-input"
         :name="name"
-        @change="changeEvent($event)"
+        :disabled="disabled"
         :multiple="multiple"
         :accept="accept"
+        @change="changeEvent($event)"
       />
     </div>
   </div>
@@ -25,6 +27,7 @@
 
 <script>
 import Icon from '../../components/icon'
+import Viewer from '../../components/viewer'
 import request from './request'
 export default {
   name: 'xinUpload',
@@ -76,10 +79,6 @@ export default {
       type: Number,
       default: 100000000
     },
-    closable: {
-      type: Boolean,
-      default: false
-    },
     beforeUpload: {
       type: Function,
       default: () => {}
@@ -117,8 +116,15 @@ export default {
   mounted () {
   },
   methods: {
+    viewEvent (e, item, index) {
+      Viewer({
+        list: this.fileList,
+        index: index,
+        itemValue: this.itemValue
+      })
+    },
     changeEvent (e) {
-      console.log(e.target.files)
+      if (!this.$refs.input.value) return
       let files = e.target.files
       for (let i = 0; i < files.length; i++) {
         this.uploadEvent(files[i])
@@ -145,7 +151,8 @@ export default {
         }
       })
     },
-    remove (item, index) {
+    remove (e, item, index) {
+      e.stopPropagation()
       if (this.beforeRemove && this.beforeRemove()) return
       let arr = []
       let del = null

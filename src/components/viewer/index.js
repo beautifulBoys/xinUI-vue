@@ -7,7 +7,8 @@ const Viewer = function (options = {}) {
   let instance = new ViewerComponent({
     data: {
       list: options.list || [],
-      viewIndex: options.index || 0
+      viewIndex: options.index || 0,
+      itemValue: options.itemValue || 'url'
     }
   })
   instance.$mount()

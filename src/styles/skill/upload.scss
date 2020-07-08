@@ -1,6 +1,11 @@
 
 .xin-upload {
   font-size: 0;
+  display: inline-block;
+  vertical-align: top;
+  & + & {
+    margin-right: $upload-space-width;
+  }
   .upload-area {
     width: $upload-width;
     height: $upload-width;
@@ -54,6 +59,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          transition: all $upload-animate-time;
         }
       }
       &:hover {

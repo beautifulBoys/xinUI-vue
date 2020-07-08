@@ -1,12 +1,35 @@
 <template>
   <div class="example-page example-upload">
     <div class="line">
+      <xin-label width="80">完整示例</xin-label>
       <xin-upload
         :data="{token}"
         :action="action"
         :file-list="val"
         multiple
-        :limit="4"
+        :before-upload="beforeUpload"
+        :on-progress="onProgress"
+        :on-success="onSuccess"
+        :on-error="onError"
+      ></xin-upload>
+    </div>
+    <div class="line">
+      <xin-label width="80">禁用</xin-label>
+      <xin-upload
+        :data="{token}"
+        :action="action"
+        :file-list="val"
+        disabled
+      ></xin-upload>
+    </div>
+    <div class="line">
+      <xin-label width="80">数量限制</xin-label>
+      <xin-upload
+        :data="{token}"
+        :action="action"
+        :file-list="val"
+        :limit="2"
+        disabled
         :before-upload="beforeUpload"
         :on-progress="onProgress"
         :on-success="onSuccess"
