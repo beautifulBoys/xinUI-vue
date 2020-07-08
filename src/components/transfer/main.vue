@@ -2,7 +2,7 @@
   <div class="xin-transfer">
     <div class="xin-transfer-side">
       <div class="xin-transfer-head">
-        <xin-checkbox v-model="left.all" white @change="allCheckboxChange(true, $event)">{{leftTitle}}</xin-checkbox>
+        <xin-checkbox v-model="left.all" @change="allCheckboxChange(true, $event)">{{leftTitle}}</xin-checkbox>
         <span class="xin-transfer-desc">{{left.checkedSum}}/{{leftLength}}</span>
       </div>
       <div class="xin-transfer-body">
@@ -14,19 +14,20 @@
       </div>
     </div>
     <div class="xin-transfer-control">
-      <div class="cont-box">
-        <div :class="['cont-btn', {active: left.checkedSum}]" @click="left.checkedSum && event(true)">
-          <xin-icon name="arrow-right" />
-        </div>
-        <div class="center"></div>
-        <div :class="['cont-btn', {active: right.checkedSum}]" @click="right.checkedSum && event(false)">
-          <xin-icon name="arrow-lift" />
-        </div>
-      </div>
+      <xin-icon
+        :class="['cont-btn', {active: left.checkedSum}]"
+        @click.native="event(true)"
+        name="arrow-right"
+      />
+      <xin-icon
+        :class="['cont-btn', {active: right.checkedSum}]"
+        @click.native="event(false)"
+        name="arrow-lift"
+      />
     </div>
     <div class="xin-transfer-side">
       <div class="xin-transfer-head">
-        <xin-checkbox v-model="right.all" white @change="allCheckboxChange(false, $event)">{{rightTitle}}</xin-checkbox>
+        <xin-checkbox v-model="right.all" @change="allCheckboxChange(false, $event)">{{rightTitle}}</xin-checkbox>
         <span class="xin-transfer-desc">{{right.checkedSum}}/{{rightLength}}</span>
       </div>
       <div class="xin-transfer-body">
@@ -178,6 +179,8 @@ export default {
       event && this.$emit('change', value)
     },
     event (type) {
+      if (type && !this.left.checkedSum) return
+      if (!type && !this.right.checkedSum) return
       this.list.forEach(item => {
         if (item.aside === type && item.checked && !item.disabled) {
           item.checked = false

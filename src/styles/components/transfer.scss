@@ -1,43 +1,48 @@
 
 @import "~@/styles/const.scss";
 .xin-transfer {
-  width: 520px;
-  height: 320px;
+  width: $transfer-width;
+  min-height: $transfer-height;
   font-size: 0;
-  overflow: hidden;
   box-sizing: border-box;
   vertical-align: top;
-  display: inline-block;
+  display: inline-flex;
+  & + & {
+    margin-left: $transfer-space-width;
+  }
   &:hover {
     .xin-transfer-side {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid $transfer-info-color;
+      box-shadow: 0 0 8px transparentize($transfer-info-color, 0.6);
+      .xin-transfer-head {
+        border-bottom: 1px solid $transfer-info-color;
+      }
     }
   }
   .xin-transfer-side {
-    width: 200px;
+    flex: 1;
     height: 100%;
     display: inline-block;
-    border: 1px solid $transfer-info-color;
+    border: 1px solid $transfer-default-color;
     box-sizing: border-box;
     transition: all 0.5s;
     vertical-align: top;
     .xin-transfer-head {
-      font-size: 12px;
-      color: #fff;
+      font-size: $transfer-font-size;
       padding: 0 10px;
-      line-height: 40px;
-      background: $transfer-info-color;
+      line-height: $transfer-line-height;
+      border-bottom: 1px solid $transfer-default-color;
+      
       .xin-transfer-desc {
-        color: #fff;
         float: right;
       }
     }
     .xin-transfer-body {
       width: 100%;
-      height: 258px;
+      height: $transfer-height - $transfer-line-height - 1px;
       overflow-y: auto;
       .xin-transfer-item {
-        font-size: 12px;
+        font-size: $transfer-font-size;
         color: #333;
         padding: 0 10px;
         line-height: 40px;
@@ -45,49 +50,27 @@
     }
   }
   .xin-transfer-control {
-    width: 80px;
-    height: 100%;
-    display: inline-block;
-    position: relative;
-    font-size: 0;
-    .cont-box {
-      width: 40px;
-      height: 100px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      margin: auto;
-      .cont-btn {
-        width: 100%;
-        height: 40px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    
+    .cont-btn {
+      width: $transfer-line-height;
+      height: $transfer-line-height;
+      line-height: $transfer-line-height;
+      text-align: center;
+      display: block;
+      box-sizing: border-box;
+      border: 1px solid $transfer-default-color;
+      margin: ($transfer-space-width / 2) $transfer-space-width;
+      transition: all $transfer-animate-time;
+      cursor: not-allowed;
+      &.active {
         background: $transfer-info-color;
-        border-radius: 100%;
+        color: #fff;
         border: 1px solid $transfer-info-color;
-        box-sizing: border-box;
-        cursor: default;
-        text-align: center;
-        line-height: 40px;
-        display: inline-block;
-        &.active {
-          cursor: pointer;
-          border: 1px solid $transfer-info-color;
-          &:hover, &:active {
-            background: $transfer-info-color;
-            border: 1px solid $transfer-info-color;
-            color: #fff;
-          }
-        }
-        .xin-iconfont {
-          line-height: 40px;
-          display: block;
-          text-align: center;
-        }
-      }
-      .center {
-        width: 100%;
-        height: 20px;
+        cursor: pointer;
       }
     }
   }

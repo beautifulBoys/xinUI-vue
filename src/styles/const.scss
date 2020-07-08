@@ -260,6 +260,11 @@ $badge-warning-color: $color-yellow;
 $badge-error-color: $color-red;
 
 // transfer
+$transfer-width: 430px;
+$transfer-height: 300px;
+$transfer-line-height: $line-height + 5px;
+$transfer-animate-time: 0.3s;
+$transfer-font-size: $font-size;
 $transfer-space-width: $space-width;
 $transfer-default-color: $color-gray;
 $transfer-info-color: $color-blue;
