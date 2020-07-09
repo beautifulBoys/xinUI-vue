@@ -3,11 +3,7 @@
     <div class="line">
       <xin-button fill color="success" @click="alert()">alert 展示</xin-button>
       <xin-button fill color="warning" @click="confirm()">confirm 展示</xin-button>
-      <xin-button fill color="info" @click="prompt()">prompt 展示</xin-button>
     </div>
-    <!-- <xin-model title="删除确认" :visible.sync="dialog1.show">
-      您确认要删除当前选项吗？
-    </xin-model> -->
   </div>
 </template>
 
@@ -28,7 +24,7 @@ export default {
     alert () {
       this.$alert({
         title: 'Alert 提示',
-        message: '上岛咖啡抗裂砂浆弗兰克斯艰苦奋斗发了多少副科级多斯拉克房间里肯定是非家里的事',
+        message: '本组件库仅供学习交流，不可用于商业用途，谢谢！',
         closable: true,
         confirmLabel: '知道了'
       }).confirm(() => {
@@ -40,10 +36,10 @@ export default {
     confirm () {
       this.$confirm({
         title: '身份确认',
-        message: '上岛咖啡抗裂砂浆弗兰克斯艰苦奋斗发了多少副科级多斯拉克房间里肯定是非家里的事',
+        message: '您同意不将本组件库用于商业用途的约束吗？',
         closable: true,
-        confirmLabel: '搞定哈哈',
-        cancelLabel: '取消嘿嘿',
+        confirmLabel: '同意哈哈',
+        cancelLabel: '拒绝嘿嘿',
         align: 'center'
       }).confirm(() => {
         this.$message.success('Confirm 点击了 确定')
@@ -52,20 +48,6 @@ export default {
       }).close(() => {
         this.$message.warning('Confirm 点击了 关闭')
       })
-    },
-    prompt () {
-      // this.$prompt({
-      //   title: '身份确认',
-      //   message: '上岛咖啡抗裂砂浆弗兰克斯艰苦奋斗发了多少副科级多斯拉克房间里肯定是非家里的事',
-      //   closable: true,
-      //   confirmLabel: '搞定哈哈',
-      //   cancelLabel: '取消嘿嘿',
-      //   align: 'center'
-      // }).confirm(res => {
-      //   this.$message.success('prompt 点击了 确定')
-      // }).cancel(err => {
-      //   this.$message.success('prompt 点击了 取消')
-      // })
     }
   }
 }

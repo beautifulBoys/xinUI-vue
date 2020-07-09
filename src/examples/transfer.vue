@@ -20,7 +20,6 @@
 
 <script>
 import mapJson from './map'
-console.log(mapJson)
 export default {
   components: {
   },

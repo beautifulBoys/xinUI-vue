@@ -20,7 +20,6 @@
           <td>{{props.item.text}}</td>
           <td>{{props.item.text}}</td>
           <td>
-            <!-- <xin-button color="info" fill>编辑</xin-button> -->
             <xin-button color="success" inline>新增</xin-button>
             <xin-button color="error" inline>删除</xin-button>
           </td>
@@ -67,12 +66,12 @@ export default {
         '操作'
       ],
       tbody: [
-        {id: 1, text: '空军'},
-        {id: 2, text: '陆军'},
-        {id: 3, text: '海军'},
-        {id: 4, text: '导弹军'},
-        {id: 5, text: '后勤军'},
-        {id: 6, text: '指挥军'}
+        {id: 1, text: '某某大学'},
+        {id: 2, text: '计算机工程学院'},
+        {id: 3, text: '一年级'},
+        {id: 4, text: '信息化二班'},
+        {id: 5, text: '进步小组'},
+        {id: 6, text: '李某某'}
       ],
       radioValue: '',
       checkboxValue: []
