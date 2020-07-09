@@ -33,6 +33,7 @@ import Tree from '@/examples/tree'
 import Slide from '@/examples/slide'
 import Viewer from '@/examples/viewer'
 import Upload from '@/examples/upload'
+import Crop from '@/examples/crop'
 
 export default {
   install () {
@@ -69,6 +70,7 @@ export default {
     Vue.component('example-slide', Slide)
     Vue.component('example-viewer', Viewer)
     Vue.component('example-upload', Upload)
+    Vue.component('example-crop', Crop)
   },
   Label,
   Input,
@@ -102,5 +104,6 @@ export default {
   Tree,
   Slide,
   Viewer,
-  Upload
+  Upload,
+  Crop
 }

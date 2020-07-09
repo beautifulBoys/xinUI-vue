@@ -31,6 +31,7 @@ import Tree from './tree'
 import Slide from './slide'
 import Viewer from './viewer'
 import Upload from '../skill/upload'
+import Crop from '../skill/crop'
 
 const xinComponents = {
   Input,
@@ -66,7 +67,8 @@ const xinComponents = {
   Tree,
   Slide,
   Viewer,
-  Upload
+  Upload,
+  Crop
 }
 
 function install (Vue) {
@@ -113,7 +115,8 @@ export {
   Tree,
   Slide,
   Viewer,
-  Upload
+  Upload,
+  Crop
 }
 
 export const components = {

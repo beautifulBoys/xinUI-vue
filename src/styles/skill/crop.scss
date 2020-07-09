@@ -1,0 +1,15 @@
+
+@import 'cropperjs/dist/cropper.css';
+
+.xin-crop {
+  font-size: 0;
+  width: $crop-width;
+  height: $crop-height;
+  & + & {
+    // margin-right: $upload-space-width;
+  }
+  .xin-crop-img {
+    display: none;
+  }
+  
+}
