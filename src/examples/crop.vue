@@ -3,6 +3,7 @@
     <div class="line">
       <xin-label width="80">完整示例</xin-label>
       <xin-crop
+        src="https://cdn.i5sesol.com/isesol_mall/VX4AAADnGu7LqBcW-f8de876f-caee-42f7-a324-d41a9a2586a7"
       ></xin-crop>
     </div>
   </div>

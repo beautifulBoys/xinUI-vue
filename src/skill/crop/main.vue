@@ -1,12 +1,13 @@
 <template>
   <div
+    v-if="src"
     :class="['xin-crop']"
     :style="{
       width: width.indexOf('px') > -1 ? width : width + 'px',
       height: height.indexOf('px') > -1 ? height : height + 'px'
     }"
   >
-    <img ref="image" src="https://cdn.i5sesol.com/isesol_mall/VX4AAADnGu7LqBcW-f8de876f-caee-42f7-a324-d41a9a2586a7" class="xin-crop-img" />
+    <img ref="image" :src="src" class="xin-crop-img" />
   </div>
 </template>
 
@@ -16,10 +17,13 @@ import Cropper from 'cropperjs'
 export default {
   name: 'xinCrop',
   components: {
-    'xin-icon': Icon,
-    'vue-cropper': Cropper
+    'xin-icon': Icon
   },
   props: {
+    src: {
+      type: String,
+      default: ''
+    },
     width: {
       type: String,
       default: '500'
@@ -28,45 +32,21 @@ export default {
       type: String,
       default: '350'
     },
-    accept: {
-      type: String,
-      default: ''
-    },
-    headers: {
-      type: Object,
-      default: () => ({})
-    },
-    multiple: {
-      type: Boolean,
-      default: false
-    },
-    data: {
-      type: Object,
-      default: () => ({})
-    },
-    itemLabel: {
-      type: String,
-      default: 'name'
-    },
-    itemValue: {
-      type: String,
-      default: 'url'
-    },
-    fileList: {
-      type: Array,
-      default: () => []
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    limit: {
+    viewMode: {
       type: Number,
-      default: 100000000
+      default: 1
     },
-    beforeUpload: {
-      type: Function,
-      default: () => {}
+    aspectRatio: {
+      type: Number,
+      default: NaN
+    },
+    background:  {
+      type: String,
+      default: '#fff'
+    },
+    imgType: {
+      type: String,
+      default: 'png'
     }
   },
   data () {
@@ -85,11 +65,30 @@ export default {
         return
       }
       this.cropper = new Cropper(this.$refs.image, {
-        viewMode: 1,
+        viewMode: this.viewMode,
+        aspectRatio: this.aspectRatio,
+        background: this.background,
         crop (e) {
-          console.log(e)
+          // console.log(e)
         }
       })
+    },
+    reset () {
+      this.cropper.reset()
+    },
+    anticlockwise () {
+      this.cropper.rotate(-45)
+    },
+    clockwise () {
+      this.cropper.rotate(45)
+    },
+    enlarge () {
+      this.cropper.relativeZoom(0.1)
+    },
+    narrow () {
+      this.cropper.relativeZoom(-0.1)
+    },
+    getImage () {
     }
   }
 }
