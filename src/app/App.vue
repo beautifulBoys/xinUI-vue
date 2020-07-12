@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <div class="header">练习</div> -->
+    <div class="header">练习</div>
     <div class="body">
-      <!-- <div class="left">
+      <div class="left">
         <div
           :class="['menu-item', {active: $route.path === item.url}]"
           v-for="(item, index) in menuList"
@@ -13,7 +13,7 @@
           <div class="item-text">{{item.name}}</div>
           <xin-icon name="arrow-right" />
         </div>
-      </div> -->
+      </div>
       <div class="right">
         <router-view></router-view>
       </div>
