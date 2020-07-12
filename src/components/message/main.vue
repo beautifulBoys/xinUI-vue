@@ -11,7 +11,7 @@
         'xin-message-error': type === 'error'
       }]"
       :style="{
-        top: top + 'px'
+        top: offsetTop + 'px'
       }"
       ref="message"
       v-show="visible"
@@ -72,7 +72,7 @@ export default {
       // this.nextTop = this.$refs.message.offsetHeight + this.offsetHeight + 15
     },
     beforeEnterEvent () {
-      console.log('before-appear', this.$el.offsetHeight)
+      // console.log('before-appear', this.$el.offsetHeight)
       this.contentHeight = this.$el.offsetHeight
     },
     afterLeaveEvent () {

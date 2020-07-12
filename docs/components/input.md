@@ -8,9 +8,6 @@ import { Input } from 'xin-ui'
 ## 示例
 <example-input/>
 
-## 代码示例
-<<< ./src/examples/input.vue
-
 ## 参数
 
 ### value / v-model
@@ -126,6 +123,9 @@ import { Input } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/input.vue
 
 
 

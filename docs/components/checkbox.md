@@ -10,9 +10,6 @@ import { Checkbox } from 'xin-ui'
   <example-checkbox/>
 </div>
 
-## 代码示例
-<<< ./src/examples/checkbox.vue
-
 ## 参数
 
 ### value / v-model
@@ -36,6 +33,9 @@ import { Checkbox } from 'xin-ui'
 ## 依赖情况
 
 依赖 ElementUI 的 Checkbox 组件。
+
+## 代码示例
+<<< ./src/examples/checkbox.vue
 
 
 

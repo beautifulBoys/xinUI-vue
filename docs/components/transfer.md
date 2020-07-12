@@ -8,9 +8,6 @@ import { Transfer } from 'xin-ui'
 ## 示例
 <example-transfer/>
 
-## 代码示例
-<<< ./src/examples/transfer.vue
-
 ## 参数
 
 ## 事件
@@ -20,6 +17,9 @@ import { Transfer } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/transfer.vue
 
 
 

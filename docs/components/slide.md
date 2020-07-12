@@ -10,9 +10,6 @@ import { Slide } from 'xin-ui'
   <example-slide/>
 </div>
 
-## 代码示例
-<<< ./src/examples/slide.vue
-
 ## 参数
 
 ### value / v-model
@@ -78,6 +75,9 @@ import { Slide } from 'xin-ui'
 ## 依赖情况
 
 依赖`Tooltip`组件。
+
+## 代码示例
+<<< ./src/examples/slide.vue
 
 
 

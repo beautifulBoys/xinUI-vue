@@ -38,10 +38,6 @@ export default {
       type: Number,
       default: 0
     },
-    size: {
-      type: Number,
-      default: 5
-    },
     disabled: {
       type: Boolean,
       default: false
@@ -66,10 +62,6 @@ export default {
     width: {
       type: String,
       default: ''
-    },
-    type: {
-      type: String,
-      default: 'star'
     }
   },
   data () {

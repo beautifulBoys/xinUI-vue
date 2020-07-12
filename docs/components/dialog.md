@@ -10,9 +10,6 @@ import { Dialog } from 'xin-ui'
   <example-dialog/>
 </div>
 
-## 代码示例
-<<< ./src/examples/dialog.vue
-
 ## 参数
 
 ### visible
@@ -106,6 +103,9 @@ import { Dialog } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/dialog.vue
 
 
 

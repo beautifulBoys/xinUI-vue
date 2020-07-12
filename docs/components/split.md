@@ -8,9 +8,6 @@ import { Split } from 'xin-ui'
 ## 示例
 <example-split/>
 
-## 代码示例
-<<< ./src/examples/split.vue
-
 ## 参数
 
 ## 事件
@@ -20,6 +17,9 @@ import { Split } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/split.vue
 
 
 

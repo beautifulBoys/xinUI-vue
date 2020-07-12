@@ -8,9 +8,6 @@ import { Select } from 'xin-ui'
 ## 示例
 <example-select/>
 
-## 代码示例
-<<< ./src/examples/select.vue
-
 ## 参数
 
 ### value / v-model
@@ -97,6 +94,9 @@ import { Select } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/select.vue
 
 
 

@@ -10,9 +10,6 @@ import { Viewer } from 'xin-ui'
   <example-viewer/>
 </div>
 
-## 代码示例
-<<< ./src/examples/viewer.vue
-
 ## 参数
 
 ### list
@@ -34,6 +31,9 @@ import { Viewer } from 'xin-ui'
 ## 依赖情况
 
 依赖`Icon`组件。
+
+## 代码示例
+<<< ./src/examples/viewer.vue
 
 
 

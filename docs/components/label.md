@@ -8,9 +8,6 @@ import { Label } from 'xin-ui'
 ## 示例
 <example-label/>
 
-## 代码示例
-<<< ./src/examples/label.vue
-
 ## 参数
 
 ### width
@@ -38,6 +35,9 @@ import { Label } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/label.vue
 
 
 

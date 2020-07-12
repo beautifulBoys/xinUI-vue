@@ -26,8 +26,8 @@ const Confirm = function (options) {
     closable: options.closable || false,
     title: options.title || '确认框',
     align: options.align || '',
-    confirmLabel: options.confirmLabel || '确 定',
-    cancelLabel: options.cancelLabel || '取 消'
+    confirmLabel: options.confirmLabel || '确定',
+    cancelLabel: options.cancelLabel || '取消'
   }
   let instance = new ModelComponent({
     data: { type: 'confirm', ...option }

@@ -8,9 +8,6 @@ import { DatePicker } from 'xin-ui'
 ## 示例
 <example-date-picker/>
 
-## 代码示例
-<<< ./src/examples/datePicker.vue
-
 ## 参数
 
 ### value / v-model
@@ -98,6 +95,9 @@ import { DatePicker } from 'xin-ui'
 ## 依赖情况
 
 Icon。
+
+## 代码示例
+<<< ./src/examples/datePicker.vue
 
 
 

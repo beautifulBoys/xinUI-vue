@@ -10,9 +10,6 @@ import { Tree } from 'xin-ui'
   <example-tree/>
 </div>
 
-## 代码示例
-<<< ./src/examples/tree.vue
-
 ## 参数
 
 ### list
@@ -62,6 +59,9 @@ import { Tree } from 'xin-ui'
 ## 依赖情况
 
 依赖`Checkbox`、`Icon`组件。
+
+## 代码示例
+<<< ./src/examples/tree.vue
 
 
 

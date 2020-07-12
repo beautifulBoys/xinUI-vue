@@ -8,9 +8,6 @@ import { Badge } from 'xin-ui'
 ## 示例
 <example-badge/>
 
-## 代码示例
-<<< ./src/examples/badge.vue
-
 ## 参数
 
 ### color
@@ -65,6 +62,8 @@ import { Badge } from 'xin-ui'
 
 无依赖。
 
+## 代码示例
+<<< ./src/examples/badge.vue
 
 
 

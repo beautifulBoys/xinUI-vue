@@ -8,9 +8,6 @@ import { Tabs } from 'xin-ui'
 ## 示例
 <example-tabs/>
 
-## 代码示例
-<<< ./src/examples/tabs.vue
-
 ## 参数
 
 ## 事件
@@ -20,6 +17,9 @@ import { Tabs } from 'xin-ui'
 ## 依赖情况
 
 无依赖。
+
+## 代码示例
+<<< ./src/examples/tabs.vue
 
 
 

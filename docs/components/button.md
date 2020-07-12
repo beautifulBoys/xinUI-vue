@@ -8,9 +8,6 @@ import { Button } from 'xin-ui'
 ## 示例
 <example-button/>
 
-## 代码示例
-<<< ./src/examples/button.vue
-
 ## 参数
 
 ### color
@@ -75,6 +72,8 @@ import { Button } from 'xin-ui'
 
 无依赖。
 
+## 代码示例
+<<< ./src/examples/button.vue
 
 
 
