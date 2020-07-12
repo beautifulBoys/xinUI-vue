@@ -4,15 +4,14 @@
   width: 100%;
   .xin-table-content {
     width: 100%;
-    border-top: 1px solid $table-info-color;
     .xin-table-thead {
       .xin-table-tr {
         .xin-table-th {
           font-size: $table-font-size;
           line-height: $table-line-height;
-          background: $table-info-color;
-          color: #fff;
           padding: 5px 0;
+          border-bottom: 1px solid $table-info-color;
+          color: $table-info-color;
         }
       }
     }
@@ -25,7 +24,7 @@
           padding: 5px;
         }
         &.stripe {
-          background: transparentize($table-info-color, 0.95);
+          background: transparentize($table-default-color, 0.95);
         }
       }
     }
@@ -33,10 +32,10 @@
   .xin-table-null {
     padding: 30px 45%;
     text-align: center;
-    background: transparentize($table-info-color, 0.9);
-    color: transparentize($table-info-color, 0.5);
+    background: transparentize($table-default-color, 0.9);
+    color: transparentize($table-default-color, 0.5);
     .xin-table-null-iconfont {
-      font-size: 30px;
+      font-size: 26px;
       display: block;
     }
     .xin-table-null-text {

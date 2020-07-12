@@ -9,7 +9,6 @@
             <xin-checkbox
               v-model="checkboxAllValue"
               hideLabel
-              white
               @change="checkboxAllChange($event)"
             ></xin-checkbox>
           </th>
@@ -45,16 +44,19 @@
       </tbody>
     </table>
     <div class="xin-table-null" v-if="!tbody.length">
-      <i class="xin-iconfont xin-table-null-iconfont">&#xe621;</i>
+      <xin-icon class="xin-table-null-iconfont" name="empty"/>
+      <!-- <i class="xin-iconfont xin-table-null-iconfont">&#xe621;</i> -->
       <div class="xin-table-null-text">暂无数据</div>
     </div>
   </div>
 </template>
 
 <script>
+import Icon from '../icon'
 export default {
   name: 'xinTable',
   components: {
+    'xin-icon': Icon
   },
   props: {
     tbody: {
