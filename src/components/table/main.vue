@@ -45,7 +45,6 @@
     </table>
     <div class="xin-table-null" v-if="!tbody.length">
       <xin-icon class="xin-table-null-iconfont" name="empty"/>
-      <!-- <i class="xin-iconfont xin-table-null-iconfont">&#xe621;</i> -->
       <div class="xin-table-null-text">暂无数据</div>
     </div>
   </div>
@@ -53,10 +52,14 @@
 
 <script>
 import Icon from '../icon'
+import Checkbox from '../checkbox'
+import Radio from '../radio'
 export default {
   name: 'xinTable',
   components: {
-    'xin-icon': Icon
+    'xin-icon': Icon,
+    'xin-checkbox': Checkbox,
+    'xin-radio': Radio
   },
   props: {
     tbody: {
@@ -142,13 +145,6 @@ export default {
         this.checkboxValue = value
         this.$emit('checkbox-change', this.checkboxValue, [])
       }
-    },
-    defaultEvent () {
-      if (this.disabled) return
-      this.inputValue = !this.inputValue
-      let val = this.inputValue ? this.openValue : this.closeValue
-      this.$emit('input', val)
-      this.$emit('change', val)
     }
   }
 }

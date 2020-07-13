@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['xin-tabs', color]"
+    :class="['xin-tabs', 'xin-tabs-' + color]"
   >
     <div class="xin-tabs-header">
       <div
@@ -42,9 +42,9 @@ export default {
       type: Array,
       default: () => []
     },
-    color: { // blue
+    color: { // info
       type: String,
-      default: ''
+      default: 'default'
     },
     height: {
       type: String,

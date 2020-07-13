@@ -11,7 +11,6 @@
       <div class="xin-switch-item"></div>
       <div class="xin-switch-label right">{{closeLabel}}</div>
     </div>
-    
   </div>
 </template>
 
@@ -25,7 +24,7 @@ export default {
       type: [String, Number, Boolean],
       default: false
     },
-    color: { // default, error, warning, success
+    color: { // info, error, warning, success
       type: String,
       default: 'info'
     },

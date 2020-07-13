@@ -99,7 +99,7 @@
         itemValue="name"
         itemLabel="title"
         v-model="active"
-        color="blue"
+        color="info"
         @tab-change="tabChange"
       >
         <p slot="kongJun">

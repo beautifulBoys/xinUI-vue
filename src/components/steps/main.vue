@@ -15,10 +15,6 @@
           <xin-icon name="bofang" v-if="inputValue === index + 1 && status !== 'error'" />
           <xin-icon name="gou" v-if="inputValue > index + 1" />
           <xin-icon name="shanchu1" v-if="inputValue === index + 1 && status === 'error'" />
-          <!-- <i class="xin-iconfont" v-if="inputValue < index + 1">&#xe622;</i>
-          <i class="xin-iconfont" v-if="inputValue === index + 1 && status !== 'error'">&#xe61c;</i>
-          <i class="xin-iconfont" v-if="inputValue > index + 1">&#xe61f;</i>
-          <i class="xin-iconfont" v-if="inputValue === index + 1 && status === 'error'">&#xe626;</i> -->
         </div>
         <div class="xin-steps-item-right">
           <div class="xin-steps-item-line">

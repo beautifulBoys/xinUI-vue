@@ -27,9 +27,11 @@
 </template>
 
 <script>
+import XinTag from '../tag'
 export default {
   name: 'xinTagInput',
   components: {
+    'xin-tag': XinTag
   },
   props: {
     value: {
@@ -55,10 +57,6 @@ export default {
     backSpace: {
       type: Boolean,
       default: true
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     },
     placeholder: {
       type: String,
