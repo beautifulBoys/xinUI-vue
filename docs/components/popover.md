@@ -17,6 +17,7 @@ import { Popover } from 'xin-ui'
 * 描述：浮动框显示位置。
 
 | 值 | 描述 |
+| - | - |
 | top | 上方 |
 | bottom | 下方 |
 | left | 左侧 |
@@ -44,15 +45,16 @@ import { Popover } from 'xin-ui'
 
 * 类型：`String`
 * 默认值：`"white"`
-* 描述：浮动框颜色。
+* 描述：浮动框背景色，已默认以下种类，暂不提供自定义。
 
-| 值 | 描述 |
-| dark | 黑色 |
-| white | 白色 |
-| info | 蓝色，消息色 |
-| success | 绿色，成功色 |
-| warning | 黄色，警告色 |
-| error | 红色，错误色 |
+| 值 | 描述 | 文字颜色 |
+| - | - | - |
+| dark | 黑色 | #ffffff |
+| white | 白色 | 继承 |
+| info | 蓝色，消息色 | #ffffff |
+| success | 绿色，成功色 | #ffffff |
+| warning | 黄色，警告色 | #ffffff |
+| error | 红色，错误色 | #ffffff |
 
 ### disabled
 

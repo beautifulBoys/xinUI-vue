@@ -23,6 +23,7 @@ import { Progress } from 'xin-ui'
 * 描述：进度条颜色。
 
 | 值 | 描述 |
+| - | - |
 | info | 蓝色，消息色 |
 | success | 绿色，成功色 |
 | warning | 黄色，警告色 |
