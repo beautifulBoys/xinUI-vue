@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         text: '基础组件',
-        link: '/components/'
+        link: '/basic/'
       },
       {
         text: '功能组件',
@@ -37,13 +37,14 @@ module.exports = {
           children: [
             'install',
             'use',
-            'plugin',
+            // 'plugin',
             'develop',
             'log'
           ]
-        }
+        },
+        'copyright'
       ],
-      '/components/': [
+      '/basic/': [
         '',
         {
           title: '组件',
@@ -83,7 +84,7 @@ module.exports = {
           ]
         }
       ],
-      'skill': [
+      '/skill/': [
         '',
         {
           title: '功能组件',
