@@ -31,11 +31,15 @@ module.exports = {
     ],
     sidebar: {
       '/start/': [
-        '',
         {
           title: '快速开始',
           collapsable: true,
           children: [
+            'install',
+            'use',
+            'plugin',
+            'develop',
+            'log'
           ]
         }
       ],
@@ -80,7 +84,15 @@ module.exports = {
         }
       ],
       'skill': [
-        ''
+        '',
+        {
+          title: '功能组件',
+          collapsable: true,
+          children: [
+            'upload',
+            'crop'
+          ]
+        }
       ]
     }
   }

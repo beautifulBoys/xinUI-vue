@@ -20,7 +20,7 @@ Vue.use(Button)
 Vue.use(Checkbox)
 ```
 
-## isesol-skill
+## xin-skill
 
 ### 组件引用
 
