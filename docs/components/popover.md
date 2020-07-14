@@ -72,7 +72,7 @@ import { Popover } from 'xin-ui'
 
 * 类型：`Boolean`
 * 默认值：`false`
-* 描述：是否弧角。
+* 描述：是否圆角。
 
 ## 事件
 

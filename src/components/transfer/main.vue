@@ -43,10 +43,12 @@
 
 <script>
 import Icon from '../icon'
+import Checkbox from '../checkbox'
 export default {
   name: 'xinTransfer',
   components: {
-    'xin-icon': Icon
+    'xin-icon': Icon,
+    'xin-checkbox': Checkbox
   },
   props: {
     value: {
@@ -55,7 +57,7 @@ export default {
         return []
       }
     },
-    data: {
+    list: {
       type: Array,
       default () {
         return []
@@ -87,11 +89,11 @@ export default {
     },
     itemValue: {
       type: String,
-      default: ''
+      default: 'value'
     },
-    itemText: {
+    itemLabel: {
       type: String,
-      default: ''
+      default: 'label'
     }
   },
   data () {
@@ -109,7 +111,7 @@ export default {
     }
   },
   watch: {
-    data (n) {
+    list (n) {
       this.formatData()
     }
   },
@@ -127,9 +129,9 @@ export default {
   methods: {
     formatData () {
       let arr = []
-      this.data.forEach(item => {
+      this.list.forEach(item => {
         arr.push({
-          text: item[this.itemText],
+          text: item[this.itemLabel],
           value: item[this.itemValue],
           checked: false,
           aside: true,

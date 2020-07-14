@@ -1,5 +1,9 @@
 # Tree 树
 
+## 说明
+
+该组件尚未完善。
+
 ## 引用
 ```js
 import { Tree } from 'xin-ui'

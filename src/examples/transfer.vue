@@ -3,7 +3,7 @@
     <div class="line">
       <xin-label width="60">颜色展示</xin-label>
       <xin-transfer
-        :data="list"
+        :list="list"
         itemText="name"
         itemValue="code"
         v-model="value"

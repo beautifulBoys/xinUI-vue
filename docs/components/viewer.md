@@ -1,5 +1,9 @@
 # Viewer 预览器
 
+## 说明
+
+目前仅支持预览图片，文件类型尚未支持。
+
 ## 引用
 ```js
 import { Viewer } from 'xin-ui'
