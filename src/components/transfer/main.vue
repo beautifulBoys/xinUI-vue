@@ -6,7 +6,7 @@
         <span class="xin-transfer-desc">{{left.checkedSum}}/{{leftLength}}</span>
       </div>
       <div class="xin-transfer-body">
-        <div class="xin-transfer-item" v-for="(item, index) in list" :key="index">
+        <div class="xin-transfer-item" v-for="(item, index) in renderList" :key="index">
           <template v-if="item.aside">
             <xin-checkbox v-model="item.checked" :disabled="item.disabled" @change="calculate()">{{item.text}}</xin-checkbox>
           </template>
@@ -31,7 +31,7 @@
         <span class="xin-transfer-desc">{{right.checkedSum}}/{{rightLength}}</span>
       </div>
       <div class="xin-transfer-body">
-        <div class="xin-transfer-item" v-for="(item, index) in list" :key="index">
+        <div class="xin-transfer-item" v-for="(item, index) in renderList" :key="index">
           <template v-if="!item.aside">
             <xin-checkbox v-model="item.checked" :disabled="item.disabled" @change="calculate()">{{item.text}}</xin-checkbox>
           </template>
@@ -98,7 +98,7 @@ export default {
   },
   data () {
     return {
-      list: [],
+      renderList: [],
       left: {
         all: false,
         checkedSum: 0
@@ -120,10 +120,10 @@ export default {
   },
   computed: {
     leftLength () {
-      return this.list.length ? this.list.length - this.value.length : 0
+      return this.renderList.length ? this.renderList.length - this.value.length : 0
     },
     rightLength () {
-      return this.list.length ? this.value.length : 0
+      return this.renderList.length ? this.value.length : 0
     }
   },
   methods: {
@@ -156,14 +156,14 @@ export default {
           }
         })
       })
-      this.list = arr
-      this.list.length && this.calculate()
+      this.renderList = arr
+      this.renderList.length && this.calculate()
     },
     calculate (event) {
       let leftChecked = 0
       let rightChecked = 0
       let value = []
-      this.list.forEach(item => {
+      this.renderList.forEach(item => {
         if (item.aside) {
           if (item.checked) {
             leftChecked++
@@ -183,7 +183,7 @@ export default {
     event (type) {
       if (type && !this.left.checkedSum) return
       if (!type && !this.right.checkedSum) return
-      this.list.forEach(item => {
+      this.renderList.forEach(item => {
         if (item.aside === type && item.checked && !item.disabled) {
           item.checked = false
           item.aside = !type
@@ -192,7 +192,7 @@ export default {
       this.calculate(true)
     },
     allCheckboxChange (type, status) {
-      this.list.forEach(item => {
+      this.renderList.forEach(item => {
         if (item.aside === type && !item.disabled) {
           item.checked = status
         }

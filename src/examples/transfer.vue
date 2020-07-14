@@ -4,7 +4,7 @@
       <xin-label width="60">颜色展示</xin-label>
       <xin-transfer
         :list="list"
-        itemText="name"
+        itemLabel="name"
         itemValue="code"
         v-model="value"
         :disabled="disabled"
