@@ -15,7 +15,7 @@ Vue.use(Upload)
 
 | 序号 | 模块名称 | 中文名称 | 开发状态 |
 | - | - | - | - |
-| 1 | Crop | 裁切器 | <xin-icon name="seleted"/> |
+| 1 | Crop | 裁切器 | <xin-icon name="close"/> |
 | 2 | Upload | 上传 | <xin-icon name="seleted"/> |
 | 3 | password | 密码输入器 | <xin-icon name="close"/> |
 | 4 | Upload | 登录验证 | <xin-icon name="close"/> |

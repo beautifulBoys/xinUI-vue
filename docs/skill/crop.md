@@ -1,5 +1,7 @@
 # Crop 裁切器
 
+暂不可用。
+
 ## 引用
 ```js
 import { Crop } from 'xin-ui'
