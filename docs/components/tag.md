@@ -36,7 +36,7 @@ import { Tag } from 'xin-ui'
 * 默认值：`false`
 * 描述：是否背景色填充。
 
-### closable
+### closable <xin-tag message="暂未实现" color="warning" fill></xin-tag>
 
 * 类型：`Boolean`
 * 默认值：`false`

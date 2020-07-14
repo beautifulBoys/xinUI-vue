@@ -16,7 +16,7 @@ import { Icon } from 'xin-ui'
 * 默认值：`""`
 * 描述：图标名称，传值为内置图标名称。所有图标请查看【图标列表】。
 
-### type
+### type <xin-tag message="暂未实现" color="info" fill></xin-tag>
 
 * 类型：`String`
 * 默认值：`"unicode"`

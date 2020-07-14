@@ -53,7 +53,7 @@ import { Rate } from 'xin-ui'
 
 ## 依赖情况
 
-无依赖。
+依赖内部组件`Icon`。
 
 ## 代码示例
 <<< ./src/examples/rate.vue

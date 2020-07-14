@@ -28,7 +28,7 @@ import { Grid } from 'xin-ui'
 * 默认值：`"center"`
 * 描述：垂直分布模式，同`justify-content`属性。
 
-### className
+### className <xin-tag message="暂未实现" color="warning" fill></xin-tag>
 
 * 类型：`String`
 * 默认值：`"xin-row-content"`

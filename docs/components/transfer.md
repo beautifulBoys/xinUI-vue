@@ -46,11 +46,11 @@ import { Transfer } from 'xin-ui'
 * 默认值：`[]`
 * 描述：穿梭框默认勾选状态的数据，关联 `itemValue`。
 
-### direction
+### direction <xin-tag message="暂未实现" color="warning" fill></xin-tag>
 
 * 类型：`String`
 * 默认值：`"left"`
-* 描述：穿梭框选中方向，该值暂未实现。
+* 描述：穿梭框选中方向，暂未实现。
 
 | 可选值 | 描述 |
 | - | - |

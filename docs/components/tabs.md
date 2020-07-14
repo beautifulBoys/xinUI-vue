@@ -51,13 +51,13 @@ import { Tabs } from 'xin-ui'
 * 默认值：`"title"`
 * 描述：数据源标签字段名称，`tab = list[i][itemLabel]`。
 
-### closable
+### closable <xin-tag message="暂未实现" color="warning" fill></xin-tag>
 
 * 类型：`Boolean`
 * 默认值：`false`
 * 描述：是否可关闭，暂未支持。
 
-### disabled
+### disabled <xin-tag message="暂未实现" color="warning" fill></xin-tag>
 
 * 类型：`Boolean`
 * 默认值：`false`
