@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/images/logo.png
+heroImage: assets/images/logo.png
 heroText: Xin UI 组件库
 tagline: beautifulBoys
 actionText: 快速上手→

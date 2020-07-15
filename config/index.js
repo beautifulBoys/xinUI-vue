@@ -50,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../lib'),
     assetsSubDirectory: '',
-    assetsPublicPath: '/pc/xinUI/',
+    assetsPublicPath: '/',
     /**
      * Source Maps
      */
