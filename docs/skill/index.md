@@ -20,3 +20,4 @@ Vue.use(Upload)
 | 3 | password | 密码输入器 | <xin-icon name="close"/> |
 | 4 | Upload | 登录验证 | <xin-icon name="close"/> |
 | 5 | Editor | 富文本编辑器 | <xin-icon name="close"/> |
+
