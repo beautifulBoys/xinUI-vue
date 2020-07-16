@@ -17,6 +17,5 @@
 | 名称 | 账号 |
 | - | - |
 | QQ | 1298947916 |
-| Wechat | lyxz12345 |
 | mail | 1298947916@qq.com |
 | Github | beautifulBoys |
