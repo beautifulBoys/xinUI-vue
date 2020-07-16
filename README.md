@@ -19,48 +19,48 @@ xinUI组件库开发历时半年，由开发者@beautifulBoys开发及维护；�
 
 | 序号 | 模块名称 | 中文名称 | 开发状态 |
 | - | - | - | - |
-| 1 | Badge | 标记 | <xin-icon name="seleted"/> |
-| 2 | Button | 按钮 | <xin-icon name="seleted"/> |
-| 3 | Checkbox | 复选框 | <xin-icon name="seleted"/> |
-| 4 | ColorPicker | 颜色选择器 | <xin-icon name="seleted"/> |
-| 5 | DatePicker | 日期选择器 | <xin-icon name="seleted"/> |
-| 6 | Dialog | 弹出框 | <xin-icon name="seleted"/> |
-| 7 | Grid | 栅格布局 | <xin-icon name="seleted"/> |
-| 8 | Icon | 图标 | <xin-icon name="seleted"/> |
-| 9 | Input | 输入框 | <xin-icon name="seleted"/> |
-| 10 | Label | 表单标签 | <xin-icon name="seleted"/> |
-| 11 | Loading | 加载条 | <xin-icon name="seleted"/> |
-| 12 | Message | 消息提示 | <xin-icon name="seleted"/> |
-| 13 | Model | 确认框 | <xin-icon name="seleted"/> |
-| 14 | Page | 分页 | <xin-icon name="seleted"/> |
-| 15 | Popover | 浮动框 | <xin-icon name="seleted"/> |
-| 16 | Progress | 进度条 | <xin-icon name="seleted"/> |
-| 17 | Radio | 单选框 | <xin-icon name="seleted"/> |
-| 18 | Rate | 评分 | <xin-icon name="seleted"/> |
-| 19 | Select | 下拉选择器 | <xin-icon name="seleted"/> |
-| 20 | Slide | 滑块 | <xin-icon name="seleted"/> |
-| 21 | Split | 分割面板 | <xin-icon name="seleted"/> |
-| 22 | Steps | 步骤条 | <xin-icon name="seleted"/> |
-| 23 | Switch | 开关 | <xin-icon name="seleted"/> |
-| 24 | Table | 表格 | <xin-icon name="seleted"/> |
-| 25 | Tabs | 标签页 | <xin-icon name="seleted"/> |
-| 26 | Tag | 标签 | <xin-icon name="seleted"/> |
-| 27 | TagInput | 标签输入框 | <xin-icon name="seleted"/> |
-| 28 | Tips | 提示条 | <xin-icon name="seleted"/> |
-| 29 | Tooltip | 文字提示 | <xin-icon name="seleted"/> |
-| 30 | Transfer | 穿梭框 | <xin-icon name="seleted"/> |
-| 31 | Tree | 树 | <xin-icon name="close"/> |
-| 32 | Viewer | 预览器 | <xin-icon name="seleted"/> |
+| 1 | Badge | 标记 | ✔ |
+| 2 | Button | 按钮 | ✔ |
+| 3 | Checkbox | 复选框 | ✔ |
+| 4 | ColorPicker | 颜色选择器 | ✔ |
+| 5 | DatePicker | 日期选择器 | ✔ |
+| 6 | Dialog | 弹出框 | ✔ |
+| 7 | Grid | 栅格布局 | ✔ |
+| 8 | Icon | 图标 | ✔ |
+| 9 | Input | 输入框 | ✔ |
+| 10 | Label | 表单标签 | ✔ |
+| 11 | Loading | 加载条 | ✔ |
+| 12 | Message | 消息提示 | ✔ |
+| 13 | Model | 确认框 | ✔ |
+| 14 | Page | 分页 | ✔ |
+| 15 | Popover | 浮动框 | ✔ |
+| 16 | Progress | 进度条 | ✔ |
+| 17 | Radio | 单选框 | ✔ |
+| 18 | Rate | 评分 | ✔ |
+| 19 | Select | 下拉选择器 | ✔ |
+| 20 | Slide | 滑块 | ✔ |
+| 21 | Split | 分割面板 | ✔ |
+| 22 | Steps | 步骤条 | ✔ |
+| 23 | Switch | 开关 | ✔ |
+| 24 | Table | 表格 | ✔ |
+| 25 | Tabs | 标签页 | ✔ |
+| 26 | Tag | 标签 | ✔ |
+| 27 | TagInput | 标签输入框 | ✔ |
+| 28 | Tips | 提示条 | ✔ |
+| 29 | Tooltip | 文字提示 | ✔ |
+| 30 | Transfer | 穿梭框 | ✔ |
+| 31 | Tree | 树 | ✘ |
+| 32 | Viewer | 预览器 | ✔ |
 
 ## Skill Components
 
 | 序号 | 模块名称 | 中文名称 | 开发状态 |
 | - | - | - | - |
-| 1 | Crop | 裁切器 | <xin-icon name="close"/> |
-| 2 | Upload | 上传 | <xin-icon name="seleted"/> |
-| 3 | password | 密码输入器 | <xin-icon name="close"/> |
-| 4 | Upload | 登录验证 | <xin-icon name="close"/> |
-| 5 | Editor | 富文本编辑器 | <xin-icon name="close"/> |
+| 1 | Crop | 裁切器 | ✘ |
+| 2 | Upload | 上传 | ✔ |
+| 3 | password | 密码输入器 | ✘ |
+| 4 | Upload | 登录验证 | ✘ |
+| 5 | Editor | 富文本编辑器 | ✘ |
 
 ## 版权说明
 
