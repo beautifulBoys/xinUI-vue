@@ -4,12 +4,15 @@
   width: 100%;
   .xin-table-content {
     width: 100%;
+    display: table;
     .xin-table-thead {
       .xin-table-tr {
+        border: none;
         .xin-table-th {
           font-size: $table-font-size;
           line-height: $table-line-height;
           padding: 5px 0;
+          border: none;
           border-bottom: 1px solid $table-info-color;
           color: $table-info-color;
         }
@@ -17,11 +20,13 @@
     }
     .xin-table-tbody {
       .xin-table-tr {
-        & > td {
+        border: none;
+        & > td, .xin-table-td {
           font-size: $table-font-size;
           line-height: $table-line-height;
           text-align: center;
           padding: 5px;
+          border: none;
         }
         &.stripe {
           background: transparentize($table-default-color, 0.95);
