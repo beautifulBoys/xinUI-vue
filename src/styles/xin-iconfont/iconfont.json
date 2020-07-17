@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "11488069",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e75c",
+      "unicode_decimal": 59228
+    },
+    {
       "icon_id": "11474203",
       "name": "auto",
       "font_class": "auto",
@@ -837,13 +844,6 @@
       "font_class": "link",
       "unicode": "e79c",
       "unicode_decimal": 59292
-    },
-    {
-      "icon_id": "11488069",
-      "name": "loading",
-      "font_class": "loading",
-      "unicode": "e75c",
-      "unicode_decimal": 59228
     },
     {
       "icon_id": "11488071",
