@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="header">xinUI 组件库开发</div>
+    <div class="header">xinUI 前端组件库开发面板</div>
     <div class="body">
       <div class="left">
         <div
