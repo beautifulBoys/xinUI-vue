@@ -72,7 +72,7 @@ xinUI组件库开发历时半年，由开发者@beautifulBoys开发及维护；�
 
 * 本组件库由`github:@beautifulBoys`独立开发，版权归开发者所有。
 * 本组件库使用部分图标，来源`https://www.iconfont.cn/`，侵权必删。
-* 本组件库部分组件设计参考饿了么团队开源组件库`ElementUI`，在此特别感谢。
+* 本组件库部分组件设计参考饿了么团队开源组件库`Element`，在此特别感谢。
 
 ## 联系方式
 
