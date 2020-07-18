@@ -89,6 +89,7 @@ export default {
       this.cropper.relativeZoom(-0.1)
     },
     getImage () {
+      return this.cropper.getImageData()
     }
   }
 }
