@@ -6,13 +6,18 @@ xinUI组件库开发历时半年，由开发者@beautifulBoys开发及维护；�
 
 * 独立自主开发，不拿来主义。
 * 与业务完全分离，专注于UI交互部分。
-* 以组件模块为单位，组件间不存在数据耦合。
-* 每个组件都可单独引入使用，无需引入依赖。也可整体引用。
+* 以组件模块为开发基本单位。
+* 每个组件都可单独引入使用；也可整体引用。
 
 ## 部分组件展示
 
+### Button
 <img src="https://beautifulBoys.github.io/source/xinUI/images/1.png" style="width: 600px" />
+
+### Badge
 <img src="https://beautifulBoys.github.io/source/xinUI/images/2.png" style="width: 600px" />
+
+### Switch
 <img src="https://beautifulBoys.github.io/source/xinUI/images/3.png" style="width: 600px" />
 
 ## Basic Components
@@ -56,7 +61,7 @@ xinUI组件库开发历时半年，由开发者@beautifulBoys开发及维护；�
 
 | 序号 | 模块名称 | 中文名称 | 开发状态 |
 | - | - | - | - |
-| 1 | Crop | 裁切器 | ✘ |
+| 1 | Crop | 裁切器 | ✔ |
 | 2 | Upload | 上传 | ✔ |
 | 3 | password | 密码输入器 | ✘ |
 | 4 | Upload | 登录验证 | ✘ |
@@ -66,7 +71,7 @@ xinUI组件库开发历时半年，由开发者@beautifulBoys开发及维护；�
 
 * 本组件库由`github:@beautifulBoys`独立开发，版权归开发者所有。
 * 本组件库使用部分图标，来源`https://www.iconfont.cn/`，侵权必删。
-* 本组件库部分组件设计参考饿了么团队开源组件库`ElementUI`，在此感谢。
+* 本组件库部分组件设计参考饿了么团队开源组件库`ElementUI`，在此特别感谢。
 
 ## 联系方式
 
