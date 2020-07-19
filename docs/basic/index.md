@@ -1,7 +1,7 @@
 # 基础组件
 
 * 本组件库仅用于交流学习使用，未经生产环境验证，可靠性未知，请勿在生产环境使用。
-* 组件库目前包含34个基础组件，2个功能组件。
+* 组件库目前规划了34个基础组件（已完成31个）。
 * 暂时提供一套皮肤，后期会考虑添加多套皮肤，及自定义皮肤。
 
 ## 组件列表
@@ -40,4 +40,5 @@
 | 30 | Transfer | 穿梭框 | <xin-icon name="seleted"/> |
 | 31 | Tree | 树 | <xin-icon name="close"/> |
 | 32 | Viewer | 预览器 | <xin-icon name="seleted"/> |
-
+| 33 | Cascader | 级联选择器 | <xin-icon name="close"/> |
+| 34 | SortList | 列表排序 | <xin-icon name="close"/> |

@@ -49,11 +49,11 @@ export default {
         {name: 'Badge 标记', url: '/badge'},
         {name: 'TagInput 标签输入框', url: '/tagInput'},
         {name: 'Transfer 穿梭框', url: '/transfer'},
-        {name: 'SortList 列表排序', url: '/sortList'},
+        // {name: 'SortList 列表排序', url: '/sortList'},
         {name: 'Split 分割面板', url: '/split'},
         {name: 'Loading 加载', url: '/loading'},
         {name: 'Slide 滑块', url: '/slide'},
-        {name: 'Cascader 级联选择', url: '/cascader'},
+        // {name: 'Cascader 级联选择', url: '/cascader'},
         {name: 'Upload 上传', url: '/upload'},
         {name: 'ColorPicker 颜色选择器', url: '/colorPicker'},
         {name: 'Tips 提示条', url: '/tips'},
@@ -61,7 +61,8 @@ export default {
         {name: 'Tag 标签', url: '/tag'},
         {name: 'Grid 栅格', url: '/grid'},
         {name: 'Icon 图标', url: '/icon'},
-        {name: 'Viewer 预览器', url: '/viewer'}
+        {name: 'Viewer 预览器', url: '/viewer'},
+        {name: 'Crop 裁切器', url: '/crop'}
       ]
     }
   },
@@ -96,6 +97,9 @@ html, body {
     line-height: 50px;
     font-size: $font-size + 10px;
     text-align: center;
+    color: $color-blue;
+    // color: #fff;
+    // background: $color-blue;
     border-bottom: 1px solid $color-blue;
   }
   .body {
