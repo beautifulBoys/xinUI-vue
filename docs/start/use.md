@@ -14,7 +14,7 @@ Vue.use(xinUI)
 
 ```js
 import { Button, Checkbox } from 'xin-ui'
-// 样式不提供单独打包。
+// 样式文件不提供单独打包。
 import 'xin-ui/styles.css'
 Vue.use(Button)
 Vue.use(Checkbox)
