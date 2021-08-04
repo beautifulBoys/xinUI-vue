@@ -2,7 +2,7 @@
 module.exports = {
   title: 'XinUI 前端组件库',
   description: '一个基于 Vue 框架的轻量级 UI 组件库',
-  // base: '/pc/xinUI/',
+  base: '/pc/xinUI/',
   head: [
     [
       'link',
