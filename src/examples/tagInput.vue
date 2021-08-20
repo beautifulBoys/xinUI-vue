@@ -18,7 +18,7 @@ export default {
   data () {
     return {
       val: [],
-      val1: ['陆军', '东风快递', '火箭军']
+      val1: ['奶茶', '豆汁', '冷饮']
     }
   },
   mounted () {

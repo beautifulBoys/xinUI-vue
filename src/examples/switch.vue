@@ -23,7 +23,7 @@
     </div>
     <div class="line">
       <xin-label width="80">超长文字显示</xin-label>
-      <xin-switch v-model="val5" color="success" openLabel="中华人民共和国第二十届全国代表大会开幕" closeLabel="中华人民共和国第二十届全国代表大会闭幕"></xin-switch>
+      <xin-switch v-model="val5" color="success" openLabel="第三十二届东京奥运会开幕" closeLabel="第三十二届东京奥运会闭幕"></xin-switch>
     </div>
     <div class="line">
       <xin-label width="80">事件</xin-label>
