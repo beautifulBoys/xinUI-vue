@@ -65,12 +65,12 @@ export default {
         show: false
       },
       tbody: [
-        {id: 1, text: '空军'},
-        {id: 2, text: '陆军'},
-        {id: 3, text: '海军'},
-        {id: 4, text: '导弹军'},
-        {id: 5, text: '后勤军'},
-        {id: 6, text: '指挥军'}
+        {id: 1, text: '锅包肉'},
+        {id: 2, text: '蟹肉煲'},
+        {id: 3, text: '酱棒骨'},
+        {id: 4, text: '小鸡炖蘑菇'},
+        {id: 5, text: '猪肉炖粉条'},
+        {id: 6, text: '溜肉段'}
       ],
       list: [
         { id: 1, name: '清华大学' },
